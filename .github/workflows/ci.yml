@@ -2,13 +2,14 @@ name: CI
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ main, p2p-beta ]
   pull_request:
-    branches: [ main, develop ]
+    branches: [ main, p2p-beta ]
 
 jobs:
   build-and-test:
     runs-on: windows-latest
+    timeout-minutes: 60
     
     steps:
     - name: Checkout code
@@ -41,5 +42,4 @@ jobs:
         name: payday3-internal-build
         path: |
           Build/Release/**/*.dll
-          Build/Release/**/*.exe
         retention-days: 7
