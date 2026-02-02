@@ -1,0 +1,81 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version (e.g., v1.0.0)'
+        required: true
+        type: string
+
+jobs:
+  build-release:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup xmake
+      uses: xmake-io/github-action-setup-xmake@v1
+      with:
+        xmake-version: latest
+
+    - name: Configure xmake (Release)
+      run: xmake config -m release -a x64 -p windows
+
+    - name: Build project (Release)
+      run: xmake build Payday3-Internal
+
+    - name: Package artifacts
+      run: |
+        mkdir release-package
+        xcopy /E /I Build\Release release-package\
+        echo "Build completed on $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')" > release-package\BUILD_INFO.txt
+      shell: pwsh
+
+    - name: Create ZIP archive
+      run: |
+        Compress-Archive -Path release-package\* -DestinationPath Payday3-Internal-Release.zip
+      shell: pwsh
+
+    - name: Get version
+      id: get_version
+      run: |
+        if ("${{ github.event_name }}" -eq "workflow_dispatch") {
+          $version = "${{ github.event.inputs.version }}"
+        } else {
+          $version = "${{ github.ref_name }}"
+        }
+        echo "VERSION=$version" >> $env:GITHUB_OUTPUT
+      shell: pwsh
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ steps.get_version.outputs.VERSION }}
+        name: Release ${{ steps.get_version.outputs.VERSION }}
+        draft: false
+        prerelease: false
+        files: |
+          Payday3-Internal-Release.zip
+        body: |
+          ## Payday3-Internal ${{ steps.get_version.outputs.VERSION }}
+          
+          ### Changes
+          - Built with xmake in release mode
+          - Windows x64 architecture
+          
+          ### Installation
+          1. Download `Payday3-Internal-Release.zip`
+          2. Extract the archive
+          3. Follow the instructions in README.md
+          
+          ### Build Information
+          - Build Date: ${{ github.event.head_commit.timestamp }}
+          - Commit: ${{ github.sha }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
