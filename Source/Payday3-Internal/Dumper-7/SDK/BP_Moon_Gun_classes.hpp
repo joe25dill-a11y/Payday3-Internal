@@ -20,7 +20,7 @@ namespace SDK
 
 // BlueprintGeneratedClass BP_Moon_Gun.BP_Moon_Gun_C
 // 0x0040 (0x0B30 - 0x0AF0)
-class ABP_Moon_Gun_C : public ASBZAIDrone
+class ABP_Moon_Gun_C final : public ASBZAIDrone
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0AF0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -34,12 +34,12 @@ public:
 	struct FVector                                RandomDeathVector;                                 // 0x0B20(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UpdateDeath(float ElapsedTimeSinceDeath, float LinearForce, float AngularForce, float Duration, const struct FVector& RandomVector);
-	void UserConstructionScript();
-	void TickExec_8EDFF4314BB4D040A4F521AAA5A56326(const class UDelegateTimer* Timer, float ElapsedTime, float TimeSinceLast);
-	void TickExec_51BB4EA443607F8BF71EA7893F95BCE5(const class UDelegateTimer* Timer, float ElapsedTime, float TimeSinceLast);
-	void BP_OnKill_Client();
 	void ExecuteUbergraph_BP_Moon_Gun(int32 EntryPoint);
+	void BP_OnKill_Client();
+	void TickExec_51BB4EA443607F8BF71EA7893F95BCE5(const class UDelegateTimer* Timer, float ElapsedTime, float TimeSinceLast);
+	void TickExec_8EDFF4314BB4D040A4F521AAA5A56326(const class UDelegateTimer* Timer, float ElapsedTime, float TimeSinceLast);
+	void UserConstructionScript();
+	void UpdateDeath(float ElapsedTimeSinceDeath, float LinearForce, float AngularForce, float Duration, const struct FVector& RandomVector);
 
 public:
 	static class UClass* StaticClass()

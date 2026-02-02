@@ -37,46 +37,6 @@ void UWBP_UI_Widget_PartyClientWidget_C::ExecuteUbergraph_WBP_UI_Widget_PartyCli
 }
 
 
-// Function WBP_UI_Widget_PartyClientWidget.WBP_UI_Widget_PartyClientWidget_C.OnHeisterIconChangedEvent
-// (Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UPaperSprite*                     InNewHeisterIcon                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_UI_Widget_PartyClientWidget_C::OnHeisterIconChangedEvent(class UPaperSprite* InNewHeisterIcon)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_UI_Widget_PartyClientWidget_C", "OnHeisterIconChangedEvent");
-
-	Params::WBP_UI_Widget_PartyClientWidget_C_OnHeisterIconChangedEvent Parms{};
-
-	Parms.InNewHeisterIcon = InNewHeisterIcon;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_UI_Widget_PartyClientWidget.WBP_UI_Widget_PartyClientWidget_C.On Damage
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FSBZDamageEvent&           DamageEventData                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-
-void UWBP_UI_Widget_PartyClientWidget_C::On_Damage(const struct FSBZDamageEvent& DamageEventData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_UI_Widget_PartyClientWidget_C", "On Damage");
-
-	Params::WBP_UI_Widget_PartyClientWidget_C_On_Damage Parms{};
-
-	Parms.DamageEventData = std::move(DamageEventData);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function WBP_UI_Widget_PartyClientWidget.WBP_UI_Widget_PartyClientWidget_C.OnReviveEnded
 // (BlueprintCallable, BlueprintEvent)
 
@@ -105,6 +65,20 @@ void UWBP_UI_Widget_PartyClientWidget_C::OnReviveStarted()
 }
 
 
+// Function WBP_UI_Widget_PartyClientWidget.WBP_UI_Widget_PartyClientWidget_C.Destruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UWBP_UI_Widget_PartyClientWidget_C::Destruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_UI_Widget_PartyClientWidget_C", "Destruct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function WBP_UI_Widget_PartyClientWidget.WBP_UI_Widget_PartyClientWidget_C.OnStateChanged
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -128,7 +102,7 @@ void UWBP_UI_Widget_PartyClientWidget_C::OnStateChanged(EPD3DefeatState Old, EPD
 
 
 // Function WBP_UI_Widget_PartyClientWidget.WBP_UI_Widget_PartyClientWidget_C.OnRenownLevelChanged
-// (BlueprintCallable, BlueprintEvent)
+// (BlueprintEvent)
 // Parameters:
 // class ASBZPlayerState*                  InPlayerState                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -147,17 +121,23 @@ void UWBP_UI_Widget_PartyClientWidget_C::OnRenownLevelChanged(class ASBZPlayerSt
 }
 
 
-// Function WBP_UI_Widget_PartyClientWidget.WBP_UI_Widget_PartyClientWidget_C.Destruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function WBP_UI_Widget_PartyClientWidget.WBP_UI_Widget_PartyClientWidget_C.OnHeisterIconChangedEvent
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class UPaperSprite*                     InNewHeisterIcon                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_UI_Widget_PartyClientWidget_C::Destruct()
+void UWBP_UI_Widget_PartyClientWidget_C::OnHeisterIconChangedEvent(class UPaperSprite* InNewHeisterIcon)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_UI_Widget_PartyClientWidget_C", "Destruct");
+		Func = Class->GetFunction("WBP_UI_Widget_PartyClientWidget_C", "OnHeisterIconChangedEvent");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::WBP_UI_Widget_PartyClientWidget_C_OnHeisterIconChangedEvent Parms{};
+
+	Parms.InNewHeisterIcon = InNewHeisterIcon;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -172,46 +152,6 @@ void UWBP_UI_Widget_PartyClientWidget_C::Construct()
 		Func = Class->GetFunction("WBP_UI_Widget_PartyClientWidget_C", "Construct");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_UI_Widget_PartyClientWidget.WBP_UI_Widget_PartyClientWidget_C.OnPlatformChanged
-// (Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class ASBZPlayerState*                  InPlayerState                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_UI_Widget_PartyClientWidget_C::OnPlatformChanged(class ASBZPlayerState* InPlayerState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_UI_Widget_PartyClientWidget_C", "OnPlatformChanged");
-
-	Params::WBP_UI_Widget_PartyClientWidget_C_OnPlatformChanged Parms{};
-
-	Parms.InPlayerState = InPlayerState;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_UI_Widget_PartyClientWidget.WBP_UI_Widget_PartyClientWidget_C.OnInfamyLevelChanged
-// (Event, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class ASBZPlayerState*                  InPlayerState                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_UI_Widget_PartyClientWidget_C::OnInfamyLevelChanged(class ASBZPlayerState* InPlayerState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_UI_Widget_PartyClientWidget_C", "OnInfamyLevelChanged");
-
-	Params::WBP_UI_Widget_PartyClientWidget_C_OnInfamyLevelChanged Parms{};
-
-	Parms.InPlayerState = InPlayerState;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -235,17 +175,43 @@ void UWBP_UI_Widget_PartyClientWidget_C::PreConstruct(bool IsDesignTime)
 }
 
 
-// Function WBP_UI_Widget_PartyClientWidget.WBP_UI_Widget_PartyClientWidget_C.OnInitialized
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Function WBP_UI_Widget_PartyClientWidget.WBP_UI_Widget_PartyClientWidget_C.OnInfamyLevelChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class ASBZPlayerState*                  InPlayerState                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_UI_Widget_PartyClientWidget_C::OnInitialized()
+void UWBP_UI_Widget_PartyClientWidget_C::OnInfamyLevelChanged(class ASBZPlayerState* InPlayerState)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_UI_Widget_PartyClientWidget_C", "OnInitialized");
+		Func = Class->GetFunction("WBP_UI_Widget_PartyClientWidget_C", "OnInfamyLevelChanged");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::WBP_UI_Widget_PartyClientWidget_C_OnInfamyLevelChanged Parms{};
+
+	Parms.InPlayerState = InPlayerState;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_UI_Widget_PartyClientWidget.WBP_UI_Widget_PartyClientWidget_C.OnPlatformChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class ASBZPlayerState*                  InPlayerState                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_UI_Widget_PartyClientWidget_C::OnPlatformChanged(class ASBZPlayerState* InPlayerState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_UI_Widget_PartyClientWidget_C", "OnPlatformChanged");
+
+	Params::WBP_UI_Widget_PartyClientWidget_C_OnPlatformChanged Parms{};
+
+	Parms.InPlayerState = InPlayerState;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

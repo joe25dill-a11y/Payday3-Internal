@@ -23,6 +23,15 @@ enum class EGridlyColumnDataType : uint8
 	EGridlyColumnDataType_MAX                = 2,
 };
 
+// ScriptStruct Gridly.GridlyResult
+// 0x0010 (0x0010 - 0x0000)
+struct FGridlyResult final
+{
+public:
+	class FString                                 Message;                                           // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGridlyResult;
+
 // ScriptStruct Gridly.GridlyColumnInfo
 // 0x0018 (0x0018 - 0x0000)
 struct FGridlyColumnInfo final
@@ -33,15 +42,6 @@ public:
 	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FGridlyColumnInfo;
-
-// ScriptStruct Gridly.GridlyResult
-// 0x0010 (0x0010 - 0x0000)
-struct FGridlyResult final
-{
-public:
-	class FString                                 Message;                                           // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGridlyResult;
 
 // ScriptStruct Gridly.GridlyTableCell
 // 0x0030 (0x0030 - 0x0000)

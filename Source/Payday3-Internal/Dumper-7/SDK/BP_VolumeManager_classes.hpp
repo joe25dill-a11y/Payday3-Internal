@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_VolumeManager.BP_VolumeManager_C
-// 0x0000 (0x01D0 - 0x01D0)
+// 0x0000 (0x01E0 - 0x01E0)
 class UBP_VolumeManager_C final : public USBZVolumeManager
 {
 public:

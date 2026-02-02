@@ -151,34 +151,6 @@ void UWBP_Results_Payout_C::OnAddBag()
 }
 
 
-// Function WBP_Results_Payout.WBP_Results_Payout_C.OnShowSecretBags
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UWBP_Results_Payout_C::OnShowSecretBags()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Results_Payout_C", "OnShowSecretBags");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_Results_Payout.WBP_Results_Payout_C.OnAddSecretBag
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UWBP_Results_Payout_C::OnAddSecretBag()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Results_Payout_C", "OnAddSecretBag");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function WBP_Results_Payout.WBP_Results_Payout_C.PayoutFinished
 // (Public, BlueprintCallable, BlueprintEvent)
 

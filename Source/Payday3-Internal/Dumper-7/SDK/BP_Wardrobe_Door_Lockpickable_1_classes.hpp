@@ -12,8 +12,8 @@
 
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "AkAudio_structs.hpp"
 #include "Starbreeze_classes.hpp"
+#include "AkAudio_structs.hpp"
 
 
 namespace SDK
@@ -36,13 +36,13 @@ public:
 	TMap<class USceneComponent*, struct FTransform> SpawnComponentTransformMap;                      // 0x0340(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 
 public:
-	void PopulateSpawnInformationMap(TMap<class USceneComponent*, struct FTransform>* InOutSpawnDataMap);
-	void UserConstructionScript();
-	void Timeline_0__FinishedFunc();
-	void Timeline_0__UpdateFunc();
-	void BP_OnMiniGameSuccess(bool bDoCosmetics);
-	void OnActorSpawned(class AActor* SpawnedActor, class USceneComponent* AttachParent);
 	void ExecuteUbergraph_BP_Wardrobe_Door_Lockpickable_1(int32 EntryPoint);
+	void OnActorSpawned(class AActor* SpawnedActor, class USceneComponent* AttachParent);
+	void BP_OnMiniGameSuccess(bool bDoCosmetics);
+	void Timeline_0__UpdateFunc();
+	void Timeline_0__FinishedFunc();
+	void UserConstructionScript();
+	void PopulateSpawnInformationMap(TMap<class USceneComponent*, struct FTransform>* InOutSpawnDataMap);
 
 public:
 	static class UClass* StaticClass()

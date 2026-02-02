@@ -11,21 +11,21 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "Starbreeze_structs.hpp"
 #include "CH_BaseCop_classes.hpp"
 #include "AkAudio_structs.hpp"
-#include "Starbreeze_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass CH_Cloaker.CH_Cloaker_C
-// 0x0010 (0x1D00 - 0x1CF0)
+// 0x0010 (0x1D10 - 0x1D00)
 class ACH_Cloaker_C final : public ACH_BaseCop_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1CF0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UNiagaraComponent*                      Niagara;                                           // 0x1CF8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1D00(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UNiagaraComponent*                      Niagara;                                           // 0x1D08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_CH_Cloaker(int32 EntryPoint);

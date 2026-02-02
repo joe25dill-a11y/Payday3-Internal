@@ -37,10 +37,10 @@ public:
 	TArray<class APawn*>                          SpawnedPawns;                                      // 0x0778(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
 
 public:
-	void CustomEvent_1(class APawn* SpawnedPawn, class ASBZCarriedStaticInteractionActor* Spawnedloot);
-	void CustomEvent_2(class APawn* SpawnedPawn, class ASBZCarriedStaticInteractionActor* Spawnedloot);
-	void ReceiveBeginPlay();
 	void ExecuteUbergraph_BP_Sedan_FirstResponders_Base(int32 EntryPoint);
+	void ReceiveBeginPlay();
+	void CustomEvent_2(class APawn* SpawnedPawn, class ASBZCarriedStaticInteractionActor* Spawnedloot);
+	void CustomEvent_1(class APawn* SpawnedPawn, class ASBZCarriedStaticInteractionActor* Spawnedloot);
 
 public:
 	static class UClass* StaticClass()

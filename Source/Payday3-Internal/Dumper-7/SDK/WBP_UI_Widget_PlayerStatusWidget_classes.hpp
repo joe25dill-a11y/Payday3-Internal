@@ -21,7 +21,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_UI_Widget_PlayerStatusWidget.WBP_UI_Widget_PlayerStatusWidget_C
-// 0x01A0 (0x04E8 - 0x0348)
+// 0x0198 (0x04E0 - 0x0348)
 class UWBP_UI_Widget_PlayerStatusWidget_C final : public UPD3HUDPlayerStatusWidget
 {
 public:
@@ -30,27 +30,25 @@ public:
 	class UImage*                                 Image_Frame;                                       // 0x0358(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UImage*                                 Image_PlayerIcon;                                  // 0x0360(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UWBP_VoIP_C*                            WBP_VoIP;                                          // 0x0368(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_UI_Widget_KillCount_C*             Widget_KillCount;                                  // 0x0370(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UPaperSprite*                           InDesignerHeisterIcon;                             // 0x0378(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSlateColor                            Tased;                                             // 0x0380(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            Default;                                           // 0x03A8(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            Cuffed;                                            // 0x03D0(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            Downed;                                            // 0x03F8(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            In_Custody;                                        // 0x0420(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            Subdued;                                           // 0x0448(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            Default_BKG;                                       // 0x0470(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            KnockedBKG;                                        // 0x0498(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            TasedBKG;                                          // 0x04C0(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class UPaperSprite*                           InDesignerHeisterIcon;                             // 0x0370(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSlateColor                            Tased;                                             // 0x0378(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            Default;                                           // 0x03A0(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            Cuffed;                                            // 0x03C8(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            Downed;                                            // 0x03F0(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            In_Custody;                                        // 0x0418(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            Subdued;                                           // 0x0440(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            Default_BKG;                                       // 0x0468(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            KnockedBKG;                                        // 0x0490(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            TasedBKG;                                          // 0x04B8(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ExecuteUbergraph_WBP_UI_Widget_PlayerStatusWidget(int32 EntryPoint);
-	void OnHeisterIconChangedEvent(class UPaperSprite* InNewHeisterIcon);
-	void OnStateChanged(EPD3DefeatState Old, EPD3DefeatState New);
-	void Destruct();
-	void On_Damage(const struct FSBZDamageEvent& DamageEventData);
-	void OnInitialized();
-	void Construct();
 	void PreConstruct(bool IsDesignTime);
+	void Destruct();
+	void Construct();
+	void OnStateChanged(EPD3DefeatState Old, EPD3DefeatState New);
+	void OnHeisterIconChangedEvent(class UPaperSprite* InNewHeisterIcon);
+	void OnInitialized();
 	void SetEOSProdUID();
 
 public:

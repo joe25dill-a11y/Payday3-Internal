@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function BP_Van_FBI.BP_Van_FBI_C.ExecuteUbergraph_BP_Van_FBI
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Van_FBI_C::ExecuteUbergraph_BP_Van_FBI(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Van_FBI_C", "ExecuteUbergraph_BP_Van_FBI");
+
+	Params::BP_Van_FBI_C_ExecuteUbergraph_BP_Van_FBI Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_Van_FBI.BP_Van_FBI_C.BndEvt__BP_Van_FBI_PropDamageComponent_K2Node_ComponentBoundEvent_0_SBZPropDamageHealthSignature__DelegateSignature
 // (HasOutParams, BlueprintEvent)
 // Parameters:
@@ -38,26 +58,6 @@ void ABP_Van_FBI_C::BndEvt__BP_Van_FBI_PropDamageComponent_K2Node_ComponentBound
 	Parms.Health = Health;
 	Parms.bDoCosmetics = bDoCosmetics;
 	Parms.DamageContext = std::move(DamageContext);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Van_FBI.BP_Van_FBI_C.ExecuteUbergraph_BP_Van_FBI
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Van_FBI_C::ExecuteUbergraph_BP_Van_FBI(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Van_FBI_C", "ExecuteUbergraph_BP_Van_FBI");
-
-	Params::BP_Van_FBI_C_ExecuteUbergraph_BP_Van_FBI Parms{};
-
-	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

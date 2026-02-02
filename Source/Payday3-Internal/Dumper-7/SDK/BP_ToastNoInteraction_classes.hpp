@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ToastNoInteraction.BP_ToastNoInteraction_C
-// 0x0000 (0x02E8 - 0x02E8)
+// 0x0000 (0x02F0 - 0x02F0)
 class ABP_ToastNoInteraction_C final : public ABP_InstantLoot_MoneyBase_C
 {
 public:

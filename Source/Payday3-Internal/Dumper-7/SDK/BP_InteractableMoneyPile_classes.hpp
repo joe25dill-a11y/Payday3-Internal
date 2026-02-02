@@ -19,7 +19,7 @@ namespace SDK
 
 // BlueprintGeneratedClass BP_InteractableMoneyPile.BP_InteractableMoneyPile_C
 // 0x0018 (0x0370 - 0x0358)
-class ABP_InteractableMoneyPile_C : public ABP_SingleBagGeneratorBase_C
+class ABP_InteractableMoneyPile_C final : public ABP_SingleBagGeneratorBase_C
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_BP_InteractableMoneyPile_C;         // 0x0358(0x0008)(ZeroConstructor, Transient, DuplicateTransient)

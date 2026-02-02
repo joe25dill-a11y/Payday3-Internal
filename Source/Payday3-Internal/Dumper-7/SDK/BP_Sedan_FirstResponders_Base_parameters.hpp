@@ -14,26 +14,6 @@
 namespace SDK::Params
 {
 
-// Function BP_Sedan_FirstResponders_Base.BP_Sedan_FirstResponders_Base_C.CustomEvent_1
-// 0x0010 (0x0010 - 0x0000)
-struct BP_Sedan_FirstResponders_Base_C_CustomEvent_1 final
-{
-public:
-	class APawn*                                  SpawnedPawn;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ASBZCarriedStaticInteractionActor*      Spawnedloot;                                       // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Sedan_FirstResponders_Base_C_CustomEvent_1;
-
-// Function BP_Sedan_FirstResponders_Base.BP_Sedan_FirstResponders_Base_C.CustomEvent_2
-// 0x0010 (0x0010 - 0x0000)
-struct BP_Sedan_FirstResponders_Base_C_CustomEvent_2 final
-{
-public:
-	class APawn*                                  SpawnedPawn;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ASBZCarriedStaticInteractionActor*      Spawnedloot;                                       // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Sedan_FirstResponders_Base_C_CustomEvent_2;
-
 // Function BP_Sedan_FirstResponders_Base.BP_Sedan_FirstResponders_Base_C.ExecuteUbergraph_BP_Sedan_FirstResponders_Base
 // 0x00C0 (0x00C0 - 0x0000)
 struct BP_Sedan_FirstResponders_Base_C_ExecuteUbergraph_BP_Sedan_FirstResponders_Base final
@@ -68,6 +48,26 @@ public:
 	class USBZAISquad*                            CallFunc_AddSquad_ReturnValue_1;                   // 0x00B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Sedan_FirstResponders_Base_C_ExecuteUbergraph_BP_Sedan_FirstResponders_Base;
+
+// Function BP_Sedan_FirstResponders_Base.BP_Sedan_FirstResponders_Base_C.CustomEvent_2
+// 0x0010 (0x0010 - 0x0000)
+struct BP_Sedan_FirstResponders_Base_C_CustomEvent_2 final
+{
+public:
+	class APawn*                                  SpawnedPawn;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ASBZCarriedStaticInteractionActor*      Spawnedloot;                                       // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Sedan_FirstResponders_Base_C_CustomEvent_2;
+
+// Function BP_Sedan_FirstResponders_Base.BP_Sedan_FirstResponders_Base_C.CustomEvent_1
+// 0x0010 (0x0010 - 0x0000)
+struct BP_Sedan_FirstResponders_Base_C_CustomEvent_1 final
+{
+public:
+	class APawn*                                  SpawnedPawn;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ASBZCarriedStaticInteractionActor*      Spawnedloot;                                       // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Sedan_FirstResponders_Base_C_CustomEvent_1;
 
 }
 

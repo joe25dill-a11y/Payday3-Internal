@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "UMG_structs.hpp"
 #include "UMG_classes.hpp"
 #include "Starbreeze_structs.hpp"
 

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_classes.hpp"
 #include "CableBox_Color_Enum_structs.hpp"
+#include "CoreUObject_classes.hpp"
 
 
 namespace SDK

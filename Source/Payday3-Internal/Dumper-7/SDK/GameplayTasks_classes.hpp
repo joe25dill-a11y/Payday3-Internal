@@ -50,30 +50,32 @@ public:
 };
 DUMPER7_ASSERTS_UGameplayTask;
 
-// Class GameplayTasks.GameplayTask_TimeLimitedExecution
-// 0x0030 (0x00A0 - 0x0070)
-class UGameplayTask_TimeLimitedExecution final : public UGameplayTask
+// Class GameplayTasks.GameplayTask_WaitDelay
+// 0x0018 (0x0088 - 0x0070)
+class UGameplayTask_WaitDelay final : public UGameplayTask
 {
 public:
-	TMulticastInlineDelegate<void()>              OnFinished;                                        // 0x0070(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnTimeExpired;                                     // 0x0080(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_90[0x10];                                      // 0x0090(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              OnFinish;                                          // 0x0070(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UGameplayTask_WaitDelay* TaskWaitDelay(TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner, float Time, const uint8 Priority);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("GameplayTask_TimeLimitedExecution")
+		STATIC_CLASS_IMPL("GameplayTask_WaitDelay")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"GameplayTask_TimeLimitedExecution")
+		STATIC_NAME_IMPL(L"GameplayTask_WaitDelay")
 	}
-	static class UGameplayTask_TimeLimitedExecution* GetDefaultObj()
+	static class UGameplayTask_WaitDelay* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UGameplayTask_TimeLimitedExecution>();
+		return GetDefaultObjImpl<UGameplayTask_WaitDelay>();
 	}
 };
-DUMPER7_ASSERTS_UGameplayTask_TimeLimitedExecution;
+DUMPER7_ASSERTS_UGameplayTask_WaitDelay;
 
 // Class GameplayTasks.GameplayTasksComponent
 // 0x0070 (0x0130 - 0x00C0)
@@ -168,32 +170,30 @@ public:
 };
 DUMPER7_ASSERTS_UGameplayTask_SpawnActor;
 
-// Class GameplayTasks.GameplayTask_WaitDelay
-// 0x0018 (0x0088 - 0x0070)
-class UGameplayTask_WaitDelay final : public UGameplayTask
+// Class GameplayTasks.GameplayTask_TimeLimitedExecution
+// 0x0030 (0x00A0 - 0x0070)
+class UGameplayTask_TimeLimitedExecution final : public UGameplayTask
 {
 public:
-	TMulticastInlineDelegate<void()>              OnFinish;                                          // 0x0070(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UGameplayTask_WaitDelay* TaskWaitDelay(TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner, float Time, const uint8 Priority);
+	TMulticastInlineDelegate<void()>              OnFinished;                                        // 0x0070(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnTimeExpired;                                     // 0x0080(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_90[0x10];                                      // 0x0090(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("GameplayTask_WaitDelay")
+		STATIC_CLASS_IMPL("GameplayTask_TimeLimitedExecution")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"GameplayTask_WaitDelay")
+		STATIC_NAME_IMPL(L"GameplayTask_TimeLimitedExecution")
 	}
-	static class UGameplayTask_WaitDelay* GetDefaultObj()
+	static class UGameplayTask_TimeLimitedExecution* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UGameplayTask_WaitDelay>();
+		return GetDefaultObjImpl<UGameplayTask_TimeLimitedExecution>();
 	}
 };
-DUMPER7_ASSERTS_UGameplayTask_WaitDelay;
+DUMPER7_ASSERTS_UGameplayTask_TimeLimitedExecution;
 
 // Class GameplayTasks.GameplayTaskOwnerInterface
 // 0x0000 (0x0000 - 0x0000)

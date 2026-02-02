@@ -73,6 +73,7 @@ public:
 	void MakeControlReferencesBasedOnButtomType(TArray<struct FSBZButtonControlReference>* ControlsReference);
 
 	void IsActiveButtonOfBundleType(bool* bIsBundleButton) const;
+	void IsActiveButtonOfFeaturedBundleType(bool* bIsFeaturedButton) const;
 
 public:
 	static class UClass* StaticClass()

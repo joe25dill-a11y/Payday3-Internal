@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass CH_BaseHumanAI.CH_BaseHumanAI_C
-// 0x0000 (0x1CE0 - 0x1CE0)
+// 0x0000 (0x1CF0 - 0x1CF0)
 class ACH_BaseHumanAI_C : public ASBZAICharacter
 {
 public:

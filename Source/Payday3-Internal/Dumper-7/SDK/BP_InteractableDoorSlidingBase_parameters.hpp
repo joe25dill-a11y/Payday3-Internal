@@ -11,31 +11,13 @@
 #include "Basic.hpp"
 
 #include "Starbreeze_structs.hpp"
-#include "doorStateSimple_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "doorStateSimple_structs.hpp"
 #include "Engine_structs.hpp"
 
 
 namespace SDK::Params
 {
-
-// Function BP_InteractableDoorSlidingBase.BP_InteractableDoorSlidingBase_C.initToValidPosition
-// 0x0001 (0x0001 - 0x0000)
-struct BP_InteractableDoorSlidingBase_C_initToValidPosition final
-{
-public:
-	ESBZGateState                                 oldState;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_InteractableDoorSlidingBase_C_initToValidPosition;
-
-// Function BP_InteractableDoorSlidingBase.BP_InteractableDoorSlidingBase_C.onOpenAnimUpdateTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_InteractableDoorSlidingBase_C_onOpenAnimUpdateTick final
-{
-public:
-	float                                         alpha;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_InteractableDoorSlidingBase_C_onOpenAnimUpdateTick;
 
 // Function BP_InteractableDoorSlidingBase.BP_InteractableDoorSlidingBase_C.ExecuteUbergraph_BP_InteractableDoorSlidingBase
 // 0x01F8 (0x01F8 - 0x0000)
@@ -60,6 +42,24 @@ public:
 	struct FHitResult                             CallFunc_K2_SetRelativeLocation_SweepHitResult_2;  // 0x0168(0x0090)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
 };
 DUMPER7_ASSERTS_BP_InteractableDoorSlidingBase_C_ExecuteUbergraph_BP_InteractableDoorSlidingBase;
+
+// Function BP_InteractableDoorSlidingBase.BP_InteractableDoorSlidingBase_C.onOpenAnimUpdateTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_InteractableDoorSlidingBase_C_onOpenAnimUpdateTick final
+{
+public:
+	float                                         alpha;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_InteractableDoorSlidingBase_C_onOpenAnimUpdateTick;
+
+// Function BP_InteractableDoorSlidingBase.BP_InteractableDoorSlidingBase_C.initToValidPosition
+// 0x0001 (0x0001 - 0x0000)
+struct BP_InteractableDoorSlidingBase_C_initToValidPosition final
+{
+public:
+	ESBZGateState                                 oldState;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_InteractableDoorSlidingBase_C_initToValidPosition;
 
 }
 

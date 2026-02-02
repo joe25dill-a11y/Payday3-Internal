@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_PlayerState.BP_PlayerState_C
-// 0x0008 (0x1878 - 0x1870)
+// 0x0008 (0x18A8 - 0x18A0)
 class ABP_PlayerState_C final : public ASBZPlayerState
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x1870(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x18A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

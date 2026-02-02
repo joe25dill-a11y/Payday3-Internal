@@ -17,17 +17,23 @@
 namespace SDK
 {
 
-// Function BP_PhoneTable_01_SmallDestruction.BP_PhoneTable_01_SmallDestruction_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_PhoneTable_01_SmallDestruction.BP_PhoneTable_01_SmallDestruction_C.ExecuteUbergraph_BP_PhoneTable_01_SmallDestruction
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_PhoneTable_01_SmallDestruction_C::ReceiveBeginPlay()
+void ABP_PhoneTable_01_SmallDestruction_C::ExecuteUbergraph_BP_PhoneTable_01_SmallDestruction(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PhoneTable_01_SmallDestruction_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_PhoneTable_01_SmallDestruction_C", "ExecuteUbergraph_BP_PhoneTable_01_SmallDestruction");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_PhoneTable_01_SmallDestruction_C_ExecuteUbergraph_BP_PhoneTable_01_SmallDestruction Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -53,23 +59,17 @@ void ABP_PhoneTable_01_SmallDestruction_C::BndEvt__BP_PhoneTable_01_SBZCosmeticD
 }
 
 
-// Function BP_PhoneTable_01_SmallDestruction.BP_PhoneTable_01_SmallDestruction_C.ExecuteUbergraph_BP_PhoneTable_01_SmallDestruction
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_PhoneTable_01_SmallDestruction.BP_PhoneTable_01_SmallDestruction_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_PhoneTable_01_SmallDestruction_C::ExecuteUbergraph_BP_PhoneTable_01_SmallDestruction(int32 EntryPoint)
+void ABP_PhoneTable_01_SmallDestruction_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PhoneTable_01_SmallDestruction_C", "ExecuteUbergraph_BP_PhoneTable_01_SmallDestruction");
+		Func = Class->GetFunction("BP_PhoneTable_01_SmallDestruction_C", "ReceiveBeginPlay");
 
-	Params::BP_PhoneTable_01_SmallDestruction_C_ExecuteUbergraph_BP_PhoneTable_01_SmallDestruction Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

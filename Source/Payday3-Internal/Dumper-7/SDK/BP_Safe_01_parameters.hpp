@@ -11,21 +11,12 @@
 #include "Basic.hpp"
 
 #include "AkAudio_structs.hpp"
-#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
 {
-
-// Function BP_Safe_01.BP_Safe_01_C.BP_OnMiniGameSuccess
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Safe_01_C_BP_OnMiniGameSuccess final
-{
-public:
-	bool                                          bDoCosmetics;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_BP_Safe_01_C_BP_OnMiniGameSuccess;
 
 // Function BP_Safe_01.BP_Safe_01_C.ExecuteUbergraph_BP_Safe_01
 // 0x0178 (0x0178 - 0x0000)
@@ -48,6 +39,15 @@ public:
 	struct FHitResult                             CallFunc_K2_SetRelativeRotation_SweepHitResult;    // 0x00E8(0x0090)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
 };
 DUMPER7_ASSERTS_BP_Safe_01_C_ExecuteUbergraph_BP_Safe_01;
+
+// Function BP_Safe_01.BP_Safe_01_C.BP_OnMiniGameSuccess
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Safe_01_C_BP_OnMiniGameSuccess final
+{
+public:
+	bool                                          bDoCosmetics;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_Safe_01_C_BP_OnMiniGameSuccess;
 
 }
 

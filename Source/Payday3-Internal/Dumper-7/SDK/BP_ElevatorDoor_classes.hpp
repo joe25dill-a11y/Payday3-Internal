@@ -12,8 +12,8 @@
 
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "AkAudio_structs.hpp"
 #include "Starbreeze_classes.hpp"
+#include "AkAudio_structs.hpp"
 
 
 namespace SDK

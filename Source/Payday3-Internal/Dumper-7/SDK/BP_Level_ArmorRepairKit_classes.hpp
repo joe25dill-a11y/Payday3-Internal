@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Level_ArmorRepairKit.BP_Level_ArmorRepairKit_C
-// 0x0000 (0x0570 - 0x0570)
+// 0x0000 (0x0580 - 0x0580)
 class ABP_Level_ArmorRepairKit_C final : public ABP_ArmorRepairKit_C
 {
 public:

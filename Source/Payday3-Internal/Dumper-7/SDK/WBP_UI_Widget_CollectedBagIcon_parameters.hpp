@@ -14,6 +14,15 @@
 namespace SDK::Params
 {
 
+// Function WBP_UI_Widget_CollectedBagIcon.WBP_UI_Widget_CollectedBagIcon_C.ExecuteUbergraph_WBP_UI_Widget_CollectedBagIcon
+// 0x0004 (0x0004 - 0x0000)
+struct WBP_UI_Widget_CollectedBagIcon_C_ExecuteUbergraph_WBP_UI_Widget_CollectedBagIcon final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_UI_Widget_CollectedBagIcon_C_ExecuteUbergraph_WBP_UI_Widget_CollectedBagIcon;
+
 // Function WBP_UI_Widget_CollectedBagIcon.WBP_UI_Widget_CollectedBagIcon_C.CollectBag
 // 0x0008 (0x0008 - 0x0000)
 struct WBP_UI_Widget_CollectedBagIcon_C_CollectBag final

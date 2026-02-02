@@ -11,30 +11,30 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "AkAudio_structs.hpp"
 #include "Starbreeze_classes.hpp"
+#include "AkAudio_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ArmorRepairKit.BP_ArmorRepairKit_C
-// 0x0030 (0x0570 - 0x0540)
+// 0x0030 (0x0580 - 0x0550)
 class ABP_ArmorRepairKit_C : public ASBZArmorRepairKit
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0540(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USBZShoutTargetComponent*               SBZShoutTarget;                                    // 0x0548(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMesh*                            chargeMesh;                                        // 0x0550(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class UStaticMeshComponent*>           chargeMeshes;                                      // 0x0558(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0550(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USBZShoutTargetComponent*               SBZShoutTarget;                                    // 0x0558(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMesh*                            chargeMesh;                                        // 0x0560(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class UStaticMeshComponent*>           chargeMeshes;                                      // 0x0568(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 
 public:
-	void ExecuteUbergraph_BP_ArmorRepairKit(int32 EntryPoint);
-	void ReceiveBeginPlay();
-	void OnChargesChanged(float ChargesChangeTo, bool bDoCosmetics);
-	void OnThrown();
-	void UserConstructionScript();
 	void createChargeMeshes(bool outline);
+	void UserConstructionScript();
+	void OnThrown();
+	void OnChargesChanged(float ChargesChangeTo, bool bDoCosmetics);
+	void ReceiveBeginPlay();
+	void ExecuteUbergraph_BP_ArmorRepairKit(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

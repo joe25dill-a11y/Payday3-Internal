@@ -12,8 +12,8 @@
 
 #include "Starbreeze_structs.hpp"
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "struct_PlayerStatsToCompare_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params
@@ -126,19 +126,19 @@ public:
 DUMPER7_ASSERTS_WBP_UI_Results_PlayerStatus_C_UpdateTextNebulaPlayerName;
 
 // Function WBP_UI_Results_PlayerStatus.WBP_UI_Results_PlayerStatus_C.GetPlayerStats
-// 0x0650 (0x0650 - 0x0000)
+// 0x0680 (0x0680 - 0x0000)
 struct WBP_UI_Results_PlayerStatus_C_GetPlayerStats final
 {
 public:
 	TArray<struct FSBZEquippableEndMissionResultData> EquippableArray;                               // 0x0000(0x0010)(Edit, BlueprintVisible)
-	struct FSBZPlayerEndMissionResultData         PlayerData;                                        // 0x0010(0x01B8)(Edit, BlueprintVisible)
-	int32                                         CallFunc_GetWeaponAccuracy_Accuracy;               // 0x01C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Round_ReturnValue;                        // 0x01CC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_GetWeaponAccuracy_Accuracy_1;             // 0x01D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct Fstruct_PlayerStatsToCompare           K2Node_MakeStruct_struct_PlayerStatsToCompare;     // 0x01D4(0x0034)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ASBZMissionState*                       CallFunc_GetSBZMissionState_ReturnValue;           // 0x0208(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSBZEndMissionResultData               CallFunc_GetMissionResultData_ReturnValue;         // 0x0210(0x0288)(ConstParm)
-	struct FSBZPlayerEndMissionResultData         CallFunc_GetPlayerData_ReturnValue;                // 0x0498(0x01B8)(ConstParm)
+	struct FSBZPlayerEndMissionResultData         PlayerData;                                        // 0x0010(0x01C0)(Edit, BlueprintVisible)
+	int32                                         CallFunc_GetWeaponAccuracy_Accuracy;               // 0x01D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Round_ReturnValue;                        // 0x01D4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_GetWeaponAccuracy_Accuracy_1;             // 0x01D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct Fstruct_PlayerStatsToCompare           K2Node_MakeStruct_struct_PlayerStatsToCompare;     // 0x01DC(0x0034)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ASBZMissionState*                       CallFunc_GetSBZMissionState_ReturnValue;           // 0x0210(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSBZEndMissionResultData               CallFunc_GetMissionResultData_ReturnValue;         // 0x0218(0x02A8)(ConstParm)
+	struct FSBZPlayerEndMissionResultData         CallFunc_GetPlayerData_ReturnValue;                // 0x04C0(0x01C0)(ConstParm)
 };
 DUMPER7_ASSERTS_WBP_UI_Results_PlayerStatus_C_GetPlayerStats;
 

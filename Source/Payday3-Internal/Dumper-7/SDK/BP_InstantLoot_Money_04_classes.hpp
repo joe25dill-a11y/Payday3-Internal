@@ -17,15 +17,15 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_InstantLoot_Money_04.BP_InstantLoot_Money_04_C
-// 0x0008 (0x02F0 - 0x02E8)
+// 0x0008 (0x02F8 - 0x02F0)
 class ABP_InstantLoot_Money_04_C final : public ABP_InstantLoot_MoneyBase_C
 {
 public:
-	bool                                          Enable_Offset;                                     // 0x02E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          Enable_Offset;                                     // 0x02F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void Random_Offset(bool EnableOffset);
 	void UserConstructionScript();
+	void Random_Offset(bool EnableOffset);
 
 public:
 	static class UClass* StaticClass()

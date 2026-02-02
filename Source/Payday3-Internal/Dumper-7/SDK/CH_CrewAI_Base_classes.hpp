@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass CH_CrewAI_Base.CH_CrewAI_Base_C
-// 0x0010 (0x18D0 - 0x18C0)
+// 0x0010 (0x18E0 - 0x18D0)
 class ACH_CrewAI_Base_C : public ASBZAICrewCharacter
 {
 public:
-	class USBZAIStimuliReactionComponent*         SBZAIStimuliReaction;                              // 0x18C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UAIPerceptionStimuliSourceComponent*    AIPerceptionStimuliSource;                         // 0x18C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USBZAIStimuliReactionComponent*         SBZAIStimuliReaction;                              // 0x18D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UAIPerceptionStimuliSourceComponent*    AIPerceptionStimuliSource;                         // 0x18D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

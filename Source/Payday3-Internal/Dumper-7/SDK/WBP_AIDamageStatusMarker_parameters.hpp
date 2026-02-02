@@ -10,7 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
+#include "UMG_structs.hpp"
 #include "Starbreeze_structs.hpp"
 
 
@@ -18,65 +19,36 @@ namespace SDK::Params
 {
 
 // Function WBP_AIDamageStatusMarker.WBP_AIDamageStatusMarker_C.ExecuteUbergraph_WBP_AIDamageStatusMarker
-// 0x00B8 (0x00B8 - 0x0000)
+// 0x00D8 (0x00D8 - 0x0000)
 struct WBP_AIDamageStatusMarker_C_ExecuteUbergraph_WBP_AIDamageStatusMarker final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSBZMarkerRuntime                      K2Node_Event_Data;                                 // 0x0008(0x0098)(ConstParm, ContainsInstancedReference)
-	float                                         K2Node_Event_OldHealth;                            // 0x00A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_OldHealthMax;                         // 0x00A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_OldArmor;                             // 0x00A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_OldArmorMax;                          // 0x00AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_OldArmorHardness;                     // 0x00B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable;                                // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	ESlateVisibility                              Temp_byte_Variable;                                // 0x0005(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESlateVisibility                              Temp_byte_Variable_1;                              // 0x0006(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_7[0x1];                                        // 0x0007(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               CallFunc_GetDynamicMaterial_ReturnValue;           // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_GetDynamicMaterial_ReturnValue_1;         // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_NearlyEqual_FloatFloat_ReturnValue;       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_NearlyEqual_FloatFloat_ReturnValue_1;     // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1A[0x2];                                       // 0x001A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_FInterpTo_ReturnValue;                    // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_FInterpTo_ReturnValue_1;                  // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_OldArmorHardness;                     // 0x0024(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_OldArmorMax;                          // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_OldArmor;                             // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_OldHealthMax;                         // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_FloatFloat_ReturnValue;        // 0x0034(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_FloatFloat_ReturnValue_1;      // 0x0035(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0036(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_37[0x1];                                       // 0x0037(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         K2Node_Event_OldHealth;                            // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESlateVisibility                              K2Node_Select_Default;                             // 0x003C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSBZMarkerRuntime                      K2Node_Event_Data;                                 // 0x0040(0x0098)(ConstParm, ContainsInstancedReference)
 };
 DUMPER7_ASSERTS_WBP_AIDamageStatusMarker_C_ExecuteUbergraph_WBP_AIDamageStatusMarker;
-
-// Function WBP_AIDamageStatusMarker.WBP_AIDamageStatusMarker_C.BP_OnArmorHardnessChanged
-// 0x0004 (0x0004 - 0x0000)
-struct WBP_AIDamageStatusMarker_C_BP_OnArmorHardnessChanged final
-{
-public:
-	float                                         OldArmorHardness;                                  // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_AIDamageStatusMarker_C_BP_OnArmorHardnessChanged;
-
-// Function WBP_AIDamageStatusMarker.WBP_AIDamageStatusMarker_C.BP_OnArmorMaxChanged
-// 0x0004 (0x0004 - 0x0000)
-struct WBP_AIDamageStatusMarker_C_BP_OnArmorMaxChanged final
-{
-public:
-	float                                         OldArmorMax;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_AIDamageStatusMarker_C_BP_OnArmorMaxChanged;
-
-// Function WBP_AIDamageStatusMarker.WBP_AIDamageStatusMarker_C.BP_OnArmorChanged
-// 0x0004 (0x0004 - 0x0000)
-struct WBP_AIDamageStatusMarker_C_BP_OnArmorChanged final
-{
-public:
-	float                                         OldArmor;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_AIDamageStatusMarker_C_BP_OnArmorChanged;
-
-// Function WBP_AIDamageStatusMarker.WBP_AIDamageStatusMarker_C.BP_OnHealthMaxChanged
-// 0x0004 (0x0004 - 0x0000)
-struct WBP_AIDamageStatusMarker_C_BP_OnHealthMaxChanged final
-{
-public:
-	float                                         OldHealthMax;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_AIDamageStatusMarker_C_BP_OnHealthMaxChanged;
-
-// Function WBP_AIDamageStatusMarker.WBP_AIDamageStatusMarker_C.BP_OnHealthChanged
-// 0x0004 (0x0004 - 0x0000)
-struct WBP_AIDamageStatusMarker_C_BP_OnHealthChanged final
-{
-public:
-	float                                         OldHealth;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WBP_AIDamageStatusMarker_C_BP_OnHealthChanged;
 
 // Function WBP_AIDamageStatusMarker.WBP_AIDamageStatusMarker_C.BP_SetData
 // 0x0098 (0x0098 - 0x0000)
@@ -87,65 +59,104 @@ public:
 };
 DUMPER7_ASSERTS_WBP_AIDamageStatusMarker_C_BP_SetData;
 
+// Function WBP_AIDamageStatusMarker.WBP_AIDamageStatusMarker_C.BP_OnHealthChanged
+// 0x0004 (0x0004 - 0x0000)
+struct WBP_AIDamageStatusMarker_C_BP_OnHealthChanged final
+{
+public:
+	float                                         OldHealth;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_AIDamageStatusMarker_C_BP_OnHealthChanged;
+
+// Function WBP_AIDamageStatusMarker.WBP_AIDamageStatusMarker_C.BP_OnHealthMaxChanged
+// 0x0004 (0x0004 - 0x0000)
+struct WBP_AIDamageStatusMarker_C_BP_OnHealthMaxChanged final
+{
+public:
+	float                                         OldHealthMax;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_AIDamageStatusMarker_C_BP_OnHealthMaxChanged;
+
+// Function WBP_AIDamageStatusMarker.WBP_AIDamageStatusMarker_C.BP_OnArmorChanged
+// 0x0004 (0x0004 - 0x0000)
+struct WBP_AIDamageStatusMarker_C_BP_OnArmorChanged final
+{
+public:
+	float                                         OldArmor;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_AIDamageStatusMarker_C_BP_OnArmorChanged;
+
+// Function WBP_AIDamageStatusMarker.WBP_AIDamageStatusMarker_C.BP_OnArmorMaxChanged
+// 0x0004 (0x0004 - 0x0000)
+struct WBP_AIDamageStatusMarker_C_BP_OnArmorMaxChanged final
+{
+public:
+	float                                         OldArmorMax;                                       // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_AIDamageStatusMarker_C_BP_OnArmorMaxChanged;
+
+// Function WBP_AIDamageStatusMarker.WBP_AIDamageStatusMarker_C.BP_OnArmorHardnessChanged
+// 0x0004 (0x0004 - 0x0000)
+struct WBP_AIDamageStatusMarker_C_BP_OnArmorHardnessChanged final
+{
+public:
+	float                                         OldArmorHardness;                                  // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_AIDamageStatusMarker_C_BP_OnArmorHardnessChanged;
+
 // Function WBP_AIDamageStatusMarker.WBP_AIDamageStatusMarker_C.Setup
-// 0x002C (0x002C - 0x0000)
+// 0x0001 (0x0001 - 0x0000)
 struct WBP_AIDamageStatusMarker_C_Setup final
 {
 public:
-	float                                         CallFunc_BreakVector2D_X;                          // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector2D_Y;                          // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector2D_X_1;                        // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector2D_Y_1;                        // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Add_FloatFloat_ReturnValue;               // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue;                 // 0x0014(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Subtract_FloatFloat_ReturnValue;          // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_1;               // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Greater_FloatFloat_ReturnValue;           // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_WBP_AIDamageStatusMarker_C_Setup;
 
 // Function WBP_AIDamageStatusMarker.WBP_AIDamageStatusMarker_C.UpdateHealth
-// 0x0028 (0x0028 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct WBP_AIDamageStatusMarker_C_UpdateHealth final
 {
 public:
-	float                                         CallFunc_BreakVector2D_X;                          // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector2D_Y;                          // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_FMax_ReturnValue;                         // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_SafeDivide_ReturnValue;                   // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_FClamp_ReturnValue;                       // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector2D_X_1;                        // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector2D_Y_1;                        // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue;                 // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         OldHealth;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsSetup;                                          // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         NewHealth;                                         // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x000C(0x0014)(ZeroConstructor, NoDestructor)
+	struct FTimerHandle                           CallFunc_CheckAndUpdateDelayedTimer_OutHandle;     // 0x0020(0x0008)(NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetNormalizedValue_ReturnValue;           // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetNormalizedValue_ReturnValue_1;         // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_AIDamageStatusMarker_C_UpdateHealth;
 
 // Function WBP_AIDamageStatusMarker.WBP_AIDamageStatusMarker_C.UpdateArmor
-// 0x0028 (0x0028 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct WBP_AIDamageStatusMarker_C_UpdateArmor final
 {
 public:
-	float                                         CallFunc_BreakVector2D_X;                          // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector2D_Y;                          // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector2D_X_1;                        // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_BreakVector2D_Y_1;                        // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_FMax_ReturnValue;                         // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_SafeDivide_ReturnValue;                   // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_FClamp_ReturnValue;                       // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue;                 // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         OldArmor;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsSetup;                                          // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0008(0x0014)(ZeroConstructor, NoDestructor)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTimerHandle                           CallFunc_CheckAndUpdateDelayedTimer_OutHandle;     // 0x0020(0x0008)(NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetNormalizedValue_ReturnValue;           // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetNormalizedValue_ReturnValue_1;         // 0x002C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_AIDamageStatusMarker_C_UpdateArmor;
 
 // Function WBP_AIDamageStatusMarker.WBP_AIDamageStatusMarker_C.UpdateArmorHardness
-// 0x0020 (0x0020 - 0x0000)
+// 0x0028 (0x0028 - 0x0000)
 struct WBP_AIDamageStatusMarker_C_UpdateArmorHardness final
 {
 public:
-	float                                         CallFunc_FMax_ReturnValue;                         // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          Temp_bool_Variable;                                // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	ESlateVisibility                              Temp_byte_Variable;                                // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESlateVisibility                              Temp_byte_Variable_1;                              // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_FloatFloat_ReturnValue;        // 0x0003(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	float                                         CallFunc_FMax_ReturnValue;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FText                                   CallFunc_Conv_FloatToText_ReturnValue;             // 0x0008(0x0018)()
+	ESlateVisibility                              K2Node_Select_Default;                             // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_AIDamageStatusMarker_C_UpdateArmorHardness;
 
@@ -162,6 +173,48 @@ public:
 	class UUMGSequencePlayer*                     CallFunc_PlayAnimation_ReturnValue;                // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_AIDamageStatusMarker_C_BP_OnFadeOutChanged;
+
+// Function WBP_AIDamageStatusMarker.WBP_AIDamageStatusMarker_C.GetNormalizedValue
+// 0x0018 (0x0018 - 0x0000)
+struct WBP_AIDamageStatusMarker_C_GetNormalizedValue final
+{
+public:
+	float                                         A;                                                 // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         InMax;                                             // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_FMax_ReturnValue;                         // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_SafeDivide_ReturnValue;                   // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_FClamp_ReturnValue;                       // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_AIDamageStatusMarker_C_GetNormalizedValue;
+
+// Function WBP_AIDamageStatusMarker.WBP_AIDamageStatusMarker_C.SetMaterialParam
+// 0x0020 (0x0020 - 0x0000)
+struct WBP_AIDamageStatusMarker_C_SetMaterialParam final
+{
+public:
+	class UImage*                                 InImage;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   InParamName;                                       // 0x0008(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         InValue;                                           // 0x0014(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_GetDynamicMaterial_ReturnValue;           // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_AIDamageStatusMarker_C_SetMaterialParam;
+
+// Function WBP_AIDamageStatusMarker.WBP_AIDamageStatusMarker_C.CheckAndUpdateDelayedTimer
+// 0x0040 (0x0040 - 0x0000)
+struct WBP_AIDamageStatusMarker_C_CheckAndUpdateDelayedTimer final
+{
+public:
+	struct FTimerHandle                           InHandle;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             InUpdateEvent;                                     // 0x0008(0x0014)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTimerHandle                           OutHandle;                                         // 0x0020(0x0008)(Parm, OutParm, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_K2_IsTimerActiveHandle_ReturnValue;       // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTimerHandle                           CallFunc_K2_SetTimerDelegate_ReturnValue;          // 0x0030(0x0008)(NoDestructor, HasGetValueTypeHash)
+	struct FTimerHandle                           CallFunc_K2_InvalidateTimerHandle_ReturnValue;     // 0x0038(0x0008)(NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_AIDamageStatusMarker_C_CheckAndUpdateDelayedTimer;
 
 }
 

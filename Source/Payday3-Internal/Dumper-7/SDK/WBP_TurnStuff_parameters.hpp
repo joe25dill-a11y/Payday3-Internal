@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
-#include "UMG_structs.hpp"
-#include "Twox2_Minigame_Structs_structs.hpp"
-#include "Threex3_Turn_Puzzle_Struct_structs.hpp"
-#include "Starbreeze_structs.hpp"
-#include "GameplayTags_structs.hpp"
-#include "SlateCore_structs.hpp"
-#include "Fourx4_minigame_Struct_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Twox2_Minigame_Structs_structs.hpp"
+#include "Starbreeze_structs.hpp"
+#include "Threex3_Turn_Puzzle_Struct_structs.hpp"
+#include "GameplayTags_structs.hpp"
+#include "Fourx4_minigame_Struct_structs.hpp"
+#include "UMG_structs.hpp"
+#include "SlateCore_structs.hpp"
 #include "AkAudio_structs.hpp"
 #include "CoreUObject_structs.hpp"
 

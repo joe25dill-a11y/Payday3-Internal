@@ -28,8 +28,8 @@ public:
 	class UStaticMeshComponent*                   MeshP_FBIVan_Lights;                               // 0x0818(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void BndEvt__BP_Van_FBI_PropDamageComponent_K2Node_ComponentBoundEvent_0_SBZPropDamageHealthSignature__DelegateSignature(class UActorComponent* PoolComponent, float Health, bool bDoCosmetics, const struct FSBZPropDamageContext& DamageContext);
 	void ExecuteUbergraph_BP_Van_FBI(int32 EntryPoint);
+	void BndEvt__BP_Van_FBI_PropDamageComponent_K2Node_ComponentBoundEvent_0_SBZPropDamageHealthSignature__DelegateSignature(class UActorComponent* PoolComponent, float Health, bool bDoCosmetics, const struct FSBZPropDamageContext& DamageContext);
 
 public:
 	static class UClass* StaticClass()

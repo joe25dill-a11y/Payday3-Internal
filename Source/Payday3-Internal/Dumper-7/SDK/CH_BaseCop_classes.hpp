@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass CH_BaseCop.CH_BaseCop_C
-// 0x0010 (0x1CF0 - 0x1CE0)
+// 0x0010 (0x1D00 - 0x1CF0)
 class ACH_BaseCop_C : public ACH_BaseHumanAI_C
 {
 public:
-	class UAIPerceptionStimuliSourceComponent*    AIPerceptionStimuliSource;                         // 0x1CE0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USBZEventReactionComponent*             SBZEventReaction;                                  // 0x1CE8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UAIPerceptionStimuliSourceComponent*    AIPerceptionStimuliSource;                         // 0x1CF0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USBZEventReactionComponent*             SBZEventReaction;                                  // 0x1CF8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

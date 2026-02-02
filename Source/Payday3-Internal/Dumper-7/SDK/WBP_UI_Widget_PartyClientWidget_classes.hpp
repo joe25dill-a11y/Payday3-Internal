@@ -22,7 +22,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_UI_Widget_PartyClientWidget.WBP_UI_Widget_PartyClientWidget_C
-// 0x0188 (0x04D0 - 0x0348)
+// 0x0178 (0x04C0 - 0x0348)
 class UWBP_UI_Widget_PartyClientWidget_C final : public UPD3HUDPlayerStatusWidget
 {
 public:
@@ -35,34 +35,30 @@ public:
 	class UWBP_RenownLevel_C*                     RenownLevel;                                       // 0x0378(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UTextBlock*                             Text_InfamyLevel;                                  // 0x0380(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UWBP_VoIP_C*                            WBP_VoIP;                                          // 0x0388(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_UI_Widget_KillCount_C*             Widget_KillCount;                                  // 0x0390(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWidgetSwitcher*                        DefeatInfo_WS_0;                                   // 0x0398(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UPaperSprite*                           InDesignerHeisterIcon;                             // 0x03A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UPaperSprite*                           DebugInDesignerPlatformIcon;                       // 0x03A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSlateColor                            Subdued;                                           // 0x03B0(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            In_Custody;                                        // 0x03D8(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            Downed;                                            // 0x0400(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            Cuffed;                                            // 0x0428(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            Default;                                           // 0x0450(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            Tased;                                             // 0x0478(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FLinearColor                           DefaultBkgColor;                                   // 0x04A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           KnockedBkgColor;                                   // 0x04B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           TasedBkgColor;                                     // 0x04C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPaperSprite*                           InDesignerHeisterIcon;                             // 0x0390(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPaperSprite*                           DebugInDesignerPlatformIcon;                       // 0x0398(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSlateColor                            Subdued;                                           // 0x03A0(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            In_Custody;                                        // 0x03C8(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            Downed;                                            // 0x03F0(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            Cuffed;                                            // 0x0418(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            Default;                                           // 0x0440(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            Tased;                                             // 0x0468(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FLinearColor                           DefaultBkgColor;                                   // 0x0490(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           KnockedBkgColor;                                   // 0x04A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           TasedBkgColor;                                     // 0x04B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_WBP_UI_Widget_PartyClientWidget(int32 EntryPoint);
-	void OnHeisterIconChangedEvent(class UPaperSprite* InNewHeisterIcon);
-	void On_Damage(const struct FSBZDamageEvent& DamageEventData);
 	void OnReviveEnded();
 	void OnReviveStarted();
+	void Destruct();
 	void OnStateChanged(EPD3DefeatState Old, EPD3DefeatState New);
 	void OnRenownLevelChanged(class ASBZPlayerState* InPlayerState);
-	void Destruct();
+	void OnHeisterIconChangedEvent(class UPaperSprite* InNewHeisterIcon);
 	void Construct();
-	void OnPlatformChanged(class ASBZPlayerState* InPlayerState);
-	void OnInfamyLevelChanged(class ASBZPlayerState* InPlayerState);
 	void PreConstruct(bool IsDesignTime);
-	void OnInitialized();
+	void OnInfamyLevelChanged(class ASBZPlayerState* InPlayerState);
+	void OnPlatformChanged(class ASBZPlayerState* InPlayerState);
 	void SetEOSProdUID();
 	void UpdatePlayerLevel(class ASBZPlayerState* InPlayerState);
 

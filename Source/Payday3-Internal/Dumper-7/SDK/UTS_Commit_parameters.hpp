@@ -16,6 +16,15 @@
 namespace SDK::Params
 {
 
+// Function UTS_Commit.UTS_Commit_C.OnDeactivatedBP
+// 0x0001 (0x0001 - 0x0000)
+struct UTS_Commit_C_OnDeactivatedBP final
+{
+public:
+	EBTNodeResult                                 NodeResult;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_UTS_Commit_C_OnDeactivatedBP;
+
 // Function UTS_Commit.UTS_Commit_C.ExecuteUbergraph_UTS_Commit
 // 0x0008 (0x0008 - 0x0000)
 struct UTS_Commit_C_ExecuteUbergraph_UTS_Commit final
@@ -25,15 +34,6 @@ public:
 	EBTNodeResult                                 K2Node_Event_NodeResult;                           // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_UTS_Commit_C_ExecuteUbergraph_UTS_Commit;
-
-// Function UTS_Commit.UTS_Commit_C.OnDeactivatedBP
-// 0x0001 (0x0001 - 0x0000)
-struct UTS_Commit_C_OnDeactivatedBP final
-{
-public:
-	EBTNodeResult                                 NodeResult;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_UTS_Commit_C_OnDeactivatedBP;
 
 // Function UTS_Commit.UTS_Commit_C.CalcScoreBP
 // 0x0004 (0x0004 - 0x0000)

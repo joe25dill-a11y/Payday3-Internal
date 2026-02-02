@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass CH_Grenadier.CH_Grenadier_C
-// 0x0010 (0x1D00 - 0x1CF0)
+// 0x0010 (0x1D10 - 0x1D00)
 class ACH_Grenadier_C final : public ACH_BaseCop_C
 {
 public:
-	class USBZAIGrenadeBelt*                      SBZAIGrenadeBelt;                                  // 0x1CF0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USBZAIGrenadeBelt*                      SBZAIGrenadeBelt;                                  // 0x1D00(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

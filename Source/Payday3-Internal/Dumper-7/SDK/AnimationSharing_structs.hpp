@@ -16,6 +16,28 @@
 namespace SDK
 {
 
+// ScriptStruct AnimationSharing.TickAnimationSharingFunction
+// 0x0008 (0x0030 - 0x0028)
+struct FTickAnimationSharingFunction final : public FTickFunction
+{
+public:
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FTickAnimationSharingFunction;
+
+// ScriptStruct AnimationSharing.AnimationSharingScalability
+// 0x0010 (0x0010 - 0x0000)
+struct FAnimationSharingScalability final
+{
+public:
+	struct FPerPlatformBool                       UseBlendTransitions;                               // 0x0000(0x0001)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPerPlatformFloat                      BlendSignificanceValue;                            // 0x0004(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FPerPlatformInt                        MaximumNumberConcurrentBlends;                     // 0x0008(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FPerPlatformFloat                      TickSignificanceValue;                             // 0x000C(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAnimationSharingScalability;
+
 // ScriptStruct AnimationSharing.AnimationSetup
 // 0x0018 (0x0018 - 0x0000)
 struct FAnimationSetup final
@@ -28,15 +50,6 @@ public:
 	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAnimationSetup;
-
-// ScriptStruct AnimationSharing.TickAnimationSharingFunction
-// 0x0008 (0x0030 - 0x0028)
-struct FTickAnimationSharingFunction final : public FTickFunction
-{
-public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FTickAnimationSharingFunction;
 
 // ScriptStruct AnimationSharing.AnimationStateEntry
 // 0x0030 (0x0030 - 0x0000)
@@ -60,19 +73,6 @@ public:
 	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAnimationStateEntry;
-
-// ScriptStruct AnimationSharing.AnimationSharingScalability
-// 0x0010 (0x0010 - 0x0000)
-struct FAnimationSharingScalability final
-{
-public:
-	struct FPerPlatformBool                       UseBlendTransitions;                               // 0x0000(0x0001)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPerPlatformFloat                      BlendSignificanceValue;                            // 0x0004(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FPerPlatformInt                        MaximumNumberConcurrentBlends;                     // 0x0008(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FPerPlatformFloat                      TickSignificanceValue;                             // 0x000C(0x0004)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAnimationSharingScalability;
 
 // ScriptStruct AnimationSharing.PerSkeletonAnimationSharingSetup
 // 0x0038 (0x0038 - 0x0000)

@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "AkAudio_structs.hpp"
 #include "Starbreeze_classes.hpp"
+#include "AkAudio_structs.hpp"
 
 
 namespace SDK
@@ -35,10 +35,10 @@ public:
 	float                                         openAngle;                                         // 0x0340(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void open_timeline__FinishedFunc();
-	void open_timeline__UpdateFunc();
-	void BP_OnMiniGameSuccess(bool bDoCosmetics);
 	void ExecuteUbergraph_BP_Safe_01(int32 EntryPoint);
+	void BP_OnMiniGameSuccess(bool bDoCosmetics);
+	void open_timeline__UpdateFunc();
+	void open_timeline__FinishedFunc();
 
 public:
 	static class UClass* StaticClass()

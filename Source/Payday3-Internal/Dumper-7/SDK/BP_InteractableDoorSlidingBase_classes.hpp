@@ -33,10 +33,10 @@ public:
 	struct FVector                                initialDoorRelativeLocation;                       // 0x0624(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UserConstructionScript();
-	void initToValidPosition(ESBZGateState oldState);
-	void onOpenAnimUpdateTick(float alpha);
 	void ExecuteUbergraph_BP_InteractableDoorSlidingBase(int32 EntryPoint);
+	void onOpenAnimUpdateTick(float alpha);
+	void initToValidPosition(ESBZGateState oldState);
+	void UserConstructionScript();
 
 public:
 	static class UClass* StaticClass()

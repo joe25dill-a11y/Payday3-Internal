@@ -18,16 +18,16 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass CH_SWAT_SMG.CH_SWAT_SMG_C
-// 0x0010 (0x1D10 - 0x1D00)
+// 0x0010 (0x1D20 - 0x1D10)
 class ACH_SWAT_SMG_C final : public ACH_BaseCommonSwat_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1CF8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UStaticMeshComponent*                   Helmet;                                            // 0x1D00(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1D08(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UStaticMeshComponent*                   Helmet;                                            // 0x1D10(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveBeginPlay();
 	void ExecuteUbergraph_CH_SWAT_SMG(int32 EntryPoint);
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

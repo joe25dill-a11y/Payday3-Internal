@@ -17,40 +17,6 @@
 namespace SDK
 {
 
-// Function ABP_WP_Master.ABP_WP_Master_C.ExecuteUbergraph_ABP_WP_Master
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UABP_WP_Master_C::ExecuteUbergraph_ABP_WP_Master(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_WP_Master_C", "ExecuteUbergraph_ABP_WP_Master");
-
-	Params::ABP_WP_Master_C_ExecuteUbergraph_ABP_WP_Master Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ABP_WP_Master.ABP_WP_Master_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_WP_Master_AnimGraphNode_ApplyAdditive_85D4F45E4F8F7BDA666392AE5DD6049F
-// (BlueprintEvent)
-
-void UABP_WP_Master_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_WP_Master_AnimGraphNode_ApplyAdditive_85D4F45E4F8F7BDA666392AE5DD6049F()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_WP_Master_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_WP_Master_AnimGraphNode_ApplyAdditive_85D4F45E4F8F7BDA666392AE5DD6049F");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function ABP_WP_Master.ABP_WP_Master_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -69,6 +35,40 @@ void UABP_WP_Master_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 
 	if (AnimGraph_0 != nullptr)
 		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
+}
+
+
+// Function ABP_WP_Master.ABP_WP_Master_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_WP_Master_AnimGraphNode_ApplyAdditive_85D4F45E4F8F7BDA666392AE5DD6049F
+// (BlueprintEvent)
+
+void UABP_WP_Master_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_WP_Master_AnimGraphNode_ApplyAdditive_85D4F45E4F8F7BDA666392AE5DD6049F()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_WP_Master_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_WP_Master_AnimGraphNode_ApplyAdditive_85D4F45E4F8F7BDA666392AE5DD6049F");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_WP_Master.ABP_WP_Master_C.ExecuteUbergraph_ABP_WP_Master
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_WP_Master_C::ExecuteUbergraph_ABP_WP_Master(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_WP_Master_C", "ExecuteUbergraph_ABP_WP_Master");
+
+	Params::ABP_WP_Master_C_ExecuteUbergraph_ABP_WP_Master Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "AIModule_structs.hpp"
 #include "Starbreeze_classes.hpp"
+#include "AIModule_structs.hpp"
 
 
 namespace SDK
@@ -28,9 +28,9 @@ public:
 	bool                                          Started;                                           // 0x006C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void ExecuteUbergraph_UTS_Commit(int32 EntryPoint);
-	void OnDeactivatedBP(EBTNodeResult NodeResult);
 	void OnDeselectedBP();
+	void OnDeactivatedBP(EBTNodeResult NodeResult);
+	void ExecuteUbergraph_UTS_Commit(int32 EntryPoint);
 	void OnSelectedBP();
 
 	float CalcScoreBP() const;

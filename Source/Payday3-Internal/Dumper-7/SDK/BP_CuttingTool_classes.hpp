@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "AkAudio_structs.hpp"
 #include "Starbreeze_structs.hpp"
 #include "Starbreeze_classes.hpp"
+#include "AkAudio_structs.hpp"
 
 
 namespace SDK
@@ -32,11 +32,11 @@ public:
 	struct FSBZControlsReference                  In_Controls_Reference_Idle;                        // 0x05C0(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
-	void ExecuteUbergraph_BP_CuttingTool(int32 EntryPoint);
-	void OnActivatedIdle();
-	void OnReady();
-	void OnActivatedUsing();
 	void OnCanceled();
+	void OnActivatedUsing();
+	void OnReady();
+	void OnActivatedIdle();
+	void ExecuteUbergraph_BP_CuttingTool(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

@@ -16,16 +16,6 @@
 namespace SDK::Params
 {
 
-// Function BP_DroneSpawner.BP_DroneSpawner_C.SpawnedPawnDelegate_Event_0
-// 0x0010 (0x0010 - 0x0000)
-struct BP_DroneSpawner_C_SpawnedPawnDelegate_Event_0 final
-{
-public:
-	class APawn*                                  SpawnedPawn;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ASBZCarriedStaticInteractionActor*      Spawnedloot;                                       // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_DroneSpawner_C_SpawnedPawnDelegate_Event_0;
-
 // Function BP_DroneSpawner.BP_DroneSpawner_C.ExecuteUbergraph_BP_DroneSpawner
 // 0x0090 (0x0090 - 0x0000)
 struct BP_DroneSpawner_C_ExecuteUbergraph_BP_DroneSpawner final
@@ -51,6 +41,16 @@ public:
 	bool                                          CallFunc_HasValidNavigationAt_ReturnValue;         // 0x0088(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_DroneSpawner_C_ExecuteUbergraph_BP_DroneSpawner;
+
+// Function BP_DroneSpawner.BP_DroneSpawner_C.SpawnedPawnDelegate_Event_0
+// 0x0010 (0x0010 - 0x0000)
+struct BP_DroneSpawner_C_SpawnedPawnDelegate_Event_0 final
+{
+public:
+	class APawn*                                  SpawnedPawn;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ASBZCarriedStaticInteractionActor*      Spawnedloot;                                       // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_DroneSpawner_C_SpawnedPawnDelegate_Event_0;
 
 }
 

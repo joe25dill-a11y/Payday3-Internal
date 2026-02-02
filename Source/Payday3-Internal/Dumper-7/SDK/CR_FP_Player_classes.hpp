@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Starbreeze_structs.hpp"
 #include "ControlRig_classes.hpp"
+#include "Starbreeze_structs.hpp"
 
 
 namespace SDK

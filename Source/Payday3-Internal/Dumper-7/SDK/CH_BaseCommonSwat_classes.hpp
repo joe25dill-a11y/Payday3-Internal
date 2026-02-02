@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass CH_BaseCommonSwat.CH_BaseCommonSwat_C
-// 0x0010 (0x1D00 - 0x1CF0)
+// 0x0010 (0x1D10 - 0x1D00)
 #pragma pack(push, 0x1)
 class alignas(0x10) ACH_BaseCommonSwat_C : public ACH_BaseCop_C
 {
 public:
-	class USBZShoutTargetComponent*               SBZShoutTarget;                                    // 0x1CF0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USBZShoutTargetComponent*               SBZShoutTarget;                                    // 0x1D00(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

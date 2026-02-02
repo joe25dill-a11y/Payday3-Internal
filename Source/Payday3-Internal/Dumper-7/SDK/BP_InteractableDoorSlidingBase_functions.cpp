@@ -17,35 +17,21 @@
 namespace SDK
 {
 
-// Function BP_InteractableDoorSlidingBase.BP_InteractableDoorSlidingBase_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_InteractableDoorSlidingBase_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InteractableDoorSlidingBase_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_InteractableDoorSlidingBase.BP_InteractableDoorSlidingBase_C.initToValidPosition
-// (BlueprintCallable, BlueprintEvent)
+// Function BP_InteractableDoorSlidingBase.BP_InteractableDoorSlidingBase_C.ExecuteUbergraph_BP_InteractableDoorSlidingBase
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// ESBZGateState                           oldState                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_InteractableDoorSlidingBase_C::initToValidPosition(ESBZGateState oldState)
+void ABP_InteractableDoorSlidingBase_C::ExecuteUbergraph_BP_InteractableDoorSlidingBase(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InteractableDoorSlidingBase_C", "initToValidPosition");
+		Func = Class->GetFunction("BP_InteractableDoorSlidingBase_C", "ExecuteUbergraph_BP_InteractableDoorSlidingBase");
 
-	Params::BP_InteractableDoorSlidingBase_C_initToValidPosition Parms{};
+	Params::BP_InteractableDoorSlidingBase_C_ExecuteUbergraph_BP_InteractableDoorSlidingBase Parms{};
 
-	Parms.oldState = oldState;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -71,23 +57,37 @@ void ABP_InteractableDoorSlidingBase_C::onOpenAnimUpdateTick(float alpha)
 }
 
 
-// Function BP_InteractableDoorSlidingBase.BP_InteractableDoorSlidingBase_C.ExecuteUbergraph_BP_InteractableDoorSlidingBase
-// (Final, UbergraphFunction, HasDefaults)
+// Function BP_InteractableDoorSlidingBase.BP_InteractableDoorSlidingBase_C.initToValidPosition
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ESBZGateState                           oldState                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_InteractableDoorSlidingBase_C::ExecuteUbergraph_BP_InteractableDoorSlidingBase(int32 EntryPoint)
+void ABP_InteractableDoorSlidingBase_C::initToValidPosition(ESBZGateState oldState)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InteractableDoorSlidingBase_C", "ExecuteUbergraph_BP_InteractableDoorSlidingBase");
+		Func = Class->GetFunction("BP_InteractableDoorSlidingBase_C", "initToValidPosition");
 
-	Params::BP_InteractableDoorSlidingBase_C_ExecuteUbergraph_BP_InteractableDoorSlidingBase Parms{};
+	Params::BP_InteractableDoorSlidingBase_C_initToValidPosition Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.oldState = oldState;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_InteractableDoorSlidingBase.BP_InteractableDoorSlidingBase_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_InteractableDoorSlidingBase_C::UserConstructionScript()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InteractableDoorSlidingBase_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

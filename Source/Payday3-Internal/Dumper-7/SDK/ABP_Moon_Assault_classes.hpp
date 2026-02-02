@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Starbreeze_classes.hpp"
 #include "AnimGraphRuntime_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Starbreeze_classes.hpp"
 #include "ControlRig_structs.hpp"
 
 
@@ -53,8 +53,8 @@ public:
 	struct FVector                                __CustomProperty_Velocity_0FAD52EE42BA8AE635BCF59646742C39; // 0x1254(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void AnimGraph(struct FPoseLink* AnimGraph_0);
 	void ExecuteUbergraph_ABP_Moon_Assault(int32 EntryPoint);
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
 
 public:
 	static class UClass* StaticClass()

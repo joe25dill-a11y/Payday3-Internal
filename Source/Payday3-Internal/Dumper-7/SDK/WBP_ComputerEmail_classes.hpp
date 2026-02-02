@@ -36,7 +36,6 @@ public:
 	class UImage*                                 TitleBackground_I;                                 // 0x02F0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void OnRep_CodePacket();
 	void UpdateDisplayText(const struct FSBZHackableDisplayText& DisplayText);
 
 public:

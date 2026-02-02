@@ -17,17 +17,23 @@
 namespace SDK
 {
 
-// Function BP_DesktopComputer_01_Monitor.BP_DesktopComputer_01_Monitor_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Function BP_DesktopComputer_01_Monitor.BP_DesktopComputer_01_Monitor_C.ExecuteUbergraph_BP_DesktopComputer_01_Monitor
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_DesktopComputer_01_Monitor_C::UserConstructionScript()
+void ABP_DesktopComputer_01_Monitor_C::ExecuteUbergraph_BP_DesktopComputer_01_Monitor(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DesktopComputer_01_Monitor_C", "UserConstructionScript");
+		Func = Class->GetFunction("BP_DesktopComputer_01_Monitor_C", "ExecuteUbergraph_BP_DesktopComputer_01_Monitor");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_DesktopComputer_01_Monitor_C_ExecuteUbergraph_BP_DesktopComputer_01_Monitor Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -53,23 +59,17 @@ void ABP_DesktopComputer_01_Monitor_C::BndEvt__BP_CashRegister_01_Monitor_SmallD
 }
 
 
-// Function BP_DesktopComputer_01_Monitor.BP_DesktopComputer_01_Monitor_C.ExecuteUbergraph_BP_DesktopComputer_01_Monitor
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_DesktopComputer_01_Monitor.BP_DesktopComputer_01_Monitor_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_DesktopComputer_01_Monitor_C::ExecuteUbergraph_BP_DesktopComputer_01_Monitor(int32 EntryPoint)
+void ABP_DesktopComputer_01_Monitor_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DesktopComputer_01_Monitor_C", "ExecuteUbergraph_BP_DesktopComputer_01_Monitor");
+		Func = Class->GetFunction("BP_DesktopComputer_01_Monitor_C", "UserConstructionScript");
 
-	Params::BP_DesktopComputer_01_Monitor_C_ExecuteUbergraph_BP_DesktopComputer_01_Monitor Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

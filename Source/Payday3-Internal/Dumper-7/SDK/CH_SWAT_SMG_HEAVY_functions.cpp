@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function CH_SWAT_SMG_HEAVY.CH_SWAT_SMG_HEAVY_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ACH_SWAT_SMG_HEAVY_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CH_SWAT_SMG_HEAVY_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function CH_SWAT_SMG_HEAVY.CH_SWAT_SMG_HEAVY_C.ExecuteUbergraph_CH_SWAT_SMG_HEAVY
 // (Final, UbergraphFunction)
 // Parameters:
@@ -48,6 +34,20 @@ void ACH_SWAT_SMG_HEAVY_C::ExecuteUbergraph_CH_SWAT_SMG_HEAVY(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function CH_SWAT_SMG_HEAVY.CH_SWAT_SMG_HEAVY_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ACH_SWAT_SMG_HEAVY_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CH_SWAT_SMG_HEAVY_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

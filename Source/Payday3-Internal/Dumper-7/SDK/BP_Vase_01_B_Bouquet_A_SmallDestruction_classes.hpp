@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "Starbreeze_structs.hpp"
 #include "SBZSmallCosmeticDestruction_fading_classes.hpp"
+#include "Starbreeze_structs.hpp"
 
 
 namespace SDK

@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "BP_BaseHelicopter_classes.hpp"
 #include "Starbreeze_structs.hpp"
+#include "BP_BaseHelicopter_classes.hpp"
 
 
 namespace SDK

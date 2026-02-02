@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Level_AmmoPack.BP_Level_AmmoPack_C
-// 0x0000 (0x0560 - 0x0560)
+// 0x0000 (0x0570 - 0x0570)
 class ABP_Level_AmmoPack_C final : public ABP_AmmoPack_C
 {
 public:

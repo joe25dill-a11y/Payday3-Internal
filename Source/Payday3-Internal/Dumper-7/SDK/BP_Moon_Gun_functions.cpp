@@ -17,69 +17,37 @@
 namespace SDK
 {
 
-// Function BP_Moon_Gun.BP_Moon_Gun_C.UpdateDeath
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BP_Moon_Gun.BP_Moon_Gun_C.ExecuteUbergraph_BP_Moon_Gun
+// (Final, UbergraphFunction)
 // Parameters:
-// float                                   ElapsedTimeSinceDeath                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   LinearForce                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   AngularForce                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   Duration                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FVector&                   RandomVector                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Moon_Gun_C::UpdateDeath(float ElapsedTimeSinceDeath, float LinearForce, float AngularForce, float Duration, const struct FVector& RandomVector)
+void ABP_Moon_Gun_C::ExecuteUbergraph_BP_Moon_Gun(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Moon_Gun_C", "UpdateDeath");
+		Func = Class->GetFunction("BP_Moon_Gun_C", "ExecuteUbergraph_BP_Moon_Gun");
 
-	Params::BP_Moon_Gun_C_UpdateDeath Parms{};
+	Params::BP_Moon_Gun_C_ExecuteUbergraph_BP_Moon_Gun Parms{};
 
-	Parms.ElapsedTimeSinceDeath = ElapsedTimeSinceDeath;
-	Parms.LinearForce = LinearForce;
-	Parms.AngularForce = AngularForce;
-	Parms.Duration = Duration;
-	Parms.RandomVector = std::move(RandomVector);
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_Moon_Gun.BP_Moon_Gun_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Function BP_Moon_Gun.BP_Moon_Gun_C.BP_OnKill_Client
+// (Event, Protected, BlueprintEvent)
 
-void ABP_Moon_Gun_C::UserConstructionScript()
+void ABP_Moon_Gun_C::BP_OnKill_Client()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Moon_Gun_C", "UserConstructionScript");
+		Func = Class->GetFunction("BP_Moon_Gun_C", "BP_OnKill_Client");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Moon_Gun.BP_Moon_Gun_C.TickExec_8EDFF4314BB4D040A4F521AAA5A56326
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const class UDelegateTimer*             Timer                                                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   ElapsedTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   TimeSinceLast                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Moon_Gun_C::TickExec_8EDFF4314BB4D040A4F521AAA5A56326(const class UDelegateTimer* Timer, float ElapsedTime, float TimeSinceLast)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Moon_Gun_C", "TickExec_8EDFF4314BB4D040A4F521AAA5A56326");
-
-	Params::BP_Moon_Gun_C_TickExec_8EDFF4314BB4D040A4F521AAA5A56326 Parms{};
-
-	Parms.Timer = Timer;
-	Parms.ElapsedTime = ElapsedTime;
-	Parms.TimeSinceLast = TimeSinceLast;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -107,35 +75,67 @@ void ABP_Moon_Gun_C::TickExec_51BB4EA443607F8BF71EA7893F95BCE5(const class UDele
 }
 
 
-// Function BP_Moon_Gun.BP_Moon_Gun_C.BP_OnKill_Client
-// (Event, Protected, BlueprintEvent)
+// Function BP_Moon_Gun.BP_Moon_Gun_C.TickExec_8EDFF4314BB4D040A4F521AAA5A56326
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class UDelegateTimer*             Timer                                                  (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ElapsedTime                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   TimeSinceLast                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Moon_Gun_C::BP_OnKill_Client()
+void ABP_Moon_Gun_C::TickExec_8EDFF4314BB4D040A4F521AAA5A56326(const class UDelegateTimer* Timer, float ElapsedTime, float TimeSinceLast)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Moon_Gun_C", "BP_OnKill_Client");
+		Func = Class->GetFunction("BP_Moon_Gun_C", "TickExec_8EDFF4314BB4D040A4F521AAA5A56326");
+
+	Params::BP_Moon_Gun_C_TickExec_8EDFF4314BB4D040A4F521AAA5A56326 Parms{};
+
+	Parms.Timer = Timer;
+	Parms.ElapsedTime = ElapsedTime;
+	Parms.TimeSinceLast = TimeSinceLast;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Moon_Gun.BP_Moon_Gun_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Moon_Gun_C::UserConstructionScript()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Moon_Gun_C", "UserConstructionScript");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_Moon_Gun.BP_Moon_Gun_C.ExecuteUbergraph_BP_Moon_Gun
-// (Final, UbergraphFunction)
+// Function BP_Moon_Gun.BP_Moon_Gun_C.UpdateDeath
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ElapsedTimeSinceDeath                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   LinearForce                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   AngularForce                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   Duration                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   RandomVector                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Moon_Gun_C::ExecuteUbergraph_BP_Moon_Gun(int32 EntryPoint)
+void ABP_Moon_Gun_C::UpdateDeath(float ElapsedTimeSinceDeath, float LinearForce, float AngularForce, float Duration, const struct FVector& RandomVector)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Moon_Gun_C", "ExecuteUbergraph_BP_Moon_Gun");
+		Func = Class->GetFunction("BP_Moon_Gun_C", "UpdateDeath");
 
-	Params::BP_Moon_Gun_C_ExecuteUbergraph_BP_Moon_Gun Parms{};
+	Params::BP_Moon_Gun_C_UpdateDeath Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.ElapsedTimeSinceDeath = ElapsedTimeSinceDeath;
+	Parms.LinearForce = LinearForce;
+	Parms.AngularForce = AngularForce;
+	Parms.Duration = Duration;
+	Parms.RandomVector = std::move(RandomVector);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

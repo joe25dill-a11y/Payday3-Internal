@@ -17,6 +17,20 @@
 namespace SDK
 {
 
+// Function BP_MicroCamera.BP_MicroCamera_C.OnActivated
+// (Event, Protected, BlueprintEvent)
+
+void ABP_MicroCamera_C::OnActivated()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_MicroCamera_C", "OnActivated");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_MicroCamera.BP_MicroCamera_C.ExecuteUbergraph_BP_MicroCamera
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -34,20 +48,6 @@ void ABP_MicroCamera_C::ExecuteUbergraph_BP_MicroCamera(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_MicroCamera.BP_MicroCamera_C.OnActivated
-// (Event, Protected, BlueprintEvent)
-
-void ABP_MicroCamera_C::OnActivated()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MicroCamera_C", "OnActivated");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

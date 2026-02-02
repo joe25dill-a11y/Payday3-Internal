@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function BP_HeistGameState.BP_HeistGameState_C.ExecuteUbergraph_BP_HeistGameState
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_HeistGameState_C::ExecuteUbergraph_BP_HeistGameState(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeistGameState_C", "ExecuteUbergraph_BP_HeistGameState");
-
-	Params::BP_HeistGameState_C_ExecuteUbergraph_BP_HeistGameState Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_HeistGameState.BP_HeistGameState_C.BP_OnHideAllOutlinesChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -52,6 +32,26 @@ void ABP_HeistGameState_C::BP_OnHideAllOutlinesChanged(bool bIsHidden)
 	Params::BP_HeistGameState_C_BP_OnHideAllOutlinesChanged Parms{};
 
 	Parms.bIsHidden = bIsHidden;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_HeistGameState.BP_HeistGameState_C.ExecuteUbergraph_BP_HeistGameState
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_HeistGameState_C::ExecuteUbergraph_BP_HeistGameState(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_HeistGameState_C", "ExecuteUbergraph_BP_HeistGameState");
+
+	Params::BP_HeistGameState_C_ExecuteUbergraph_BP_HeistGameState Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

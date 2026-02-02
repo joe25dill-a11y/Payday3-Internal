@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Starbreeze_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "SlateCore_structs.hpp"
 
 
@@ -203,7 +203,7 @@ struct WBP_UI_Widget_SM_MatchmakingStatus_C_UpdateTimer final
 public:
 	class USBZOnlineSession*                      CallFunc_GetSBZOnline_ReturnValue;                 // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CallFunc_GetTimerRemainingNonPausableTimeByHandle_ReturnValue; // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_FTrunc_ReturnValue;                       // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_FCeil_ReturnValue;                        // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FText                                   CallFunc_FormatIntToTimerText_ReturnValue;         // 0x0010(0x0018)()
 };
 DUMPER7_ASSERTS_WBP_UI_Widget_SM_MatchmakingStatus_C_UpdateTimer;

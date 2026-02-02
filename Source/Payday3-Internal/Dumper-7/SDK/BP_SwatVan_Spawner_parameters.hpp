@@ -16,16 +16,6 @@
 namespace SDK::Params
 {
 
-// Function BP_SwatVan_Spawner.BP_SwatVan_Spawner_C.PawnSpawned
-// 0x0010 (0x0010 - 0x0000)
-struct BP_SwatVan_Spawner_C_PawnSpawned final
-{
-public:
-	class APawn*                                  SpawnedPawn;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ASBZCarriedStaticInteractionActor*      Spawnedloot;                                       // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_SwatVan_Spawner_C_PawnSpawned;
-
 // Function BP_SwatVan_Spawner.BP_SwatVan_Spawner_C.ExecuteUbergraph_BP_SwatVan_Spawner
 // 0x0068 (0x0068 - 0x0000)
 struct BP_SwatVan_Spawner_C_ExecuteUbergraph_BP_SwatVan_Spawner final
@@ -50,6 +40,16 @@ public:
 	bool                                          CallFunc_NotEqual_ByteByte_ReturnValue;            // 0x0062(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_SwatVan_Spawner_C_ExecuteUbergraph_BP_SwatVan_Spawner;
+
+// Function BP_SwatVan_Spawner.BP_SwatVan_Spawner_C.PawnSpawned
+// 0x0010 (0x0010 - 0x0000)
+struct BP_SwatVan_Spawner_C_PawnSpawned final
+{
+public:
+	class APawn*                                  SpawnedPawn;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ASBZCarriedStaticInteractionActor*      Spawnedloot;                                       // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_SwatVan_Spawner_C_PawnSpawned;
 
 }
 

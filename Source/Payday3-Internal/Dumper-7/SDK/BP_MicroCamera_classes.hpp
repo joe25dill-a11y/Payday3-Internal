@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "AkAudio_structs.hpp"
 #include "Starbreeze_classes.hpp"
+#include "AkAudio_structs.hpp"
 
 
 namespace SDK
@@ -27,8 +27,8 @@ public:
 	class UBoxComponent*                          Interactable_Collision;                            // 0x06E8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_MicroCamera(int32 EntryPoint);
 	void OnActivated();
+	void ExecuteUbergraph_BP_MicroCamera(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Placeable_AmmoBag_CrewAI.BP_Placeable_AmmoBag_CrewAI_C
-// 0x0000 (0x05D0 - 0x05D0)
+// 0x0000 (0x05E0 - 0x05E0)
 class ABP_Placeable_AmmoBag_CrewAI_C final : public ABP_Placeable_AmmoBag_C
 {
 public:

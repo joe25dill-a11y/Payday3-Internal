@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "AkAudio_structs.hpp"
 #include "Starbreeze_structs.hpp"
 #include "Starbreeze_classes.hpp"
+#include "AkAudio_structs.hpp"
 
 
 namespace SDK
@@ -21,7 +21,7 @@ namespace SDK
 
 // BlueprintGeneratedClass BP_GenericHackableComputer.BP_GenericHackableComputer_C
 // 0x0080 (0x0568 - 0x04E8)
-class ABP_GenericHackableComputer_C final : public ASBZHackableActor
+class ABP_GenericHackableComputer_C : public ASBZHackableActor
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x04E8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)

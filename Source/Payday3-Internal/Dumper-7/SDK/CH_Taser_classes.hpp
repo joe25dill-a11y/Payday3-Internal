@@ -17,13 +17,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass CH_Taser.CH_Taser_C
-// 0x0020 (0x1D10 - 0x1CF0)
+// 0x0020 (0x1D20 - 0x1D00)
 class ACH_Taser_C final : public ACH_BaseCop_C
 {
 public:
-	class USBZAITaserSpecialComponent*            SBZAITaserSpecial;                                 // 0x1CF0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UAITaserBattery_C*                      AITaserBattery;                                    // 0x1CF8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   Helmet;                                            // 0x1D00(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USBZAITaserSpecialComponent*            SBZAITaserSpecial;                                 // 0x1D00(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UAITaserBattery_C*                      AITaserBattery;                                    // 0x1D08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Helmet;                                            // 0x1D10(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

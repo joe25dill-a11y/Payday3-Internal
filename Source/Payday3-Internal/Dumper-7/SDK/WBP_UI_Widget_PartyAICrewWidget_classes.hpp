@@ -20,7 +20,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_UI_Widget_PartyAICrewWidget.WBP_UI_Widget_PartyAICrewWidget_C
-// 0x01B8 (0x0460 - 0x02A8)
+// 0x01A8 (0x0450 - 0x02A8)
 class UWBP_UI_Widget_PartyAICrewWidget_C final : public UPD3HUDAICrewStatusWidget
 {
 public:
@@ -29,33 +29,29 @@ public:
 	class UWidgetSwitcher*                        DefeatInfo_WS;                                     // 0x02B8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UImage*                                 Image_AICrewIcon;                                  // 0x02C0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UTextBlock*                             Text_AICrewName;                                   // 0x02C8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_UI_Widget_KillCount_C*             Widget_KillCount;                                  // 0x02D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_UI_Widget_PartyMemberRevive_C*     Widget_Revive;                                     // 0x02D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UMaterialInstanceDynamic*               MaterialInstance;                                  // 0x02D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UWidgetSwitcher*                        DefeatInfo_WS_0;                                   // 0x02E0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_UI_Widget_PartyMemberRevive_C*     Widget_Revive;                                     // 0x02E8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UPaperSprite*                           In_Designer_Heister_Icon;                          // 0x02F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSlateColor                            Tased;                                             // 0x02F8(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            Default;                                           // 0x0320(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            Cuffed;                                            // 0x0348(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            Downed;                                            // 0x0370(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            In_Custody;                                        // 0x0398(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            Subdued;                                           // 0x03C0(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            TasedBKG;                                          // 0x03E8(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            DefaultBKG;                                        // 0x0410(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSlateColor                            KnockedBKG;                                        // 0x0438(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class UPaperSprite*                           In_Designer_Heister_Icon;                          // 0x02E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSlateColor                            Tased;                                             // 0x02E8(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            Default;                                           // 0x0310(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            Cuffed;                                            // 0x0338(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            Downed;                                            // 0x0360(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            In_Custody;                                        // 0x0388(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            Subdued;                                           // 0x03B0(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            TasedBKG;                                          // 0x03D8(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            DefaultBKG;                                        // 0x0400(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateColor                            KnockedBKG;                                        // 0x0428(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ExecuteUbergraph_WBP_UI_Widget_PartyAICrewWidget(int32 EntryPoint);
-	void BP_OnMaskedOnStateChanged(class ASBZAICrewState* InAICrewState);
-	void BP_OnCharacterChanged(class ASBZAICrewState* InAICrewState);
-	void On_Damage(const struct FSBZDamageEvent& DamageEventData);
 	void OnReviveEnded();
 	void OnReviveStarted();
+	void PreConstruct(bool IsDesignTime);
 	void OnStateChanged(EPD3DefeatState Old, EPD3DefeatState New);
 	void Destruct();
-	void OnInitialized();
 	void Construct();
-	void PreConstruct(bool IsDesignTime);
+	void BP_OnCharacterChanged(class ASBZAICrewState* InAICrewState);
+	void BP_OnMaskedOnStateChanged(class ASBZAICrewState* InAICrewState);
 	void Get_Character_Icon(class ASBZAICrewState* InPlayerState, TScriptInterface<class ISlateTextureAtlasInterface>* CharacterIcon);
 
 public:

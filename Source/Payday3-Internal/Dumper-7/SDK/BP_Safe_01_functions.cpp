@@ -17,31 +17,23 @@
 namespace SDK
 {
 
-// Function BP_Safe_01.BP_Safe_01_C.open_timeline__FinishedFunc
-// (BlueprintEvent)
+// Function BP_Safe_01.BP_Safe_01_C.ExecuteUbergraph_BP_Safe_01
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Safe_01_C::open_timeline__FinishedFunc()
+void ABP_Safe_01_C::ExecuteUbergraph_BP_Safe_01(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Safe_01_C", "open_timeline__FinishedFunc");
+		Func = Class->GetFunction("BP_Safe_01_C", "ExecuteUbergraph_BP_Safe_01");
 
-	UObject::ProcessEvent(Func, nullptr);
-}
+	Params::BP_Safe_01_C_ExecuteUbergraph_BP_Safe_01 Parms{};
 
+	Parms.EntryPoint = EntryPoint;
 
-// Function BP_Safe_01.BP_Safe_01_C.open_timeline__UpdateFunc
-// (BlueprintEvent)
-
-void ABP_Safe_01_C::open_timeline__UpdateFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Safe_01_C", "open_timeline__UpdateFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -65,23 +57,31 @@ void ABP_Safe_01_C::BP_OnMiniGameSuccess(bool bDoCosmetics)
 }
 
 
-// Function BP_Safe_01.BP_Safe_01_C.ExecuteUbergraph_BP_Safe_01
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_Safe_01.BP_Safe_01_C.open_timeline__UpdateFunc
+// (BlueprintEvent)
 
-void ABP_Safe_01_C::ExecuteUbergraph_BP_Safe_01(int32 EntryPoint)
+void ABP_Safe_01_C::open_timeline__UpdateFunc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Safe_01_C", "ExecuteUbergraph_BP_Safe_01");
+		Func = Class->GetFunction("BP_Safe_01_C", "open_timeline__UpdateFunc");
 
-	Params::BP_Safe_01_C_ExecuteUbergraph_BP_Safe_01 Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function BP_Safe_01.BP_Safe_01_C.open_timeline__FinishedFunc
+// (BlueprintEvent)
+
+void ABP_Safe_01_C::open_timeline__FinishedFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Safe_01_C", "open_timeline__FinishedFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

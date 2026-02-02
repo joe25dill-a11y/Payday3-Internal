@@ -58,7 +58,7 @@ void UWBP_UI_Widget_Objective_C::PreConstruct(bool IsDesignTime)
 
 
 // Function WBP_UI_Widget_Objective.WBP_UI_Widget_Objective_C.OnObjectiveInitialized
-// (Event, Protected, BlueprintCallable, BlueprintEvent)
+// (Event, Protected, BlueprintEvent)
 // Parameters:
 // class ASBZObjective*                    ObjectiveInit                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    bIsSubObjective                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -80,7 +80,7 @@ void UWBP_UI_Widget_Objective_C::OnObjectiveInitialized(class ASBZObjective* Obj
 
 
 // Function WBP_UI_Widget_Objective.WBP_UI_Widget_Objective_C.OnTickingTypeChanged
-// (Event, Protected, BlueprintCallable, BlueprintEvent)
+// (Event, Protected, BlueprintEvent)
 // Parameters:
 // ESBZTickingLootType                     InTickingLootType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -100,11 +100,11 @@ void UWBP_UI_Widget_Objective_C::OnTickingTypeChanged(ESBZTickingLootType InTick
 
 
 // Function WBP_UI_Widget_Objective.WBP_UI_Widget_Objective_C.ObjectiveActivated
-// (Event, Protected, BlueprintCallable, BlueprintEvent)
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// class ASBZObjective*                    NewObjectiveActivated                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ASBZObjective*                    Param_ObjectiveActivated_0                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_UI_Widget_Objective_C::ObjectiveActivated(class ASBZObjective* NewObjectiveActivated)
+void UWBP_UI_Widget_Objective_C::ObjectiveActivated(class ASBZObjective* Param_ObjectiveActivated_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -113,7 +113,7 @@ void UWBP_UI_Widget_Objective_C::ObjectiveActivated(class ASBZObjective* NewObje
 
 	Params::WBP_UI_Widget_Objective_C_ObjectiveActivated Parms{};
 
-	Parms.NewObjectiveActivated = NewObjectiveActivated;
+	Parms.Param_ObjectiveActivated_0 = Param_ObjectiveActivated_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -140,7 +140,7 @@ void UWBP_UI_Widget_Objective_C::OnAnimationFinished(const class UWidgetAnimatio
 
 
 // Function WBP_UI_Widget_Objective.WBP_UI_Widget_Objective_C.OnObjectiveRemoved
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// (Event, Public, BlueprintEvent)
 
 void UWBP_UI_Widget_Objective_C::OnObjectiveRemoved()
 {
@@ -148,6 +148,20 @@ void UWBP_UI_Widget_Objective_C::OnObjectiveRemoved()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("WBP_UI_Widget_Objective_C", "OnObjectiveRemoved");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_UI_Widget_Objective.WBP_UI_Widget_Objective_C.InitTickingLootVisuals
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UWBP_UI_Widget_Objective_C::InitTickingLootVisuals()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_UI_Widget_Objective_C", "InitTickingLootVisuals");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -170,20 +184,6 @@ void UWBP_UI_Widget_Objective_C::UpdateTickingLootType(ESBZTickingLootType InTyp
 	Parms.InType = InType;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_UI_Widget_Objective.WBP_UI_Widget_Objective_C.InitTickingLootVisuals
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UWBP_UI_Widget_Objective_C::InitTickingLootVisuals()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_UI_Widget_Objective_C", "InitTickingLootVisuals");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

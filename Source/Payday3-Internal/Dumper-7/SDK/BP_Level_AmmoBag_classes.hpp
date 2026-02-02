@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Level_AmmoBag.BP_Level_AmmoBag_C
-// 0x0000 (0x05D0 - 0x05D0)
+// 0x0000 (0x05E0 - 0x05E0)
 class ABP_Level_AmmoBag_C final : public ABP_Placeable_AmmoBag_C
 {
 public:

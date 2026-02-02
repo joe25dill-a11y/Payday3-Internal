@@ -17,23 +17,17 @@
 namespace SDK
 {
 
-// Function UTS_Commit.UTS_Commit_C.ExecuteUbergraph_UTS_Commit
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function UTS_Commit.UTS_Commit_C.OnDeselectedBP
+// (Event, Public, BlueprintEvent)
 
-void UUTS_Commit_C::ExecuteUbergraph_UTS_Commit(int32 EntryPoint)
+void UUTS_Commit_C::OnDeselectedBP()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UTS_Commit_C", "ExecuteUbergraph_UTS_Commit");
+		Func = Class->GetFunction("UTS_Commit_C", "OnDeselectedBP");
 
-	Params::UTS_Commit_C_ExecuteUbergraph_UTS_Commit Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -57,17 +51,23 @@ void UUTS_Commit_C::OnDeactivatedBP(EBTNodeResult NodeResult)
 }
 
 
-// Function UTS_Commit.UTS_Commit_C.OnDeselectedBP
-// (Event, Public, BlueprintEvent)
+// Function UTS_Commit.UTS_Commit_C.ExecuteUbergraph_UTS_Commit
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UUTS_Commit_C::OnDeselectedBP()
+void UUTS_Commit_C::ExecuteUbergraph_UTS_Commit(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UTS_Commit_C", "OnDeselectedBP");
+		Func = Class->GetFunction("UTS_Commit_C", "ExecuteUbergraph_UTS_Commit");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::UTS_Commit_C_ExecuteUbergraph_UTS_Commit Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

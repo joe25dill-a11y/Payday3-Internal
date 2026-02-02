@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function ABP_Moon_Assault.ABP_Moon_Assault_C.ExecuteUbergraph_ABP_Moon_Assault
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_Moon_Assault_C::ExecuteUbergraph_ABP_Moon_Assault(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_Moon_Assault_C", "ExecuteUbergraph_ABP_Moon_Assault");
+
+	Params::ABP_Moon_Assault_C_ExecuteUbergraph_ABP_Moon_Assault Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function ABP_Moon_Assault.ABP_Moon_Assault_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -35,26 +55,6 @@ void UABP_Moon_Assault_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 
 	if (AnimGraph_0 != nullptr)
 		*AnimGraph_0 = std::move(Parms.AnimGraph_0);
-}
-
-
-// Function ABP_Moon_Assault.ABP_Moon_Assault_C.ExecuteUbergraph_ABP_Moon_Assault
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UABP_Moon_Assault_C::ExecuteUbergraph_ABP_Moon_Assault(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Moon_Assault_C", "ExecuteUbergraph_ABP_Moon_Assault");
-
-	Params::ABP_Moon_Assault_C_ExecuteUbergraph_ABP_Moon_Assault Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

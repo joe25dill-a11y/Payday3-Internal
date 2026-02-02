@@ -26,10 +26,10 @@ public:
 	class USplineComponent*                       Spline;                                            // 0x0370(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveBeginPlay();
-	void SpawnedPawnDelegate_Event_0(class APawn* SpawnedPawn, class ASBZCarriedStaticInteractionActor* Spawnedloot);
-	void OnSelectedTick();
 	void ExecuteUbergraph_BP_DroneSpawner(int32 EntryPoint);
+	void OnSelectedTick();
+	void SpawnedPawnDelegate_Event_0(class APawn* SpawnedPawn, class ASBZCarriedStaticInteractionActor* Spawnedloot);
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

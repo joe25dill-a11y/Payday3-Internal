@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "AkAudio_structs.hpp"
 #include "Starbreeze_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "AkAudio_structs.hpp"
 
 
 namespace SDK::Params

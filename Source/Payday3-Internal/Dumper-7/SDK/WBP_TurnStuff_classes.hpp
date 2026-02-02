@@ -10,16 +10,16 @@
 
 #include "Basic.hpp"
 
-#include "Fourx4_All_Hacking_Minigames_Struct_structs.hpp"
+#include "Twox2_Minigame_Structs_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Threex3_All_Hacking_Minigames_Struct_structs.hpp"
+#include "Threex3_Turn_Puzzle_Struct_structs.hpp"
 #include "Starbreeze_structs.hpp"
 #include "Starbreeze_classes.hpp"
-#include "Threex3_Turn_Puzzle_Struct_structs.hpp"
+#include "AkAudio_structs.hpp"
+#include "Fourx4_All_Hacking_Minigames_Struct_structs.hpp"
 #include "Fourx4_minigame_Struct_structs.hpp"
 #include "Twox2_All_Hacking_minigames_Struct_structs.hpp"
-#include "Twox2_Minigame_Structs_structs.hpp"
-#include "AkAudio_structs.hpp"
 
 
 namespace SDK

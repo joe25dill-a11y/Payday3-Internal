@@ -37,23 +37,51 @@ void UWBP_UI_Widget_PlayerStatusWidget_C::ExecuteUbergraph_WBP_UI_Widget_PlayerS
 }
 
 
-// Function WBP_UI_Widget_PlayerStatusWidget.WBP_UI_Widget_PlayerStatusWidget_C.OnHeisterIconChangedEvent
-// (Event, Protected, BlueprintCallable, BlueprintEvent)
+// Function WBP_UI_Widget_PlayerStatusWidget.WBP_UI_Widget_PlayerStatusWidget_C.PreConstruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
-// class UPaperSprite*                     InNewHeisterIcon                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWBP_UI_Widget_PlayerStatusWidget_C::OnHeisterIconChangedEvent(class UPaperSprite* InNewHeisterIcon)
+void UWBP_UI_Widget_PlayerStatusWidget_C::PreConstruct(bool IsDesignTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_UI_Widget_PlayerStatusWidget_C", "OnHeisterIconChangedEvent");
+		Func = Class->GetFunction("WBP_UI_Widget_PlayerStatusWidget_C", "PreConstruct");
 
-	Params::WBP_UI_Widget_PlayerStatusWidget_C_OnHeisterIconChangedEvent Parms{};
+	Params::WBP_UI_Widget_PlayerStatusWidget_C_PreConstruct Parms{};
 
-	Parms.InNewHeisterIcon = InNewHeisterIcon;
+	Parms.IsDesignTime = IsDesignTime;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_UI_Widget_PlayerStatusWidget.WBP_UI_Widget_PlayerStatusWidget_C.Destruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UWBP_UI_Widget_PlayerStatusWidget_C::Destruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_UI_Widget_PlayerStatusWidget_C", "Destruct");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_UI_Widget_PlayerStatusWidget.WBP_UI_Widget_PlayerStatusWidget_C.Construct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UWBP_UI_Widget_PlayerStatusWidget_C::Construct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_UI_Widget_PlayerStatusWidget_C", "Construct");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -79,35 +107,21 @@ void UWBP_UI_Widget_PlayerStatusWidget_C::OnStateChanged(EPD3DefeatState Old, EP
 }
 
 
-// Function WBP_UI_Widget_PlayerStatusWidget.WBP_UI_Widget_PlayerStatusWidget_C.Destruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UWBP_UI_Widget_PlayerStatusWidget_C::Destruct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_UI_Widget_PlayerStatusWidget_C", "Destruct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_UI_Widget_PlayerStatusWidget.WBP_UI_Widget_PlayerStatusWidget_C.On Damage
-// (HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function WBP_UI_Widget_PlayerStatusWidget.WBP_UI_Widget_PlayerStatusWidget_C.OnHeisterIconChangedEvent
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// const struct FSBZDamageEvent&           DamageEventData                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// class UPaperSprite*                     InNewHeisterIcon                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_UI_Widget_PlayerStatusWidget_C::On_Damage(const struct FSBZDamageEvent& DamageEventData)
+void UWBP_UI_Widget_PlayerStatusWidget_C::OnHeisterIconChangedEvent(class UPaperSprite* InNewHeisterIcon)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_UI_Widget_PlayerStatusWidget_C", "On Damage");
+		Func = Class->GetFunction("WBP_UI_Widget_PlayerStatusWidget_C", "OnHeisterIconChangedEvent");
 
-	Params::WBP_UI_Widget_PlayerStatusWidget_C_On_Damage Parms{};
+	Params::WBP_UI_Widget_PlayerStatusWidget_C_OnHeisterIconChangedEvent Parms{};
 
-	Parms.DamageEventData = std::move(DamageEventData);
+	Parms.InNewHeisterIcon = InNewHeisterIcon;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -124,40 +138,6 @@ void UWBP_UI_Widget_PlayerStatusWidget_C::OnInitialized()
 		Func = Class->GetFunction("WBP_UI_Widget_PlayerStatusWidget_C", "OnInitialized");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_UI_Widget_PlayerStatusWidget.WBP_UI_Widget_PlayerStatusWidget_C.Construct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UWBP_UI_Widget_PlayerStatusWidget_C::Construct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_UI_Widget_PlayerStatusWidget_C", "Construct");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_UI_Widget_PlayerStatusWidget.WBP_UI_Widget_PlayerStatusWidget_C.PreConstruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UWBP_UI_Widget_PlayerStatusWidget_C::PreConstruct(bool IsDesignTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_UI_Widget_PlayerStatusWidget_C", "PreConstruct");
-
-	Params::WBP_UI_Widget_PlayerStatusWidget_C_PreConstruct Parms{};
-
-	Parms.IsDesignTime = IsDesignTime;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 

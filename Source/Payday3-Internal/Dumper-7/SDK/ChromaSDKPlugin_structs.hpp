@@ -278,6 +278,16 @@ enum class EChromaSDKDeviceTypeEnum : uint8
 	DE_MAX                                   = 2,
 };
 
+// ScriptStruct ChromaSDKPlugin.ChromaSDKColorFrame1D
+// 0x0018 (0x0018 - 0x0000)
+struct FChromaSDKColorFrame1D final
+{
+public:
+	TArray<struct FLinearColor>                   Colors;                                            // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_10[0x8];                                       // 0x0010(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FChromaSDKColorFrame1D;
+
 // ScriptStruct ChromaSDKPlugin.ChromaSDKDeviceInfoType
 // 0x0008 (0x0008 - 0x0000)
 struct FChromaSDKDeviceInfoType final
@@ -288,6 +298,15 @@ public:
 	int32                                         Connected;                                         // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FChromaSDKDeviceInfoType;
+
+// ScriptStruct ChromaSDKPlugin.ChromaSDKColors
+// 0x0010 (0x0010 - 0x0000)
+struct FChromaSDKColors final
+{
+public:
+	TArray<struct FLinearColor>                   Colors;                                            // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FChromaSDKColors;
 
 // ScriptStruct ChromaSDKPlugin.ChromaSDKDeviceFrameIndex
 // 0x0010 (0x0010 - 0x0000)
@@ -325,6 +344,16 @@ public:
 };
 DUMPER7_ASSERTS_FChromaSDKScene;
 
+// ScriptStruct ChromaSDKPlugin.ChromaSDKColorFrame2D
+// 0x0018 (0x0018 - 0x0000)
+struct FChromaSDKColorFrame2D final
+{
+public:
+	TArray<struct FChromaSDKColors>               Colors;                                            // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_10[0x8];                                       // 0x0010(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FChromaSDKColorFrame2D;
+
 // ScriptStruct ChromaSDKPlugin.ChromaSDKAppInfoType
 // 0x0048 (0x0048 - 0x0000)
 struct FChromaSDKAppInfoType final
@@ -338,35 +367,6 @@ public:
 	int32                                         Category;                                          // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FChromaSDKAppInfoType;
-
-// ScriptStruct ChromaSDKPlugin.ChromaSDKColors
-// 0x0010 (0x0010 - 0x0000)
-struct FChromaSDKColors final
-{
-public:
-	TArray<struct FLinearColor>                   Colors;                                            // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FChromaSDKColors;
-
-// ScriptStruct ChromaSDKPlugin.ChromaSDKColorFrame2D
-// 0x0018 (0x0018 - 0x0000)
-struct FChromaSDKColorFrame2D final
-{
-public:
-	TArray<struct FChromaSDKColors>               Colors;                                            // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10[0x8];                                       // 0x0010(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FChromaSDKColorFrame2D;
-
-// ScriptStruct ChromaSDKPlugin.ChromaSDKColorFrame1D
-// 0x0018 (0x0018 - 0x0000)
-struct FChromaSDKColorFrame1D final
-{
-public:
-	TArray<struct FLinearColor>                   Colors;                                            // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_10[0x8];                                       // 0x0010(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FChromaSDKColorFrame1D;
 
 // ScriptStruct ChromaSDKPlugin.ChromaSDKGuid
 // 0x0010 (0x0010 - 0x0000)

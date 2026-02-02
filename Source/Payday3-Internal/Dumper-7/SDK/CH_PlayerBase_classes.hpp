@@ -19,20 +19,20 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass CH_PlayerBase.CH_PlayerBase_C
-// 0x0040 (0x21F0 - 0x21B0)
+// 0x0040 (0x2210 - 0x21D0)
 class ACH_PlayerBase_C : public ASBZPlayerCharacter
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x21B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UAIPerceptionStimuliSourceComponent*    AIPerceptionStimuliSource;                         // 0x21B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USBZEventReactionComponent*             SBZEventReaction;                                  // 0x21C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	float                                         MaskAnimationTimeline_NewTrack_0_4646CFB743B8E163EFED5DAB42E7C43D; // 0x21C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETimelineDirection                            MaskAnimationTimeline__Direction_4646CFB743B8E163EFED5DAB42E7C43D; // 0x21CC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_21CD[0x3];                                     // 0x21CD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTimelineComponent*                     MaskAnimationTimeline;                             // 0x21D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class USBZModularCharacterComponent*          ModularMesh;                                       // 0x21D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   MaskMorphTargetName;                               // 0x21E0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ESBZMaskType                                  MaskType;                                          // 0x21EC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x21D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UAIPerceptionStimuliSourceComponent*    AIPerceptionStimuliSource;                         // 0x21D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USBZEventReactionComponent*             SBZEventReaction;                                  // 0x21E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         MaskAnimationTimeline_NewTrack_0_4646CFB743B8E163EFED5DAB42E7C43D; // 0x21E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            MaskAnimationTimeline__Direction_4646CFB743B8E163EFED5DAB42E7C43D; // 0x21EC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_21ED[0x3];                                     // 0x21ED(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     MaskAnimationTimeline;                             // 0x21F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class USBZModularCharacterComponent*          ModularMesh;                                       // 0x21F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   MaskMorphTargetName;                               // 0x2200(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESBZMaskType                                  MaskType;                                          // 0x220C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_CH_PlayerBase(int32 EntryPoint);

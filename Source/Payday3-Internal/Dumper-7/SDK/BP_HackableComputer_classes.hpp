@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "Struct_NameLocationAndSpawn_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Enum_HackingComputerStates_structs.hpp"
 #include "Enum_HackingResultOnDone_structs.hpp"
-#include "Struct_NameLocationAndSpawn_structs.hpp"
 #include "Starbreeze_classes.hpp"
 
 

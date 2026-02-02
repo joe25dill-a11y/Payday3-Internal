@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "Slate_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Starbreeze_classes.hpp"
 #include "UMG_structs.hpp"
@@ -19,7 +20,7 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_MenuRoot_PrimaryTextButton.WBP_MenuRoot_PrimaryTextButton_C
-// 0x0048 (0x03B8 - 0x0370)
+// 0x0050 (0x03C0 - 0x0370)
 class UWBP_MenuRoot_PrimaryTextButton_C final : public USBZMenuButton
 {
 public:
@@ -30,6 +31,7 @@ public:
 	class USBZUITextBlock*                        Title_T;                                           // 0x0390(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class FText                                   InTitle;                                           // 0x0398(0x0018)(Edit, BlueprintVisible, ExposeOnSpawn)
 	class USBZTextStyle*                          InStyle;                                           // 0x03B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETextCasing                                   InTextCasing;                                      // 0x03B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_WBP_MenuRoot_PrimaryTextButton(int32 EntryPoint);

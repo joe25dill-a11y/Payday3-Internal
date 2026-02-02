@@ -19,13 +19,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass CH_Tower.CH_Tower_C
-// 0x0020 (0x1D10 - 0x1CF0)
+// 0x0020 (0x1D20 - 0x1D00)
 class ACH_Tower_C final : public ACH_BaseCop_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1CF0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USBZAITowerSpecialComponent*            SBZAITowerSpecial;                                 // 0x1CF8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   Helmet;                                            // 0x1D00(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1D00(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USBZAITowerSpecialComponent*            SBZAITowerSpecial;                                 // 0x1D08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Helmet;                                            // 0x1D10(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_CH_Tower(int32 EntryPoint);

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "BP_SwatVan_classes.hpp"
 #include "Engine_structs.hpp"
+#include "BP_SwatVan_classes.hpp"
 #include "Starbreeze_structs.hpp"
 
 
@@ -33,9 +33,9 @@ public:
 	class ASBZPawnSpawnPredefined*                Spawners;                                          // 0x0750(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveBeginPlay();
-	void PawnSpawned(class APawn* SpawnedPawn, class ASBZCarriedStaticInteractionActor* Spawnedloot);
 	void ExecuteUbergraph_BP_SwatVan_Spawner(int32 EntryPoint);
+	void PawnSpawned(class APawn* SpawnedPawn, class ASBZCarriedStaticInteractionActor* Spawnedloot);
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

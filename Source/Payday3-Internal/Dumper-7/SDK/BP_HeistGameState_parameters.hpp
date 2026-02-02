@@ -14,6 +14,15 @@
 namespace SDK::Params
 {
 
+// Function BP_HeistGameState.BP_HeistGameState_C.BP_OnHideAllOutlinesChanged
+// 0x0001 (0x0001 - 0x0000)
+struct BP_HeistGameState_C_BP_OnHideAllOutlinesChanged final
+{
+public:
+	bool                                          bIsHidden;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_HeistGameState_C_BP_OnHideAllOutlinesChanged;
+
 // Function BP_HeistGameState.BP_HeistGameState_C.ExecuteUbergraph_BP_HeistGameState
 // 0x0008 (0x0008 - 0x0000)
 struct BP_HeistGameState_C_ExecuteUbergraph_BP_HeistGameState final
@@ -23,15 +32,6 @@ public:
 	bool                                          K2Node_Event_bIsHidden;                            // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_HeistGameState_C_ExecuteUbergraph_BP_HeistGameState;
-
-// Function BP_HeistGameState.BP_HeistGameState_C.BP_OnHideAllOutlinesChanged
-// 0x0001 (0x0001 - 0x0000)
-struct BP_HeistGameState_C_BP_OnHideAllOutlinesChanged final
-{
-public:
-	bool                                          bIsHidden;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_BP_HeistGameState_C_BP_OnHideAllOutlinesChanged;
 
 }
 

@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "AkAudio_structs.hpp"
 #include "Starbreeze_classes.hpp"
+#include "AkAudio_structs.hpp"
 
 
 namespace SDK
@@ -28,9 +28,9 @@ public:
 	int32                                         MarkerID;                                          // 0x0630(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_DeliveryDrone(int32 EntryPoint);
-	void BP_OnBagDropped();
 	void ReceiveBeginPlay();
+	void BP_OnBagDropped();
+	void ExecuteUbergraph_BP_DeliveryDrone(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

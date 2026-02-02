@@ -20,7 +20,7 @@ namespace SDK
 
 // WidgetBlueprintGeneratedClass WBP_Settings_SliderButton.WBP_Settings_SliderButton_C
 // 0x0040 (0x0460 - 0x0420)
-class UWBP_Settings_SliderButton_C : public USBZSettingsButtonSlider
+class UWBP_Settings_SliderButton_C final : public USBZSettingsButtonSlider
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0420(0x0008)(ZeroConstructor, Transient, DuplicateTransient)

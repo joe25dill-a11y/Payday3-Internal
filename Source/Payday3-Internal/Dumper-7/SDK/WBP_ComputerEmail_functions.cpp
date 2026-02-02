@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function WBP_ComputerEmail.WBP_ComputerEmail_C.OnRep_CodePacket
-// (BlueprintCallable, BlueprintEvent)
-
-void UWBP_ComputerEmail_C::OnRep_CodePacket()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ComputerEmail_C", "OnRep_CodePacket");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function WBP_ComputerEmail.WBP_ComputerEmail_C.UpdateDisplayText
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:

@@ -17,17 +17,23 @@
 namespace SDK
 {
 
-// Function BP_SwatVan_Spawner.BP_SwatVan_Spawner_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_SwatVan_Spawner.BP_SwatVan_Spawner_C.ExecuteUbergraph_BP_SwatVan_Spawner
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_SwatVan_Spawner_C::ReceiveBeginPlay()
+void ABP_SwatVan_Spawner_C::ExecuteUbergraph_BP_SwatVan_Spawner(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SwatVan_Spawner_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_SwatVan_Spawner_C", "ExecuteUbergraph_BP_SwatVan_Spawner");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_SwatVan_Spawner_C_ExecuteUbergraph_BP_SwatVan_Spawner Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -53,23 +59,17 @@ void ABP_SwatVan_Spawner_C::PawnSpawned(class APawn* SpawnedPawn, class ASBZCarr
 }
 
 
-// Function BP_SwatVan_Spawner.BP_SwatVan_Spawner_C.ExecuteUbergraph_BP_SwatVan_Spawner
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_SwatVan_Spawner.BP_SwatVan_Spawner_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_SwatVan_Spawner_C::ExecuteUbergraph_BP_SwatVan_Spawner(int32 EntryPoint)
+void ABP_SwatVan_Spawner_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SwatVan_Spawner_C", "ExecuteUbergraph_BP_SwatVan_Spawner");
+		Func = Class->GetFunction("BP_SwatVan_Spawner_C", "ReceiveBeginPlay");
 
-	Params::BP_SwatVan_Spawner_C_ExecuteUbergraph_BP_SwatVan_Spawner Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass CH_CrewAI_Wolf.CH_CrewAI_Wolf_C
-// 0x0000 (0x18D0 - 0x18D0)
+// 0x0000 (0x18E0 - 0x18E0)
 class ACH_CrewAI_Wolf_C final : public ACH_CrewAI_Base_C
 {
 public:

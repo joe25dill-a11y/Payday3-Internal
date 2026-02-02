@@ -10,18 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "Starbreeze_classes.hpp"
+#include "BP_InstantLoot_Base_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_InstantLoot_MoneyBase.BP_InstantLoot_MoneyBase_C
-// 0x0008 (0x02E8 - 0x02E0)
-class ABP_InstantLoot_MoneyBase_C : public ASBZInstantLoot
+// 0x0008 (0x02F0 - 0x02E8)
+class ABP_InstantLoot_MoneyBase_C : public ABP_InstantLoot_Base_C
 {
 public:
-	class UStaticMeshComponent*                   Loot;                                              // 0x02E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Loot;                                              // 0x02E8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void UserConstructionScript();

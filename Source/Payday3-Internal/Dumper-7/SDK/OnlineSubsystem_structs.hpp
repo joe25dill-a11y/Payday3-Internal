@@ -46,6 +46,17 @@ enum class EMPMatchOutcome : uint8
 	EMPMatchOutcome_MAX                      = 10,
 };
 
+// ScriptStruct OnlineSubsystem.InAppPurchaseProductRequest
+// 0x0018 (0x0018 - 0x0000)
+struct FInAppPurchaseProductRequest final
+{
+public:
+	class FString                                 ProductIdentifier;                                 // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsConsumable;                                     // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FInAppPurchaseProductRequest;
+
 // ScriptStruct OnlineSubsystem.InAppPurchaseProductInfo
 // 0x00A8 (0x00A8 - 0x0000)
 struct FInAppPurchaseProductInfo final
@@ -66,17 +77,6 @@ public:
 };
 DUMPER7_ASSERTS_FInAppPurchaseProductInfo;
 
-// ScriptStruct OnlineSubsystem.NamedInterfaceDef
-// 0x0020 (0x0020 - 0x0000)
-struct FNamedInterfaceDef final
-{
-public:
-	class FName                                   InterfaceName;                                     // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 InterfaceClassName;                                // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FNamedInterfaceDef;
-
 // ScriptStruct OnlineSubsystem.InAppPurchaseRestoreInfo
 // 0x0030 (0x0030 - 0x0000)
 struct FInAppPurchaseRestoreInfo final
@@ -88,6 +88,17 @@ public:
 };
 DUMPER7_ASSERTS_FInAppPurchaseRestoreInfo;
 
+// ScriptStruct OnlineSubsystem.NamedInterfaceDef
+// 0x0020 (0x0020 - 0x0000)
+struct FNamedInterfaceDef final
+{
+public:
+	class FName                                   InterfaceName;                                     // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 InterfaceClassName;                                // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FNamedInterfaceDef;
+
 // ScriptStruct OnlineSubsystem.NamedInterface
 // 0x0018 (0x0018 - 0x0000)
 struct FNamedInterface final
@@ -98,17 +109,6 @@ public:
 	class UObject*                                InterfaceObject;                                   // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FNamedInterface;
-
-// ScriptStruct OnlineSubsystem.InAppPurchaseProductRequest
-// 0x0018 (0x0018 - 0x0000)
-struct FInAppPurchaseProductRequest final
-{
-public:
-	class FString                                 ProductIdentifier;                                 // 0x0000(0x0010)(BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsConsumable;                                     // 0x0010(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FInAppPurchaseProductRequest;
 
 }
 

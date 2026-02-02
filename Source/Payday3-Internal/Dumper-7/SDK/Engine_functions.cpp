@@ -14359,555 +14359,6 @@ void UBlueprintAsyncActionBase::Activate()
 }
 
 
-// Function Engine.TimelineComponent.OnRep_Timeline
-// (Final, Native, Public)
-
-void UTimelineComponent::OnRep_Timeline()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "OnRep_Timeline");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TimelineComponent.Play
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-
-void UTimelineComponent::Play()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "Play");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TimelineComponent.PlayFromStart
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-
-void UTimelineComponent::PlayFromStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "PlayFromStart");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TimelineComponent.Reverse
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-
-void UTimelineComponent::Reverse()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "Reverse");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TimelineComponent.ReverseFromEnd
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-
-void UTimelineComponent::ReverseFromEnd()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "ReverseFromEnd");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TimelineComponent.SetFloatCurve
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// class UCurveFloat*                      NewFloatCurve                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             FloatTrackName                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTimelineComponent::SetFloatCurve(class UCurveFloat* NewFloatCurve, class FName FloatTrackName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "SetFloatCurve");
-
-	Params::TimelineComponent_SetFloatCurve Parms{};
-
-	Parms.NewFloatCurve = NewFloatCurve;
-	Parms.FloatTrackName = FloatTrackName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TimelineComponent.SetIgnoreTimeDilation
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bNewIgnoreTimeDilation                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTimelineComponent::SetIgnoreTimeDilation(bool bNewIgnoreTimeDilation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "SetIgnoreTimeDilation");
-
-	Params::TimelineComponent_SetIgnoreTimeDilation Parms{};
-
-	Parms.bNewIgnoreTimeDilation = bNewIgnoreTimeDilation;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TimelineComponent.SetLinearColorCurve
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// class UCurveLinearColor*                NewLinearColorCurve                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             LinearColorTrackName                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTimelineComponent::SetLinearColorCurve(class UCurveLinearColor* NewLinearColorCurve, class FName LinearColorTrackName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "SetLinearColorCurve");
-
-	Params::TimelineComponent_SetLinearColorCurve Parms{};
-
-	Parms.NewLinearColorCurve = NewLinearColorCurve;
-	Parms.LinearColorTrackName = LinearColorTrackName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TimelineComponent.SetLooping
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bNewLooping                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTimelineComponent::SetLooping(bool bNewLooping)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "SetLooping");
-
-	Params::TimelineComponent_SetLooping Parms{};
-
-	Parms.bNewLooping = bNewLooping;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TimelineComponent.SetNewTime
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewTime                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTimelineComponent::SetNewTime(float NewTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "SetNewTime");
-
-	Params::TimelineComponent_SetNewTime Parms{};
-
-	Parms.NewTime = NewTime;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TimelineComponent.SetPlaybackPosition
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewPosition                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bFireEvents                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bFireUpdate                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTimelineComponent::SetPlaybackPosition(float NewPosition, bool bFireEvents, bool bFireUpdate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "SetPlaybackPosition");
-
-	Params::TimelineComponent_SetPlaybackPosition Parms{};
-
-	Parms.NewPosition = NewPosition;
-	Parms.bFireEvents = bFireEvents;
-	Parms.bFireUpdate = bFireUpdate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TimelineComponent.SetPlayRate
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewRate                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTimelineComponent::SetPlayRate(float NewRate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "SetPlayRate");
-
-	Params::TimelineComponent_SetPlayRate Parms{};
-
-	Parms.NewRate = NewRate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TimelineComponent.SetTimelineLength
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewLength                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTimelineComponent::SetTimelineLength(float NewLength)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "SetTimelineLength");
-
-	Params::TimelineComponent_SetTimelineLength Parms{};
-
-	Parms.NewLength = NewLength;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TimelineComponent.SetTimelineLengthMode
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// ETimelineLengthMode                     NewLengthMode                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTimelineComponent::SetTimelineLengthMode(ETimelineLengthMode NewLengthMode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "SetTimelineLengthMode");
-
-	Params::TimelineComponent_SetTimelineLengthMode Parms{};
-
-	Parms.NewLengthMode = NewLengthMode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TimelineComponent.SetVectorCurve
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// class UCurveVector*                     NewVectorCurve                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             VectorTrackName                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTimelineComponent::SetVectorCurve(class UCurveVector* NewVectorCurve, class FName VectorTrackName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "SetVectorCurve");
-
-	Params::TimelineComponent_SetVectorCurve Parms{};
-
-	Parms.NewVectorCurve = NewVectorCurve;
-	Parms.VectorTrackName = VectorTrackName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TimelineComponent.Stop
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-
-void UTimelineComponent::Stop()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "Stop");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TimelineComponent.GetIgnoreTimeDilation
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UTimelineComponent::GetIgnoreTimeDilation() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "GetIgnoreTimeDilation");
-
-	Params::TimelineComponent_GetIgnoreTimeDilation Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.TimelineComponent.GetPlaybackPosition
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UTimelineComponent::GetPlaybackPosition() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "GetPlaybackPosition");
-
-	Params::TimelineComponent_GetPlaybackPosition Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.TimelineComponent.GetPlayRate
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UTimelineComponent::GetPlayRate() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "GetPlayRate");
-
-	Params::TimelineComponent_GetPlayRate Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.TimelineComponent.GetTimelineLength
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UTimelineComponent::GetTimelineLength() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "GetTimelineLength");
-
-	Params::TimelineComponent_GetTimelineLength Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.TimelineComponent.IsLooping
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UTimelineComponent::IsLooping() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "IsLooping");
-
-	Params::TimelineComponent_IsLooping Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.TimelineComponent.IsPlaying
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UTimelineComponent::IsPlaying() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "IsPlaying");
-
-	Params::TimelineComponent_IsPlaying Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.TimelineComponent.IsReversing
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UTimelineComponent::IsReversing() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TimelineComponent", "IsReversing");
-
-	Params::TimelineComponent_IsReversing Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function Engine.SpotLight.SetInnerConeAngle
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -17623,6 +17074,298 @@ struct FVector APawn::K2_GetMovementInputVector() const
 }
 
 
+// Function Engine.SoundSubmix.AddEnvelopeFollowerDelegate
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const TArray<float>& Envelope)>&OnSubmixEnvelopeBP                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void USoundSubmix::AddEnvelopeFollowerDelegate(const class UObject* WorldContextObject, const TDelegate<void(const TArray<float>& Envelope)>& OnSubmixEnvelopeBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SoundSubmix", "AddEnvelopeFollowerDelegate");
+
+	Params::SoundSubmix_AddEnvelopeFollowerDelegate Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.OnSubmixEnvelopeBP = OnSubmixEnvelopeBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SoundSubmix.AddSpectralAnalysisDelegate
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<struct FSoundSubmixSpectralAnalysisBandSettings>&InBandSettings                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const TDelegate<void(const TArray<float>& Magnitude)>&OnSubmixSpectralAnalysisBP                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   UpdateRate                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   DecibelNoiseFloor                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bDoNormalize                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bDoAutoRange                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   AutoRangeAttackTime                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   AutoRangeReleaseTime                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USoundSubmix::AddSpectralAnalysisDelegate(const class UObject* WorldContextObject, const TArray<struct FSoundSubmixSpectralAnalysisBandSettings>& InBandSettings, const TDelegate<void(const TArray<float>& Magnitude)>& OnSubmixSpectralAnalysisBP, float UpdateRate, float DecibelNoiseFloor, bool bDoNormalize, bool bDoAutoRange, float AutoRangeAttackTime, float AutoRangeReleaseTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SoundSubmix", "AddSpectralAnalysisDelegate");
+
+	Params::SoundSubmix_AddSpectralAnalysisDelegate Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.InBandSettings = std::move(InBandSettings);
+	Parms.OnSubmixSpectralAnalysisBP = OnSubmixSpectralAnalysisBP;
+	Parms.UpdateRate = UpdateRate;
+	Parms.DecibelNoiseFloor = DecibelNoiseFloor;
+	Parms.bDoNormalize = bDoNormalize;
+	Parms.bDoAutoRange = bDoAutoRange;
+	Parms.AutoRangeAttackTime = AutoRangeAttackTime;
+	Parms.AutoRangeReleaseTime = AutoRangeReleaseTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SoundSubmix.RemoveSpectralAnalysisDelegate
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TDelegate<void(const TArray<float>& Magnitude)>&OnSubmixSpectralAnalysisBP                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void USoundSubmix::RemoveSpectralAnalysisDelegate(const class UObject* WorldContextObject, const TDelegate<void(const TArray<float>& Magnitude)>& OnSubmixSpectralAnalysisBP)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SoundSubmix", "RemoveSpectralAnalysisDelegate");
+
+	Params::SoundSubmix_RemoveSpectralAnalysisDelegate Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.OnSubmixSpectralAnalysisBP = OnSubmixSpectralAnalysisBP;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SoundSubmix.SetSubmixOutputVolume
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InOutputVolume                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USoundSubmix::SetSubmixOutputVolume(const class UObject* WorldContextObject, float InOutputVolume)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SoundSubmix", "SetSubmixOutputVolume");
+
+	Params::SoundSubmix_SetSubmixOutputVolume Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.InOutputVolume = InOutputVolume;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SoundSubmix.StartEnvelopeFollowing
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USoundSubmix::StartEnvelopeFollowing(const class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SoundSubmix", "StartEnvelopeFollowing");
+
+	Params::SoundSubmix_StartEnvelopeFollowing Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SoundSubmix.StartRecordingOutput
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ExpectedDuration                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USoundSubmix::StartRecordingOutput(const class UObject* WorldContextObject, float ExpectedDuration)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SoundSubmix", "StartRecordingOutput");
+
+	Params::SoundSubmix_StartRecordingOutput Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ExpectedDuration = ExpectedDuration;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SoundSubmix.StartSpectralAnalysis
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EFFTSize                                FFTSize                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EFFTPeakInterpolationMethod             InterpolationMethod                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EFFTWindowType                          WindowType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   HopSize                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EAudioSpectrumType                      SpectrumType                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USoundSubmix::StartSpectralAnalysis(const class UObject* WorldContextObject, EFFTSize FFTSize, EFFTPeakInterpolationMethod InterpolationMethod, EFFTWindowType WindowType, float HopSize, EAudioSpectrumType SpectrumType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SoundSubmix", "StartSpectralAnalysis");
+
+	Params::SoundSubmix_StartSpectralAnalysis Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.FFTSize = FFTSize;
+	Parms.InterpolationMethod = InterpolationMethod;
+	Parms.WindowType = WindowType;
+	Parms.HopSize = HopSize;
+	Parms.SpectrumType = SpectrumType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SoundSubmix.StopEnvelopeFollowing
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USoundSubmix::StopEnvelopeFollowing(const class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SoundSubmix", "StopEnvelopeFollowing");
+
+	Params::SoundSubmix_StopEnvelopeFollowing Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SoundSubmix.StopRecordingOutput
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EAudioRecordingExportType               ExportType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USoundWave*                       ExistingSoundWaveToOverwrite                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USoundSubmix::StopRecordingOutput(const class UObject* WorldContextObject, EAudioRecordingExportType ExportType, const class FString& Name_0, const class FString& Path, class USoundWave* ExistingSoundWaveToOverwrite)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SoundSubmix", "StopRecordingOutput");
+
+	Params::SoundSubmix_StopRecordingOutput Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.ExportType = ExportType;
+	Parms.Name_0 = std::move(Name_0);
+	Parms.Path = std::move(Path);
+	Parms.ExistingSoundWaveToOverwrite = ExistingSoundWaveToOverwrite;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SoundSubmix.StopSpectralAnalysis
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USoundSubmix::StopSpectralAnalysis(const class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SoundSubmix", "StopSpectralAnalysis");
+
+	Params::SoundSubmix_StopSpectralAnalysis Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function Engine.AnimNotify.GetNotifyName
 // (Native, Event, Public, BlueprintEvent, Const)
 // Parameters:
@@ -17900,6 +17643,504 @@ void UCanvasRenderTarget2D::UpdateResource()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.LightComponentBase.SetAffectGlobalIllumination
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULightComponentBase::SetAffectGlobalIllumination(bool bNewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LightComponentBase", "SetAffectGlobalIllumination");
+
+	Params::LightComponentBase_SetAffectGlobalIllumination Parms{};
+
+	Parms.bNewValue = bNewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.LightComponentBase.SetAffectReflection
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULightComponentBase::SetAffectReflection(bool bNewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LightComponentBase", "SetAffectReflection");
+
+	Params::LightComponentBase_SetAffectReflection Parms{};
+
+	Parms.bNewValue = bNewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.LightComponentBase.SetCastDeepShadow
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULightComponentBase::SetCastDeepShadow(bool bNewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LightComponentBase", "SetCastDeepShadow");
+
+	Params::LightComponentBase_SetCastDeepShadow Parms{};
+
+	Parms.bNewValue = bNewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.LightComponentBase.SetCastRaytracedShadow
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULightComponentBase::SetCastRaytracedShadow(bool bNewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LightComponentBase", "SetCastRaytracedShadow");
+
+	Params::LightComponentBase_SetCastRaytracedShadow Parms{};
+
+	Parms.bNewValue = bNewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.LightComponentBase.SetCastShadows
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULightComponentBase::SetCastShadows(bool bNewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LightComponentBase", "SetCastShadows");
+
+	Params::LightComponentBase_SetCastShadows Parms{};
+
+	Parms.bNewValue = bNewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.LightComponentBase.SetCastVolumetricShadow
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULightComponentBase::SetCastVolumetricShadow(bool bNewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LightComponentBase", "SetCastVolumetricShadow");
+
+	Params::LightComponentBase_SetCastVolumetricShadow Parms{};
+
+	Parms.bNewValue = bNewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.LightComponentBase.SetSamplesPerPixel
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULightComponentBase::SetSamplesPerPixel(int32 NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LightComponentBase", "SetSamplesPerPixel");
+
+	Params::LightComponentBase_SetSamplesPerPixel Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.LightComponentBase.GetLightColor
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FLinearColor                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FLinearColor ULightComponentBase::GetLightColor() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LightComponentBase", "GetLightColor");
+
+	Params::LightComponentBase_GetLightColor Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SkyLightComponent.RecaptureSky
+// (Final, Native, Public, BlueprintCallable)
+
+void USkyLightComponent::RecaptureSky()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyLightComponent", "RecaptureSky");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyLightComponent.SetCubemap
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UTextureCube*                     NewCubemap                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyLightComponent::SetCubemap(class UTextureCube* NewCubemap)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyLightComponent", "SetCubemap");
+
+	Params::SkyLightComponent_SetCubemap Parms{};
+
+	Parms.NewCubemap = NewCubemap;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyLightComponent.SetCubemapBlend
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UTextureCube*                     SourceCubemap                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UTextureCube*                     DestinationCubemap                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InBlendFraction                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyLightComponent::SetCubemapBlend(class UTextureCube* SourceCubemap, class UTextureCube* DestinationCubemap, float InBlendFraction)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyLightComponent", "SetCubemapBlend");
+
+	Params::SkyLightComponent_SetCubemapBlend Parms{};
+
+	Parms.SourceCubemap = SourceCubemap;
+	Parms.DestinationCubemap = DestinationCubemap;
+	Parms.InBlendFraction = InBlendFraction;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyLightComponent.SetIndirectLightingIntensity
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewIntensity                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyLightComponent::SetIndirectLightingIntensity(float NewIntensity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyLightComponent", "SetIndirectLightingIntensity");
+
+	Params::SkyLightComponent_SetIndirectLightingIntensity Parms{};
+
+	Parms.NewIntensity = NewIntensity;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyLightComponent.SetIntensity
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewIntensity                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyLightComponent::SetIntensity(float NewIntensity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyLightComponent", "SetIntensity");
+
+	Params::SkyLightComponent_SetIntensity Parms{};
+
+	Parms.NewIntensity = NewIntensity;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyLightComponent.SetLightColor
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FLinearColor&              NewLightColor                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyLightComponent::SetLightColor(const struct FLinearColor& NewLightColor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyLightComponent", "SetLightColor");
+
+	Params::SkyLightComponent_SetLightColor Parms{};
+
+	Parms.NewLightColor = std::move(NewLightColor);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyLightComponent.SetLowerHemisphereColor
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FLinearColor&              InLowerHemisphereColor                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyLightComponent::SetLowerHemisphereColor(const struct FLinearColor& InLowerHemisphereColor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyLightComponent", "SetLowerHemisphereColor");
+
+	Params::SkyLightComponent_SetLowerHemisphereColor Parms{};
+
+	Parms.InLowerHemisphereColor = std::move(InLowerHemisphereColor);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyLightComponent.SetMinOcclusion
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InMinOcclusion                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyLightComponent::SetMinOcclusion(float InMinOcclusion)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyLightComponent", "SetMinOcclusion");
+
+	Params::SkyLightComponent_SetMinOcclusion Parms{};
+
+	Parms.InMinOcclusion = InMinOcclusion;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyLightComponent.SetOcclusionContrast
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InOcclusionContrast                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyLightComponent::SetOcclusionContrast(float InOcclusionContrast)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyLightComponent", "SetOcclusionContrast");
+
+	Params::SkyLightComponent_SetOcclusionContrast Parms{};
+
+	Parms.InOcclusionContrast = InOcclusionContrast;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyLightComponent.SetOcclusionExponent
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InOcclusionExponent                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyLightComponent::SetOcclusionExponent(float InOcclusionExponent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyLightComponent", "SetOcclusionExponent");
+
+	Params::SkyLightComponent_SetOcclusionExponent Parms{};
+
+	Parms.InOcclusionExponent = InOcclusionExponent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyLightComponent.SetOcclusionTint
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FColor&                    InTint                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyLightComponent::SetOcclusionTint(const struct FColor& InTint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyLightComponent", "SetOcclusionTint");
+
+	Params::SkyLightComponent_SetOcclusionTint Parms{};
+
+	Parms.InTint = std::move(InTint);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyLightComponent.SetVolumetricScatteringIntensity
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewIntensity                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyLightComponent::SetVolumetricScatteringIntensity(float NewIntensity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyLightComponent", "SetVolumetricScatteringIntensity");
+
+	Params::SkyLightComponent_SetVolumetricScatteringIntensity Parms{};
+
+	Parms.NewIntensity = NewIntensity;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -18240,200 +18481,6 @@ void UBlueprintSetLibrary::SetSetPropertyByName(class UObject* Object, class FNa
 	Parms.Object = Object;
 	Parms.PropertyName = PropertyName;
 	Parms.Value = std::move(Value);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.VisualLoggerKismetLibrary.EnableRecording
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bEnabled                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UVisualLoggerKismetLibrary::EnableRecording(bool bEnabled)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("VisualLoggerKismetLibrary", "EnableRecording");
-
-	Params::VisualLoggerKismetLibrary_EnableRecording Parms{};
-
-	Parms.bEnabled = bEnabled;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.VisualLoggerKismetLibrary.LogBox
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FBox&                      BoxShape                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// const class FString&                    Text                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FLinearColor&              ObjectColor                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             LogCategory                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bAddToMessageLog                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UVisualLoggerKismetLibrary::LogBox(class UObject* WorldContextObject, const struct FBox& BoxShape, const class FString& Text, const struct FLinearColor& ObjectColor, class FName LogCategory, bool bAddToMessageLog)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("VisualLoggerKismetLibrary", "LogBox");
-
-	Params::VisualLoggerKismetLibrary_LogBox Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.BoxShape = std::move(BoxShape);
-	Parms.Text = std::move(Text);
-	Parms.ObjectColor = std::move(ObjectColor);
-	Parms.LogCategory = LogCategory;
-	Parms.bAddToMessageLog = bAddToMessageLog;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.VisualLoggerKismetLibrary.LogLocation
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    Text                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FLinearColor&              ObjectColor                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Radius                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             LogCategory                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bAddToMessageLog                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UVisualLoggerKismetLibrary::LogLocation(class UObject* WorldContextObject, const struct FVector& Location, const class FString& Text, const struct FLinearColor& ObjectColor, float Radius, class FName LogCategory, bool bAddToMessageLog)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("VisualLoggerKismetLibrary", "LogLocation");
-
-	Params::VisualLoggerKismetLibrary_LogLocation Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.Location = std::move(Location);
-	Parms.Text = std::move(Text);
-	Parms.ObjectColor = std::move(ObjectColor);
-	Parms.Radius = Radius;
-	Parms.LogCategory = LogCategory;
-	Parms.bAddToMessageLog = bAddToMessageLog;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.VisualLoggerKismetLibrary.LogSegment
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   SegmentStart                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   SegmentEnd                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    Text                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FLinearColor&              ObjectColor                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const float                             Thickness                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             CategoryName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bAddToMessageLog                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UVisualLoggerKismetLibrary::LogSegment(class UObject* WorldContextObject, const struct FVector& SegmentStart, const struct FVector& SegmentEnd, const class FString& Text, const struct FLinearColor& ObjectColor, const float Thickness, class FName CategoryName, bool bAddToMessageLog)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("VisualLoggerKismetLibrary", "LogSegment");
-
-	Params::VisualLoggerKismetLibrary_LogSegment Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.SegmentStart = std::move(SegmentStart);
-	Parms.SegmentEnd = std::move(SegmentEnd);
-	Parms.Text = std::move(Text);
-	Parms.ObjectColor = std::move(ObjectColor);
-	Parms.Thickness = Thickness;
-	Parms.CategoryName = CategoryName;
-	Parms.bAddToMessageLog = bAddToMessageLog;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.VisualLoggerKismetLibrary.LogText
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    Text                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             LogCategory                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bAddToMessageLog                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UVisualLoggerKismetLibrary::LogText(class UObject* WorldContextObject, const class FString& Text, class FName LogCategory, bool bAddToMessageLog)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("VisualLoggerKismetLibrary", "LogText");
-
-	Params::VisualLoggerKismetLibrary_LogText Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.Text = std::move(Text);
-	Parms.LogCategory = LogCategory;
-	Parms.bAddToMessageLog = bAddToMessageLog;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.VisualLoggerKismetLibrary.RedirectVislog
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                          SourceOwner                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UObject*                          DestinationOwner                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UVisualLoggerKismetLibrary::RedirectVislog(class UObject* SourceOwner, class UObject* DestinationOwner)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("VisualLoggerKismetLibrary", "RedirectVislog");
-
-	Params::VisualLoggerKismetLibrary_RedirectVislog Parms{};
-
-	Parms.SourceOwner = SourceOwner;
-	Parms.DestinationOwner = DestinationOwner;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -26394,458 +26441,6 @@ void UPlayerInput::SetMouseSensitivity(const float Sensitivity)
 }
 
 
-// Function Engine.StaticMesh.CreateStaticMeshDescription
-// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UObject*                          Outer_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UStaticMeshDescription*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UStaticMeshDescription* UStaticMesh::CreateStaticMeshDescription(class UObject* Outer_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("StaticMesh", "CreateStaticMeshDescription");
-
-	Params::StaticMesh_CreateStaticMeshDescription Parms{};
-
-	Parms.Outer_0 = Outer_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.StaticMesh.AddMaterial
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// class UMaterialInterface*               Material                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FName UStaticMesh::AddMaterial(class UMaterialInterface* Material)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StaticMesh", "AddMaterial");
-
-	Params::StaticMesh_AddMaterial Parms{};
-
-	Parms.Material = Material;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.StaticMesh.AddSocket
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// class UStaticMeshSocket*                Socket                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UStaticMesh::AddSocket(class UStaticMeshSocket* Socket)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StaticMesh", "AddSocket");
-
-	Params::StaticMesh_AddSocket Parms{};
-
-	Parms.Socket = Socket;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.StaticMesh.BuildFromStaticMeshDescriptions
-// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const TArray<class UStaticMeshDescription*>&StaticMeshDescriptions                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    bBuildSimpleCollision                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UStaticMesh::BuildFromStaticMeshDescriptions(const TArray<class UStaticMeshDescription*>& StaticMeshDescriptions, bool bBuildSimpleCollision)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StaticMesh", "BuildFromStaticMeshDescriptions");
-
-	Params::StaticMesh_BuildFromStaticMeshDescriptions Parms{};
-
-	Parms.StaticMeshDescriptions = std::move(StaticMeshDescriptions);
-	Parms.bBuildSimpleCollision = bBuildSimpleCollision;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.StaticMesh.RemoveSocket
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// class UStaticMeshSocket*                Socket                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UStaticMesh::RemoveSocket(class UStaticMeshSocket* Socket)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StaticMesh", "RemoveSocket");
-
-	Params::StaticMesh_RemoveSocket Parms{};
-
-	Parms.Socket = Socket;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.StaticMesh.SetStaticMaterials
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const TArray<struct FStaticMaterial>&   InStaticMaterials                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UStaticMesh::SetStaticMaterials(const TArray<struct FStaticMaterial>& InStaticMaterials)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StaticMesh", "SetStaticMaterials");
-
-	Params::StaticMesh_SetStaticMaterials Parms{};
-
-	Parms.InStaticMaterials = std::move(InStaticMaterials);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.StaticMesh.FindSocket
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FName                             InSocketName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UStaticMeshSocket*                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UStaticMeshSocket* UStaticMesh::FindSocket(class FName InSocketName) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StaticMesh", "FindSocket");
-
-	Params::StaticMesh_FindSocket Parms{};
-
-	Parms.InSocketName = InSocketName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.StaticMesh.GetBoundingBox
-// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FBox                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FBox UStaticMesh::GetBoundingBox() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StaticMesh", "GetBoundingBox");
-
-	Params::StaticMesh_GetBoundingBox Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.StaticMesh.GetBounds
-// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FBoxSphereBounds                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FBoxSphereBounds UStaticMesh::GetBounds() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StaticMesh", "GetBounds");
-
-	Params::StaticMesh_GetBounds Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.StaticMesh.GetMaterial
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   MaterialIndex                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMaterialInterface*               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UMaterialInterface* UStaticMesh::GetMaterial(int32 MaterialIndex) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StaticMesh", "GetMaterial");
-
-	Params::StaticMesh_GetMaterial Parms{};
-
-	Parms.MaterialIndex = MaterialIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.StaticMesh.GetMaterialIndex
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FName                             MaterialSlotName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UStaticMesh::GetMaterialIndex(class FName MaterialSlotName) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StaticMesh", "GetMaterialIndex");
-
-	Params::StaticMesh_GetMaterialIndex Parms{};
-
-	Parms.MaterialSlotName = MaterialSlotName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.StaticMesh.GetMaterialSlotName
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   MaterialIndex                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FName UStaticMesh::GetMaterialSlotName(int32 MaterialIndex) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StaticMesh", "GetMaterialSlotName");
-
-	Params::StaticMesh_GetMaterialSlotName Parms{};
-
-	Parms.MaterialIndex = MaterialIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.StaticMesh.GetMinimumLODForPlatform
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const class FName&                      PlatformName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UStaticMesh::GetMinimumLODForPlatform(const class FName& PlatformName) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StaticMesh", "GetMinimumLODForPlatform");
-
-	Params::StaticMesh_GetMinimumLODForPlatform Parms{};
-
-	Parms.PlatformName = PlatformName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.StaticMesh.GetMinimumLODForPlatforms
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TMap<class FName, int32>*               PlatformMinimumLODs                                    (Parm, OutParm, NativeAccessSpecifierPublic)
-
-void UStaticMesh::GetMinimumLODForPlatforms(TMap<class FName, int32>* PlatformMinimumLODs) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StaticMesh", "GetMinimumLODForPlatforms");
-
-	Params::StaticMesh_GetMinimumLODForPlatforms Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (PlatformMinimumLODs != nullptr)
-		*PlatformMinimumLODs = std::move(Parms.PlatformMinimumLODs);
-}
-
-
-// Function Engine.StaticMesh.GetNumLODs
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UStaticMesh::GetNumLODs() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StaticMesh", "GetNumLODs");
-
-	Params::StaticMesh_GetNumLODs Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.StaticMesh.GetNumSections
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   InLOD                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UStaticMesh::GetNumSections(int32 InLOD) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StaticMesh", "GetNumSections");
-
-	Params::StaticMesh_GetNumSections Parms{};
-
-	Parms.InLOD = InLOD;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.StaticMesh.GetStaticMaterials
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const TArray<struct FStaticMaterial>    ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-const TArray<struct FStaticMaterial> UStaticMesh::GetStaticMaterials() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StaticMesh", "GetStaticMaterials");
-
-	Params::StaticMesh_GetStaticMaterials Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function Engine.AnimInstance.BlueprintBeginPlay
 // (Event, Public, BlueprintEvent)
 
@@ -31248,206 +30843,6 @@ class UMaterialInterface* ADecalActor::GetDecalMaterial() const
 		Func = Class->GetFunction("DecalActor", "GetDecalMaterial");
 
 	Params::DecalActor_GetDecalMaterial Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.LightComponentBase.SetAffectGlobalIllumination
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bNewValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ULightComponentBase::SetAffectGlobalIllumination(bool bNewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LightComponentBase", "SetAffectGlobalIllumination");
-
-	Params::LightComponentBase_SetAffectGlobalIllumination Parms{};
-
-	Parms.bNewValue = bNewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.LightComponentBase.SetAffectReflection
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bNewValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ULightComponentBase::SetAffectReflection(bool bNewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LightComponentBase", "SetAffectReflection");
-
-	Params::LightComponentBase_SetAffectReflection Parms{};
-
-	Parms.bNewValue = bNewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.LightComponentBase.SetCastDeepShadow
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bNewValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ULightComponentBase::SetCastDeepShadow(bool bNewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LightComponentBase", "SetCastDeepShadow");
-
-	Params::LightComponentBase_SetCastDeepShadow Parms{};
-
-	Parms.bNewValue = bNewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.LightComponentBase.SetCastRaytracedShadow
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bNewValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ULightComponentBase::SetCastRaytracedShadow(bool bNewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LightComponentBase", "SetCastRaytracedShadow");
-
-	Params::LightComponentBase_SetCastRaytracedShadow Parms{};
-
-	Parms.bNewValue = bNewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.LightComponentBase.SetCastShadows
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bNewValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ULightComponentBase::SetCastShadows(bool bNewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LightComponentBase", "SetCastShadows");
-
-	Params::LightComponentBase_SetCastShadows Parms{};
-
-	Parms.bNewValue = bNewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.LightComponentBase.SetCastVolumetricShadow
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bNewValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ULightComponentBase::SetCastVolumetricShadow(bool bNewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LightComponentBase", "SetCastVolumetricShadow");
-
-	Params::LightComponentBase_SetCastVolumetricShadow Parms{};
-
-	Parms.bNewValue = bNewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.LightComponentBase.SetSamplesPerPixel
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ULightComponentBase::SetSamplesPerPixel(int32 NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LightComponentBase", "SetSamplesPerPixel");
-
-	Params::LightComponentBase_SetSamplesPerPixel Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.LightComponentBase.GetLightColor
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FLinearColor                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FLinearColor ULightComponentBase::GetLightColor() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LightComponentBase", "GetLightColor");
-
-	Params::LightComponentBase_GetLightColor Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -40912,156 +40307,6 @@ float UCurveFloat::GetFloatValue(float InTime) const
 }
 
 
-// Function Engine.WindDirectionalSourceComponent.SetMaximumGustAmount
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InNewMaxGust                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWindDirectionalSourceComponent::SetMaximumGustAmount(float InNewMaxGust)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WindDirectionalSourceComponent", "SetMaximumGustAmount");
-
-	Params::WindDirectionalSourceComponent_SetMaximumGustAmount Parms{};
-
-	Parms.InNewMaxGust = InNewMaxGust;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.WindDirectionalSourceComponent.SetMinimumGustAmount
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InNewMinGust                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWindDirectionalSourceComponent::SetMinimumGustAmount(float InNewMinGust)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WindDirectionalSourceComponent", "SetMinimumGustAmount");
-
-	Params::WindDirectionalSourceComponent_SetMinimumGustAmount Parms{};
-
-	Parms.InNewMinGust = InNewMinGust;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.WindDirectionalSourceComponent.SetRadius
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InNewRadius                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWindDirectionalSourceComponent::SetRadius(float InNewRadius)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WindDirectionalSourceComponent", "SetRadius");
-
-	Params::WindDirectionalSourceComponent_SetRadius Parms{};
-
-	Parms.InNewRadius = InNewRadius;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.WindDirectionalSourceComponent.SetSpeed
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InNewSpeed                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWindDirectionalSourceComponent::SetSpeed(float InNewSpeed)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WindDirectionalSourceComponent", "SetSpeed");
-
-	Params::WindDirectionalSourceComponent_SetSpeed Parms{};
-
-	Parms.InNewSpeed = InNewSpeed;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.WindDirectionalSourceComponent.SetStrength
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InNewStrength                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWindDirectionalSourceComponent::SetStrength(float InNewStrength)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WindDirectionalSourceComponent", "SetStrength");
-
-	Params::WindDirectionalSourceComponent_SetStrength Parms{};
-
-	Parms.InNewStrength = InNewStrength;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.WindDirectionalSourceComponent.SetWindType
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EWindSourceType                         InNewType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWindDirectionalSourceComponent::SetWindType(EWindSourceType InNewType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WindDirectionalSourceComponent", "SetWindType");
-
-	Params::WindDirectionalSourceComponent_SetWindType Parms{};
-
-	Parms.InNewType = InNewType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function Engine.AmbientSound.AdjustVolume
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -41182,298 +40427,6 @@ void AAmbientSound::Stop()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SoundSubmix.AddEnvelopeFollowerDelegate
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TDelegate<void(const TArray<float>& Envelope)>&OnSubmixEnvelopeBP                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void USoundSubmix::AddEnvelopeFollowerDelegate(const class UObject* WorldContextObject, const TDelegate<void(const TArray<float>& Envelope)>& OnSubmixEnvelopeBP)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SoundSubmix", "AddEnvelopeFollowerDelegate");
-
-	Params::SoundSubmix_AddEnvelopeFollowerDelegate Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.OnSubmixEnvelopeBP = OnSubmixEnvelopeBP;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SoundSubmix.AddSpectralAnalysisDelegate
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TArray<struct FSoundSubmixSpectralAnalysisBandSettings>&InBandSettings                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// const TDelegate<void(const TArray<float>& Magnitude)>&OnSubmixSpectralAnalysisBP                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// float                                   UpdateRate                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   DecibelNoiseFloor                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bDoNormalize                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bDoAutoRange                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   AutoRangeAttackTime                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   AutoRangeReleaseTime                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USoundSubmix::AddSpectralAnalysisDelegate(const class UObject* WorldContextObject, const TArray<struct FSoundSubmixSpectralAnalysisBandSettings>& InBandSettings, const TDelegate<void(const TArray<float>& Magnitude)>& OnSubmixSpectralAnalysisBP, float UpdateRate, float DecibelNoiseFloor, bool bDoNormalize, bool bDoAutoRange, float AutoRangeAttackTime, float AutoRangeReleaseTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SoundSubmix", "AddSpectralAnalysisDelegate");
-
-	Params::SoundSubmix_AddSpectralAnalysisDelegate Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.InBandSettings = std::move(InBandSettings);
-	Parms.OnSubmixSpectralAnalysisBP = OnSubmixSpectralAnalysisBP;
-	Parms.UpdateRate = UpdateRate;
-	Parms.DecibelNoiseFloor = DecibelNoiseFloor;
-	Parms.bDoNormalize = bDoNormalize;
-	Parms.bDoAutoRange = bDoAutoRange;
-	Parms.AutoRangeAttackTime = AutoRangeAttackTime;
-	Parms.AutoRangeReleaseTime = AutoRangeReleaseTime;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SoundSubmix.RemoveSpectralAnalysisDelegate
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TDelegate<void(const TArray<float>& Magnitude)>&OnSubmixSpectralAnalysisBP                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void USoundSubmix::RemoveSpectralAnalysisDelegate(const class UObject* WorldContextObject, const TDelegate<void(const TArray<float>& Magnitude)>& OnSubmixSpectralAnalysisBP)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SoundSubmix", "RemoveSpectralAnalysisDelegate");
-
-	Params::SoundSubmix_RemoveSpectralAnalysisDelegate Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.OnSubmixSpectralAnalysisBP = OnSubmixSpectralAnalysisBP;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SoundSubmix.SetSubmixOutputVolume
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InOutputVolume                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USoundSubmix::SetSubmixOutputVolume(const class UObject* WorldContextObject, float InOutputVolume)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SoundSubmix", "SetSubmixOutputVolume");
-
-	Params::SoundSubmix_SetSubmixOutputVolume Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.InOutputVolume = InOutputVolume;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SoundSubmix.StartEnvelopeFollowing
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USoundSubmix::StartEnvelopeFollowing(const class UObject* WorldContextObject)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SoundSubmix", "StartEnvelopeFollowing");
-
-	Params::SoundSubmix_StartEnvelopeFollowing Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SoundSubmix.StartRecordingOutput
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ExpectedDuration                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USoundSubmix::StartRecordingOutput(const class UObject* WorldContextObject, float ExpectedDuration)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SoundSubmix", "StartRecordingOutput");
-
-	Params::SoundSubmix_StartRecordingOutput Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.ExpectedDuration = ExpectedDuration;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SoundSubmix.StartSpectralAnalysis
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EFFTSize                                FFTSize                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EFFTPeakInterpolationMethod             InterpolationMethod                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EFFTWindowType                          WindowType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   HopSize                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EAudioSpectrumType                      SpectrumType                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USoundSubmix::StartSpectralAnalysis(const class UObject* WorldContextObject, EFFTSize FFTSize, EFFTPeakInterpolationMethod InterpolationMethod, EFFTWindowType WindowType, float HopSize, EAudioSpectrumType SpectrumType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SoundSubmix", "StartSpectralAnalysis");
-
-	Params::SoundSubmix_StartSpectralAnalysis Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.FFTSize = FFTSize;
-	Parms.InterpolationMethod = InterpolationMethod;
-	Parms.WindowType = WindowType;
-	Parms.HopSize = HopSize;
-	Parms.SpectrumType = SpectrumType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SoundSubmix.StopEnvelopeFollowing
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USoundSubmix::StopEnvelopeFollowing(const class UObject* WorldContextObject)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SoundSubmix", "StopEnvelopeFollowing");
-
-	Params::SoundSubmix_StopEnvelopeFollowing Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SoundSubmix.StopRecordingOutput
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EAudioRecordingExportType               ExportType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    Name_0                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    Path                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class USoundWave*                       ExistingSoundWaveToOverwrite                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USoundSubmix::StopRecordingOutput(const class UObject* WorldContextObject, EAudioRecordingExportType ExportType, const class FString& Name_0, const class FString& Path, class USoundWave* ExistingSoundWaveToOverwrite)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SoundSubmix", "StopRecordingOutput");
-
-	Params::SoundSubmix_StopRecordingOutput Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.ExportType = ExportType;
-	Parms.Name_0 = std::move(Name_0);
-	Parms.Path = std::move(Path);
-	Parms.ExistingSoundWaveToOverwrite = ExistingSoundWaveToOverwrite;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SoundSubmix.StopSpectralAnalysis
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USoundSubmix::StopSpectralAnalysis(const class UObject* WorldContextObject)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SoundSubmix", "StopSpectralAnalysis");
-
-	Params::SoundSubmix_StopSpectralAnalysis Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -41702,6 +40655,81 @@ float UAnimMontage::GetDefaultBlendOutTime() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function Engine.StereoLayerShapeCylinder.SetHeight
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InHeight                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UStereoLayerShapeCylinder::SetHeight(int32 InHeight)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StereoLayerShapeCylinder", "SetHeight");
+
+	Params::StereoLayerShapeCylinder_SetHeight Parms{};
+
+	Parms.InHeight = InHeight;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.StereoLayerShapeCylinder.SetOverlayArc
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InOverlayArc                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UStereoLayerShapeCylinder::SetOverlayArc(float InOverlayArc)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StereoLayerShapeCylinder", "SetOverlayArc");
+
+	Params::StereoLayerShapeCylinder_SetOverlayArc Parms{};
+
+	Parms.InOverlayArc = InOverlayArc;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.StereoLayerShapeCylinder.SetRadius
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InRadius                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UStereoLayerShapeCylinder::SetRadius(float InRadius)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StereoLayerShapeCylinder", "SetRadius");
+
+	Params::StereoLayerShapeCylinder_SetRadius Parms{};
+
+	Parms.InRadius = InRadius;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -43115,19 +42143,50 @@ class UAsyncActionHandleSaveGame* UAsyncActionHandleSaveGame::AsyncSaveGameToSlo
 }
 
 
-// Function Engine.SpringArmComponent.GetTargetRotation
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Function Engine.StaticMesh.CreateStaticMeshDescription
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FRotator                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// class UObject*                          Outer_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UStaticMeshDescription*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FRotator USpringArmComponent::GetTargetRotation() const
+class UStaticMeshDescription* UStaticMesh::CreateStaticMeshDescription(class UObject* Outer_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SpringArmComponent", "GetTargetRotation");
+		Func = StaticClass()->GetFunction("StaticMesh", "CreateStaticMeshDescription");
 
-	Params::SpringArmComponent_GetTargetRotation Parms{};
+	Params::StaticMesh_CreateStaticMeshDescription Parms{};
+
+	Parms.Outer_0 = Outer_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.StaticMesh.AddMaterial
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// class UMaterialInterface*               Material                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FName UStaticMesh::AddMaterial(class UMaterialInterface* Material)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StaticMesh", "AddMaterial");
+
+	Params::StaticMesh_AddMaterial Parms{};
+
+	Parms.Material = Material;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -43140,19 +42199,124 @@ struct FRotator USpringArmComponent::GetTargetRotation() const
 }
 
 
-// Function Engine.SpringArmComponent.GetUnfixedCameraPosition
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Function Engine.StaticMesh.AddSocket
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UStaticMeshSocket*                Socket                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector USpringArmComponent::GetUnfixedCameraPosition() const
+void UStaticMesh::AddSocket(class UStaticMeshSocket* Socket)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SpringArmComponent", "GetUnfixedCameraPosition");
+		Func = Class->GetFunction("StaticMesh", "AddSocket");
 
-	Params::SpringArmComponent_GetUnfixedCameraPosition Parms{};
+	Params::StaticMesh_AddSocket Parms{};
+
+	Parms.Socket = Socket;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.StaticMesh.BuildFromStaticMeshDescriptions
+// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const TArray<class UStaticMeshDescription*>&StaticMeshDescriptions                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    bBuildSimpleCollision                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UStaticMesh::BuildFromStaticMeshDescriptions(const TArray<class UStaticMeshDescription*>& StaticMeshDescriptions, bool bBuildSimpleCollision)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StaticMesh", "BuildFromStaticMeshDescriptions");
+
+	Params::StaticMesh_BuildFromStaticMeshDescriptions Parms{};
+
+	Parms.StaticMeshDescriptions = std::move(StaticMeshDescriptions);
+	Parms.bBuildSimpleCollision = bBuildSimpleCollision;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.StaticMesh.RemoveSocket
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// class UStaticMeshSocket*                Socket                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UStaticMesh::RemoveSocket(class UStaticMeshSocket* Socket)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StaticMesh", "RemoveSocket");
+
+	Params::StaticMesh_RemoveSocket Parms{};
+
+	Parms.Socket = Socket;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.StaticMesh.SetStaticMaterials
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const TArray<struct FStaticMaterial>&   InStaticMaterials                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UStaticMesh::SetStaticMaterials(const TArray<struct FStaticMaterial>& InStaticMaterials)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StaticMesh", "SetStaticMaterials");
+
+	Params::StaticMesh_SetStaticMaterials Parms{};
+
+	Parms.InStaticMaterials = std::move(InStaticMaterials);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.StaticMesh.FindSocket
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FName                             InSocketName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UStaticMeshSocket*                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UStaticMeshSocket* UStaticMesh::FindSocket(class FName InSocketName) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StaticMesh", "FindSocket");
+
+	Params::StaticMesh_FindSocket Parms{};
+
+	Parms.InSocketName = InSocketName;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -43165,19 +42329,260 @@ struct FVector USpringArmComponent::GetUnfixedCameraPosition() const
 }
 
 
-// Function Engine.SpringArmComponent.IsCollisionFixApplied
+// Function Engine.StaticMesh.GetBoundingBox
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FBox                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FBox UStaticMesh::GetBoundingBox() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StaticMesh", "GetBoundingBox");
+
+	Params::StaticMesh_GetBoundingBox Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.StaticMesh.GetBounds
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FBoxSphereBounds                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FBoxSphereBounds UStaticMesh::GetBounds() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StaticMesh", "GetBounds");
+
+	Params::StaticMesh_GetBounds Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.StaticMesh.GetMaterial
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   MaterialIndex                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMaterialInterface*               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UMaterialInterface* UStaticMesh::GetMaterial(int32 MaterialIndex) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StaticMesh", "GetMaterial");
+
+	Params::StaticMesh_GetMaterial Parms{};
+
+	Parms.MaterialIndex = MaterialIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.StaticMesh.GetMaterialIndex
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FName                             MaterialSlotName                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UStaticMesh::GetMaterialIndex(class FName MaterialSlotName) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StaticMesh", "GetMaterialIndex");
+
+	Params::StaticMesh_GetMaterialIndex Parms{};
+
+	Parms.MaterialSlotName = MaterialSlotName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.StaticMesh.GetMaterialSlotName
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   MaterialIndex                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FName UStaticMesh::GetMaterialSlotName(int32 MaterialIndex) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StaticMesh", "GetMaterialSlotName");
+
+	Params::StaticMesh_GetMaterialSlotName Parms{};
+
+	Parms.MaterialIndex = MaterialIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.StaticMesh.GetMinimumLODForPlatform
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class FName&                      PlatformName                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UStaticMesh::GetMinimumLODForPlatform(const class FName& PlatformName) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StaticMesh", "GetMinimumLODForPlatform");
+
+	Params::StaticMesh_GetMinimumLODForPlatform Parms{};
+
+	Parms.PlatformName = PlatformName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.StaticMesh.GetMinimumLODForPlatforms
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TMap<class FName, int32>*               PlatformMinimumLODs                                    (Parm, OutParm, NativeAccessSpecifierPublic)
+
+void UStaticMesh::GetMinimumLODForPlatforms(TMap<class FName, int32>* PlatformMinimumLODs) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StaticMesh", "GetMinimumLODForPlatforms");
+
+	Params::StaticMesh_GetMinimumLODForPlatforms Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (PlatformMinimumLODs != nullptr)
+		*PlatformMinimumLODs = std::move(Parms.PlatformMinimumLODs);
+}
+
+
+// Function Engine.StaticMesh.GetNumLODs
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UStaticMesh::GetNumLODs() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StaticMesh", "GetNumLODs");
+
+	Params::StaticMesh_GetNumLODs Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.StaticMesh.GetNumSections
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   InLOD                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UStaticMesh::GetNumSections(int32 InLOD) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StaticMesh", "GetNumSections");
+
+	Params::StaticMesh_GetNumSections Parms{};
+
+	Parms.InLOD = InLOD;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.StaticMesh.GetStaticMaterials
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<struct FStaticMaterial>    ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-bool USpringArmComponent::IsCollisionFixApplied() const
+const TArray<struct FStaticMaterial> UStaticMesh::GetStaticMaterials() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SpringArmComponent", "IsCollisionFixApplied");
+		Func = Class->GetFunction("StaticMesh", "GetStaticMaterials");
 
-	Params::SpringArmComponent_IsCollisionFixApplied Parms{};
+	Params::StaticMesh_GetStaticMaterials Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -43283,6 +42688,88 @@ class UAsyncActionLoadPrimaryAssetList* UAsyncActionLoadPrimaryAssetList::AsyncL
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function Engine.ViewportStatsSubsystem.AddDisplayDelegate
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const TDelegate<void(class FText* OutText, struct FLinearColor* OutColor)>&Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UViewportStatsSubsystem::AddDisplayDelegate(const TDelegate<void(class FText* OutText, struct FLinearColor* OutColor)>& Delegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ViewportStatsSubsystem", "AddDisplayDelegate");
+
+	Params::ViewportStatsSubsystem_AddDisplayDelegate Parms{};
+
+	Parms.Delegate = Delegate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.ViewportStatsSubsystem.AddTimedDisplay
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const class FText&                      Text                                                   (Parm, NativeAccessSpecifierPublic)
+// const struct FLinearColor&              Color                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UViewportStatsSubsystem::AddTimedDisplay(const class FText& Text, const struct FLinearColor& Color, float Duration)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ViewportStatsSubsystem", "AddTimedDisplay");
+
+	Params::ViewportStatsSubsystem_AddTimedDisplay Parms{};
+
+	Parms.Text = std::move(Text);
+	Parms.Color = std::move(Color);
+	Parms.Duration = Duration;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.ViewportStatsSubsystem.RemoveDisplayDelegate
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const int32                             IndexToRemove                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UViewportStatsSubsystem::RemoveDisplayDelegate(const int32 IndexToRemove)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ViewportStatsSubsystem", "RemoveDisplayDelegate");
+
+	Params::ViewportStatsSubsystem_RemoveDisplayDelegate Parms{};
+
+	Parms.IndexToRemove = IndexToRemove;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -43925,194 +43412,6 @@ void UAutoDestroySubsystem::OnActorEndPlay(class AActor* Actor, EEndPlayReason E
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TwitterIntegrationBase.AuthorizeAccounts
-// (Native, Public)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UTwitterIntegrationBase::AuthorizeAccounts()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TwitterIntegrationBase", "AuthorizeAccounts");
-
-	Params::TwitterIntegrationBase_AuthorizeAccounts Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.TwitterIntegrationBase.CanShowTweetUI
-// (Native, Public)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UTwitterIntegrationBase::CanShowTweetUI()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TwitterIntegrationBase", "CanShowTweetUI");
-
-	Params::TwitterIntegrationBase_CanShowTweetUI Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.TwitterIntegrationBase.GetAccountName
-// (Native, Public)
-// Parameters:
-// int32                                   AccountIndex                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class FString UTwitterIntegrationBase::GetAccountName(int32 AccountIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TwitterIntegrationBase", "GetAccountName");
-
-	Params::TwitterIntegrationBase_GetAccountName Parms{};
-
-	Parms.AccountIndex = AccountIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.TwitterIntegrationBase.GetNumAccounts
-// (Native, Public)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UTwitterIntegrationBase::GetNumAccounts()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TwitterIntegrationBase", "GetNumAccounts");
-
-	Params::TwitterIntegrationBase_GetNumAccounts Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.TwitterIntegrationBase.Init
-// (Native, Public)
-
-void UTwitterIntegrationBase::Init()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TwitterIntegrationBase", "Init");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TwitterIntegrationBase.ShowTweetUI
-// (Native, Public)
-// Parameters:
-// const class FString&                    InitialMessage                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    URL                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    Picture                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UTwitterIntegrationBase::ShowTweetUI(const class FString& InitialMessage, const class FString& URL, const class FString& Picture)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TwitterIntegrationBase", "ShowTweetUI");
-
-	Params::TwitterIntegrationBase_ShowTweetUI Parms{};
-
-	Parms.InitialMessage = std::move(InitialMessage);
-	Parms.URL = std::move(URL);
-	Parms.Picture = std::move(Picture);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.TwitterIntegrationBase.TwitterRequest
-// (Native, Public, HasOutParams)
-// Parameters:
-// const class FString&                    URL                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TArray<class FString>&            ParamKeysAndValues                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// ETwitterRequestMethod                   RequestMethod                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   AccountIndex                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UTwitterIntegrationBase::TwitterRequest(const class FString& URL, const TArray<class FString>& ParamKeysAndValues, ETwitterRequestMethod RequestMethod, int32 AccountIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TwitterIntegrationBase", "TwitterRequest");
-
-	Params::TwitterIntegrationBase_TwitterRequest Parms{};
-
-	Parms.URL = std::move(URL);
-	Parms.ParamKeysAndValues = std::move(ParamKeysAndValues);
-	Parms.RequestMethod = RequestMethod;
-	Parms.AccountIndex = AccountIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -67328,72 +66627,15 @@ void UCheatManager::Walk()
 }
 
 
-// Function Engine.SkeletalMeshActor.OnRep_ReplicatedMaterial0
+// Function Engine.WorldSettings.OnRep_WorldGravityZ
 // (Native, Public)
 
-void ASkeletalMeshActor::OnRep_ReplicatedMaterial0()
+void AWorldSettings::OnRep_WorldGravityZ()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMeshActor", "OnRep_ReplicatedMaterial0");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkeletalMeshActor.OnRep_ReplicatedMaterial1
-// (Native, Public)
-
-void ASkeletalMeshActor::OnRep_ReplicatedMaterial1()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMeshActor", "OnRep_ReplicatedMaterial1");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkeletalMeshActor.OnRep_ReplicatedMesh
-// (Native, Public)
-
-void ASkeletalMeshActor::OnRep_ReplicatedMesh()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMeshActor", "OnRep_ReplicatedMesh");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkeletalMeshActor.OnRep_ReplicatedPhysAsset
-// (Native, Public)
-
-void ASkeletalMeshActor::OnRep_ReplicatedPhysAsset()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMeshActor", "OnRep_ReplicatedPhysAsset");
+		Func = Class->GetFunction("WorldSettings", "OnRep_WorldGravityZ");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -68778,6 +68020,194 @@ class AActor* ADebugCameraController::GetSelectedActor() const
 }
 
 
+// Function Engine.TwitterIntegrationBase.AuthorizeAccounts
+// (Native, Public)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UTwitterIntegrationBase::AuthorizeAccounts()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TwitterIntegrationBase", "AuthorizeAccounts");
+
+	Params::TwitterIntegrationBase_AuthorizeAccounts Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.TwitterIntegrationBase.CanShowTweetUI
+// (Native, Public)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UTwitterIntegrationBase::CanShowTweetUI()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TwitterIntegrationBase", "CanShowTweetUI");
+
+	Params::TwitterIntegrationBase_CanShowTweetUI Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.TwitterIntegrationBase.GetAccountName
+// (Native, Public)
+// Parameters:
+// int32                                   AccountIndex                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UTwitterIntegrationBase::GetAccountName(int32 AccountIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TwitterIntegrationBase", "GetAccountName");
+
+	Params::TwitterIntegrationBase_GetAccountName Parms{};
+
+	Parms.AccountIndex = AccountIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.TwitterIntegrationBase.GetNumAccounts
+// (Native, Public)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UTwitterIntegrationBase::GetNumAccounts()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TwitterIntegrationBase", "GetNumAccounts");
+
+	Params::TwitterIntegrationBase_GetNumAccounts Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.TwitterIntegrationBase.Init
+// (Native, Public)
+
+void UTwitterIntegrationBase::Init()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TwitterIntegrationBase", "Init");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TwitterIntegrationBase.ShowTweetUI
+// (Native, Public)
+// Parameters:
+// const class FString&                    InitialMessage                                         (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    URL                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Picture                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UTwitterIntegrationBase::ShowTweetUI(const class FString& InitialMessage, const class FString& URL, const class FString& Picture)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TwitterIntegrationBase", "ShowTweetUI");
+
+	Params::TwitterIntegrationBase_ShowTweetUI Parms{};
+
+	Parms.InitialMessage = std::move(InitialMessage);
+	Parms.URL = std::move(URL);
+	Parms.Picture = std::move(Picture);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.TwitterIntegrationBase.TwitterRequest
+// (Native, Public, HasOutParams)
+// Parameters:
+// const class FString&                    URL                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            ParamKeysAndValues                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// ETwitterRequestMethod                   RequestMethod                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   AccountIndex                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UTwitterIntegrationBase::TwitterRequest(const class FString& URL, const TArray<class FString>& ParamKeysAndValues, ETwitterRequestMethod RequestMethod, int32 AccountIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TwitterIntegrationBase", "TwitterRequest");
+
+	Params::TwitterIntegrationBase_TwitterRequest Parms{};
+
+	Parms.URL = std::move(URL);
+	Parms.ParamKeysAndValues = std::move(ParamKeysAndValues);
+	Parms.RequestMethod = RequestMethod;
+	Parms.AccountIndex = AccountIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Engine.KismetRenderingLibrary.BeginDrawCanvasToRenderTarget
 // (Final, RequiredAPI, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -69775,21 +69205,61 @@ float UDecalComponent::GetFadeStartDelay() const
 }
 
 
-// Function Engine.SceneCapture2D.OnInterpToggle
+// Function Engine.SceneCaptureComponent.ClearHiddenComponents
 // (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bEnable                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ASceneCapture2D::OnInterpToggle(bool bEnable)
+void USceneCaptureComponent::ClearHiddenComponents()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneCapture2D", "OnInterpToggle");
+		Func = Class->GetFunction("SceneCaptureComponent", "ClearHiddenComponents");
 
-	Params::SceneCapture2D_OnInterpToggle Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.bEnable = bEnable;
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SceneCaptureComponent.ClearShowOnlyComponents
+// (Final, Native, Public, BlueprintCallable)
+
+void USceneCaptureComponent::ClearShowOnlyComponents()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneCaptureComponent", "ClearShowOnlyComponents");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SceneCaptureComponent.HideActorComponents
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                           InActor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bIncludeFromChildActors                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USceneCaptureComponent::HideActorComponents(class AActor* InActor, const bool bIncludeFromChildActors)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneCaptureComponent", "HideActorComponents");
+
+	Params::SceneCaptureComponent_HideActorComponents Parms{};
+
+	Parms.InActor = InActor;
+	Parms.bIncludeFromChildActors = bIncludeFromChildActors;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -69800,21 +69270,21 @@ void ASceneCapture2D::OnInterpToggle(bool bEnable)
 }
 
 
-// Function Engine.SBZSparseIrradianceVolumeComponent.SetCharacterIntensityMultiplier
+// Function Engine.SceneCaptureComponent.HideComponent
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   NewMultiplier                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              InComponent                                            (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USBZSparseIrradianceVolumeComponent::SetCharacterIntensityMultiplier(float NewMultiplier)
+void USceneCaptureComponent::HideComponent(class UPrimitiveComponent* InComponent)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SBZSparseIrradianceVolumeComponent", "SetCharacterIntensityMultiplier");
+		Func = Class->GetFunction("SceneCaptureComponent", "HideComponent");
 
-	Params::SBZSparseIrradianceVolumeComponent_SetCharacterIntensityMultiplier Parms{};
+	Params::SceneCaptureComponent_HideComponent Parms{};
 
-	Parms.NewMultiplier = NewMultiplier;
+	Parms.InComponent = InComponent;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -69825,21 +69295,23 @@ void USBZSparseIrradianceVolumeComponent::SetCharacterIntensityMultiplier(float 
 }
 
 
-// Function Engine.SBZSparseIrradianceVolumeComponent.SetEndIntensity
+// Function Engine.SceneCaptureComponent.RemoveShowOnlyActorComponents
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   NewIntensity                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           InActor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bIncludeFromChildActors                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USBZSparseIrradianceVolumeComponent::SetEndIntensity(float NewIntensity)
+void USceneCaptureComponent::RemoveShowOnlyActorComponents(class AActor* InActor, const bool bIncludeFromChildActors)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SBZSparseIrradianceVolumeComponent", "SetEndIntensity");
+		Func = Class->GetFunction("SceneCaptureComponent", "RemoveShowOnlyActorComponents");
 
-	Params::SBZSparseIrradianceVolumeComponent_SetEndIntensity Parms{};
+	Params::SceneCaptureComponent_RemoveShowOnlyActorComponents Parms{};
 
-	Parms.NewIntensity = NewIntensity;
+	Parms.InActor = InActor;
+	Parms.bIncludeFromChildActors = bIncludeFromChildActors;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -69850,21 +69322,21 @@ void USBZSparseIrradianceVolumeComponent::SetEndIntensity(float NewIntensity)
 }
 
 
-// Function Engine.SBZSparseIrradianceVolumeComponent.SetIntensity
+// Function Engine.SceneCaptureComponent.RemoveShowOnlyComponent
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   NewIntensity                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              InComponent                                            (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USBZSparseIrradianceVolumeComponent::SetIntensity(float NewIntensity)
+void USceneCaptureComponent::RemoveShowOnlyComponent(class UPrimitiveComponent* InComponent)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SBZSparseIrradianceVolumeComponent", "SetIntensity");
+		Func = Class->GetFunction("SceneCaptureComponent", "RemoveShowOnlyComponent");
 
-	Params::SBZSparseIrradianceVolumeComponent_SetIntensity Parms{};
+	Params::SceneCaptureComponent_RemoveShowOnlyComponent Parms{};
 
-	Parms.NewIntensity = NewIntensity;
+	Parms.InComponent = InComponent;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -69875,21 +69347,21 @@ void USBZSparseIrradianceVolumeComponent::SetIntensity(float NewIntensity)
 }
 
 
-// Function Engine.SBZSparseIrradianceVolumeComponent.SetSpecularIntensity
+// Function Engine.SceneCaptureComponent.SetCaptureSortPriority
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   NewIntensity                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   NewCaptureSortPriority                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USBZSparseIrradianceVolumeComponent::SetSpecularIntensity(float NewIntensity)
+void USceneCaptureComponent::SetCaptureSortPriority(int32 NewCaptureSortPriority)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SBZSparseIrradianceVolumeComponent", "SetSpecularIntensity");
+		Func = Class->GetFunction("SceneCaptureComponent", "SetCaptureSortPriority");
 
-	Params::SBZSparseIrradianceVolumeComponent_SetSpecularIntensity Parms{};
+	Params::SceneCaptureComponent_SetCaptureSortPriority Parms{};
 
-	Parms.NewIntensity = NewIntensity;
+	Parms.NewCaptureSortPriority = NewCaptureSortPriority;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -69900,19 +69372,161 @@ void USBZSparseIrradianceVolumeComponent::SetSpecularIntensity(float NewIntensit
 }
 
 
-// Function Engine.StereoLayerShapeEquirect.SetEquirectProps
+// Function Engine.SceneCaptureComponent.ShowOnlyActorComponents
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class AActor*                           InActor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bIncludeFromChildActors                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USceneCaptureComponent::ShowOnlyActorComponents(class AActor* InActor, const bool bIncludeFromChildActors)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneCaptureComponent", "ShowOnlyActorComponents");
+
+	Params::SceneCaptureComponent_ShowOnlyActorComponents Parms{};
+
+	Parms.InActor = InActor;
+	Parms.bIncludeFromChildActors = bIncludeFromChildActors;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SceneCaptureComponent.ShowOnlyComponent
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UPrimitiveComponent*              InComponent                                            (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USceneCaptureComponent::ShowOnlyComponent(class UPrimitiveComponent* InComponent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneCaptureComponent", "ShowOnlyComponent");
+
+	Params::SceneCaptureComponent_ShowOnlyComponent Parms{};
+
+	Parms.InComponent = InComponent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SceneCaptureComponent2D.AddOrUpdateBlendable
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TScriptInterface<class IBlendableInterface>InBlendableObject                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
+// float                                   InWeight                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USceneCaptureComponent2D::AddOrUpdateBlendable(TScriptInterface<class IBlendableInterface> InBlendableObject, float InWeight)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneCaptureComponent2D", "AddOrUpdateBlendable");
+
+	Params::SceneCaptureComponent2D_AddOrUpdateBlendable Parms{};
+
+	Parms.InBlendableObject = InBlendableObject;
+	Parms.InWeight = InWeight;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SceneCaptureComponent2D.CaptureScene
+// (Final, Native, Public, BlueprintCallable)
+
+void USceneCaptureComponent2D::CaptureScene()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneCaptureComponent2D", "CaptureScene");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SceneCaptureComponent2D.RemoveBlendable
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TScriptInterface<class IBlendableInterface>InBlendableObject                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
+
+void USceneCaptureComponent2D::RemoveBlendable(TScriptInterface<class IBlendableInterface> InBlendableObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneCaptureComponent2D", "RemoveBlendable");
+
+	Params::SceneCaptureComponent2D_RemoveBlendable Parms{};
+
+	Parms.InBlendableObject = InBlendableObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.StereoLayerComponent.MarkTextureForUpdate
+// (Final, Native, Public, BlueprintCallable)
+
+void UStereoLayerComponent::MarkTextureForUpdate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StereoLayerComponent", "MarkTextureForUpdate");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.StereoLayerComponent.SetEquirectProps
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // const struct FEquirectProps&            InScaleBiases                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UStereoLayerShapeEquirect::SetEquirectProps(const struct FEquirectProps& InScaleBiases)
+void UStereoLayerComponent::SetEquirectProps(const struct FEquirectProps& InScaleBiases)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("StereoLayerShapeEquirect", "SetEquirectProps");
+		Func = Class->GetFunction("StereoLayerComponent", "SetEquirectProps");
 
-	Params::StereoLayerShapeEquirect_SetEquirectProps Parms{};
+	Params::StereoLayerComponent_SetEquirectProps Parms{};
 
 	Parms.InScaleBiases = std::move(InScaleBiases);
 
@@ -69922,6 +69536,256 @@ void UStereoLayerShapeEquirect::SetEquirectProps(const struct FEquirectProps& In
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.StereoLayerComponent.SetLeftTexture
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UTexture*                         InTexture                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UStereoLayerComponent::SetLeftTexture(class UTexture* InTexture)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StereoLayerComponent", "SetLeftTexture");
+
+	Params::StereoLayerComponent_SetLeftTexture Parms{};
+
+	Parms.InTexture = InTexture;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.StereoLayerComponent.SetPriority
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InPriority                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UStereoLayerComponent::SetPriority(int32 InPriority)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StereoLayerComponent", "SetPriority");
+
+	Params::StereoLayerComponent_SetPriority Parms{};
+
+	Parms.InPriority = InPriority;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.StereoLayerComponent.SetQuadSize
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector2D&                 InQuadSize                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UStereoLayerComponent::SetQuadSize(const struct FVector2D& InQuadSize)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StereoLayerComponent", "SetQuadSize");
+
+	Params::StereoLayerComponent_SetQuadSize Parms{};
+
+	Parms.InQuadSize = std::move(InQuadSize);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.StereoLayerComponent.SetTexture
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UTexture*                         InTexture                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UStereoLayerComponent::SetTexture(class UTexture* InTexture)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StereoLayerComponent", "SetTexture");
+
+	Params::StereoLayerComponent_SetTexture Parms{};
+
+	Parms.InTexture = InTexture;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.StereoLayerComponent.SetUVRect
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FBox2D&                    InUVRect                                               (Parm, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
+
+void UStereoLayerComponent::SetUVRect(const struct FBox2D& InUVRect)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StereoLayerComponent", "SetUVRect");
+
+	Params::StereoLayerComponent_SetUVRect Parms{};
+
+	Parms.InUVRect = std::move(InUVRect);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.StereoLayerComponent.GetLeftTexture
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UTexture*                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UTexture* UStereoLayerComponent::GetLeftTexture() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StereoLayerComponent", "GetLeftTexture");
+
+	Params::StereoLayerComponent_GetLeftTexture Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.StereoLayerComponent.GetPriority
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UStereoLayerComponent::GetPriority() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StereoLayerComponent", "GetPriority");
+
+	Params::StereoLayerComponent_GetPriority Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.StereoLayerComponent.GetQuadSize
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D UStereoLayerComponent::GetQuadSize() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StereoLayerComponent", "GetQuadSize");
+
+	Params::StereoLayerComponent_GetQuadSize Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.StereoLayerComponent.GetTexture
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UTexture*                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UTexture* UStereoLayerComponent::GetTexture() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StereoLayerComponent", "GetTexture");
+
+	Params::StereoLayerComponent_GetTexture Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.StereoLayerComponent.GetUVRect
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FBox2D                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FBox2D UStereoLayerComponent::GetUVRect() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StereoLayerComponent", "GetUVRect");
+
+	Params::StereoLayerComponent_GetUVRect Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -70156,102 +70020,6 @@ bool UKismetStringTableLibrary::IsRegisteredTableId(const class FName TableId)
 }
 
 
-// Function Engine.StereoLayerFunctionLibrary.EnableAutoLoadingSplashScreen
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// bool                                    InAutoShowEnabled                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UStereoLayerFunctionLibrary::EnableAutoLoadingSplashScreen(bool InAutoShowEnabled)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("StereoLayerFunctionLibrary", "EnableAutoLoadingSplashScreen");
-
-	Params::StereoLayerFunctionLibrary_EnableAutoLoadingSplashScreen Parms{};
-
-	Parms.InAutoShowEnabled = InAutoShowEnabled;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.StereoLayerFunctionLibrary.HideSplashScreen
-// (Final, Native, Static, Public, BlueprintCallable)
-
-void UStereoLayerFunctionLibrary::HideSplashScreen()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("StereoLayerFunctionLibrary", "HideSplashScreen");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.StereoLayerFunctionLibrary.SetSplashScreen
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class UTexture*                         Texture                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector2D&                 Scale                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   Offset                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bShowLoadingMovie                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bShowOnSet                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UStereoLayerFunctionLibrary::SetSplashScreen(class UTexture* Texture, const struct FVector2D& Scale, const struct FVector& Offset, bool bShowLoadingMovie, bool bShowOnSet)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("StereoLayerFunctionLibrary", "SetSplashScreen");
-
-	Params::StereoLayerFunctionLibrary_SetSplashScreen Parms{};
-
-	Parms.Texture = Texture;
-	Parms.Scale = std::move(Scale);
-	Parms.Offset = std::move(Offset);
-	Parms.bShowLoadingMovie = bShowLoadingMovie;
-	Parms.bShowOnSet = bShowOnSet;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.StereoLayerFunctionLibrary.ShowSplashScreen
-// (Final, Native, Static, Public, BlueprintCallable)
-
-void UStereoLayerFunctionLibrary::ShowSplashScreen()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("StereoLayerFunctionLibrary", "ShowSplashScreen");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function Engine.LocalLightComponent.GetUnitsConversionFactor
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -70334,25 +70102,51 @@ void ULocalLightComponent::SetIntensityUnits(ELightUnits NewIntensityUnits)
 }
 
 
-// Function Engine.SkeletalMeshSocket.InitializeSocketFromLocation
+// Function Engine.SkyAtmosphereComponent.GetAtmosphereTransmitanceOnGroundAtPlanetTop
 // (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// const class USkeletalMeshComponent*     SkelComp                                               (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   WorldLocation                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   WorldNormal                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UDirectionalLightComponent*       DirectionalLight                                       (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FLinearColor                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USkeletalMeshSocket::InitializeSocketFromLocation(const class USkeletalMeshComponent* SkelComp, const struct FVector& WorldLocation, const struct FVector& WorldNormal)
+struct FLinearColor USkyAtmosphereComponent::GetAtmosphereTransmitanceOnGroundAtPlanetTop(class UDirectionalLightComponent* DirectionalLight)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMeshSocket", "InitializeSocketFromLocation");
+		Func = Class->GetFunction("SkyAtmosphereComponent", "GetAtmosphereTransmitanceOnGroundAtPlanetTop");
 
-	Params::SkeletalMeshSocket_InitializeSocketFromLocation Parms{};
+	Params::SkyAtmosphereComponent_GetAtmosphereTransmitanceOnGroundAtPlanetTop Parms{};
 
-	Parms.SkelComp = SkelComp;
-	Parms.WorldLocation = std::move(WorldLocation);
-	Parms.WorldNormal = std::move(WorldNormal);
+	Parms.DirectionalLight = DirectionalLight;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SkyAtmosphereComponent.OverrideAtmosphereLightDirection
+// (Final, RequiredAPI, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// int32                                   AtmosphereLightIndex                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   LightDirection                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyAtmosphereComponent::OverrideAtmosphereLightDirection(int32 AtmosphereLightIndex, const struct FVector& LightDirection)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyAtmosphereComponent", "OverrideAtmosphereLightDirection");
+
+	Params::SkyAtmosphereComponent_OverrideAtmosphereLightDirection Parms{};
+
+	Parms.AtmosphereLightIndex = AtmosphereLightIndex;
+	Parms.LightDirection = std::move(LightDirection);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -70363,22 +70157,21 @@ void USkeletalMeshSocket::InitializeSocketFromLocation(const class USkeletalMesh
 }
 
 
-// Function Engine.SkeletalMeshSocket.GetSocketLocation
-// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Function Engine.SkyAtmosphereComponent.SetAerialPespectiveViewDistanceScale
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
-// const class USkeletalMeshComponent*     SkelComp                                               (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector USkeletalMeshSocket::GetSocketLocation(const class USkeletalMeshComponent* SkelComp) const
+void USkyAtmosphereComponent::SetAerialPespectiveViewDistanceScale(float NewValue)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMeshSocket", "GetSocketLocation");
+		Func = Class->GetFunction("SkyAtmosphereComponent", "SetAerialPespectiveViewDistanceScale");
 
-	Params::SkeletalMeshSocket_GetSocketLocation Parms{};
+	Params::SkyAtmosphereComponent_SetAerialPespectiveViewDistanceScale Parms{};
 
-	Parms.SkelComp = SkelComp;
+	Parms.NewValue = NewValue;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -70386,8 +70179,381 @@ struct FVector USkeletalMeshSocket::GetSocketLocation(const class USkeletalMeshC
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
 
-	return Parms.ReturnValue;
+
+// Function Engine.SkyAtmosphereComponent.SetAtmosphereHeight
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyAtmosphereComponent::SetAtmosphereHeight(float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyAtmosphereComponent", "SetAtmosphereHeight");
+
+	Params::SkyAtmosphereComponent_SetAtmosphereHeight Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyAtmosphereComponent.SetHeightFogContribution
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyAtmosphereComponent::SetHeightFogContribution(float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyAtmosphereComponent", "SetHeightFogContribution");
+
+	Params::SkyAtmosphereComponent_SetHeightFogContribution Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyAtmosphereComponent.SetMieAbsorption
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FLinearColor&              NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyAtmosphereComponent::SetMieAbsorption(const struct FLinearColor& NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyAtmosphereComponent", "SetMieAbsorption");
+
+	Params::SkyAtmosphereComponent_SetMieAbsorption Parms{};
+
+	Parms.NewValue = std::move(NewValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyAtmosphereComponent.SetMieAbsorptionScale
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyAtmosphereComponent::SetMieAbsorptionScale(float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyAtmosphereComponent", "SetMieAbsorptionScale");
+
+	Params::SkyAtmosphereComponent_SetMieAbsorptionScale Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyAtmosphereComponent.SetMieAnisotropy
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyAtmosphereComponent::SetMieAnisotropy(float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyAtmosphereComponent", "SetMieAnisotropy");
+
+	Params::SkyAtmosphereComponent_SetMieAnisotropy Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyAtmosphereComponent.SetMieExponentialDistribution
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyAtmosphereComponent::SetMieExponentialDistribution(float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyAtmosphereComponent", "SetMieExponentialDistribution");
+
+	Params::SkyAtmosphereComponent_SetMieExponentialDistribution Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyAtmosphereComponent.SetMieScattering
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FLinearColor&              NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyAtmosphereComponent::SetMieScattering(const struct FLinearColor& NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyAtmosphereComponent", "SetMieScattering");
+
+	Params::SkyAtmosphereComponent_SetMieScattering Parms{};
+
+	Parms.NewValue = std::move(NewValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyAtmosphereComponent.SetMieScatteringScale
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyAtmosphereComponent::SetMieScatteringScale(float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyAtmosphereComponent", "SetMieScatteringScale");
+
+	Params::SkyAtmosphereComponent_SetMieScatteringScale Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyAtmosphereComponent.SetMultiScatteringFactor
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyAtmosphereComponent::SetMultiScatteringFactor(float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyAtmosphereComponent", "SetMultiScatteringFactor");
+
+	Params::SkyAtmosphereComponent_SetMultiScatteringFactor Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyAtmosphereComponent.SetOtherAbsorption
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FLinearColor&              NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyAtmosphereComponent::SetOtherAbsorption(const struct FLinearColor& NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyAtmosphereComponent", "SetOtherAbsorption");
+
+	Params::SkyAtmosphereComponent_SetOtherAbsorption Parms{};
+
+	Parms.NewValue = std::move(NewValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyAtmosphereComponent.SetOtherAbsorptionScale
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyAtmosphereComponent::SetOtherAbsorptionScale(float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyAtmosphereComponent", "SetOtherAbsorptionScale");
+
+	Params::SkyAtmosphereComponent_SetOtherAbsorptionScale Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyAtmosphereComponent.SetRayleighExponentialDistribution
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyAtmosphereComponent::SetRayleighExponentialDistribution(float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyAtmosphereComponent", "SetRayleighExponentialDistribution");
+
+	Params::SkyAtmosphereComponent_SetRayleighExponentialDistribution Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyAtmosphereComponent.SetRayleighScattering
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FLinearColor&              NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyAtmosphereComponent::SetRayleighScattering(const struct FLinearColor& NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyAtmosphereComponent", "SetRayleighScattering");
+
+	Params::SkyAtmosphereComponent_SetRayleighScattering Parms{};
+
+	Parms.NewValue = std::move(NewValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyAtmosphereComponent.SetRayleighScatteringScale
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyAtmosphereComponent::SetRayleighScatteringScale(float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyAtmosphereComponent", "SetRayleighScatteringScale");
+
+	Params::SkyAtmosphereComponent_SetRayleighScatteringScale Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkyAtmosphereComponent.SetSkyLuminanceFactor
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FLinearColor&              NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkyAtmosphereComponent::SetSkyLuminanceFactor(const struct FLinearColor& NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkyAtmosphereComponent", "SetSkyLuminanceFactor");
+
+	Params::SkyAtmosphereComponent_SetSkyLuminanceFactor Parms{};
+
+	Parms.NewValue = std::move(NewValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -74886,6 +75052,356 @@ void UGameplayStatics::UnRetainAllSoundsInSoundClass(class USoundClass* InSoundC
 }
 
 
+// Function Engine.TextRenderComponent.K2_SetText
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FText&                      Value                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UTextRenderComponent::K2_SetText(const class FText& Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TextRenderComponent", "K2_SetText");
+
+	Params::TextRenderComponent_K2_SetText Parms{};
+
+	Parms.Value = std::move(Value);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TextRenderComponent.SetFont
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UFont*                            Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTextRenderComponent::SetFont(class UFont* Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TextRenderComponent", "SetFont");
+
+	Params::TextRenderComponent_SetFont Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TextRenderComponent.SetHorizontalAlignment
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EHorizTextAligment                      Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTextRenderComponent::SetHorizontalAlignment(EHorizTextAligment Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TextRenderComponent", "SetHorizontalAlignment");
+
+	Params::TextRenderComponent_SetHorizontalAlignment Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TextRenderComponent.SetHorizSpacingAdjust
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTextRenderComponent::SetHorizSpacingAdjust(float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TextRenderComponent", "SetHorizSpacingAdjust");
+
+	Params::TextRenderComponent_SetHorizSpacingAdjust Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TextRenderComponent.SetText
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    Value                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTextRenderComponent::SetText(const class FString& Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TextRenderComponent", "SetText");
+
+	Params::TextRenderComponent_SetText Parms{};
+
+	Parms.Value = std::move(Value);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TextRenderComponent.SetTextMaterial
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UMaterialInterface*               Material                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTextRenderComponent::SetTextMaterial(class UMaterialInterface* Material)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TextRenderComponent", "SetTextMaterial");
+
+	Params::TextRenderComponent_SetTextMaterial Parms{};
+
+	Parms.Material = Material;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TextRenderComponent.SetTextRenderColor
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FColor&                    Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTextRenderComponent::SetTextRenderColor(const struct FColor& Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TextRenderComponent", "SetTextRenderColor");
+
+	Params::TextRenderComponent_SetTextRenderColor Parms{};
+
+	Parms.Value = std::move(Value);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TextRenderComponent.SetVerticalAlignment
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EVerticalTextAligment                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTextRenderComponent::SetVerticalAlignment(EVerticalTextAligment Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TextRenderComponent", "SetVerticalAlignment");
+
+	Params::TextRenderComponent_SetVerticalAlignment Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TextRenderComponent.SetVertSpacingAdjust
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTextRenderComponent::SetVertSpacingAdjust(float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TextRenderComponent", "SetVertSpacingAdjust");
+
+	Params::TextRenderComponent_SetVertSpacingAdjust Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TextRenderComponent.SetWorldSize
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTextRenderComponent::SetWorldSize(float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TextRenderComponent", "SetWorldSize");
+
+	Params::TextRenderComponent_SetWorldSize Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TextRenderComponent.SetXScale
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTextRenderComponent::SetXScale(float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TextRenderComponent", "SetXScale");
+
+	Params::TextRenderComponent_SetXScale Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TextRenderComponent.SetYScale
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTextRenderComponent::SetYScale(float Value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TextRenderComponent", "SetYScale");
+
+	Params::TextRenderComponent_SetYScale Parms{};
+
+	Parms.Value = Value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TextRenderComponent.GetTextLocalSize
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector UTextRenderComponent::GetTextLocalSize() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TextRenderComponent", "GetTextLocalSize");
+
+	Params::TextRenderComponent_GetTextLocalSize Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.TextRenderComponent.GetTextWorldSize
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector UTextRenderComponent::GetTextWorldSize() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TextRenderComponent", "GetTextWorldSize");
+
+	Params::TextRenderComponent_GetTextWorldSize Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Engine.GameUserSettings.GetDefaultResolution
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -76674,6 +77190,786 @@ void UMaterialBillboardComponent::SetElements(const TArray<struct FMaterialSprit
 }
 
 
+// Function Engine.SplineMeshComponent.SetBoundaryMax
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InBoundaryMax                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USplineMeshComponent::SetBoundaryMax(float InBoundaryMax, bool bUpdateMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "SetBoundaryMax");
+
+	Params::SplineMeshComponent_SetBoundaryMax Parms{};
+
+	Parms.InBoundaryMax = InBoundaryMax;
+	Parms.bUpdateMesh = bUpdateMesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SplineMeshComponent.SetBoundaryMin
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InBoundaryMin                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USplineMeshComponent::SetBoundaryMin(float InBoundaryMin, bool bUpdateMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "SetBoundaryMin");
+
+	Params::SplineMeshComponent_SetBoundaryMin Parms{};
+
+	Parms.InBoundaryMin = InBoundaryMin;
+	Parms.bUpdateMesh = bUpdateMesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SplineMeshComponent.SetEndOffset
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector2D&                 EndOffset                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USplineMeshComponent::SetEndOffset(const struct FVector2D& EndOffset, bool bUpdateMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "SetEndOffset");
+
+	Params::SplineMeshComponent_SetEndOffset Parms{};
+
+	Parms.EndOffset = std::move(EndOffset);
+	Parms.bUpdateMesh = bUpdateMesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SplineMeshComponent.SetEndPosition
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   EndPos                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USplineMeshComponent::SetEndPosition(const struct FVector& EndPos, bool bUpdateMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "SetEndPosition");
+
+	Params::SplineMeshComponent_SetEndPosition Parms{};
+
+	Parms.EndPos = std::move(EndPos);
+	Parms.bUpdateMesh = bUpdateMesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SplineMeshComponent.SetEndRoll
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   EndRoll                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USplineMeshComponent::SetEndRoll(float EndRoll, bool bUpdateMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "SetEndRoll");
+
+	Params::SplineMeshComponent_SetEndRoll Parms{};
+
+	Parms.EndRoll = EndRoll;
+	Parms.bUpdateMesh = bUpdateMesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SplineMeshComponent.SetEndScale
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector2D&                 EndScale                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USplineMeshComponent::SetEndScale(const struct FVector2D& EndScale, bool bUpdateMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "SetEndScale");
+
+	Params::SplineMeshComponent_SetEndScale Parms{};
+
+	Parms.EndScale = std::move(EndScale);
+	Parms.bUpdateMesh = bUpdateMesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SplineMeshComponent.SetEndTangent
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   EndTangent                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USplineMeshComponent::SetEndTangent(const struct FVector& EndTangent, bool bUpdateMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "SetEndTangent");
+
+	Params::SplineMeshComponent_SetEndTangent Parms{};
+
+	Parms.EndTangent = std::move(EndTangent);
+	Parms.bUpdateMesh = bUpdateMesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SplineMeshComponent.SetForwardAxis
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// ESplineMeshAxis                         InForwardAxis                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USplineMeshComponent::SetForwardAxis(ESplineMeshAxis InForwardAxis, bool bUpdateMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "SetForwardAxis");
+
+	Params::SplineMeshComponent_SetForwardAxis Parms{};
+
+	Parms.InForwardAxis = InForwardAxis;
+	Parms.bUpdateMesh = bUpdateMesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SplineMeshComponent.SetSplineUpDir
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   InSplineUpDir                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USplineMeshComponent::SetSplineUpDir(const struct FVector& InSplineUpDir, bool bUpdateMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "SetSplineUpDir");
+
+	Params::SplineMeshComponent_SetSplineUpDir Parms{};
+
+	Parms.InSplineUpDir = std::move(InSplineUpDir);
+	Parms.bUpdateMesh = bUpdateMesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SplineMeshComponent.SetStartAndEnd
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   StartPos                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   StartTangent                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   EndPos                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   EndTangent                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USplineMeshComponent::SetStartAndEnd(const struct FVector& StartPos, const struct FVector& StartTangent, const struct FVector& EndPos, const struct FVector& EndTangent, bool bUpdateMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "SetStartAndEnd");
+
+	Params::SplineMeshComponent_SetStartAndEnd Parms{};
+
+	Parms.StartPos = std::move(StartPos);
+	Parms.StartTangent = std::move(StartTangent);
+	Parms.EndPos = std::move(EndPos);
+	Parms.EndTangent = std::move(EndTangent);
+	Parms.bUpdateMesh = bUpdateMesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SplineMeshComponent.SetStartOffset
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector2D&                 StartOffset                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USplineMeshComponent::SetStartOffset(const struct FVector2D& StartOffset, bool bUpdateMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "SetStartOffset");
+
+	Params::SplineMeshComponent_SetStartOffset Parms{};
+
+	Parms.StartOffset = std::move(StartOffset);
+	Parms.bUpdateMesh = bUpdateMesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SplineMeshComponent.SetStartPosition
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   StartPos                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USplineMeshComponent::SetStartPosition(const struct FVector& StartPos, bool bUpdateMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "SetStartPosition");
+
+	Params::SplineMeshComponent_SetStartPosition Parms{};
+
+	Parms.StartPos = std::move(StartPos);
+	Parms.bUpdateMesh = bUpdateMesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SplineMeshComponent.SetStartRoll
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   StartRoll                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USplineMeshComponent::SetStartRoll(float StartRoll, bool bUpdateMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "SetStartRoll");
+
+	Params::SplineMeshComponent_SetStartRoll Parms{};
+
+	Parms.StartRoll = StartRoll;
+	Parms.bUpdateMesh = bUpdateMesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SplineMeshComponent.SetStartScale
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector2D&                 StartScale                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USplineMeshComponent::SetStartScale(const struct FVector2D& StartScale, bool bUpdateMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "SetStartScale");
+
+	Params::SplineMeshComponent_SetStartScale Parms{};
+
+	Parms.StartScale = std::move(StartScale);
+	Parms.bUpdateMesh = bUpdateMesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SplineMeshComponent.SetStartTangent
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector&                   StartTangent                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USplineMeshComponent::SetStartTangent(const struct FVector& StartTangent, bool bUpdateMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "SetStartTangent");
+
+	Params::SplineMeshComponent_SetStartTangent Parms{};
+
+	Parms.StartTangent = std::move(StartTangent);
+	Parms.bUpdateMesh = bUpdateMesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SplineMeshComponent.UpdateMesh
+// (Final, Native, Public, BlueprintCallable)
+
+void USplineMeshComponent::UpdateMesh()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "UpdateMesh");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SplineMeshComponent.GetBoundaryMax
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float USplineMeshComponent::GetBoundaryMax() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "GetBoundaryMax");
+
+	Params::SplineMeshComponent_GetBoundaryMax Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SplineMeshComponent.GetBoundaryMin
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float USplineMeshComponent::GetBoundaryMin() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "GetBoundaryMin");
+
+	Params::SplineMeshComponent_GetBoundaryMin Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SplineMeshComponent.GetEndOffset
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D USplineMeshComponent::GetEndOffset() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "GetEndOffset");
+
+	Params::SplineMeshComponent_GetEndOffset Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SplineMeshComponent.GetEndPosition
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector USplineMeshComponent::GetEndPosition() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "GetEndPosition");
+
+	Params::SplineMeshComponent_GetEndPosition Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SplineMeshComponent.GetEndRoll
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float USplineMeshComponent::GetEndRoll() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "GetEndRoll");
+
+	Params::SplineMeshComponent_GetEndRoll Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SplineMeshComponent.GetEndScale
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D USplineMeshComponent::GetEndScale() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "GetEndScale");
+
+	Params::SplineMeshComponent_GetEndScale Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SplineMeshComponent.GetEndTangent
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector USplineMeshComponent::GetEndTangent() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "GetEndTangent");
+
+	Params::SplineMeshComponent_GetEndTangent Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SplineMeshComponent.GetForwardAxis
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// ESplineMeshAxis                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ESplineMeshAxis USplineMeshComponent::GetForwardAxis() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "GetForwardAxis");
+
+	Params::SplineMeshComponent_GetForwardAxis Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SplineMeshComponent.GetSplineUpDir
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector USplineMeshComponent::GetSplineUpDir() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "GetSplineUpDir");
+
+	Params::SplineMeshComponent_GetSplineUpDir Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SplineMeshComponent.GetStartOffset
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D USplineMeshComponent::GetStartOffset() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "GetStartOffset");
+
+	Params::SplineMeshComponent_GetStartOffset Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SplineMeshComponent.GetStartPosition
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector USplineMeshComponent::GetStartPosition() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "GetStartPosition");
+
+	Params::SplineMeshComponent_GetStartPosition Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SplineMeshComponent.GetStartRoll
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float USplineMeshComponent::GetStartRoll() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "GetStartRoll");
+
+	Params::SplineMeshComponent_GetStartRoll Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SplineMeshComponent.GetStartScale
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D USplineMeshComponent::GetStartScale() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "GetStartScale");
+
+	Params::SplineMeshComponent_GetStartScale Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SplineMeshComponent.GetStartTangent
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector USplineMeshComponent::GetStartTangent() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SplineMeshComponent", "GetStartTangent");
+
+	Params::SplineMeshComponent_GetStartTangent Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Engine.HealthSnapshotBlueprintLibrary.LogPerformanceSnapshot
 // (Final, Exec, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -76734,6 +78030,31 @@ void UHealthSnapshotBlueprintLibrary::StopPerformanceSnapshots()
 	Func->FunctionFlags |= 0x400;
 
 	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.VectorFieldComponent.SetIntensity
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewIntensity                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVectorFieldComponent::SetIntensity(float NewIntensity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VectorFieldComponent", "SetIntensity");
+
+	Params::VectorFieldComponent_SetIntensity Parms{};
+
+	Parms.NewIntensity = NewIntensity;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -77042,292 +78363,6 @@ float UImportanceSamplingLibrary::RandomSobolFloat(int32 Index_0, int32 Dimensio
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SBZPoseableSkeletalMeshComponent.CopyPoseFromSkeletalComponent
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class USkeletalMeshComponent*           InComponentToCopy                                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USBZPoseableSkeletalMeshComponent::CopyPoseFromSkeletalComponent(class USkeletalMeshComponent* InComponentToCopy)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SBZPoseableSkeletalMeshComponent", "CopyPoseFromSkeletalComponent");
-
-	Params::SBZPoseableSkeletalMeshComponent_CopyPoseFromSkeletalComponent Parms{};
-
-	Parms.InComponentToCopy = InComponentToCopy;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SBZPoseableSkeletalMeshComponent.GetBoneLocationByName
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EBoneSpaces                             BoneSpace                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector USBZPoseableSkeletalMeshComponent::GetBoneLocationByName(class FName BoneName, EBoneSpaces BoneSpace)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SBZPoseableSkeletalMeshComponent", "GetBoneLocationByName");
-
-	Params::SBZPoseableSkeletalMeshComponent_GetBoneLocationByName Parms{};
-
-	Parms.BoneName = BoneName;
-	Parms.BoneSpace = BoneSpace;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SBZPoseableSkeletalMeshComponent.GetBoneRotationByName
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EBoneSpaces                             BoneSpace                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FRotator                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FRotator USBZPoseableSkeletalMeshComponent::GetBoneRotationByName(class FName BoneName, EBoneSpaces BoneSpace)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SBZPoseableSkeletalMeshComponent", "GetBoneRotationByName");
-
-	Params::SBZPoseableSkeletalMeshComponent_GetBoneRotationByName Parms{};
-
-	Parms.BoneName = BoneName;
-	Parms.BoneSpace = BoneSpace;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SBZPoseableSkeletalMeshComponent.GetBoneScaleByName
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EBoneSpaces                             BoneSpace                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector USBZPoseableSkeletalMeshComponent::GetBoneScaleByName(class FName BoneName, EBoneSpaces BoneSpace)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SBZPoseableSkeletalMeshComponent", "GetBoneScaleByName");
-
-	Params::SBZPoseableSkeletalMeshComponent_GetBoneScaleByName Parms{};
-
-	Parms.BoneName = BoneName;
-	Parms.BoneSpace = BoneSpace;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SBZPoseableSkeletalMeshComponent.GetBoneTransformByName
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EBoneSpaces                             BoneSpace                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FTransform USBZPoseableSkeletalMeshComponent::GetBoneTransformByName(class FName BoneName, EBoneSpaces BoneSpace)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SBZPoseableSkeletalMeshComponent", "GetBoneTransformByName");
-
-	Params::SBZPoseableSkeletalMeshComponent_GetBoneTransformByName Parms{};
-
-	Parms.BoneName = BoneName;
-	Parms.BoneSpace = BoneSpace;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SBZPoseableSkeletalMeshComponent.ResetBoneTransformByName
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USBZPoseableSkeletalMeshComponent::ResetBoneTransformByName(class FName BoneName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SBZPoseableSkeletalMeshComponent", "ResetBoneTransformByName");
-
-	Params::SBZPoseableSkeletalMeshComponent_ResetBoneTransformByName Parms{};
-
-	Parms.BoneName = BoneName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SBZPoseableSkeletalMeshComponent.SetBoneLocationByName
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   InLocation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EBoneSpaces                             BoneSpace                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USBZPoseableSkeletalMeshComponent::SetBoneLocationByName(class FName BoneName, const struct FVector& InLocation, EBoneSpaces BoneSpace)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SBZPoseableSkeletalMeshComponent", "SetBoneLocationByName");
-
-	Params::SBZPoseableSkeletalMeshComponent_SetBoneLocationByName Parms{};
-
-	Parms.BoneName = BoneName;
-	Parms.InLocation = std::move(InLocation);
-	Parms.BoneSpace = BoneSpace;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SBZPoseableSkeletalMeshComponent.SetBoneRotationByName
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FRotator&                  InRotation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// EBoneSpaces                             BoneSpace                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USBZPoseableSkeletalMeshComponent::SetBoneRotationByName(class FName BoneName, const struct FRotator& InRotation, EBoneSpaces BoneSpace)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SBZPoseableSkeletalMeshComponent", "SetBoneRotationByName");
-
-	Params::SBZPoseableSkeletalMeshComponent_SetBoneRotationByName Parms{};
-
-	Parms.BoneName = BoneName;
-	Parms.InRotation = std::move(InRotation);
-	Parms.BoneSpace = BoneSpace;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SBZPoseableSkeletalMeshComponent.SetBoneScaleByName
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   InScale3D                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EBoneSpaces                             BoneSpace                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USBZPoseableSkeletalMeshComponent::SetBoneScaleByName(class FName BoneName, const struct FVector& InScale3D, EBoneSpaces BoneSpace)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SBZPoseableSkeletalMeshComponent", "SetBoneScaleByName");
-
-	Params::SBZPoseableSkeletalMeshComponent_SetBoneScaleByName Parms{};
-
-	Parms.BoneName = BoneName;
-	Parms.InScale3D = std::move(InScale3D);
-	Parms.BoneSpace = BoneSpace;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SBZPoseableSkeletalMeshComponent.SetBoneTransformByName
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FTransform&                InTransform                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// EBoneSpaces                             BoneSpace                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USBZPoseableSkeletalMeshComponent::SetBoneTransformByName(class FName BoneName, const struct FTransform& InTransform, EBoneSpaces BoneSpace)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SBZPoseableSkeletalMeshComponent", "SetBoneTransformByName");
-
-	Params::SBZPoseableSkeletalMeshComponent_SetBoneTransformByName Parms{};
-
-	Parms.BoneName = BoneName;
-	Parms.InTransform = std::move(InTransform);
-	Parms.BoneSpace = BoneSpace;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -77880,22 +78915,21 @@ void UInputSettings::GetAxisNames(TArray<class FName>* AxisNames) const
 }
 
 
-// Function Engine.VOIPTalker.CreateTalkerForPlayer
+// Function Engine.VOIPStatics.SetMicThreshold
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// class APlayerState*                     OwningState                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UVOIPTalker*                      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InThreshold                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UVOIPTalker* UVOIPTalker::CreateTalkerForPlayer(class APlayerState* OwningState)
+void UVOIPStatics::SetMicThreshold(float InThreshold)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("VOIPTalker", "CreateTalkerForPlayer");
+		Func = StaticClass()->GetFunction("VOIPStatics", "SetMicThreshold");
 
-	Params::VOIPTalker_CreateTalkerForPlayer Parms{};
+	Params::VOIPStatics_SetMicThreshold Parms{};
 
-	Parms.OwningState = OwningState;
+	Parms.InThreshold = InThreshold;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -77903,26 +78937,179 @@ class UVOIPTalker* UVOIPTalker::CreateTalkerForPlayer(class APlayerState* Owning
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkeletalMesh.SetDefaultAnimatingRig
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSoftObjectPtr<class UObject>           InAnimatingRig                                         (Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkeletalMesh::SetDefaultAnimatingRig(TSoftObjectPtr<class UObject> InAnimatingRig)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkeletalMesh", "SetDefaultAnimatingRig");
+
+	Params::SkeletalMesh_SetDefaultAnimatingRig Parms{};
+
+	Parms.InAnimatingRig = InAnimatingRig;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkeletalMesh.SetLODSettings
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class USkeletalMeshLODSettings*         InLODSettings                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USkeletalMesh::SetLODSettings(class USkeletalMeshLODSettings* InLODSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkeletalMesh", "SetLODSettings");
+
+	Params::SkeletalMesh_SetLODSettings Parms{};
+
+	Parms.InLODSettings = InLODSettings;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkeletalMesh.SetMaterials
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const TArray<struct FSkeletalMaterial>& InMaterials                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void USkeletalMesh::SetMaterials(const TArray<struct FSkeletalMaterial>& InMaterials)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkeletalMesh", "SetMaterials");
+
+	Params::SkeletalMesh_SetMaterials Parms{};
+
+	Parms.InMaterials = std::move(InMaterials);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkeletalMesh.SetMeshClothingAssets
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const TArray<class UClothingAssetBase*>&InMeshClothingAssets                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void USkeletalMesh::SetMeshClothingAssets(const TArray<class UClothingAssetBase*>& InMeshClothingAssets)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkeletalMesh", "SetMeshClothingAssets");
+
+	Params::SkeletalMesh_SetMeshClothingAssets Parms{};
+
+	Parms.InMeshClothingAssets = std::move(InMeshClothingAssets);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkeletalMesh.SetMorphTargets
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const TArray<class UMorphTarget*>&      InMorphTargets                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void USkeletalMesh::SetMorphTargets(const TArray<class UMorphTarget*>& InMorphTargets)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkeletalMesh", "SetMorphTargets");
+
+	Params::SkeletalMesh_SetMorphTargets Parms{};
+
+	Parms.InMorphTargets = std::move(InMorphTargets);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SkeletalMesh.FindSocket
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FName                             InSocketName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USkeletalMeshSocket*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class USkeletalMeshSocket* USkeletalMesh::FindSocket(class FName InSocketName) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkeletalMesh", "FindSocket");
+
+	Params::SkeletalMesh_FindSocket Parms{};
+
+	Parms.InSocketName = InSocketName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
 
 
-// Function Engine.VOIPTalker.BPOnTalkingBegin
-// (Native, Event, Protected, BlueprintEvent)
+// Function Engine.SkeletalMesh.FindSocketAndIndex
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class UAudioComponent*                  AudioComponent                                         (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             InSocketName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  OutIndex                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USkeletalMeshSocket*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVOIPTalker::BPOnTalkingBegin(class UAudioComponent* AudioComponent)
+class USkeletalMeshSocket* USkeletalMesh::FindSocketAndIndex(class FName InSocketName, int32* OutIndex) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("VOIPTalker", "BPOnTalkingBegin");
+		Func = Class->GetFunction("SkeletalMesh", "FindSocketAndIndex");
 
-	Params::VOIPTalker_BPOnTalkingBegin Parms{};
+	Params::SkeletalMesh_FindSocketAndIndex Parms{};
 
-	Parms.AudioComponent = AudioComponent;
+	Parms.InSocketName = InSocketName;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -77930,41 +79117,67 @@ void UVOIPTalker::BPOnTalkingBegin(class UAudioComponent* AudioComponent)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	if (OutIndex != nullptr)
+		*OutIndex = Parms.OutIndex;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function Engine.VOIPTalker.BPOnTalkingEnd
-// (Native, Event, Protected, BlueprintEvent)
+// Function Engine.SkeletalMesh.FindSocketInfo
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FName                             InSocketName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FTransform*                      OutTransform                                           (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// int32*                                  OutBoneIndex                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32*                                  OutIndex                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USkeletalMeshSocket*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVOIPTalker::BPOnTalkingEnd()
+class USkeletalMeshSocket* USkeletalMesh::FindSocketInfo(class FName InSocketName, struct FTransform* OutTransform, int32* OutBoneIndex, int32* OutIndex) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("VOIPTalker", "BPOnTalkingEnd");
+		Func = Class->GetFunction("SkeletalMesh", "FindSocketInfo");
+
+	Params::SkeletalMesh_FindSocketInfo Parms{};
+
+	Parms.InSocketName = InSocketName;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	if (OutTransform != nullptr)
+		*OutTransform = std::move(Parms.OutTransform);
+
+	if (OutBoneIndex != nullptr)
+		*OutBoneIndex = Parms.OutBoneIndex;
+
+	if (OutIndex != nullptr)
+		*OutIndex = Parms.OutIndex;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function Engine.VOIPTalker.GetVoiceLevel
-// (Final, Native, Public, BlueprintCallable)
+// Function Engine.SkeletalMesh.GetBounds
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FBoxSphereBounds                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
-float UVOIPTalker::GetVoiceLevel()
+struct FBoxSphereBounds USkeletalMesh::GetBounds() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("VOIPTalker", "GetVoiceLevel");
+		Func = Class->GetFunction("SkeletalMesh", "GetBounds");
 
-	Params::VOIPTalker_GetVoiceLevel Parms{};
+	Params::SkeletalMesh_GetBounds Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -77977,21 +79190,19 @@ float UVOIPTalker::GetVoiceLevel()
 }
 
 
-// Function Engine.VOIPTalker.RegisterWithPlayerState
-// (Final, Native, Public, BlueprintCallable)
+// Function Engine.SkeletalMesh.GetDefaultAnimatingRig
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class APlayerState*                     OwningState                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSoftObjectPtr<class UObject>           ReturnValue                                            (Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVOIPTalker::RegisterWithPlayerState(class APlayerState* OwningState)
+TSoftObjectPtr<class UObject> USkeletalMesh::GetDefaultAnimatingRig() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("VOIPTalker", "RegisterWithPlayerState");
+		Func = Class->GetFunction("SkeletalMesh", "GetDefaultAnimatingRig");
 
-	Params::VOIPTalker_RegisterWithPlayerState Parms{};
-
-	Parms.OwningState = OwningState;
+	Params::SkeletalMesh_GetDefaultAnimatingRig Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -77999,6 +79210,369 @@ void UVOIPTalker::RegisterWithPlayerState(class APlayerState* OwningState)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SkeletalMesh.GetImportedBounds
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FBoxSphereBounds                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FBoxSphereBounds USkeletalMesh::GetImportedBounds() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkeletalMesh", "GetImportedBounds");
+
+	Params::SkeletalMesh_GetImportedBounds Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SkeletalMesh.GetLODSettings
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class USkeletalMeshLODSettings*   ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+const class USkeletalMeshLODSettings* USkeletalMesh::GetLODSettings() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkeletalMesh", "GetLODSettings");
+
+	Params::SkeletalMesh_GetLODSettings Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SkeletalMesh.GetMaterials
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const TArray<struct FSkeletalMaterial>  ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+const TArray<struct FSkeletalMaterial> USkeletalMesh::GetMaterials() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkeletalMesh", "GetMaterials");
+
+	Params::SkeletalMesh_GetMaterials Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SkeletalMesh.GetMeshClothingAssets
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const TArray<class UClothingAssetBase*> ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+const TArray<class UClothingAssetBase*> USkeletalMesh::GetMeshClothingAssets() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkeletalMesh", "GetMeshClothingAssets");
+
+	Params::SkeletalMesh_GetMeshClothingAssets Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SkeletalMesh.GetMorphTargets
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const TArray<class UMorphTarget*>       ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+const TArray<class UMorphTarget*> USkeletalMesh::GetMorphTargets() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkeletalMesh", "GetMorphTargets");
+
+	Params::SkeletalMesh_GetMorphTargets Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SkeletalMesh.GetNodeMappingContainer
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UBlueprint*                       SourceAsset                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UNodeMappingContainer*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UNodeMappingContainer* USkeletalMesh::GetNodeMappingContainer(class UBlueprint* SourceAsset) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkeletalMesh", "GetNodeMappingContainer");
+
+	Params::SkeletalMesh_GetNodeMappingContainer Parms{};
+
+	Parms.SourceAsset = SourceAsset;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SkeletalMesh.GetNodeMappingData
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const TArray<class UNodeMappingContainer*>ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+const TArray<class UNodeMappingContainer*> USkeletalMesh::GetNodeMappingData() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkeletalMesh", "GetNodeMappingData");
+
+	Params::SkeletalMesh_GetNodeMappingData Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SkeletalMesh.GetPhysicsAsset
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UPhysicsAsset*                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UPhysicsAsset* USkeletalMesh::GetPhysicsAsset() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkeletalMesh", "GetPhysicsAsset");
+
+	Params::SkeletalMesh_GetPhysicsAsset Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SkeletalMesh.GetShadowPhysicsAsset
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UPhysicsAsset*                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UPhysicsAsset* USkeletalMesh::GetShadowPhysicsAsset() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkeletalMesh", "GetShadowPhysicsAsset");
+
+	Params::SkeletalMesh_GetShadowPhysicsAsset Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SkeletalMesh.GetSkeleton
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class USkeleton*                  ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+const class USkeleton* USkeletalMesh::GetSkeleton() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkeletalMesh", "GetSkeleton");
+
+	Params::SkeletalMesh_GetSkeleton Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SkeletalMesh.GetSocketByIndex
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USkeletalMeshSocket*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class USkeletalMeshSocket* USkeletalMesh::GetSocketByIndex(int32 Index_0) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkeletalMesh", "GetSocketByIndex");
+
+	Params::SkeletalMesh_GetSocketByIndex Parms{};
+
+	Parms.Index_0 = Index_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SkeletalMesh.IsSectionUsingCloth
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   InSectionIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bCheckCorrespondingSections                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool USkeletalMesh::IsSectionUsingCloth(int32 InSectionIndex, bool bCheckCorrespondingSections) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkeletalMesh", "IsSectionUsingCloth");
+
+	Params::SkeletalMesh_IsSectionUsingCloth Parms{};
+
+	Parms.InSectionIndex = InSectionIndex;
+	Parms.bCheckCorrespondingSections = bCheckCorrespondingSections;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SkeletalMesh.K2_GetAllMorphTargetNames
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FString> USkeletalMesh::K2_GetAllMorphTargetNames() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkeletalMesh", "K2_GetAllMorphTargetNames");
+
+	Params::SkeletalMesh_K2_GetAllMorphTargetNames Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SkeletalMesh.NumSockets
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 USkeletalMesh::NumSockets() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SkeletalMesh", "NumSockets");
+
+	Params::SkeletalMesh_NumSockets Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -79597,6 +81171,154 @@ void UInterpToMovementComponent::StopSimulating(const struct FHitResult& HitResu
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SubsystemBlueprintLibrary.GetEngineSubsystem
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// TSubclassOf<class UEngineSubsystem>     Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UEngineSubsystem*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UEngineSubsystem* USubsystemBlueprintLibrary::GetEngineSubsystem(TSubclassOf<class UEngineSubsystem> Class_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SubsystemBlueprintLibrary", "GetEngineSubsystem");
+
+	Params::SubsystemBlueprintLibrary_GetEngineSubsystem Parms{};
+
+	Parms.Class_0 = Class_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SubsystemBlueprintLibrary.GetGameInstanceSubsystem
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UObject*                          ContextObject                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UGameInstanceSubsystem>Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UGameInstanceSubsystem*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UGameInstanceSubsystem* USubsystemBlueprintLibrary::GetGameInstanceSubsystem(class UObject* ContextObject, TSubclassOf<class UGameInstanceSubsystem> Class_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SubsystemBlueprintLibrary", "GetGameInstanceSubsystem");
+
+	Params::SubsystemBlueprintLibrary_GetGameInstanceSubsystem Parms{};
+
+	Parms.ContextObject = ContextObject;
+	Parms.Class_0 = Class_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SubsystemBlueprintLibrary.GetLocalPlayerSubsystem
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UObject*                          ContextObject                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class ULocalPlayerSubsystem>Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ULocalPlayerSubsystem*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULocalPlayerSubsystem* USubsystemBlueprintLibrary::GetLocalPlayerSubsystem(class UObject* ContextObject, TSubclassOf<class ULocalPlayerSubsystem> Class_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SubsystemBlueprintLibrary", "GetLocalPlayerSubsystem");
+
+	Params::SubsystemBlueprintLibrary_GetLocalPlayerSubsystem Parms{};
+
+	Parms.ContextObject = ContextObject;
+	Parms.Class_0 = Class_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SubsystemBlueprintLibrary.GetLocalPlayerSubSystemFromPlayerController
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class APlayerController*                PlayerController                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class ULocalPlayerSubsystem>Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ULocalPlayerSubsystem*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ULocalPlayerSubsystem* USubsystemBlueprintLibrary::GetLocalPlayerSubSystemFromPlayerController(class APlayerController* PlayerController, TSubclassOf<class ULocalPlayerSubsystem> Class_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SubsystemBlueprintLibrary", "GetLocalPlayerSubSystemFromPlayerController");
+
+	Params::SubsystemBlueprintLibrary_GetLocalPlayerSubSystemFromPlayerController Parms{};
+
+	Parms.PlayerController = PlayerController;
+	Parms.Class_0 = Class_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SubsystemBlueprintLibrary.GetWorldSubsystem
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UObject*                          ContextObject                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UWorldSubsystem>      Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UWorldSubsystem*                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UWorldSubsystem* USubsystemBlueprintLibrary::GetWorldSubsystem(class UObject* ContextObject, TSubclassOf<class UWorldSubsystem> Class_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SubsystemBlueprintLibrary", "GetWorldSubsystem");
+
+	Params::SubsystemBlueprintLibrary_GetWorldSubsystem Parms{};
+
+	Parms.ContextObject = ContextObject;
+	Parms.Class_0 = Class_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -92002,88 +93724,6 @@ void UKismetSystemLibrary::UnregisterForRemoteNotifications()
 }
 
 
-// Function Engine.ViewportStatsSubsystem.AddDisplayDelegate
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const TDelegate<void(class FText* OutText, struct FLinearColor* OutColor)>&Delegate                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UViewportStatsSubsystem::AddDisplayDelegate(const TDelegate<void(class FText* OutText, struct FLinearColor* OutColor)>& Delegate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ViewportStatsSubsystem", "AddDisplayDelegate");
-
-	Params::ViewportStatsSubsystem_AddDisplayDelegate Parms{};
-
-	Parms.Delegate = Delegate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.ViewportStatsSubsystem.AddTimedDisplay
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const class FText&                      Text                                                   (Parm, NativeAccessSpecifierPublic)
-// const struct FLinearColor&              Color                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Duration                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UViewportStatsSubsystem::AddTimedDisplay(const class FText& Text, const struct FLinearColor& Color, float Duration)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ViewportStatsSubsystem", "AddTimedDisplay");
-
-	Params::ViewportStatsSubsystem_AddTimedDisplay Parms{};
-
-	Parms.Text = std::move(Text);
-	Parms.Color = std::move(Color);
-	Parms.Duration = Duration;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.ViewportStatsSubsystem.RemoveDisplayDelegate
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const int32                             IndexToRemove                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UViewportStatsSubsystem::RemoveDisplayDelegate(const int32 IndexToRemove)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ViewportStatsSubsystem", "RemoveDisplayDelegate");
-
-	Params::ViewportStatsSubsystem_RemoveDisplayDelegate Parms{};
-
-	Parms.IndexToRemove = IndexToRemove;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function Engine.MaterialInstanceDynamic.CopyInterpParameters
 // (Final, Native, Public)
 // Parameters:
@@ -92809,651 +94449,15 @@ bool UParticleSystem::ContainsEmitterType(class UClass* TypeData)
 }
 
 
-// Function Engine.SkeletalMesh.SetDefaultAnimatingRig
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSoftObjectPtr<class UObject>           InAnimatingRig                                         (Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Engine.SkeletalMeshActor.OnRep_ReplicatedMaterial0
+// (Native, Public)
 
-void USkeletalMesh::SetDefaultAnimatingRig(TSoftObjectPtr<class UObject> InAnimatingRig)
+void ASkeletalMeshActor::OnRep_ReplicatedMaterial0()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "SetDefaultAnimatingRig");
-
-	Params::SkeletalMesh_SetDefaultAnimatingRig Parms{};
-
-	Parms.InAnimatingRig = InAnimatingRig;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkeletalMesh.SetLODSettings
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class USkeletalMeshLODSettings*         InLODSettings                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkeletalMesh::SetLODSettings(class USkeletalMeshLODSettings* InLODSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "SetLODSettings");
-
-	Params::SkeletalMesh_SetLODSettings Parms{};
-
-	Parms.InLODSettings = InLODSettings;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkeletalMesh.SetMaterials
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const TArray<struct FSkeletalMaterial>& InMaterials                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void USkeletalMesh::SetMaterials(const TArray<struct FSkeletalMaterial>& InMaterials)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "SetMaterials");
-
-	Params::SkeletalMesh_SetMaterials Parms{};
-
-	Parms.InMaterials = std::move(InMaterials);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkeletalMesh.SetMeshClothingAssets
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const TArray<class UClothingAssetBase*>&InMeshClothingAssets                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void USkeletalMesh::SetMeshClothingAssets(const TArray<class UClothingAssetBase*>& InMeshClothingAssets)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "SetMeshClothingAssets");
-
-	Params::SkeletalMesh_SetMeshClothingAssets Parms{};
-
-	Parms.InMeshClothingAssets = std::move(InMeshClothingAssets);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkeletalMesh.SetMorphTargets
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const TArray<class UMorphTarget*>&      InMorphTargets                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-
-void USkeletalMesh::SetMorphTargets(const TArray<class UMorphTarget*>& InMorphTargets)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "SetMorphTargets");
-
-	Params::SkeletalMesh_SetMorphTargets Parms{};
-
-	Parms.InMorphTargets = std::move(InMorphTargets);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkeletalMesh.FindSocket
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FName                             InSocketName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class USkeletalMeshSocket*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class USkeletalMeshSocket* USkeletalMesh::FindSocket(class FName InSocketName) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "FindSocket");
-
-	Params::SkeletalMesh_FindSocket Parms{};
-
-	Parms.InSocketName = InSocketName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SkeletalMesh.FindSocketAndIndex
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FName                             InSocketName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32*                                  OutIndex                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class USkeletalMeshSocket*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class USkeletalMeshSocket* USkeletalMesh::FindSocketAndIndex(class FName InSocketName, int32* OutIndex) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "FindSocketAndIndex");
-
-	Params::SkeletalMesh_FindSocketAndIndex Parms{};
-
-	Parms.InSocketName = InSocketName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutIndex != nullptr)
-		*OutIndex = Parms.OutIndex;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SkeletalMesh.FindSocketInfo
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FName                             InSocketName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform*                      OutTransform                                           (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// int32*                                  OutBoneIndex                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32*                                  OutIndex                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class USkeletalMeshSocket*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class USkeletalMeshSocket* USkeletalMesh::FindSocketInfo(class FName InSocketName, struct FTransform* OutTransform, int32* OutBoneIndex, int32* OutIndex) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "FindSocketInfo");
-
-	Params::SkeletalMesh_FindSocketInfo Parms{};
-
-	Parms.InSocketName = InSocketName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutTransform != nullptr)
-		*OutTransform = std::move(Parms.OutTransform);
-
-	if (OutBoneIndex != nullptr)
-		*OutBoneIndex = Parms.OutBoneIndex;
-
-	if (OutIndex != nullptr)
-		*OutIndex = Parms.OutIndex;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SkeletalMesh.GetBounds
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FBoxSphereBounds                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FBoxSphereBounds USkeletalMesh::GetBounds() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "GetBounds");
-
-	Params::SkeletalMesh_GetBounds Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SkeletalMesh.GetDefaultAnimatingRig
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TSoftObjectPtr<class UObject>           ReturnValue                                            (Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TSoftObjectPtr<class UObject> USkeletalMesh::GetDefaultAnimatingRig() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "GetDefaultAnimatingRig");
-
-	Params::SkeletalMesh_GetDefaultAnimatingRig Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SkeletalMesh.GetImportedBounds
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FBoxSphereBounds                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FBoxSphereBounds USkeletalMesh::GetImportedBounds() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "GetImportedBounds");
-
-	Params::SkeletalMesh_GetImportedBounds Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SkeletalMesh.GetLODSettings
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const class USkeletalMeshLODSettings*   ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-const class USkeletalMeshLODSettings* USkeletalMesh::GetLODSettings() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "GetLODSettings");
-
-	Params::SkeletalMesh_GetLODSettings Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SkeletalMesh.GetMaterials
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const TArray<struct FSkeletalMaterial>  ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-const TArray<struct FSkeletalMaterial> USkeletalMesh::GetMaterials() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "GetMaterials");
-
-	Params::SkeletalMesh_GetMaterials Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SkeletalMesh.GetMeshClothingAssets
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const TArray<class UClothingAssetBase*> ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-const TArray<class UClothingAssetBase*> USkeletalMesh::GetMeshClothingAssets() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "GetMeshClothingAssets");
-
-	Params::SkeletalMesh_GetMeshClothingAssets Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SkeletalMesh.GetMorphTargets
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const TArray<class UMorphTarget*>       ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-const TArray<class UMorphTarget*> USkeletalMesh::GetMorphTargets() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "GetMorphTargets");
-
-	Params::SkeletalMesh_GetMorphTargets Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SkeletalMesh.GetNodeMappingContainer
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UBlueprint*                       SourceAsset                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UNodeMappingContainer*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UNodeMappingContainer* USkeletalMesh::GetNodeMappingContainer(class UBlueprint* SourceAsset) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "GetNodeMappingContainer");
-
-	Params::SkeletalMesh_GetNodeMappingContainer Parms{};
-
-	Parms.SourceAsset = SourceAsset;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SkeletalMesh.GetNodeMappingData
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const TArray<class UNodeMappingContainer*>ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-const TArray<class UNodeMappingContainer*> USkeletalMesh::GetNodeMappingData() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "GetNodeMappingData");
-
-	Params::SkeletalMesh_GetNodeMappingData Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SkeletalMesh.GetPhysicsAsset
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UPhysicsAsset*                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UPhysicsAsset* USkeletalMesh::GetPhysicsAsset() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "GetPhysicsAsset");
-
-	Params::SkeletalMesh_GetPhysicsAsset Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SkeletalMesh.GetShadowPhysicsAsset
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UPhysicsAsset*                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UPhysicsAsset* USkeletalMesh::GetShadowPhysicsAsset() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "GetShadowPhysicsAsset");
-
-	Params::SkeletalMesh_GetShadowPhysicsAsset Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SkeletalMesh.GetSkeleton
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const class USkeleton*                  ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-const class USkeleton* USkeletalMesh::GetSkeleton() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "GetSkeleton");
-
-	Params::SkeletalMesh_GetSkeleton Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SkeletalMesh.GetSocketByIndex
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class USkeletalMeshSocket*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class USkeletalMeshSocket* USkeletalMesh::GetSocketByIndex(int32 Index_0) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "GetSocketByIndex");
-
-	Params::SkeletalMesh_GetSocketByIndex Parms{};
-
-	Parms.Index_0 = Index_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SkeletalMesh.IsSectionUsingCloth
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   InSectionIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bCheckCorrespondingSections                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool USkeletalMesh::IsSectionUsingCloth(int32 InSectionIndex, bool bCheckCorrespondingSections) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "IsSectionUsingCloth");
-
-	Params::SkeletalMesh_IsSectionUsingCloth Parms{};
-
-	Parms.InSectionIndex = InSectionIndex;
-	Parms.bCheckCorrespondingSections = bCheckCorrespondingSections;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SkeletalMesh.K2_GetAllMorphTargetNames
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-
-TArray<class FString> USkeletalMesh::K2_GetAllMorphTargetNames() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "K2_GetAllMorphTargetNames");
-
-	Params::SkeletalMesh_K2_GetAllMorphTargetNames Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SkeletalMesh.NumSockets
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 USkeletalMesh::NumSockets() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkeletalMesh", "NumSockets");
-
-	Params::SkeletalMesh_NumSockets Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SkyLightComponent.RecaptureSky
-// (Final, Native, Public, BlueprintCallable)
-
-void USkyLightComponent::RecaptureSky()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyLightComponent", "RecaptureSky");
+		Func = Class->GetFunction("SkeletalMeshActor", "OnRep_ReplicatedMaterial0");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93464,294 +94468,15 @@ void USkyLightComponent::RecaptureSky()
 }
 
 
-// Function Engine.SkyLightComponent.SetCubemap
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UTextureCube*                     NewCubemap                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Engine.SkeletalMeshActor.OnRep_ReplicatedMaterial1
+// (Native, Public)
 
-void USkyLightComponent::SetCubemap(class UTextureCube* NewCubemap)
+void ASkeletalMeshActor::OnRep_ReplicatedMaterial1()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SkyLightComponent", "SetCubemap");
-
-	Params::SkyLightComponent_SetCubemap Parms{};
-
-	Parms.NewCubemap = NewCubemap;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyLightComponent.SetCubemapBlend
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UTextureCube*                     SourceCubemap                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UTextureCube*                     DestinationCubemap                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InBlendFraction                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyLightComponent::SetCubemapBlend(class UTextureCube* SourceCubemap, class UTextureCube* DestinationCubemap, float InBlendFraction)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyLightComponent", "SetCubemapBlend");
-
-	Params::SkyLightComponent_SetCubemapBlend Parms{};
-
-	Parms.SourceCubemap = SourceCubemap;
-	Parms.DestinationCubemap = DestinationCubemap;
-	Parms.InBlendFraction = InBlendFraction;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyLightComponent.SetIndirectLightingIntensity
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewIntensity                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyLightComponent::SetIndirectLightingIntensity(float NewIntensity)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyLightComponent", "SetIndirectLightingIntensity");
-
-	Params::SkyLightComponent_SetIndirectLightingIntensity Parms{};
-
-	Parms.NewIntensity = NewIntensity;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyLightComponent.SetIntensity
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewIntensity                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyLightComponent::SetIntensity(float NewIntensity)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyLightComponent", "SetIntensity");
-
-	Params::SkyLightComponent_SetIntensity Parms{};
-
-	Parms.NewIntensity = NewIntensity;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyLightComponent.SetLightColor
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FLinearColor&              NewLightColor                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyLightComponent::SetLightColor(const struct FLinearColor& NewLightColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyLightComponent", "SetLightColor");
-
-	Params::SkyLightComponent_SetLightColor Parms{};
-
-	Parms.NewLightColor = std::move(NewLightColor);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyLightComponent.SetLowerHemisphereColor
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FLinearColor&              InLowerHemisphereColor                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyLightComponent::SetLowerHemisphereColor(const struct FLinearColor& InLowerHemisphereColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyLightComponent", "SetLowerHemisphereColor");
-
-	Params::SkyLightComponent_SetLowerHemisphereColor Parms{};
-
-	Parms.InLowerHemisphereColor = std::move(InLowerHemisphereColor);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyLightComponent.SetMinOcclusion
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InMinOcclusion                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyLightComponent::SetMinOcclusion(float InMinOcclusion)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyLightComponent", "SetMinOcclusion");
-
-	Params::SkyLightComponent_SetMinOcclusion Parms{};
-
-	Parms.InMinOcclusion = InMinOcclusion;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyLightComponent.SetOcclusionContrast
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InOcclusionContrast                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyLightComponent::SetOcclusionContrast(float InOcclusionContrast)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyLightComponent", "SetOcclusionContrast");
-
-	Params::SkyLightComponent_SetOcclusionContrast Parms{};
-
-	Parms.InOcclusionContrast = InOcclusionContrast;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyLightComponent.SetOcclusionExponent
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InOcclusionExponent                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyLightComponent::SetOcclusionExponent(float InOcclusionExponent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyLightComponent", "SetOcclusionExponent");
-
-	Params::SkyLightComponent_SetOcclusionExponent Parms{};
-
-	Parms.InOcclusionExponent = InOcclusionExponent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyLightComponent.SetOcclusionTint
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FColor&                    InTint                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyLightComponent::SetOcclusionTint(const struct FColor& InTint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyLightComponent", "SetOcclusionTint");
-
-	Params::SkyLightComponent_SetOcclusionTint Parms{};
-
-	Parms.InTint = std::move(InTint);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyLightComponent.SetVolumetricScatteringIntensity
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewIntensity                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyLightComponent::SetVolumetricScatteringIntensity(float NewIntensity)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyLightComponent", "SetVolumetricScatteringIntensity");
-
-	Params::SkyLightComponent_SetVolumetricScatteringIntensity Parms{};
-
-	Parms.NewIntensity = NewIntensity;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SceneCaptureComponent.ClearHiddenComponents
-// (Final, Native, Public, BlueprintCallable)
-
-void USceneCaptureComponent::ClearHiddenComponents()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneCaptureComponent", "ClearHiddenComponents");
+		Func = Class->GetFunction("SkeletalMeshActor", "OnRep_ReplicatedMaterial1");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93762,15 +94487,15 @@ void USceneCaptureComponent::ClearHiddenComponents()
 }
 
 
-// Function Engine.SceneCaptureComponent.ClearShowOnlyComponents
-// (Final, Native, Public, BlueprintCallable)
+// Function Engine.SkeletalMeshActor.OnRep_ReplicatedMesh
+// (Native, Public)
 
-void USceneCaptureComponent::ClearShowOnlyComponents()
+void ASkeletalMeshActor::OnRep_ReplicatedMesh()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneCaptureComponent", "ClearShowOnlyComponents");
+		Func = Class->GetFunction("SkeletalMeshActor", "OnRep_ReplicatedMesh");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93781,223 +94506,15 @@ void USceneCaptureComponent::ClearShowOnlyComponents()
 }
 
 
-// Function Engine.SceneCaptureComponent.HideActorComponents
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class AActor*                           InActor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const bool                              bIncludeFromChildActors                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Engine.SkeletalMeshActor.OnRep_ReplicatedPhysAsset
+// (Native, Public)
 
-void USceneCaptureComponent::HideActorComponents(class AActor* InActor, const bool bIncludeFromChildActors)
+void ASkeletalMeshActor::OnRep_ReplicatedPhysAsset()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneCaptureComponent", "HideActorComponents");
-
-	Params::SceneCaptureComponent_HideActorComponents Parms{};
-
-	Parms.InActor = InActor;
-	Parms.bIncludeFromChildActors = bIncludeFromChildActors;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SceneCaptureComponent.HideComponent
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UPrimitiveComponent*              InComponent                                            (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USceneCaptureComponent::HideComponent(class UPrimitiveComponent* InComponent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneCaptureComponent", "HideComponent");
-
-	Params::SceneCaptureComponent_HideComponent Parms{};
-
-	Parms.InComponent = InComponent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SceneCaptureComponent.RemoveShowOnlyActorComponents
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class AActor*                           InActor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const bool                              bIncludeFromChildActors                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USceneCaptureComponent::RemoveShowOnlyActorComponents(class AActor* InActor, const bool bIncludeFromChildActors)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneCaptureComponent", "RemoveShowOnlyActorComponents");
-
-	Params::SceneCaptureComponent_RemoveShowOnlyActorComponents Parms{};
-
-	Parms.InActor = InActor;
-	Parms.bIncludeFromChildActors = bIncludeFromChildActors;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SceneCaptureComponent.RemoveShowOnlyComponent
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UPrimitiveComponent*              InComponent                                            (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USceneCaptureComponent::RemoveShowOnlyComponent(class UPrimitiveComponent* InComponent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneCaptureComponent", "RemoveShowOnlyComponent");
-
-	Params::SceneCaptureComponent_RemoveShowOnlyComponent Parms{};
-
-	Parms.InComponent = InComponent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SceneCaptureComponent.SetCaptureSortPriority
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   NewCaptureSortPriority                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USceneCaptureComponent::SetCaptureSortPriority(int32 NewCaptureSortPriority)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneCaptureComponent", "SetCaptureSortPriority");
-
-	Params::SceneCaptureComponent_SetCaptureSortPriority Parms{};
-
-	Parms.NewCaptureSortPriority = NewCaptureSortPriority;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SceneCaptureComponent.ShowOnlyActorComponents
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class AActor*                           InActor                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const bool                              bIncludeFromChildActors                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USceneCaptureComponent::ShowOnlyActorComponents(class AActor* InActor, const bool bIncludeFromChildActors)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneCaptureComponent", "ShowOnlyActorComponents");
-
-	Params::SceneCaptureComponent_ShowOnlyActorComponents Parms{};
-
-	Parms.InActor = InActor;
-	Parms.bIncludeFromChildActors = bIncludeFromChildActors;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SceneCaptureComponent.ShowOnlyComponent
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UPrimitiveComponent*              InComponent                                            (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USceneCaptureComponent::ShowOnlyComponent(class UPrimitiveComponent* InComponent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneCaptureComponent", "ShowOnlyComponent");
-
-	Params::SceneCaptureComponent_ShowOnlyComponent Parms{};
-
-	Parms.InComponent = InComponent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SceneCaptureComponent2D.AddOrUpdateBlendable
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TScriptInterface<class IBlendableInterface>InBlendableObject                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
-// float                                   InWeight                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USceneCaptureComponent2D::AddOrUpdateBlendable(TScriptInterface<class IBlendableInterface> InBlendableObject, float InWeight)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneCaptureComponent2D", "AddOrUpdateBlendable");
-
-	Params::SceneCaptureComponent2D_AddOrUpdateBlendable Parms{};
-
-	Parms.InBlendableObject = InBlendableObject;
-	Parms.InWeight = InWeight;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SceneCaptureComponent2D.CaptureScene
-// (Final, Native, Public, BlueprintCallable)
-
-void USceneCaptureComponent2D::CaptureScene()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneCaptureComponent2D", "CaptureScene");
+		Func = Class->GetFunction("SkeletalMeshActor", "OnRep_ReplicatedPhysAsset");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94008,21 +94525,25 @@ void USceneCaptureComponent2D::CaptureScene()
 }
 
 
-// Function Engine.SceneCaptureComponent2D.RemoveBlendable
-// (Final, Native, Public, BlueprintCallable)
+// Function Engine.SkeletalMeshSocket.InitializeSocketFromLocation
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
-// TScriptInterface<class IBlendableInterface>InBlendableObject                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
+// const class USkeletalMeshComponent*     SkelComp                                               (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   WorldLocation                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   WorldNormal                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USceneCaptureComponent2D::RemoveBlendable(TScriptInterface<class IBlendableInterface> InBlendableObject)
+void USkeletalMeshSocket::InitializeSocketFromLocation(const class USkeletalMeshComponent* SkelComp, const struct FVector& WorldLocation, const struct FVector& WorldNormal)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneCaptureComponent2D", "RemoveBlendable");
+		Func = Class->GetFunction("SkeletalMeshSocket", "InitializeSocketFromLocation");
 
-	Params::SceneCaptureComponent2D_RemoveBlendable Parms{};
+	Params::SkeletalMeshSocket_InitializeSocketFromLocation Parms{};
 
-	Parms.InBlendableObject = InBlendableObject;
+	Parms.SkelComp = SkelComp;
+	Parms.WorldLocation = std::move(WorldLocation);
+	Parms.WorldNormal = std::move(WorldNormal);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94033,319 +94554,22 @@ void USceneCaptureComponent2D::RemoveBlendable(TScriptInterface<class IBlendable
 }
 
 
-// Function Engine.TextRenderComponent.K2_SetText
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Function Engine.SkeletalMeshSocket.GetSocketLocation
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// const class FText&                      Value                                                  (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UTextRenderComponent::K2_SetText(const class FText& Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TextRenderComponent", "K2_SetText");
-
-	Params::TextRenderComponent_K2_SetText Parms{};
-
-	Parms.Value = std::move(Value);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TextRenderComponent.SetFont
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UFont*                            Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTextRenderComponent::SetFont(class UFont* Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TextRenderComponent", "SetFont");
-
-	Params::TextRenderComponent_SetFont Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TextRenderComponent.SetHorizontalAlignment
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EHorizTextAligment                      Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTextRenderComponent::SetHorizontalAlignment(EHorizTextAligment Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TextRenderComponent", "SetHorizontalAlignment");
-
-	Params::TextRenderComponent_SetHorizontalAlignment Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TextRenderComponent.SetHorizSpacingAdjust
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTextRenderComponent::SetHorizSpacingAdjust(float Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TextRenderComponent", "SetHorizSpacingAdjust");
-
-	Params::TextRenderComponent_SetHorizSpacingAdjust Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TextRenderComponent.SetText
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    Value                                                  (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTextRenderComponent::SetText(const class FString& Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TextRenderComponent", "SetText");
-
-	Params::TextRenderComponent_SetText Parms{};
-
-	Parms.Value = std::move(Value);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TextRenderComponent.SetTextMaterial
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UMaterialInterface*               Material                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTextRenderComponent::SetTextMaterial(class UMaterialInterface* Material)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TextRenderComponent", "SetTextMaterial");
-
-	Params::TextRenderComponent_SetTextMaterial Parms{};
-
-	Parms.Material = Material;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TextRenderComponent.SetTextRenderColor
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FColor&                    Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTextRenderComponent::SetTextRenderColor(const struct FColor& Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TextRenderComponent", "SetTextRenderColor");
-
-	Params::TextRenderComponent_SetTextRenderColor Parms{};
-
-	Parms.Value = std::move(Value);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TextRenderComponent.SetVerticalAlignment
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EVerticalTextAligment                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTextRenderComponent::SetVerticalAlignment(EVerticalTextAligment Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TextRenderComponent", "SetVerticalAlignment");
-
-	Params::TextRenderComponent_SetVerticalAlignment Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TextRenderComponent.SetVertSpacingAdjust
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTextRenderComponent::SetVertSpacingAdjust(float Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TextRenderComponent", "SetVertSpacingAdjust");
-
-	Params::TextRenderComponent_SetVertSpacingAdjust Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TextRenderComponent.SetWorldSize
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTextRenderComponent::SetWorldSize(float Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TextRenderComponent", "SetWorldSize");
-
-	Params::TextRenderComponent_SetWorldSize Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TextRenderComponent.SetXScale
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTextRenderComponent::SetXScale(float Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TextRenderComponent", "SetXScale");
-
-	Params::TextRenderComponent_SetXScale Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TextRenderComponent.SetYScale
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTextRenderComponent::SetYScale(float Value)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TextRenderComponent", "SetYScale");
-
-	Params::TextRenderComponent_SetYScale Parms{};
-
-	Parms.Value = Value;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.TextRenderComponent.GetTextLocalSize
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
+// const class USkeletalMeshComponent*     SkelComp                                               (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector UTextRenderComponent::GetTextLocalSize() const
+struct FVector USkeletalMeshSocket::GetSocketLocation(const class USkeletalMeshComponent* SkelComp) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TextRenderComponent", "GetTextLocalSize");
+		Func = Class->GetFunction("SkeletalMeshSocket", "GetSocketLocation");
 
-	Params::TextRenderComponent_GetTextLocalSize Parms{};
+	Params::SkeletalMeshSocket_GetSocketLocation Parms{};
+
+	Parms.SkelComp = SkelComp;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94358,19 +94582,215 @@ struct FVector UTextRenderComponent::GetTextLocalSize() const
 }
 
 
-// Function Engine.TextRenderComponent.GetTextWorldSize
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Function Engine.VisualLoggerKismetLibrary.EnableRecording
+// (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bEnabled                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector UTextRenderComponent::GetTextWorldSize() const
+void UVisualLoggerKismetLibrary::EnableRecording(bool bEnabled)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TextRenderComponent", "GetTextWorldSize");
+		Func = StaticClass()->GetFunction("VisualLoggerKismetLibrary", "EnableRecording");
 
-	Params::TextRenderComponent_GetTextWorldSize Parms{};
+	Params::VisualLoggerKismetLibrary_EnableRecording Parms{};
+
+	Parms.bEnabled = bEnabled;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.VisualLoggerKismetLibrary.LogBox
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FBox&                      BoxShape                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// const class FString&                    Text                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLinearColor&              ObjectColor                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             LogCategory                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bAddToMessageLog                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVisualLoggerKismetLibrary::LogBox(class UObject* WorldContextObject, const struct FBox& BoxShape, const class FString& Text, const struct FLinearColor& ObjectColor, class FName LogCategory, bool bAddToMessageLog)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("VisualLoggerKismetLibrary", "LogBox");
+
+	Params::VisualLoggerKismetLibrary_LogBox Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.BoxShape = std::move(BoxShape);
+	Parms.Text = std::move(Text);
+	Parms.ObjectColor = std::move(ObjectColor);
+	Parms.LogCategory = LogCategory;
+	Parms.bAddToMessageLog = bAddToMessageLog;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.VisualLoggerKismetLibrary.LogLocation
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Text                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLinearColor&              ObjectColor                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Radius                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             LogCategory                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bAddToMessageLog                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVisualLoggerKismetLibrary::LogLocation(class UObject* WorldContextObject, const struct FVector& Location, const class FString& Text, const struct FLinearColor& ObjectColor, float Radius, class FName LogCategory, bool bAddToMessageLog)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("VisualLoggerKismetLibrary", "LogLocation");
+
+	Params::VisualLoggerKismetLibrary_LogLocation Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.Location = std::move(Location);
+	Parms.Text = std::move(Text);
+	Parms.ObjectColor = std::move(ObjectColor);
+	Parms.Radius = Radius;
+	Parms.LogCategory = LogCategory;
+	Parms.bAddToMessageLog = bAddToMessageLog;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.VisualLoggerKismetLibrary.LogSegment
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   SegmentStart                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   SegmentEnd                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Text                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FLinearColor&              ObjectColor                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             Thickness                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             CategoryName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bAddToMessageLog                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVisualLoggerKismetLibrary::LogSegment(class UObject* WorldContextObject, const struct FVector& SegmentStart, const struct FVector& SegmentEnd, const class FString& Text, const struct FLinearColor& ObjectColor, const float Thickness, class FName CategoryName, bool bAddToMessageLog)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("VisualLoggerKismetLibrary", "LogSegment");
+
+	Params::VisualLoggerKismetLibrary_LogSegment Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.SegmentStart = std::move(SegmentStart);
+	Parms.SegmentEnd = std::move(SegmentEnd);
+	Parms.Text = std::move(Text);
+	Parms.ObjectColor = std::move(ObjectColor);
+	Parms.Thickness = Thickness;
+	Parms.CategoryName = CategoryName;
+	Parms.bAddToMessageLog = bAddToMessageLog;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.VisualLoggerKismetLibrary.LogText
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContextObject                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Text                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             LogCategory                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bAddToMessageLog                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVisualLoggerKismetLibrary::LogText(class UObject* WorldContextObject, const class FString& Text, class FName LogCategory, bool bAddToMessageLog)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("VisualLoggerKismetLibrary", "LogText");
+
+	Params::VisualLoggerKismetLibrary_LogText Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.Text = std::move(Text);
+	Parms.LogCategory = LogCategory;
+	Parms.bAddToMessageLog = bAddToMessageLog;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.VisualLoggerKismetLibrary.RedirectVislog
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UObject*                          SourceOwner                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          DestinationOwner                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVisualLoggerKismetLibrary::RedirectVislog(class UObject* SourceOwner, class UObject* DestinationOwner)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("VisualLoggerKismetLibrary", "RedirectVislog");
+
+	Params::VisualLoggerKismetLibrary_RedirectVislog Parms{};
+
+	Parms.SourceOwner = SourceOwner;
+	Parms.DestinationOwner = DestinationOwner;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SBZSparseIrradianceVolumeComponent.SetCharacterIntensityMultiplier
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewMultiplier                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USBZSparseIrradianceVolumeComponent::SetCharacterIntensityMultiplier(float NewMultiplier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SBZSparseIrradianceVolumeComponent", "SetCharacterIntensityMultiplier");
+
+	Params::SBZSparseIrradianceVolumeComponent_SetCharacterIntensityMultiplier Parms{};
+
+	Parms.NewMultiplier = NewMultiplier;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -94378,8 +94798,125 @@ struct FVector UTextRenderComponent::GetTextWorldSize() const
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
 
-	return Parms.ReturnValue;
+
+// Function Engine.SBZSparseIrradianceVolumeComponent.SetEndIntensity
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewIntensity                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USBZSparseIrradianceVolumeComponent::SetEndIntensity(float NewIntensity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SBZSparseIrradianceVolumeComponent", "SetEndIntensity");
+
+	Params::SBZSparseIrradianceVolumeComponent_SetEndIntensity Parms{};
+
+	Parms.NewIntensity = NewIntensity;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SBZSparseIrradianceVolumeComponent.SetIntensity
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewIntensity                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USBZSparseIrradianceVolumeComponent::SetIntensity(float NewIntensity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SBZSparseIrradianceVolumeComponent", "SetIntensity");
+
+	Params::SBZSparseIrradianceVolumeComponent_SetIntensity Parms{};
+
+	Parms.NewIntensity = NewIntensity;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SBZSparseIrradianceVolumeComponent.SetSpecularIntensity
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewIntensity                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USBZSparseIrradianceVolumeComponent::SetSpecularIntensity(float NewIntensity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SBZSparseIrradianceVolumeComponent", "SetSpecularIntensity");
+
+	Params::SBZSparseIrradianceVolumeComponent_SetSpecularIntensity Parms{};
+
+	Parms.NewIntensity = NewIntensity;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SceneCaptureComponentCube.CaptureScene
+// (Final, Native, Public, BlueprintCallable)
+
+void USceneCaptureComponentCube::CaptureScene()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneCaptureComponentCube", "CaptureScene");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.StereoLayerShapeEquirect.SetEquirectProps
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const struct FEquirectProps&            InScaleBiases                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UStereoLayerShapeEquirect::SetEquirectProps(const struct FEquirectProps& InScaleBiases)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("StereoLayerShapeEquirect", "SetEquirectProps");
+
+	Params::StereoLayerShapeEquirect_SetEquirectProps Parms{};
+
+	Parms.InScaleBiases = std::move(InScaleBiases);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -95292,23 +95829,21 @@ struct FTransform UPhysicalAnimationComponent::GetBodyTargetTransform(class FNam
 }
 
 
-// Function Engine.SplineMeshComponent.SetBoundaryMax
+// Function Engine.PointLightComponent.SetLightFalloffExponent
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   InBoundaryMax                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewLightFalloffExponent                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USplineMeshComponent::SetBoundaryMax(float InBoundaryMax, bool bUpdateMesh)
+void UPointLightComponent::SetLightFalloffExponent(float NewLightFalloffExponent)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "SetBoundaryMax");
+		Func = Class->GetFunction("PointLightComponent", "SetLightFalloffExponent");
 
-	Params::SplineMeshComponent_SetBoundaryMax Parms{};
+	Params::PointLightComponent_SetLightFalloffExponent Parms{};
 
-	Parms.InBoundaryMax = InBoundaryMax;
-	Parms.bUpdateMesh = bUpdateMesh;
+	Parms.NewLightFalloffExponent = NewLightFalloffExponent;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -95319,23 +95854,21 @@ void USplineMeshComponent::SetBoundaryMax(float InBoundaryMax, bool bUpdateMesh)
 }
 
 
-// Function Engine.SplineMeshComponent.SetBoundaryMin
+// Function Engine.PointLightComponent.SetSoftSourceRadius
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   InBoundaryMin                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   bNewValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USplineMeshComponent::SetBoundaryMin(float InBoundaryMin, bool bUpdateMesh)
+void UPointLightComponent::SetSoftSourceRadius(float bNewValue)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "SetBoundaryMin");
+		Func = Class->GetFunction("PointLightComponent", "SetSoftSourceRadius");
 
-	Params::SplineMeshComponent_SetBoundaryMin Parms{};
+	Params::PointLightComponent_SetSoftSourceRadius Parms{};
 
-	Parms.InBoundaryMin = InBoundaryMin;
-	Parms.bUpdateMesh = bUpdateMesh;
+	Parms.bNewValue = bNewValue;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -95346,77 +95879,21 @@ void USplineMeshComponent::SetBoundaryMin(float InBoundaryMin, bool bUpdateMesh)
 }
 
 
-// Function Engine.SplineMeshComponent.SetEndOffset
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector2D&                 EndOffset                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USplineMeshComponent::SetEndOffset(const struct FVector2D& EndOffset, bool bUpdateMesh)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "SetEndOffset");
-
-	Params::SplineMeshComponent_SetEndOffset Parms{};
-
-	Parms.EndOffset = std::move(EndOffset);
-	Parms.bUpdateMesh = bUpdateMesh;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SplineMeshComponent.SetEndPosition
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector&                   EndPos                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USplineMeshComponent::SetEndPosition(const struct FVector& EndPos, bool bUpdateMesh)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "SetEndPosition");
-
-	Params::SplineMeshComponent_SetEndPosition Parms{};
-
-	Parms.EndPos = std::move(EndPos);
-	Parms.bUpdateMesh = bUpdateMesh;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SplineMeshComponent.SetEndRoll
+// Function Engine.PointLightComponent.SetSourceLength
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   EndRoll                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USplineMeshComponent::SetEndRoll(float EndRoll, bool bUpdateMesh)
+void UPointLightComponent::SetSourceLength(float NewValue)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "SetEndRoll");
+		Func = Class->GetFunction("PointLightComponent", "SetSourceLength");
 
-	Params::SplineMeshComponent_SetEndRoll Parms{};
+	Params::PointLightComponent_SetSourceLength Parms{};
 
-	Parms.EndRoll = EndRoll;
-	Parms.bUpdateMesh = bUpdateMesh;
+	Parms.NewValue = NewValue;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -95427,77 +95904,21 @@ void USplineMeshComponent::SetEndRoll(float EndRoll, bool bUpdateMesh)
 }
 
 
-// Function Engine.SplineMeshComponent.SetEndScale
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector2D&                 EndScale                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USplineMeshComponent::SetEndScale(const struct FVector2D& EndScale, bool bUpdateMesh)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "SetEndScale");
-
-	Params::SplineMeshComponent_SetEndScale Parms{};
-
-	Parms.EndScale = std::move(EndScale);
-	Parms.bUpdateMesh = bUpdateMesh;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SplineMeshComponent.SetEndTangent
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector&                   EndTangent                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USplineMeshComponent::SetEndTangent(const struct FVector& EndTangent, bool bUpdateMesh)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "SetEndTangent");
-
-	Params::SplineMeshComponent_SetEndTangent Parms{};
-
-	Parms.EndTangent = std::move(EndTangent);
-	Parms.bUpdateMesh = bUpdateMesh;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SplineMeshComponent.SetForwardAxis
+// Function Engine.PointLightComponent.SetSourceRadius
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// ESplineMeshAxis                         InForwardAxis                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   bNewValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USplineMeshComponent::SetForwardAxis(ESplineMeshAxis InForwardAxis, bool bUpdateMesh)
+void UPointLightComponent::SetSourceRadius(float bNewValue)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "SetForwardAxis");
+		Func = Class->GetFunction("PointLightComponent", "SetSourceRadius");
 
-	Params::SplineMeshComponent_SetForwardAxis Parms{};
+	Params::PointLightComponent_SetSourceRadius Parms{};
 
-	Parms.InForwardAxis = InForwardAxis;
-	Parms.bUpdateMesh = bUpdateMesh;
+	Parms.bNewValue = bNewValue;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -95508,137 +95929,21 @@ void USplineMeshComponent::SetForwardAxis(ESplineMeshAxis InForwardAxis, bool bU
 }
 
 
-// Function Engine.SplineMeshComponent.SetSplineUpDir
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector&                   InSplineUpDir                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USplineMeshComponent::SetSplineUpDir(const struct FVector& InSplineUpDir, bool bUpdateMesh)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "SetSplineUpDir");
-
-	Params::SplineMeshComponent_SetSplineUpDir Parms{};
-
-	Parms.InSplineUpDir = std::move(InSplineUpDir);
-	Parms.bUpdateMesh = bUpdateMesh;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SplineMeshComponent.SetStartAndEnd
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector&                   StartPos                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   StartTangent                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   EndPos                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   EndTangent                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USplineMeshComponent::SetStartAndEnd(const struct FVector& StartPos, const struct FVector& StartTangent, const struct FVector& EndPos, const struct FVector& EndTangent, bool bUpdateMesh)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "SetStartAndEnd");
-
-	Params::SplineMeshComponent_SetStartAndEnd Parms{};
-
-	Parms.StartPos = std::move(StartPos);
-	Parms.StartTangent = std::move(StartTangent);
-	Parms.EndPos = std::move(EndPos);
-	Parms.EndTangent = std::move(EndTangent);
-	Parms.bUpdateMesh = bUpdateMesh;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SplineMeshComponent.SetStartOffset
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector2D&                 StartOffset                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USplineMeshComponent::SetStartOffset(const struct FVector2D& StartOffset, bool bUpdateMesh)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "SetStartOffset");
-
-	Params::SplineMeshComponent_SetStartOffset Parms{};
-
-	Parms.StartOffset = std::move(StartOffset);
-	Parms.bUpdateMesh = bUpdateMesh;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SplineMeshComponent.SetStartPosition
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector&                   StartPos                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USplineMeshComponent::SetStartPosition(const struct FVector& StartPos, bool bUpdateMesh)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "SetStartPosition");
-
-	Params::SplineMeshComponent_SetStartPosition Parms{};
-
-	Parms.StartPos = std::move(StartPos);
-	Parms.bUpdateMesh = bUpdateMesh;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SplineMeshComponent.SetStartRoll
+// Function Engine.SpotLightComponent.SetInnerConeAngle
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   StartRoll                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewInnerConeAngle                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USplineMeshComponent::SetStartRoll(float StartRoll, bool bUpdateMesh)
+void USpotLightComponent::SetInnerConeAngle(float NewInnerConeAngle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "SetStartRoll");
+		Func = Class->GetFunction("SpotLightComponent", "SetInnerConeAngle");
 
-	Params::SplineMeshComponent_SetStartRoll Parms{};
+	Params::SpotLightComponent_SetInnerConeAngle Parms{};
 
-	Parms.StartRoll = StartRoll;
-	Parms.bUpdateMesh = bUpdateMesh;
+	Parms.NewInnerConeAngle = NewInnerConeAngle;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -95649,92 +95954,21 @@ void USplineMeshComponent::SetStartRoll(float StartRoll, bool bUpdateMesh)
 }
 
 
-// Function Engine.SplineMeshComponent.SetStartScale
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector2D&                 StartScale                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USplineMeshComponent::SetStartScale(const struct FVector2D& StartScale, bool bUpdateMesh)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "SetStartScale");
-
-	Params::SplineMeshComponent_SetStartScale Parms{};
-
-	Parms.StartScale = std::move(StartScale);
-	Parms.bUpdateMesh = bUpdateMesh;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SplineMeshComponent.SetStartTangent
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector&                   StartTangent                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateMesh                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USplineMeshComponent::SetStartTangent(const struct FVector& StartTangent, bool bUpdateMesh)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "SetStartTangent");
-
-	Params::SplineMeshComponent_SetStartTangent Parms{};
-
-	Parms.StartTangent = std::move(StartTangent);
-	Parms.bUpdateMesh = bUpdateMesh;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SplineMeshComponent.UpdateMesh
+// Function Engine.SpotLightComponent.SetOuterConeAngle
 // (Final, Native, Public, BlueprintCallable)
-
-void USplineMeshComponent::UpdateMesh()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "UpdateMesh");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SplineMeshComponent.GetBoundaryMax
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewOuterConeAngle                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float USplineMeshComponent::GetBoundaryMax() const
+void USpotLightComponent::SetOuterConeAngle(float NewOuterConeAngle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "GetBoundaryMax");
+		Func = Class->GetFunction("SpotLightComponent", "SetOuterConeAngle");
 
-	Params::SplineMeshComponent_GetBoundaryMax Parms{};
+	Params::SpotLightComponent_SetOuterConeAngle Parms{};
+
+	Parms.NewOuterConeAngle = NewOuterConeAngle;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -95742,333 +95976,6 @@ float USplineMeshComponent::GetBoundaryMax() const
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SplineMeshComponent.GetBoundaryMin
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float USplineMeshComponent::GetBoundaryMin() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "GetBoundaryMin");
-
-	Params::SplineMeshComponent_GetBoundaryMin Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SplineMeshComponent.GetEndOffset
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector2D USplineMeshComponent::GetEndOffset() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "GetEndOffset");
-
-	Params::SplineMeshComponent_GetEndOffset Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SplineMeshComponent.GetEndPosition
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector USplineMeshComponent::GetEndPosition() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "GetEndPosition");
-
-	Params::SplineMeshComponent_GetEndPosition Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SplineMeshComponent.GetEndRoll
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float USplineMeshComponent::GetEndRoll() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "GetEndRoll");
-
-	Params::SplineMeshComponent_GetEndRoll Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SplineMeshComponent.GetEndScale
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector2D USplineMeshComponent::GetEndScale() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "GetEndScale");
-
-	Params::SplineMeshComponent_GetEndScale Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SplineMeshComponent.GetEndTangent
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector USplineMeshComponent::GetEndTangent() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "GetEndTangent");
-
-	Params::SplineMeshComponent_GetEndTangent Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SplineMeshComponent.GetForwardAxis
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// ESplineMeshAxis                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ESplineMeshAxis USplineMeshComponent::GetForwardAxis() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "GetForwardAxis");
-
-	Params::SplineMeshComponent_GetForwardAxis Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SplineMeshComponent.GetSplineUpDir
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector USplineMeshComponent::GetSplineUpDir() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "GetSplineUpDir");
-
-	Params::SplineMeshComponent_GetSplineUpDir Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SplineMeshComponent.GetStartOffset
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector2D USplineMeshComponent::GetStartOffset() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "GetStartOffset");
-
-	Params::SplineMeshComponent_GetStartOffset Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SplineMeshComponent.GetStartPosition
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector USplineMeshComponent::GetStartPosition() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "GetStartPosition");
-
-	Params::SplineMeshComponent_GetStartPosition Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SplineMeshComponent.GetStartRoll
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float USplineMeshComponent::GetStartRoll() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "GetStartRoll");
-
-	Params::SplineMeshComponent_GetStartRoll Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SplineMeshComponent.GetStartScale
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector2D USplineMeshComponent::GetStartScale() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "GetStartScale");
-
-	Params::SplineMeshComponent_GetStartScale Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SplineMeshComponent.GetStartTangent
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector USplineMeshComponent::GetStartTangent() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SplineMeshComponent", "GetStartTangent");
-
-	Params::SplineMeshComponent_GetStartTangent Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -96935,6 +96842,555 @@ bool APlayerState::IsOnlyASpectator() const
 }
 
 
+// Function Engine.TimelineComponent.OnRep_Timeline
+// (Final, Native, Public)
+
+void UTimelineComponent::OnRep_Timeline()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "OnRep_Timeline");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TimelineComponent.Play
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+
+void UTimelineComponent::Play()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "Play");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TimelineComponent.PlayFromStart
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+
+void UTimelineComponent::PlayFromStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "PlayFromStart");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TimelineComponent.Reverse
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+
+void UTimelineComponent::Reverse()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "Reverse");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TimelineComponent.ReverseFromEnd
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+
+void UTimelineComponent::ReverseFromEnd()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "ReverseFromEnd");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TimelineComponent.SetFloatCurve
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// class UCurveFloat*                      NewFloatCurve                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             FloatTrackName                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTimelineComponent::SetFloatCurve(class UCurveFloat* NewFloatCurve, class FName FloatTrackName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "SetFloatCurve");
+
+	Params::TimelineComponent_SetFloatCurve Parms{};
+
+	Parms.NewFloatCurve = NewFloatCurve;
+	Parms.FloatTrackName = FloatTrackName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TimelineComponent.SetIgnoreTimeDilation
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewIgnoreTimeDilation                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTimelineComponent::SetIgnoreTimeDilation(bool bNewIgnoreTimeDilation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "SetIgnoreTimeDilation");
+
+	Params::TimelineComponent_SetIgnoreTimeDilation Parms{};
+
+	Parms.bNewIgnoreTimeDilation = bNewIgnoreTimeDilation;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TimelineComponent.SetLinearColorCurve
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// class UCurveLinearColor*                NewLinearColorCurve                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             LinearColorTrackName                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTimelineComponent::SetLinearColorCurve(class UCurveLinearColor* NewLinearColorCurve, class FName LinearColorTrackName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "SetLinearColorCurve");
+
+	Params::TimelineComponent_SetLinearColorCurve Parms{};
+
+	Parms.NewLinearColorCurve = NewLinearColorCurve;
+	Parms.LinearColorTrackName = LinearColorTrackName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TimelineComponent.SetLooping
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewLooping                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTimelineComponent::SetLooping(bool bNewLooping)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "SetLooping");
+
+	Params::TimelineComponent_SetLooping Parms{};
+
+	Parms.bNewLooping = bNewLooping;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TimelineComponent.SetNewTime
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewTime                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTimelineComponent::SetNewTime(float NewTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "SetNewTime");
+
+	Params::TimelineComponent_SetNewTime Parms{};
+
+	Parms.NewTime = NewTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TimelineComponent.SetPlaybackPosition
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewPosition                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFireEvents                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFireUpdate                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTimelineComponent::SetPlaybackPosition(float NewPosition, bool bFireEvents, bool bFireUpdate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "SetPlaybackPosition");
+
+	Params::TimelineComponent_SetPlaybackPosition Parms{};
+
+	Parms.NewPosition = NewPosition;
+	Parms.bFireEvents = bFireEvents;
+	Parms.bFireUpdate = bFireUpdate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TimelineComponent.SetPlayRate
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewRate                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTimelineComponent::SetPlayRate(float NewRate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "SetPlayRate");
+
+	Params::TimelineComponent_SetPlayRate Parms{};
+
+	Parms.NewRate = NewRate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TimelineComponent.SetTimelineLength
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewLength                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTimelineComponent::SetTimelineLength(float NewLength)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "SetTimelineLength");
+
+	Params::TimelineComponent_SetTimelineLength Parms{};
+
+	Parms.NewLength = NewLength;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TimelineComponent.SetTimelineLengthMode
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// ETimelineLengthMode                     NewLengthMode                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTimelineComponent::SetTimelineLengthMode(ETimelineLengthMode NewLengthMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "SetTimelineLengthMode");
+
+	Params::TimelineComponent_SetTimelineLengthMode Parms{};
+
+	Parms.NewLengthMode = NewLengthMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TimelineComponent.SetVectorCurve
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// class UCurveVector*                     NewVectorCurve                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             VectorTrackName                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTimelineComponent::SetVectorCurve(class UCurveVector* NewVectorCurve, class FName VectorTrackName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "SetVectorCurve");
+
+	Params::TimelineComponent_SetVectorCurve Parms{};
+
+	Parms.NewVectorCurve = NewVectorCurve;
+	Parms.VectorTrackName = VectorTrackName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TimelineComponent.Stop
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+
+void UTimelineComponent::Stop()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "Stop");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.TimelineComponent.GetIgnoreTimeDilation
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UTimelineComponent::GetIgnoreTimeDilation() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "GetIgnoreTimeDilation");
+
+	Params::TimelineComponent_GetIgnoreTimeDilation Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.TimelineComponent.GetPlaybackPosition
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UTimelineComponent::GetPlaybackPosition() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "GetPlaybackPosition");
+
+	Params::TimelineComponent_GetPlaybackPosition Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.TimelineComponent.GetPlayRate
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UTimelineComponent::GetPlayRate() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "GetPlayRate");
+
+	Params::TimelineComponent_GetPlayRate Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.TimelineComponent.GetTimelineLength
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UTimelineComponent::GetTimelineLength() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "GetTimelineLength");
+
+	Params::TimelineComponent_GetTimelineLength Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.TimelineComponent.IsLooping
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UTimelineComponent::IsLooping() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "IsLooping");
+
+	Params::TimelineComponent_IsLooping Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.TimelineComponent.IsPlaying
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UTimelineComponent::IsPlaying() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "IsPlaying");
+
+	Params::TimelineComponent_IsPlaying Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.TimelineComponent.IsReversing
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UTimelineComponent::IsReversing() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TimelineComponent", "IsReversing");
+
+	Params::TimelineComponent_IsReversing Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Engine.PointLight.SetLightFalloffExponent
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
@@ -96975,106 +97431,6 @@ void APointLight::SetRadius(float NewRadius)
 	Params::PointLight_SetRadius Parms{};
 
 	Parms.NewRadius = NewRadius;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.PointLightComponent.SetLightFalloffExponent
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewLightFalloffExponent                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPointLightComponent::SetLightFalloffExponent(float NewLightFalloffExponent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PointLightComponent", "SetLightFalloffExponent");
-
-	Params::PointLightComponent_SetLightFalloffExponent Parms{};
-
-	Parms.NewLightFalloffExponent = NewLightFalloffExponent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.PointLightComponent.SetSoftSourceRadius
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   bNewValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPointLightComponent::SetSoftSourceRadius(float bNewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PointLightComponent", "SetSoftSourceRadius");
-
-	Params::PointLightComponent_SetSoftSourceRadius Parms{};
-
-	Parms.bNewValue = bNewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.PointLightComponent.SetSourceLength
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPointLightComponent::SetSourceLength(float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PointLightComponent", "SetSourceLength");
-
-	Params::PointLightComponent_SetSourceLength Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.PointLightComponent.SetSourceRadius
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   bNewValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPointLightComponent::SetSourceRadius(float bNewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PointLightComponent", "SetSourceRadius");
-
-	Params::PointLightComponent_SetSourceRadius Parms{};
-
-	Parms.bNewValue = bNewValue;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -97820,20 +98176,312 @@ int32 URuntimeVirtualTexture::GetTileSize() const
 }
 
 
-// Function Engine.SceneCaptureComponentCube.CaptureScene
+// Function Engine.SBZPoseableSkeletalMeshComponent.CopyPoseFromSkeletalComponent
 // (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class USkeletalMeshComponent*           InComponentToCopy                                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USceneCaptureComponentCube::CaptureScene()
+void USBZPoseableSkeletalMeshComponent::CopyPoseFromSkeletalComponent(class USkeletalMeshComponent* InComponentToCopy)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneCaptureComponentCube", "CaptureScene");
+		Func = Class->GetFunction("SBZPoseableSkeletalMeshComponent", "CopyPoseFromSkeletalComponent");
+
+	Params::SBZPoseableSkeletalMeshComponent_CopyPoseFromSkeletalComponent Parms{};
+
+	Parms.InComponentToCopy = InComponentToCopy;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SBZPoseableSkeletalMeshComponent.GetBoneLocationByName
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EBoneSpaces                             BoneSpace                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector USBZPoseableSkeletalMeshComponent::GetBoneLocationByName(class FName BoneName, EBoneSpaces BoneSpace)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SBZPoseableSkeletalMeshComponent", "GetBoneLocationByName");
+
+	Params::SBZPoseableSkeletalMeshComponent_GetBoneLocationByName Parms{};
+
+	Parms.BoneName = BoneName;
+	Parms.BoneSpace = BoneSpace;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SBZPoseableSkeletalMeshComponent.GetBoneRotationByName
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EBoneSpaces                             BoneSpace                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FRotator                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FRotator USBZPoseableSkeletalMeshComponent::GetBoneRotationByName(class FName BoneName, EBoneSpaces BoneSpace)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SBZPoseableSkeletalMeshComponent", "GetBoneRotationByName");
+
+	Params::SBZPoseableSkeletalMeshComponent_GetBoneRotationByName Parms{};
+
+	Parms.BoneName = BoneName;
+	Parms.BoneSpace = BoneSpace;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SBZPoseableSkeletalMeshComponent.GetBoneScaleByName
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EBoneSpaces                             BoneSpace                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector USBZPoseableSkeletalMeshComponent::GetBoneScaleByName(class FName BoneName, EBoneSpaces BoneSpace)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SBZPoseableSkeletalMeshComponent", "GetBoneScaleByName");
+
+	Params::SBZPoseableSkeletalMeshComponent_GetBoneScaleByName Parms{};
+
+	Parms.BoneName = BoneName;
+	Parms.BoneSpace = BoneSpace;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SBZPoseableSkeletalMeshComponent.GetBoneTransformByName
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EBoneSpaces                             BoneSpace                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FTransform USBZPoseableSkeletalMeshComponent::GetBoneTransformByName(class FName BoneName, EBoneSpaces BoneSpace)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SBZPoseableSkeletalMeshComponent", "GetBoneTransformByName");
+
+	Params::SBZPoseableSkeletalMeshComponent_GetBoneTransformByName Parms{};
+
+	Parms.BoneName = BoneName;
+	Parms.BoneSpace = BoneSpace;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SBZPoseableSkeletalMeshComponent.ResetBoneTransformByName
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USBZPoseableSkeletalMeshComponent::ResetBoneTransformByName(class FName BoneName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SBZPoseableSkeletalMeshComponent", "ResetBoneTransformByName");
+
+	Params::SBZPoseableSkeletalMeshComponent_ResetBoneTransformByName Parms{};
+
+	Parms.BoneName = BoneName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SBZPoseableSkeletalMeshComponent.SetBoneLocationByName
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InLocation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EBoneSpaces                             BoneSpace                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USBZPoseableSkeletalMeshComponent::SetBoneLocationByName(class FName BoneName, const struct FVector& InLocation, EBoneSpaces BoneSpace)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SBZPoseableSkeletalMeshComponent", "SetBoneLocationByName");
+
+	Params::SBZPoseableSkeletalMeshComponent_SetBoneLocationByName Parms{};
+
+	Parms.BoneName = BoneName;
+	Parms.InLocation = std::move(InLocation);
+	Parms.BoneSpace = BoneSpace;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SBZPoseableSkeletalMeshComponent.SetBoneRotationByName
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FRotator&                  InRotation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// EBoneSpaces                             BoneSpace                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USBZPoseableSkeletalMeshComponent::SetBoneRotationByName(class FName BoneName, const struct FRotator& InRotation, EBoneSpaces BoneSpace)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SBZPoseableSkeletalMeshComponent", "SetBoneRotationByName");
+
+	Params::SBZPoseableSkeletalMeshComponent_SetBoneRotationByName Parms{};
+
+	Parms.BoneName = BoneName;
+	Parms.InRotation = std::move(InRotation);
+	Parms.BoneSpace = BoneSpace;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SBZPoseableSkeletalMeshComponent.SetBoneScaleByName
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InScale3D                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EBoneSpaces                             BoneSpace                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USBZPoseableSkeletalMeshComponent::SetBoneScaleByName(class FName BoneName, const struct FVector& InScale3D, EBoneSpaces BoneSpace)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SBZPoseableSkeletalMeshComponent", "SetBoneScaleByName");
+
+	Params::SBZPoseableSkeletalMeshComponent_SetBoneScaleByName Parms{};
+
+	Parms.BoneName = BoneName;
+	Parms.InScale3D = std::move(InScale3D);
+	Parms.BoneSpace = BoneSpace;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SBZPoseableSkeletalMeshComponent.SetBoneTransformByName
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FTransform&                InTransform                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// EBoneSpaces                             BoneSpace                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USBZPoseableSkeletalMeshComponent::SetBoneTransformByName(class FName BoneName, const struct FTransform& InTransform, EBoneSpaces BoneSpace)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SBZPoseableSkeletalMeshComponent", "SetBoneTransformByName");
+
+	Params::SBZPoseableSkeletalMeshComponent_SetBoneTransformByName Parms{};
+
+	Parms.BoneName = BoneName;
+	Parms.InTransform = std::move(InTransform);
+	Parms.BoneSpace = BoneSpace;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.SceneCapture2D.OnInterpToggle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bEnable                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ASceneCapture2D::OnInterpToggle(bool bEnable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneCapture2D", "OnInterpToggle");
+
+	Params::SceneCapture2D_OnInterpToggle Parms{};
+
+	Parms.bEnable = bEnable;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -97864,22 +98512,19 @@ void ASceneCaptureCube::OnInterpToggle(bool bEnable)
 }
 
 
-// Function Engine.SkyAtmosphereComponent.GetAtmosphereTransmitanceOnGroundAtPlanetTop
-// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
+// Function Engine.SpringArmComponent.GetTargetRotation
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// class UDirectionalLightComponent*       DirectionalLight                                       (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FLinearColor                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FRotator                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
-struct FLinearColor USkyAtmosphereComponent::GetAtmosphereTransmitanceOnGroundAtPlanetTop(class UDirectionalLightComponent* DirectionalLight)
+struct FRotator USpringArmComponent::GetTargetRotation() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SkyAtmosphereComponent", "GetAtmosphereTransmitanceOnGroundAtPlanetTop");
+		Func = Class->GetFunction("SpringArmComponent", "GetTargetRotation");
 
-	Params::SkyAtmosphereComponent_GetAtmosphereTransmitanceOnGroundAtPlanetTop Parms{};
-
-	Parms.DirectionalLight = DirectionalLight;
+	Params::SpringArmComponent_GetTargetRotation Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -97892,23 +98537,195 @@ struct FLinearColor USkyAtmosphereComponent::GetAtmosphereTransmitanceOnGroundAt
 }
 
 
-// Function Engine.SkyAtmosphereComponent.OverrideAtmosphereLightDirection
-// (Final, RequiredAPI, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Function Engine.SpringArmComponent.GetUnfixedCameraPosition
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// int32                                   AtmosphereLightIndex                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   LightDirection                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void USkyAtmosphereComponent::OverrideAtmosphereLightDirection(int32 AtmosphereLightIndex, const struct FVector& LightDirection)
+struct FVector USpringArmComponent::GetUnfixedCameraPosition() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SkyAtmosphereComponent", "OverrideAtmosphereLightDirection");
+		Func = Class->GetFunction("SpringArmComponent", "GetUnfixedCameraPosition");
 
-	Params::SkyAtmosphereComponent_OverrideAtmosphereLightDirection Parms{};
+	Params::SpringArmComponent_GetUnfixedCameraPosition Parms{};
 
-	Parms.AtmosphereLightIndex = AtmosphereLightIndex;
-	Parms.LightDirection = std::move(LightDirection);
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.SpringArmComponent.IsCollisionFixApplied
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool USpringArmComponent::IsCollisionFixApplied() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpringArmComponent", "IsCollisionFixApplied");
+
+	Params::SpringArmComponent_IsCollisionFixApplied Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.StereoLayerFunctionLibrary.EnableAutoLoadingSplashScreen
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    InAutoShowEnabled                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UStereoLayerFunctionLibrary::EnableAutoLoadingSplashScreen(bool InAutoShowEnabled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("StereoLayerFunctionLibrary", "EnableAutoLoadingSplashScreen");
+
+	Params::StereoLayerFunctionLibrary_EnableAutoLoadingSplashScreen Parms{};
+
+	Parms.InAutoShowEnabled = InAutoShowEnabled;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.StereoLayerFunctionLibrary.HideSplashScreen
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void UStereoLayerFunctionLibrary::HideSplashScreen()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("StereoLayerFunctionLibrary", "HideSplashScreen");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.StereoLayerFunctionLibrary.SetSplashScreen
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UTexture*                         Texture                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 Scale                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Offset                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bShowLoadingMovie                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bShowOnSet                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UStereoLayerFunctionLibrary::SetSplashScreen(class UTexture* Texture, const struct FVector2D& Scale, const struct FVector& Offset, bool bShowLoadingMovie, bool bShowOnSet)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("StereoLayerFunctionLibrary", "SetSplashScreen");
+
+	Params::StereoLayerFunctionLibrary_SetSplashScreen Parms{};
+
+	Parms.Texture = Texture;
+	Parms.Scale = std::move(Scale);
+	Parms.Offset = std::move(Offset);
+	Parms.bShowLoadingMovie = bShowLoadingMovie;
+	Parms.bShowOnSet = bShowOnSet;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.StereoLayerFunctionLibrary.ShowSplashScreen
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void UStereoLayerFunctionLibrary::ShowSplashScreen()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("StereoLayerFunctionLibrary", "ShowSplashScreen");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.VOIPTalker.CreateTalkerForPlayer
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class APlayerState*                     OwningState                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UVOIPTalker*                      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UVOIPTalker* UVOIPTalker::CreateTalkerForPlayer(class APlayerState* OwningState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("VOIPTalker", "CreateTalkerForPlayer");
+
+	Params::VOIPTalker_CreateTalkerForPlayer Parms{};
+
+	Parms.OwningState = OwningState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.VOIPTalker.BPOnTalkingBegin
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// class UAudioComponent*                  AudioComponent                                         (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVOIPTalker::BPOnTalkingBegin(class UAudioComponent* AudioComponent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VOIPTalker", "BPOnTalkingBegin");
+
+	Params::VOIPTalker_BPOnTalkingBegin Parms{};
+
+	Parms.AudioComponent = AudioComponent;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -97919,540 +98736,15 @@ void USkyAtmosphereComponent::OverrideAtmosphereLightDirection(int32 AtmosphereL
 }
 
 
-// Function Engine.SkyAtmosphereComponent.SetAerialPespectiveViewDistanceScale
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function Engine.VOIPTalker.BPOnTalkingEnd
+// (Native, Event, Protected, BlueprintEvent)
 
-void USkyAtmosphereComponent::SetAerialPespectiveViewDistanceScale(float NewValue)
+void UVOIPTalker::BPOnTalkingEnd()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SkyAtmosphereComponent", "SetAerialPespectiveViewDistanceScale");
-
-	Params::SkyAtmosphereComponent_SetAerialPespectiveViewDistanceScale Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyAtmosphereComponent.SetAtmosphereHeight
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyAtmosphereComponent::SetAtmosphereHeight(float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyAtmosphereComponent", "SetAtmosphereHeight");
-
-	Params::SkyAtmosphereComponent_SetAtmosphereHeight Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyAtmosphereComponent.SetHeightFogContribution
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyAtmosphereComponent::SetHeightFogContribution(float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyAtmosphereComponent", "SetHeightFogContribution");
-
-	Params::SkyAtmosphereComponent_SetHeightFogContribution Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyAtmosphereComponent.SetMieAbsorption
-// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FLinearColor&              NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyAtmosphereComponent::SetMieAbsorption(const struct FLinearColor& NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyAtmosphereComponent", "SetMieAbsorption");
-
-	Params::SkyAtmosphereComponent_SetMieAbsorption Parms{};
-
-	Parms.NewValue = std::move(NewValue);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyAtmosphereComponent.SetMieAbsorptionScale
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyAtmosphereComponent::SetMieAbsorptionScale(float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyAtmosphereComponent", "SetMieAbsorptionScale");
-
-	Params::SkyAtmosphereComponent_SetMieAbsorptionScale Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyAtmosphereComponent.SetMieAnisotropy
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyAtmosphereComponent::SetMieAnisotropy(float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyAtmosphereComponent", "SetMieAnisotropy");
-
-	Params::SkyAtmosphereComponent_SetMieAnisotropy Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyAtmosphereComponent.SetMieExponentialDistribution
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyAtmosphereComponent::SetMieExponentialDistribution(float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyAtmosphereComponent", "SetMieExponentialDistribution");
-
-	Params::SkyAtmosphereComponent_SetMieExponentialDistribution Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyAtmosphereComponent.SetMieScattering
-// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FLinearColor&              NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyAtmosphereComponent::SetMieScattering(const struct FLinearColor& NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyAtmosphereComponent", "SetMieScattering");
-
-	Params::SkyAtmosphereComponent_SetMieScattering Parms{};
-
-	Parms.NewValue = std::move(NewValue);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyAtmosphereComponent.SetMieScatteringScale
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyAtmosphereComponent::SetMieScatteringScale(float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyAtmosphereComponent", "SetMieScatteringScale");
-
-	Params::SkyAtmosphereComponent_SetMieScatteringScale Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyAtmosphereComponent.SetMultiScatteringFactor
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyAtmosphereComponent::SetMultiScatteringFactor(float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyAtmosphereComponent", "SetMultiScatteringFactor");
-
-	Params::SkyAtmosphereComponent_SetMultiScatteringFactor Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyAtmosphereComponent.SetOtherAbsorption
-// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FLinearColor&              NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyAtmosphereComponent::SetOtherAbsorption(const struct FLinearColor& NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyAtmosphereComponent", "SetOtherAbsorption");
-
-	Params::SkyAtmosphereComponent_SetOtherAbsorption Parms{};
-
-	Parms.NewValue = std::move(NewValue);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyAtmosphereComponent.SetOtherAbsorptionScale
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyAtmosphereComponent::SetOtherAbsorptionScale(float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyAtmosphereComponent", "SetOtherAbsorptionScale");
-
-	Params::SkyAtmosphereComponent_SetOtherAbsorptionScale Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyAtmosphereComponent.SetRayleighExponentialDistribution
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyAtmosphereComponent::SetRayleighExponentialDistribution(float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyAtmosphereComponent", "SetRayleighExponentialDistribution");
-
-	Params::SkyAtmosphereComponent_SetRayleighExponentialDistribution Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyAtmosphereComponent.SetRayleighScattering
-// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FLinearColor&              NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyAtmosphereComponent::SetRayleighScattering(const struct FLinearColor& NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyAtmosphereComponent", "SetRayleighScattering");
-
-	Params::SkyAtmosphereComponent_SetRayleighScattering Parms{};
-
-	Parms.NewValue = std::move(NewValue);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyAtmosphereComponent.SetRayleighScatteringScale
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyAtmosphereComponent::SetRayleighScatteringScale(float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyAtmosphereComponent", "SetRayleighScatteringScale");
-
-	Params::SkyAtmosphereComponent_SetRayleighScatteringScale Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SkyAtmosphereComponent.SetSkyLuminanceFactor
-// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FLinearColor&              NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USkyAtmosphereComponent::SetSkyLuminanceFactor(const struct FLinearColor& NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SkyAtmosphereComponent", "SetSkyLuminanceFactor");
-
-	Params::SkyAtmosphereComponent_SetSkyLuminanceFactor Parms{};
-
-	Parms.NewValue = std::move(NewValue);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SpotLightComponent.SetInnerConeAngle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewInnerConeAngle                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USpotLightComponent::SetInnerConeAngle(float NewInnerConeAngle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpotLightComponent", "SetInnerConeAngle");
-
-	Params::SpotLightComponent_SetInnerConeAngle Parms{};
-
-	Parms.NewInnerConeAngle = NewInnerConeAngle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.SpotLightComponent.SetOuterConeAngle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewOuterConeAngle                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USpotLightComponent::SetOuterConeAngle(float NewOuterConeAngle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpotLightComponent", "SetOuterConeAngle");
-
-	Params::SpotLightComponent_SetOuterConeAngle Parms{};
-
-	Parms.NewOuterConeAngle = NewOuterConeAngle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.StereoLayerShapeCylinder.SetHeight
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InHeight                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UStereoLayerShapeCylinder::SetHeight(int32 InHeight)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StereoLayerShapeCylinder", "SetHeight");
-
-	Params::StereoLayerShapeCylinder_SetHeight Parms{};
-
-	Parms.InHeight = InHeight;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.StereoLayerShapeCylinder.SetOverlayArc
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InOverlayArc                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UStereoLayerShapeCylinder::SetOverlayArc(float InOverlayArc)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StereoLayerShapeCylinder", "SetOverlayArc");
-
-	Params::StereoLayerShapeCylinder_SetOverlayArc Parms{};
-
-	Parms.InOverlayArc = InOverlayArc;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.StereoLayerShapeCylinder.SetRadius
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InRadius                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UStereoLayerShapeCylinder::SetRadius(float InRadius)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StereoLayerShapeCylinder", "SetRadius");
-
-	Params::StereoLayerShapeCylinder_SetRadius Parms{};
-
-	Parms.InRadius = InRadius;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.StereoLayerComponent.MarkTextureForUpdate
-// (Final, Native, Public, BlueprintCallable)
-
-void UStereoLayerComponent::MarkTextureForUpdate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StereoLayerComponent", "MarkTextureForUpdate");
+		Func = Class->GetFunction("VOIPTalker", "BPOnTalkingEnd");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -98463,21 +98755,19 @@ void UStereoLayerComponent::MarkTextureForUpdate()
 }
 
 
-// Function Engine.StereoLayerComponent.SetEquirectProps
+// Function Engine.VOIPTalker.GetVoiceLevel
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// const struct FEquirectProps&            InScaleBiases                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UStereoLayerComponent::SetEquirectProps(const struct FEquirectProps& InScaleBiases)
+float UVOIPTalker::GetVoiceLevel()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("StereoLayerComponent", "SetEquirectProps");
+		Func = Class->GetFunction("VOIPTalker", "GetVoiceLevel");
 
-	Params::StereoLayerComponent_SetEquirectProps Parms{};
-
-	Parms.InScaleBiases = std::move(InScaleBiases);
+	Params::VOIPTalker_GetVoiceLevel Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -98485,452 +98775,31 @@ void UStereoLayerComponent::SetEquirectProps(const struct FEquirectProps& InScal
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function Engine.StereoLayerComponent.SetLeftTexture
+// Function Engine.VOIPTalker.RegisterWithPlayerState
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class UTexture*                         InTexture                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class APlayerState*                     OwningState                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UStereoLayerComponent::SetLeftTexture(class UTexture* InTexture)
+void UVOIPTalker::RegisterWithPlayerState(class APlayerState* OwningState)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("StereoLayerComponent", "SetLeftTexture");
+		Func = Class->GetFunction("VOIPTalker", "RegisterWithPlayerState");
 
-	Params::StereoLayerComponent_SetLeftTexture Parms{};
+	Params::VOIPTalker_RegisterWithPlayerState Parms{};
 
-	Parms.InTexture = InTexture;
+	Parms.OwningState = OwningState;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.StereoLayerComponent.SetPriority
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InPriority                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UStereoLayerComponent::SetPriority(int32 InPriority)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StereoLayerComponent", "SetPriority");
-
-	Params::StereoLayerComponent_SetPriority Parms{};
-
-	Parms.InPriority = InPriority;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.StereoLayerComponent.SetQuadSize
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector2D&                 InQuadSize                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UStereoLayerComponent::SetQuadSize(const struct FVector2D& InQuadSize)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StereoLayerComponent", "SetQuadSize");
-
-	Params::StereoLayerComponent_SetQuadSize Parms{};
-
-	Parms.InQuadSize = std::move(InQuadSize);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.StereoLayerComponent.SetTexture
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UTexture*                         InTexture                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UStereoLayerComponent::SetTexture(class UTexture* InTexture)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StereoLayerComponent", "SetTexture");
-
-	Params::StereoLayerComponent_SetTexture Parms{};
-
-	Parms.InTexture = InTexture;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.StereoLayerComponent.SetUVRect
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FBox2D&                    InUVRect                                               (Parm, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
-
-void UStereoLayerComponent::SetUVRect(const struct FBox2D& InUVRect)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StereoLayerComponent", "SetUVRect");
-
-	Params::StereoLayerComponent_SetUVRect Parms{};
-
-	Parms.InUVRect = std::move(InUVRect);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.StereoLayerComponent.GetLeftTexture
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UTexture*                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UTexture* UStereoLayerComponent::GetLeftTexture() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StereoLayerComponent", "GetLeftTexture");
-
-	Params::StereoLayerComponent_GetLeftTexture Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.StereoLayerComponent.GetPriority
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UStereoLayerComponent::GetPriority() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StereoLayerComponent", "GetPriority");
-
-	Params::StereoLayerComponent_GetPriority Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.StereoLayerComponent.GetQuadSize
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector2D UStereoLayerComponent::GetQuadSize() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StereoLayerComponent", "GetQuadSize");
-
-	Params::StereoLayerComponent_GetQuadSize Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.StereoLayerComponent.GetTexture
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UTexture*                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UTexture* UStereoLayerComponent::GetTexture() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StereoLayerComponent", "GetTexture");
-
-	Params::StereoLayerComponent_GetTexture Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.StereoLayerComponent.GetUVRect
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FBox2D                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FBox2D UStereoLayerComponent::GetUVRect() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StereoLayerComponent", "GetUVRect");
-
-	Params::StereoLayerComponent_GetUVRect Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SubsystemBlueprintLibrary.GetEngineSubsystem
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// TSubclassOf<class UEngineSubsystem>     Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UEngineSubsystem*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UEngineSubsystem* USubsystemBlueprintLibrary::GetEngineSubsystem(TSubclassOf<class UEngineSubsystem> Class_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SubsystemBlueprintLibrary", "GetEngineSubsystem");
-
-	Params::SubsystemBlueprintLibrary_GetEngineSubsystem Parms{};
-
-	Parms.Class_0 = Class_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SubsystemBlueprintLibrary.GetGameInstanceSubsystem
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class UObject*                          ContextObject                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UGameInstanceSubsystem>Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UGameInstanceSubsystem*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UGameInstanceSubsystem* USubsystemBlueprintLibrary::GetGameInstanceSubsystem(class UObject* ContextObject, TSubclassOf<class UGameInstanceSubsystem> Class_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SubsystemBlueprintLibrary", "GetGameInstanceSubsystem");
-
-	Params::SubsystemBlueprintLibrary_GetGameInstanceSubsystem Parms{};
-
-	Parms.ContextObject = ContextObject;
-	Parms.Class_0 = Class_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SubsystemBlueprintLibrary.GetLocalPlayerSubsystem
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class UObject*                          ContextObject                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class ULocalPlayerSubsystem>Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class ULocalPlayerSubsystem*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ULocalPlayerSubsystem* USubsystemBlueprintLibrary::GetLocalPlayerSubsystem(class UObject* ContextObject, TSubclassOf<class ULocalPlayerSubsystem> Class_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SubsystemBlueprintLibrary", "GetLocalPlayerSubsystem");
-
-	Params::SubsystemBlueprintLibrary_GetLocalPlayerSubsystem Parms{};
-
-	Parms.ContextObject = ContextObject;
-	Parms.Class_0 = Class_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SubsystemBlueprintLibrary.GetLocalPlayerSubSystemFromPlayerController
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class APlayerController*                PlayerController                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class ULocalPlayerSubsystem>Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class ULocalPlayerSubsystem*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ULocalPlayerSubsystem* USubsystemBlueprintLibrary::GetLocalPlayerSubSystemFromPlayerController(class APlayerController* PlayerController, TSubclassOf<class ULocalPlayerSubsystem> Class_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SubsystemBlueprintLibrary", "GetLocalPlayerSubSystemFromPlayerController");
-
-	Params::SubsystemBlueprintLibrary_GetLocalPlayerSubSystemFromPlayerController Parms{};
-
-	Parms.PlayerController = PlayerController;
-	Parms.Class_0 = Class_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.SubsystemBlueprintLibrary.GetWorldSubsystem
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class UObject*                          ContextObject                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UWorldSubsystem>      Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UWorldSubsystem*                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UWorldSubsystem* USubsystemBlueprintLibrary::GetWorldSubsystem(class UObject* ContextObject, TSubclassOf<class UWorldSubsystem> Class_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SubsystemBlueprintLibrary", "GetWorldSubsystem");
-
-	Params::SubsystemBlueprintLibrary_GetWorldSubsystem Parms{};
-
-	Parms.ContextObject = ContextObject;
-	Parms.Class_0 = Class_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Engine.VectorFieldComponent.SetIntensity
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewIntensity                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UVectorFieldComponent::SetIntensity(float NewIntensity)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VectorFieldComponent", "SetIntensity");
-
-	Params::VectorFieldComponent_SetIntensity Parms{};
-
-	Parms.NewIntensity = NewIntensity;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Engine.VOIPStatics.SetMicThreshold
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// float                                   InThreshold                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UVOIPStatics::SetMicThreshold(float InThreshold)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("VOIPStatics", "SetMicThreshold");
-
-	Params::VOIPStatics_SetMicThreshold Parms{};
-
-	Parms.InThreshold = InThreshold;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -99311,20 +99180,151 @@ void UVolumetricCloudComponent::SetViewSampleCountScale(float NewValue)
 }
 
 
-// Function Engine.WorldSettings.OnRep_WorldGravityZ
-// (Native, Public)
+// Function Engine.WindDirectionalSourceComponent.SetMaximumGustAmount
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InNewMaxGust                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AWorldSettings::OnRep_WorldGravityZ()
+void UWindDirectionalSourceComponent::SetMaximumGustAmount(float InNewMaxGust)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WorldSettings", "OnRep_WorldGravityZ");
+		Func = Class->GetFunction("WindDirectionalSourceComponent", "SetMaximumGustAmount");
+
+	Params::WindDirectionalSourceComponent_SetMaximumGustAmount Parms{};
+
+	Parms.InNewMaxGust = InNewMaxGust;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.WindDirectionalSourceComponent.SetMinimumGustAmount
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InNewMinGust                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWindDirectionalSourceComponent::SetMinimumGustAmount(float InNewMinGust)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WindDirectionalSourceComponent", "SetMinimumGustAmount");
+
+	Params::WindDirectionalSourceComponent_SetMinimumGustAmount Parms{};
+
+	Parms.InNewMinGust = InNewMinGust;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.WindDirectionalSourceComponent.SetRadius
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InNewRadius                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWindDirectionalSourceComponent::SetRadius(float InNewRadius)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WindDirectionalSourceComponent", "SetRadius");
+
+	Params::WindDirectionalSourceComponent_SetRadius Parms{};
+
+	Parms.InNewRadius = InNewRadius;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.WindDirectionalSourceComponent.SetSpeed
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InNewSpeed                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWindDirectionalSourceComponent::SetSpeed(float InNewSpeed)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WindDirectionalSourceComponent", "SetSpeed");
+
+	Params::WindDirectionalSourceComponent_SetSpeed Parms{};
+
+	Parms.InNewSpeed = InNewSpeed;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.WindDirectionalSourceComponent.SetStrength
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InNewStrength                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWindDirectionalSourceComponent::SetStrength(float InNewStrength)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WindDirectionalSourceComponent", "SetStrength");
+
+	Params::WindDirectionalSourceComponent_SetStrength Parms{};
+
+	Parms.InNewStrength = InNewStrength;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.WindDirectionalSourceComponent.SetWindType
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EWindSourceType                         InNewType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWindDirectionalSourceComponent::SetWindType(EWindSourceType InNewType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WindDirectionalSourceComponent", "SetWindType");
+
+	Params::WindDirectionalSourceComponent_SetWindType Parms{};
+
+	Parms.InNewType = InNewType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

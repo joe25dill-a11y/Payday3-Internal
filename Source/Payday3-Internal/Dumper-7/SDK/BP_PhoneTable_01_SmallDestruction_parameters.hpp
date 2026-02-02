@@ -10,24 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "AkAudio_structs.hpp"
 #include "Starbreeze_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "AkAudio_structs.hpp"
 
 
 namespace SDK::Params
 {
-
-// Function BP_PhoneTable_01_SmallDestruction.BP_PhoneTable_01_SmallDestruction_C.BndEvt__BP_PhoneTable_01_SBZCosmeticDestruction_K2Node_ComponentBoundEvent_0_SBZCosmeticDestructionComponenteSignature__DelegateSignature
-// 0x0034 (0x0034 - 0x0000)
-struct BP_PhoneTable_01_SmallDestruction_C_BndEvt__BP_PhoneTable_01_SBZCosmeticDestruction_K2Node_ComponentBoundEvent_0_SBZCosmeticDestructionComponenteSignature__DelegateSignature final
-{
-public:
-	ESBZCosmeticDestructionType                   Type;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSBZCosmeticDestructionContext         HitContext;                                        // 0x0004(0x0030)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-};
-DUMPER7_ASSERTS_BP_PhoneTable_01_SmallDestruction_C_BndEvt__BP_PhoneTable_01_SBZCosmeticDestruction_K2Node_ComponentBoundEvent_0_SBZCosmeticDestructionComponenteSignature__DelegateSignature;
 
 // Function BP_PhoneTable_01_SmallDestruction.BP_PhoneTable_01_SmallDestruction_C.ExecuteUbergraph_BP_PhoneTable_01_SmallDestruction
 // 0x00B0 (0x00B0 - 0x0000)
@@ -52,6 +41,17 @@ public:
 	int32                                         CallFunc_PostAkEvent_ReturnValue_1;                // 0x00A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_PhoneTable_01_SmallDestruction_C_ExecuteUbergraph_BP_PhoneTable_01_SmallDestruction;
+
+// Function BP_PhoneTable_01_SmallDestruction.BP_PhoneTable_01_SmallDestruction_C.BndEvt__BP_PhoneTable_01_SBZCosmeticDestruction_K2Node_ComponentBoundEvent_0_SBZCosmeticDestructionComponenteSignature__DelegateSignature
+// 0x0034 (0x0034 - 0x0000)
+struct BP_PhoneTable_01_SmallDestruction_C_BndEvt__BP_PhoneTable_01_SBZCosmeticDestruction_K2Node_ComponentBoundEvent_0_SBZCosmeticDestructionComponenteSignature__DelegateSignature final
+{
+public:
+	ESBZCosmeticDestructionType                   Type;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSBZCosmeticDestructionContext         HitContext;                                        // 0x0004(0x0030)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_PhoneTable_01_SmallDestruction_C_BndEvt__BP_PhoneTable_01_SBZCosmeticDestruction_K2Node_ComponentBoundEvent_0_SBZCosmeticDestructionComponenteSignature__DelegateSignature;
 
 }
 

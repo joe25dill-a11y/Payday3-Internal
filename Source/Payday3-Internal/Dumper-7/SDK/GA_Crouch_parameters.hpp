@@ -14,6 +14,15 @@
 namespace SDK::Params
 {
 
+// Function GA_Crouch.GA_Crouch_C.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct GA_Crouch_C_K2_OnEndAbility final
+{
+public:
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_GA_Crouch_C_K2_OnEndAbility;
+
 // Function GA_Crouch.GA_Crouch_C.ExecuteUbergraph_GA_Crouch
 // 0x0008 (0x0008 - 0x0000)
 struct GA_Crouch_C_ExecuteUbergraph_GA_Crouch final
@@ -23,15 +32,6 @@ public:
 	bool                                          K2Node_Event_bWasCancelled;                        // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_GA_Crouch_C_ExecuteUbergraph_GA_Crouch;
-
-// Function GA_Crouch.GA_Crouch_C.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct GA_Crouch_C_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_GA_Crouch_C_K2_OnEndAbility;
 
 }
 

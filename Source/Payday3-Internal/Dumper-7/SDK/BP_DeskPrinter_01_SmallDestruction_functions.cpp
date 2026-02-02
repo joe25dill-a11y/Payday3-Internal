@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function BP_DeskPrinter_01_SmallDestruction.BP_DeskPrinter_01_SmallDestruction_C.ExecuteUbergraph_BP_DeskPrinter_01_SmallDestruction
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_DeskPrinter_01_SmallDestruction_C::ExecuteUbergraph_BP_DeskPrinter_01_SmallDestruction(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_DeskPrinter_01_SmallDestruction_C", "ExecuteUbergraph_BP_DeskPrinter_01_SmallDestruction");
+
+	Params::BP_DeskPrinter_01_SmallDestruction_C_ExecuteUbergraph_BP_DeskPrinter_01_SmallDestruction Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_DeskPrinter_01_SmallDestruction.BP_DeskPrinter_01_SmallDestruction_C.BndEvt__BP_DeskPrinter_01_SBZCosmeticDestruction_K2Node_ComponentBoundEvent_0_SBZCosmeticDestructionComponenteSignature__DelegateSignature
 // (HasOutParams, BlueprintEvent)
 // Parameters:
@@ -34,26 +54,6 @@ void ABP_DeskPrinter_01_SmallDestruction_C::BndEvt__BP_DeskPrinter_01_SBZCosmeti
 
 	Parms.Type = Type;
 	Parms.HitContext = std::move(HitContext);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_DeskPrinter_01_SmallDestruction.BP_DeskPrinter_01_SmallDestruction_C.ExecuteUbergraph_BP_DeskPrinter_01_SmallDestruction
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_DeskPrinter_01_SmallDestruction_C::ExecuteUbergraph_BP_DeskPrinter_01_SmallDestruction(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DeskPrinter_01_SmallDestruction_C", "ExecuteUbergraph_BP_DeskPrinter_01_SmallDestruction");
-
-	Params::BP_DeskPrinter_01_SmallDestruction_C_ExecuteUbergraph_BP_DeskPrinter_01_SmallDestruction Parms{};
-
-	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

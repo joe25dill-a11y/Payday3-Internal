@@ -19,7 +19,7 @@ namespace SDK
 
 // WidgetBlueprintGeneratedClass WBP_Settings_TwoChoiceButton.WBP_Settings_TwoChoiceButton_C
 // 0x0030 (0x0470 - 0x0440)
-class UWBP_Settings_TwoChoiceButton_C : public USBZSettingsButtonTwoChoice
+class UWBP_Settings_TwoChoiceButton_C final : public USBZSettingsButtonTwoChoice
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0440(0x0008)(ZeroConstructor, Transient, DuplicateTransient)

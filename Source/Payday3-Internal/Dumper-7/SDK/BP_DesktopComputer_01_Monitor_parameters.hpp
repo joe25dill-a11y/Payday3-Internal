@@ -18,31 +18,6 @@
 namespace SDK::Params
 {
 
-// Function BP_DesktopComputer_01_Monitor.BP_DesktopComputer_01_Monitor_C.UserConstructionScript
-// 0x0028 (0x0028 - 0x0000)
-struct BP_DesktopComputer_01_Monitor_C_UserConstructionScript final
-{
-public:
-	E_ComputerScreens_01                          Temp_byte_Variable;                                // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInterface*                     Temp_object_Variable;                              // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInterface*                     Temp_object_Variable_1;                            // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInterface*                     Temp_object_Variable_2;                            // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInterface*                     K2Node_Select_Default;                             // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_DesktopComputer_01_Monitor_C_UserConstructionScript;
-
-// Function BP_DesktopComputer_01_Monitor.BP_DesktopComputer_01_Monitor_C.BndEvt__BP_CashRegister_01_Monitor_SmallDestruction_SBZCosmeticDestruction_1_K2Node_ComponentBoundEvent_5_SBZCosmeticDestructionComponenteSignature__DelegateSignature
-// 0x0034 (0x0034 - 0x0000)
-struct BP_DesktopComputer_01_Monitor_C_BndEvt__BP_CashRegister_01_Monitor_SmallDestruction_SBZCosmeticDestruction_1_K2Node_ComponentBoundEvent_5_SBZCosmeticDestructionComponenteSignature__DelegateSignature final
-{
-public:
-	ESBZCosmeticDestructionType                   Type;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSBZCosmeticDestructionContext         HitContext;                                        // 0x0004(0x0030)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-};
-DUMPER7_ASSERTS_BP_DesktopComputer_01_Monitor_C_BndEvt__BP_CashRegister_01_Monitor_SmallDestruction_SBZCosmeticDestruction_1_K2Node_ComponentBoundEvent_5_SBZCosmeticDestructionComponenteSignature__DelegateSignature;
-
 // Function BP_DesktopComputer_01_Monitor.BP_DesktopComputer_01_Monitor_C.ExecuteUbergraph_BP_DesktopComputer_01_Monitor
 // 0x00A0 (0x00A0 - 0x0000)
 struct BP_DesktopComputer_01_Monitor_C_ExecuteUbergraph_BP_DesktopComputer_01_Monitor final
@@ -65,6 +40,31 @@ public:
 	bool                                          CallFunc_IsDedicatedServer_ReturnValue_1;          // 0x009C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_DesktopComputer_01_Monitor_C_ExecuteUbergraph_BP_DesktopComputer_01_Monitor;
+
+// Function BP_DesktopComputer_01_Monitor.BP_DesktopComputer_01_Monitor_C.BndEvt__BP_CashRegister_01_Monitor_SmallDestruction_SBZCosmeticDestruction_1_K2Node_ComponentBoundEvent_5_SBZCosmeticDestructionComponenteSignature__DelegateSignature
+// 0x0034 (0x0034 - 0x0000)
+struct BP_DesktopComputer_01_Monitor_C_BndEvt__BP_CashRegister_01_Monitor_SmallDestruction_SBZCosmeticDestruction_1_K2Node_ComponentBoundEvent_5_SBZCosmeticDestructionComponenteSignature__DelegateSignature final
+{
+public:
+	ESBZCosmeticDestructionType                   Type;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSBZCosmeticDestructionContext         HitContext;                                        // 0x0004(0x0030)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_DesktopComputer_01_Monitor_C_BndEvt__BP_CashRegister_01_Monitor_SmallDestruction_SBZCosmeticDestruction_1_K2Node_ComponentBoundEvent_5_SBZCosmeticDestructionComponenteSignature__DelegateSignature;
+
+// Function BP_DesktopComputer_01_Monitor.BP_DesktopComputer_01_Monitor_C.UserConstructionScript
+// 0x0028 (0x0028 - 0x0000)
+struct BP_DesktopComputer_01_Monitor_C_UserConstructionScript final
+{
+public:
+	E_ComputerScreens_01                          Temp_byte_Variable;                                // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInterface*                     Temp_object_Variable;                              // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInterface*                     Temp_object_Variable_1;                            // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInterface*                     Temp_object_Variable_2;                            // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInterface*                     K2Node_Select_Default;                             // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_DesktopComputer_01_Monitor_C_UserConstructionScript;
 
 }
 

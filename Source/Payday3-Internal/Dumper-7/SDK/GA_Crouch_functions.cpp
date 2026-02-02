@@ -17,23 +17,17 @@
 namespace SDK
 {
 
-// Function GA_Crouch.GA_Crouch_C.ExecuteUbergraph_GA_Crouch
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function GA_Crouch.GA_Crouch_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
 
-void UGA_Crouch_C::ExecuteUbergraph_GA_Crouch(int32 EntryPoint)
+void UGA_Crouch_C::K2_ActivateAbility()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Crouch_C", "ExecuteUbergraph_GA_Crouch");
+		Func = Class->GetFunction("GA_Crouch_C", "K2_ActivateAbility");
 
-	Params::GA_Crouch_C_ExecuteUbergraph_GA_Crouch Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -57,17 +51,23 @@ void UGA_Crouch_C::K2_OnEndAbility(bool bWasCancelled)
 }
 
 
-// Function GA_Crouch.GA_Crouch_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
+// Function GA_Crouch.GA_Crouch_C.ExecuteUbergraph_GA_Crouch
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Crouch_C::K2_ActivateAbility()
+void UGA_Crouch_C::ExecuteUbergraph_GA_Crouch(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Crouch_C", "K2_ActivateAbility");
+		Func = Class->GetFunction("GA_Crouch_C", "ExecuteUbergraph_GA_Crouch");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::GA_Crouch_C_ExecuteUbergraph_GA_Crouch Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }
