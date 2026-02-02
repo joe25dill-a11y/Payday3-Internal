@@ -21,7 +21,7 @@ jobs:
         xmake-version: latest
 
     - name: Configure xmake (Debug)
-      run: xmake config -m debug -a x64 -p windows
+      run: xmake config -m debug -a x64 -p windows -y
 
     - name: Build project (Debug)
       run: xmake build Payday3-Internal
@@ -31,7 +31,7 @@ jobs:
       continue-on-error: true
 
     - name: Configure xmake (Release)
-      run: xmake config -m release -a x64 -p windows
+      run: xmake config -m release -a x64 -p windows -y
 
     - name: Build project (Release)
       run: xmake build Payday3-Internal
