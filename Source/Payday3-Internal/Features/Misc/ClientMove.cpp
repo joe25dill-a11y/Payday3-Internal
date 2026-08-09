@@ -31,16 +31,19 @@ namespace {
     };
 
     void TeleportPlayer(bool bChangeState = true){
-        if(Cheat::g_bIsSoloGame)
-            return;
-        
-        SDK::FVector vecPoint = pLocalPlayer->K2_GetActorLocation();
-        SDK::FSBZMinimalAgilityTraversalTrajectory trajectory{
-            vecPoint, vecPoint, vecPoint, vecPoint, std::numeric_limits<int16_t>::max(), SDK::ESBZAgilityTraversalType::VaultLowFast, false, false
-        };
+        // Solo: client already owns position — just stay put (no server desync to fix).
+        // Online: fake traversal RPC tells the server "you're here" after noclip.
+        if (!Cheat::g_bIsSoloGame && pMovementComponent)
+        {
+            SDK::FVector vecPoint = pLocalPlayer->K2_GetActorLocation();
+            SDK::FSBZMinimalAgilityTraversalTrajectory trajectory{
+                vecPoint, vecPoint, vecPoint, vecPoint, std::numeric_limits<int16_t>::max(),
+                SDK::ESBZAgilityTraversalType::VaultLowFast, false, false
+            };
+            pMovementComponent->Server_StartTraversal(trajectory);
+        }
 
-        pMovementComponent->Server_StartTraversal(trajectory);
-        if(bChangeState)
+        if (bChangeState)
             ChangeState(EState::TeleportStart);
     };
 
@@ -94,9 +97,10 @@ void Cheat::ClientMove::OnPlayerControllerTick(SDK::ASBZPlayerCharacter* _pLocal
         if(eState == EState::Disabled)
             ChangeState(EState::Active);
 
-        if(eState == EState::Active && CheatConfig::Get().m_misc.m_keyClientMoveTeleport.GetState())
+        // One-shot on key press (Hold GetState() would re-fire every tick after sync).
+        if (eState == EState::Active && CheatConfig::Get().m_misc.m_keyClientMoveTeleport.Pressed())
             TeleportPlayer();
-        
+
         return;
     }
     

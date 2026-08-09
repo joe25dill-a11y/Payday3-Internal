@@ -172,8 +172,8 @@ namespace Cheat{
                 if(!actors1.IsValidIndex(i))
                     continue;
 
-                auto pVan = reinterpret_cast<SDK::ABP_Van_FBI_C*>(actors1[i]);
-                if(!pVan || !pVan->IsA(SDK::ABP_Van_FBI_C::StaticClass()))
+                auto pVan = reinterpret_cast<SDK::ASBZAIFBIVan*>(actors1[i]);
+                if(!pVan || !pVan->IsA(SDK::ASBZAIFBIVan::StaticClass()))
                     continue;
 
                 auto pMesh = pVan->AntennaHitMeshComponent;
@@ -232,29 +232,38 @@ namespace Cheat{
     }
 
     void AimbotOnFrameBegin(){
-        if(!g_bIsInGame)
-            return;
+        try
+        {
+            if(!g_bIsInGame)
+                return;
 
-        SDK::UWorld* pGWorld = SDK::UWorld::GetWorld();
-        if (!pGWorld)
-            return;
+            SDK::UWorld* pGWorld = SDK::UWorld::GetWorld();
+            if (!pGWorld)
+                return;
 
-        auto pGameInstance = reinterpret_cast<SDK::USBZGameInstance*>(pGWorld->OwningGameInstance);
-        if (!pGameInstance || !pGameInstance->IsA(SDK::USBZGameInstance::StaticClass()))
-            return;
+            auto pGameInstance = reinterpret_cast<SDK::USBZGameInstance*>(pGWorld->OwningGameInstance);
+            if (!pGameInstance || !pGameInstance->IsA(SDK::USBZGameInstance::StaticClass()))
+                return;
 
-        SDK::USBZWorldRuntime* pWorldRuntime = reinterpret_cast<SDK::USBZWorldRuntime*>(SDK::USBZWorldRuntime::GetWorldRuntime(pGWorld));
-        if (!pWorldRuntime)
-            return;
+            SDK::USBZWorldRuntime* pWorldRuntime = reinterpret_cast<SDK::USBZWorldRuntime*>(SDK::USBZWorldRuntime::GetWorldRuntime(pGWorld));
+            if (!pWorldRuntime)
+                return;
 
-        SDK::ULocalPlayer* pULocalPlayer = pGameInstance->LocalPlayers[0];
-        if (!pULocalPlayer)
-            return;
+            if (pGameInstance->LocalPlayers.Num() <= 0)
+                return;
 
-        auto pLocalPlayerController = reinterpret_cast<SDK::ASBZPlayerController*>(pULocalPlayer->PlayerController);
-        if (!pLocalPlayerController || !pLocalPlayerController->IsA(SDK::ASBZPlayerController::StaticClass()))
-            return;
+            SDK::ULocalPlayer* pULocalPlayer = pGameInstance->LocalPlayers[0];
+            if (!pULocalPlayer)
+                return;
 
-        GetOptimalAimbotTarget(pGWorld, pWorldRuntime, pLocalPlayerController);
+            auto pLocalPlayerController = reinterpret_cast<SDK::ASBZPlayerController*>(pULocalPlayer->PlayerController);
+            if (!pLocalPlayerController || !pLocalPlayerController->IsA(SDK::ASBZPlayerController::StaticClass()))
+                return;
+
+            GetOptimalAimbotTarget(pGWorld, pWorldRuntime, pLocalPlayerController);
+        }
+        catch (...)
+        {
+        }
     }
 }

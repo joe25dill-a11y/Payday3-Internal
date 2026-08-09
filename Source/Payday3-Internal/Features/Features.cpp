@@ -3,6 +3,20 @@
 #include "../Dumper-7/SDK.hpp"
 #include "../Utils/Logging.hpp"
 #include "./Misc/ClientMove.hpp"
+#include "./Misc/FriendlyFire.hpp"
+#include "./Misc/GrabAll.hpp"
+#include "./Misc/GrabAccess.hpp"
+#include "./Misc/InstaDrill.hpp"
+#include "./Misc/SilentKill.hpp"
+#include "./Misc/PresetTeleport.hpp"
+#include "./Misc/GodAmmo.hpp"
+#include "./Misc/CarryBags.hpp"
+#include "./Misc/NoCivPenalty.hpp"
+#include "./Misc/SpawnerTools.hpp"
+
+#include <vector>
+#include <algorithm>
+#include <cstdio>
 
 #undef min
 #undef max
@@ -51,6 +65,12 @@ struct WeaponDataBackupEntry_t{
     uint32_t m_iProjectilesPerFiredRound;
     float m_flRoundsPerMinute;
     SDK::ESBZFireMode m_eFireMode;
+
+    // TraceurXu InstantKill-style FireData damage (DamageDistanceArray + pen)
+    float m_flArmorPenetration = 0.f;
+    float m_flArmorPenetrationProjectile = 0.f;
+    std::vector<SDK::FSBZDamageDistance> m_vecDamageDistance{};
+    bool m_bHasDamageBackup = false;
 };
 
 bool g_bDidBackupWeaponData = false;
@@ -85,7 +105,7 @@ bool BackupWeaponData(SDK::USBZGameInstance* pGame){
             if(!pWeaponData->SpreadData || !pWeaponData->RecoilData || !pWeaponData->FireData)
                 return false;
 
-            g_mapWeaponDataBackup.try_emplace(std::hash<std::string>{}(pWeaponData->Name.ToString().substr(14)), WeaponDataBackupEntry_t{
+            WeaponDataBackupEntry_t stBackup{
                 .m_flViewSpeedDeflect = pWeaponData->RecoilData->ViewKick.SpeedDeflect,
                 .m_flGunSpeedDeflect = pWeaponData->RecoilData->GunKickXY.SpeedDeflect,
                 .m_flInnerClusterSpreadMultiplier = pWeaponData->SpreadData->InnerClusterSpreadMultiplier,
@@ -96,7 +116,23 @@ bool BackupWeaponData(SDK::USBZGameInstance* pGame){
                 .m_iProjectilesPerFiredRound = pWeaponData->FireData->ProjectilesPerFiredRound,
                 .m_flRoundsPerMinute = pWeaponData->FireData->RoundsPerMinute,
                 .m_eFireMode = pWeaponData->FireData->FireMode
-            });
+            };
+
+            // Same fields TraceurXu_InstantKill.pak overrides on DA_FireData_*
+            stBackup.m_flArmorPenetration = pWeaponData->FireData->ArmorPenetration;
+            stBackup.m_flArmorPenetrationProjectile = pWeaponData->FireData->ArmorPenetrationProjectile;
+            if (pWeaponData->FireData->IsA(SDK::USBZPlayerWeaponFireData::StaticClass()))
+            {
+                auto* pPF = reinterpret_cast<SDK::USBZPlayerWeaponFireData*>(pWeaponData->FireData);
+                stBackup.m_vecDamageDistance.reserve(static_cast<size_t>(pPF->DamageDistanceArray.Num()));
+                for (int iDmg = 0; iDmg < pPF->DamageDistanceArray.Num(); ++iDmg)
+                    stBackup.m_vecDamageDistance.push_back(pPF->DamageDistanceArray[iDmg]);
+                stBackup.m_bHasDamageBackup = true;
+            }
+
+            g_mapWeaponDataBackup.try_emplace(
+                std::hash<std::string>{}(pWeaponData->Name.ToString().substr(14)),
+                std::move(stBackup));
         }
     }
 
@@ -141,9 +177,14 @@ WeaponDataBackupEntry_t* GetWeaponBackupData(SDK::USBZRangedWeaponData* pWeaponD
 }
 
 void ModifyWeaponData(SDK::USBZRangedWeaponData* pWeaponData){
+    const bool bMoreDmg = CheatConfig::Get().m_misc.m_bInstaKill;
     auto pBackupData = GetWeaponBackupData(pWeaponData);
     if(!pBackupData)
+    {
+        if (bMoreDmg)
+            Cheat::GodAmmo::g_sStatusInstaKill = "More Bullet Damage ON — no weapon backup yet (swap gun / rejoin heist)";
         return;
+    }
 
     if(pWeaponData->RecoilData){
         auto pRecoil = pWeaponData->RecoilData;
@@ -202,7 +243,79 @@ void ModifyWeaponData(SDK::USBZRangedWeaponData* pWeaponData){
     else
         pFire->FireMode = pBackupData->m_eFireMode;
 
-    //pFireData->MaximumPenetrationCount = std::numeric_limits<uint32_t>::max(); // Shoot through walls (Laggy af with more bullets)        
+    //pFireData->MaximumPenetrationCount = std::numeric_limits<uint32_t>::max(); // Shoot through walls (Laggy af with more bullets)
+
+    // Nexus InstantKill / TraceurXu: raise FireData bullet damage (+ armor pen so it sticks).
+    constexpr float kDmgMult = 1000.f;
+    constexpr float kArmorPen = 65535.f;
+
+    auto ApplyFireDamage = [&](SDK::USBZWeaponFireData* pFd)
+    {
+        if (!pFd)
+            return;
+        if (bMoreDmg)
+        {
+            pFd->ArmorPenetration = kArmorPen;
+            pFd->ArmorPenetrationProjectile = kArmorPen;
+            if (pFd->IsA(SDK::USBZPlayerWeaponFireData::StaticClass()))
+            {
+                auto* pPF = reinterpret_cast<SDK::USBZPlayerWeaponFireData*>(pFd);
+                for (int i = 0; i < pPF->DamageDistanceArray.Num(); ++i)
+                {
+                    float base = 1.f;
+                    if (pBackupData->m_bHasDamageBackup
+                        && i < static_cast<int>(pBackupData->m_vecDamageDistance.size()))
+                    {
+                        base = pBackupData->m_vecDamageDistance[static_cast<size_t>(i)].Damage;
+                        if (base < 1.f)
+                            base = 1.f;
+                    }
+                    pPF->DamageDistanceArray[i].Damage = base * kDmgMult;
+                }
+            }
+        }
+        else if (pBackupData->m_bHasDamageBackup)
+        {
+            pFd->ArmorPenetration = pBackupData->m_flArmorPenetration;
+            pFd->ArmorPenetrationProjectile = pBackupData->m_flArmorPenetrationProjectile;
+            if (pFd->IsA(SDK::USBZPlayerWeaponFireData::StaticClass()))
+            {
+                auto* pPF = reinterpret_cast<SDK::USBZPlayerWeaponFireData*>(pFd);
+                const int n = (std::min)(pPF->DamageDistanceArray.Num(),
+                    static_cast<int>(pBackupData->m_vecDamageDistance.size()));
+                for (int i = 0; i < n; ++i)
+                    pPF->DamageDistanceArray[i] = pBackupData->m_vecDamageDistance[static_cast<size_t>(i)];
+            }
+        }
+    };
+
+    ApplyFireDamage(pFire);
+    ApplyFireDamage(pWeaponData->OriginalFireData);
+
+    // Live readout so you can tell in the menu if it stuck.
+    float liveDmg = -1.f;
+    float livePen = pFire->ArmorPenetration;
+    int bands = 0;
+    if (pFire->IsA(SDK::USBZPlayerWeaponFireData::StaticClass()))
+    {
+        auto* pPF = reinterpret_cast<SDK::USBZPlayerWeaponFireData*>(pFire);
+        bands = pPF->DamageDistanceArray.Num();
+        if (bands > 0)
+            liveDmg = pPF->DamageDistanceArray[0].Damage;
+    }
+
+    if (bMoreDmg)
+    {
+        char buf[160]{};
+        std::snprintf(buf, sizeof(buf),
+            "ON — gun dmg[0]=%.0f  pen=%.0f  bands=%d  (vanilla×1000 should be huge)",
+            liveDmg, livePen, bands);
+        Cheat::GodAmmo::g_sStatusInstaKill = buf;
+    }
+    else
+    {
+        Cheat::GodAmmo::g_sStatusInstaKill = "More Bullet Damage off";
+    }
 }
 
 void LookForMethLabDialog(SDK::APD3HeistGameState* pGameState){
@@ -356,6 +469,16 @@ void OverrideMethLabInteractables(){
         
     
     Cheat::g_stMethLabInfo.m_bWasDisabled = bDisabled;
+}
+
+
+static void ApplyFriendlyFire(
+    SDK::UWorld* pGWorld,
+    SDK::USBZWorldRuntime* pWorldRuntime,
+    SDK::ASBZPlayerController* pLocalPlayerController,
+    SDK::ASBZPlayerCharacter* pLocalPlayer)
+{
+    Cheat::FriendlyFire::OnPlayerControllerTick(pGWorld, pWorldRuntime, pLocalPlayerController, pLocalPlayer);
 }
 
 
@@ -541,4 +664,15 @@ void Cheat::OnPlayerControllerTick(){
 
     if(pLocalPlayer->CurrentMeleeMontage)
         pLocalPlayer->CurrentMeleeMontage->RateScale = CheatConfig::Get().m_misc.m_bInstantMelee ? 10000000.f : 1.f;
+
+    Cheat::GodAmmo::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
+    Cheat::CarryBags::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
+    Cheat::NoCivPenalty::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
+    ApplyFriendlyFire(pGWorld, pWorldRuntime, pLocalPlayerController, pLocalPlayer);
+    Cheat::GrabAll::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
+    Cheat::GrabAccess::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
+    Cheat::InstaDrill::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
+    Cheat::SilentKill::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
+    Cheat::PresetTeleport::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
+    Cheat::SpawnerTools::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
 }

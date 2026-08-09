@@ -265,7 +265,7 @@ struct CheatConfig{
 
     struct Misc_t {
         Menu::Hotkey_t m_keyClientMove{ ImGuiKey_MouseX2, Menu::Hotkey_t::EType::Hold };
-        Menu::Hotkey_t m_keyClientMoveTeleport{ ImGuiKey_None, Menu::Hotkey_t::EType::Hold, true };
+        Menu::Hotkey_t m_keyClientMoveTeleport{ ImGuiKey_Z, Menu::Hotkey_t::EType::Hold, true };
         Menu::Hotkey_t m_keyClientMoveFaster{ ImGuiKey_LeftShift, Menu::Hotkey_t::EType::Hold, true };
         bool m_bClientMoveAutoTeleport = true;
         float m_flClientMoveBaseSpeed = 1000.f;
@@ -295,8 +295,54 @@ struct CheatConfig{
         bool m_bSuperToss = true;
         float m_flSuperToss = 2000.f;
 
+        // Mutual PvP when YOU are host. Starts OFF every launch.
+        bool m_bFriendlyFire = false;
+        Menu::Hotkey_t m_keyFriendlyFire{ ImGuiKey_None, Menu::Hotkey_t::EType::Toggle, true };
+
+        // Auto grab loot while checked (does NOT use Num7 — leave that for Lua).
+        // Starts OFF every launch.
+        bool m_bGrabAll = false;
+        Menu::Hotkey_t m_keyGrabAll{ ImGuiKey_None, Menu::Hotkey_t::EType::Toggle, true };
+
+        // Num/ equivalent — keycards / RFID / hackable keys. Starts OFF every launch.
+        bool m_bGrabAccess = false;
+        Menu::Hotkey_t m_keyGrabAccess{ ImGuiKey_None, Menu::Hotkey_t::EType::Toggle, true };
+
+        // Num8 equivalent — drills / thermite / lance. Starts OFF every launch.
+        bool m_bInstaDrill = false;
+        Menu::Hotkey_t m_keyInstaDrill{ ImGuiKey_None, Menu::Hotkey_t::EType::Toggle, true };
+
+        // Num* equivalent — silent bury-kill cops only. Starts OFF every launch.
+        bool m_bSilentKillCops = false;
+        Menu::Hotkey_t m_keySilentKillCops{ ImGuiKey_None, Menu::Hotkey_t::EType::Toggle, true };
+
+        // SkyCheats Num0 quality — start OFF every launch.
+        bool m_bGodMode = false;
+        Menu::Hotkey_t m_keyGodMode{ ImGuiKey_None, Menu::Hotkey_t::EType::Toggle, true };
+        bool m_bInfiniteAmmo = false;
+        Menu::Hotkey_t m_keyInfiniteAmmo{ ImGuiKey_None, Menu::Hotkey_t::EType::Toggle, true };
+
+        // FireData bullet damage ×1000 — start OFF every launch.
+        bool m_bInstaKill = false;
+        Menu::Hotkey_t m_keyInstaKill{ ImGuiKey_None, Menu::Hotkey_t::EType::Toggle, true };
+
+        // MaxCarryBagCount bump for you + AI crew — start OFF every launch.
+        bool m_bCarryMoreBags = false;
+        Menu::Hotkey_t m_keyCarryMoreBags{ ImGuiKey_None, Menu::Hotkey_t::EType::Toggle, true };
+
+        // Civ + custody end penalties — start OFF every launch.
+        bool m_bNoCivPenalty = false;
+        Menu::Hotkey_t m_keyNoCivPenalty{ ImGuiKey_None, Menu::Hotkey_t::EType::Toggle, true };
+
+        // Spawner one-shots (bind next to buttons; start unbound).
+        Menu::Hotkey_t m_keySpawnMeth{ ImGuiKey_None, Menu::Hotkey_t::EType::Toggle, true };
+        Menu::Hotkey_t m_keySpawnVan{ ImGuiKey_None, Menu::Hotkey_t::EType::Toggle, true };
+        Menu::Hotkey_t m_keySpawnGreenExit{ ImGuiKey_None, Menu::Hotkey_t::EType::Toggle, true };
+        Menu::Hotkey_t m_keySpawnMoney{ ImGuiKey_None, Menu::Hotkey_t::EType::Toggle, true };
+
         
         void Draw();
+        void UpdateFeatureHotkeys(); // poll binds → toggle bools / fire spawners
 
         ImVec2 vec2ScreenSize = ImGui::GetIO().DisplaySize;
     };

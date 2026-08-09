@@ -19,6 +19,9 @@
 #include "Features/Features.hpp"
 #include "Features/FNames.hpp"
 #include "Features/Misc/ClientMove.hpp"
+#include "Features/Misc/SpawnerTools.hpp"
+#include "Features/Misc/PresetTeleport.hpp"
+#include "Features/Misc/GodAmmo.hpp"
 
 #include <intrin.h>
 #pragma intrinsic(_ReturnAddress)
@@ -52,26 +55,44 @@ bool Init()
 	Utils::LogDebug("Attempting to acquire offsets this may take a moment...");
 	std::chrono::time_point offsetStartTime = std::chrono::high_resolution_clock::now();
 
+	// Keep Dumper-7 SDK offsets from Basic.hpp. The live scanner has a known
+	// false-positive GWorld (0x072A2A08) on this PD3 build and will crash Present/aim.
+	constexpr uint32_t kScanGWorldFalsePositive = 0x072A2A08;
+	const uint32_t dumpGObjects = SDK::Offsets::GObjects;
+	const uint32_t dumpAppendString = SDK::Offsets::AppendString;
+	const uint32_t dumpGNames = SDK::Offsets::GNames;
+	const uint32_t dumpGWorld = SDK::Offsets::GWorld;
+	const uint32_t dumpProcessEvent = SDK::Offsets::ProcessEvent;
+	const int32_t dumpProcessEventIdx = SDK::Offsets::ProcessEventIdx;
+
+	Utils::LogDebug("Using dumped SDK offsets (scanner will not overwrite):");
+	Utils::LogDebug(std::format("GObjects: 0x{:08X}", dumpGObjects));
+	Utils::LogDebug(std::format("AppendString: 0x{:08X}", dumpAppendString));
+	Utils::LogDebug(std::format("GNames: 0x{:08X}", dumpGNames));
+	Utils::LogDebug(std::format("GWorld: 0x{:08X}", dumpGWorld));
+	Utils::LogDebug(std::format("ProcessEvent: 0x{:08X}", dumpProcessEvent));
+	Utils::LogDebug(std::format("ProcessEventIdx: 0x{:08X}", dumpProcessEventIdx));
+
 	std::optional<UEOffsets::Offsets> result = UEOffsets::Scan();
 	if (!result) {
-		Globals::g_upConsole->SetVisibility(true);
-		Utils::LogError("Offset auto updating failed! Using fallback offsets. The internal may not work correctly or may even crash!");
-		std::this_thread::sleep_for(std::chrono::seconds(3));
+		Utils::LogDebug("Offset auto-scan failed (OK — staying on dump offsets).");
 	} else {
 		const UEOffsets::Offsets& offsets = result.value();
-		SDK::Offsets::GObjects = offsets.GObjects;
-		SDK::Offsets::AppendString = offsets.AppendString;
-		SDK::Offsets::GNames = offsets.GNames;
-		SDK::Offsets::ProcessEvent = offsets.ProcessEvent;
-		SDK::Offsets::ProcessEventIdx = offsets.ProcessEventIdx;
-
-		Utils::LogDebug("Offsets updated successfully:");
-		Utils::LogDebug(std::format("GObjects: 0x{:08X}", offsets.GObjects));
-		Utils::LogDebug(std::format("AppendString: 0x{:08X}", offsets.AppendString));
-		Utils::LogDebug(std::format("GNames: 0x{:08X}", offsets.GNames));
-		Utils::LogDebug(std::format("GWorld: 0x{:08X}", offsets.GWorld));
-		Utils::LogDebug(std::format("ProcessEvent: 0x{:08X}", offsets.ProcessEvent));
-		Utils::LogDebug(std::format("ProcessEventIdx: 0x{:08X}", offsets.ProcessEventIdx));
+		Utils::LogDebug("Offset auto-scan (informational only, NOT applied):");
+		Utils::LogDebug(std::format("scan GObjects: 0x{:08X}", offsets.GObjects));
+		Utils::LogDebug(std::format("scan AppendString: 0x{:08X}", offsets.AppendString));
+		Utils::LogDebug(std::format("scan GNames: 0x{:08X}", offsets.GNames));
+		Utils::LogDebug(std::format("scan GWorld: 0x{:08X}{}", offsets.GWorld,
+			offsets.GWorld == kScanGWorldFalsePositive ? " [FALSE POSITIVE]" : ""));
+		Utils::LogDebug(std::format("scan ProcessEvent: 0x{:08X}", offsets.ProcessEvent));
+		Utils::LogDebug(std::format("scan ProcessEventIdx: 0x{:08X}", offsets.ProcessEventIdx));
+		// Explicitly restore dump values in case Scan mutated anything.
+		SDK::Offsets::GObjects = dumpGObjects;
+		SDK::Offsets::AppendString = dumpAppendString;
+		SDK::Offsets::GNames = dumpGNames;
+		SDK::Offsets::GWorld = dumpGWorld;
+		SDK::Offsets::ProcessEvent = dumpProcessEvent;
+		SDK::Offsets::ProcessEventIdx = dumpProcessEventIdx;
 	}
 	std::chrono::time_point offsetEndTime = std::chrono::high_resolution_clock::now();
 
@@ -104,7 +125,8 @@ bool Init()
 		std::chrono::time_point currentTime = std::chrono::high_resolution_clock::now();
 		auto elapsedTime = std::chrono::duration_cast<std::chrono::seconds>(currentTime - startTime).count();
 		if (elapsedTime >= 30) {
-			SDK::Offsets::GWorld = result.value().GWorld;
+			// Prefer dumped GWorld — never adopt scanner false-positive.
+			SDK::Offsets::GWorld = dumpGWorld;
 			pGWorld = SDK::UWorld::GetWorld();
 			if (!pGWorld) {
 				Globals::g_upConsole->SetVisibility(true);
@@ -142,27 +164,37 @@ bool Init()
 
 SDK::ASBZPlayerCharacter* GetLocalPlayer()
 {
-	SDK::UWorld* pGWorld = SDK::UWorld::GetWorld();
-	if (!pGWorld)
-		return{};
+	try
+	{
+		SDK::UWorld* pGWorld = SDK::UWorld::GetWorld();
+		if (!pGWorld)
+			return{};
 
-	SDK::UGameInstance* pGameInstance = pGWorld->OwningGameInstance;
-	if (!pGameInstance)
-		return{};
+		SDK::UGameInstance* pGameInstance = pGWorld->OwningGameInstance;
+		if (!pGameInstance)
+			return{};
 
-	SDK::ULocalPlayer* pLocalPlayer = pGameInstance->LocalPlayers[0];
-	if (!pLocalPlayer)
-		return{};
+		if (pGameInstance->LocalPlayers.Num() <= 0)
+			return{};
 
-	SDK::ASBZPlayerController* pLocalPlayerController = reinterpret_cast<SDK::ASBZPlayerController*>(pLocalPlayer->PlayerController);
-	if (!pLocalPlayerController || !pLocalPlayerController->IsA(SDK::ASBZPlayerController::StaticClass()))
-		return{};
+		SDK::ULocalPlayer* pLocalPlayer = pGameInstance->LocalPlayers[0];
+		if (!pLocalPlayer)
+			return{};
 
-	SDK::ASBZPlayerCharacter* pLocalPlayerPawn = reinterpret_cast<SDK::ASBZPlayerCharacter*>(pLocalPlayerController->AcknowledgedPawn);
-	if (!pLocalPlayerPawn || !pLocalPlayerPawn->IsA(SDK::ASBZPlayerCharacter::StaticClass()))
-		return{};
+		SDK::ASBZPlayerController* pLocalPlayerController = reinterpret_cast<SDK::ASBZPlayerController*>(pLocalPlayer->PlayerController);
+		if (!pLocalPlayerController || !pLocalPlayerController->IsA(SDK::ASBZPlayerController::StaticClass()))
+			return{};
 
-	return pLocalPlayerPawn;
+		SDK::ASBZPlayerCharacter* pLocalPlayerPawn = reinterpret_cast<SDK::ASBZPlayerCharacter*>(pLocalPlayerController->AcknowledgedPawn);
+		if (!pLocalPlayerPawn || !pLocalPlayerPawn->IsA(SDK::ASBZPlayerCharacter::StaticClass()))
+			return{};
+
+		return pLocalPlayerPawn;
+	}
+	catch (...)
+	{
+		return{};
+	}
 }
 
 inline void RecordProcessEventCall(const SDK::UObject* pObject, class SDK::UFunction* pFunction, void* pParams){
@@ -306,7 +338,27 @@ void UObjectProcessEvent_hk(const SDK::UObject* pObject, class SDK::UFunction* p
 UObjectProcessEvent_t UObjectProcessEventPlayer_o = nullptr;
 void UObjectProcessEventPlayer_hk(const SDK::UObject* pObject, class SDK::UFunction* pFunction, void* pParams)
 {
-	if(!Cheat::g_bIsInGame || !pObject->Class || !pObject->Class->SuperStruct){
+	if(!pObject->Class || !pObject->Class->SuperStruct){
+		UObjectProcessEventPlayer_o(pObject, pFunction, pParams);
+		return;
+	}
+
+	// Custom hide&seek maps often never reach SM_ActionPhase (g_bIsInGame=false).
+	// Still run player tick when Friendly Fire is on so PvP can work there.
+	const bool bRunPlayerLogic = Cheat::g_bIsInGame
+		|| CheatConfig::Get().m_misc.m_bFriendlyFire
+		|| CheatConfig::Get().m_misc.m_bGrabAll
+		|| CheatConfig::Get().m_misc.m_bGrabAccess
+		|| CheatConfig::Get().m_misc.m_bInstaDrill
+		|| CheatConfig::Get().m_misc.m_bSilentKillCops
+		|| CheatConfig::Get().m_misc.m_bGodMode
+		|| CheatConfig::Get().m_misc.m_bInfiniteAmmo
+		|| CheatConfig::Get().m_misc.m_bInstaKill
+		|| CheatConfig::Get().m_misc.m_bCarryMoreBags
+		|| CheatConfig::Get().m_misc.m_bNoCivPenalty
+		|| Cheat::SpawnerTools::HasPendingWork()
+		|| Cheat::PresetTeleport::NeedsPlayerTick();
+	if(!bRunPlayerLogic){
 		UObjectProcessEventPlayer_o(pObject, pFunction, pParams);
 		return;
 	}

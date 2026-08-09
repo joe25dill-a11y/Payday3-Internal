@@ -9,6 +9,7 @@
 #include <unordered_map>
 #include <variant>
 #include <cstdlib>
+#include <cstdio>
 
 #ifndef NOMINMAX
 #define NOMINMAX
@@ -24,6 +25,16 @@
 #include "Utils/Logging.hpp"
 #include "Features/ESP/ESP.hpp"
 #include "Features/Features.hpp"
+#include "Features/Misc/FriendlyFire.hpp"
+#include "Features/Misc/GrabAll.hpp"
+#include "Features/Misc/GrabAccess.hpp"
+#include "Features/Misc/InstaDrill.hpp"
+#include "Features/Misc/SilentKill.hpp"
+#include "Features/Misc/PresetTeleport.hpp"
+#include "Features/Misc/GodAmmo.hpp"
+#include "Features/Misc/CarryBags.hpp"
+#include "Features/Misc/NoCivPenalty.hpp"
+#include "Features/Misc/SpawnerTools.hpp"
 #include "Menu.hpp"
 
 namespace
@@ -202,6 +213,55 @@ void Hotkey(const char* szLabel, Menu::Hotkey_t& bind){
     ImGui::PopID();
 }
 
+// Compact click-to-bind key next to a checkbox (same ActiveID pattern as Hotkey/"Teleport").
+// IMPORTANT: id must NOT match the checkbox label — Checkbox already owns GetID(szLabel).
+static void BindKeyButton(const char* szBindId, Menu::Hotkey_t& bind)
+{
+    const ImGuiID id = ImGui::GetID(szBindId);
+    ImGui::PushID(id);
+    ImGui::SameLine();
+    if (bind.m_eType == Menu::Hotkey_t::EType::AlwaysOff || bind.m_eType == Menu::Hotkey_t::EType::AlwaysOn)
+    {
+        ImGui::PopID();
+        return;
+    }
+
+    if (ImGui::GetActiveID() == id)
+    {
+        ImGui::PushStyleColor(ImGuiCol_Button, ImGui::GetColorU32(ImGuiCol_ButtonActive));
+        ImGui::Button("...");
+        ImGui::PopStyleColor();
+        ImGui::SetKeyOwner(ImGuiKey_Escape, id);
+        ImGui::GetCurrentContext()->ActiveIdAllowOverlap = true;
+        ImGui::SetActiveID(id, ImGui::GetCurrentWindow());
+        if ((!ImGui::IsItemHovered() && ImGui::GetIO().MouseClicked[0]) || bind.SetToPressedKey())
+            ImGui::ClearActiveID();
+    }
+    else if (ImGui::Button(bind.ToString()))
+    {
+        ImGui::SetActiveID(id, ImGui::GetCurrentWindow());
+    }
+    ImGui::PopID();
+}
+
+static void CheckboxWithHotkey(const char* szLabel, bool* pEnabled, Menu::Hotkey_t& bind)
+{
+    ImGui::Checkbox(szLabel, pEnabled);
+    // Unique ImGui id — "##" hides extra label text, avoids colliding with the checkbox.
+    char szBindId[192]{};
+    std::snprintf(szBindId, sizeof(szBindId), "##hk_%s", szLabel);
+    BindKeyButton(szBindId, bind);
+}
+
+static bool ButtonWithHotkey(const char* szLabel, Menu::Hotkey_t& bind)
+{
+    const bool bClicked = ImGui::Button(szLabel);
+    char szBindId[192]{};
+    std::snprintf(szBindId, sizeof(szBindId), "##hk_%s", szLabel);
+    BindKeyButton(szBindId, bind);
+    return bClicked;
+}
+
 
 bool CheatConfig::Save() const{
 
@@ -278,6 +338,32 @@ bool CheatConfig::Save() const{
 
     Write("misc.superToss.enabled", m_misc.m_bSuperToss);
     Write("misc.superToss.velocity", m_misc.m_flSuperToss);
+
+    Write("misc.friendlyFire", m_misc.m_bFriendlyFire);
+    Write("misc.grabAll", m_misc.m_bGrabAll);
+    Write("misc.grabAccess", m_misc.m_bGrabAccess);
+    Write("misc.instaDrill", m_misc.m_bInstaDrill);
+    Write("misc.silentKillCops", m_misc.m_bSilentKillCops);
+    Write("misc.godMode", m_misc.m_bGodMode);
+    Write("misc.infiniteAmmo", m_misc.m_bInfiniteAmmo);
+    Write("misc.instaKill", m_misc.m_bInstaKill);
+    Write("misc.carryMoreBags", m_misc.m_bCarryMoreBags);
+    Write("misc.noCivPenalty", m_misc.m_bNoCivPenalty);
+
+    Write("misc.keyGodMode", m_misc.m_keyGodMode);
+    Write("misc.keyInfiniteAmmo", m_misc.m_keyInfiniteAmmo);
+    Write("misc.keyInstaKill", m_misc.m_keyInstaKill);
+    Write("misc.keyCarryMoreBags", m_misc.m_keyCarryMoreBags);
+    Write("misc.keyNoCivPenalty", m_misc.m_keyNoCivPenalty);
+    Write("misc.keyFriendlyFire", m_misc.m_keyFriendlyFire);
+    Write("misc.keyGrabAll", m_misc.m_keyGrabAll);
+    Write("misc.keyGrabAccess", m_misc.m_keyGrabAccess);
+    Write("misc.keyInstaDrill", m_misc.m_keyInstaDrill);
+    Write("misc.keySilentKillCops", m_misc.m_keySilentKillCops);
+    Write("misc.keySpawnMeth", m_misc.m_keySpawnMeth);
+    Write("misc.keySpawnVan", m_misc.m_keySpawnVan);
+    Write("misc.keySpawnGreenExit", m_misc.m_keySpawnGreenExit);
+    Write("misc.keySpawnMoney", m_misc.m_keySpawnMoney);
 
     Write("esp.enabled", espConfig.bESP);
     Write("esp.normal.box", espConfig.m_stNormalEnemies.m_bBox);
@@ -481,6 +567,18 @@ bool CheatConfig::Load()
     if (Read("misc.superToss.velocity", m_misc.m_flSuperToss))
         m_misc.m_flSuperToss = std::max(0.0f, m_misc.m_flSuperToss);
 
+    // Always start OFF so a bad session can't auto-enable crashy path.
+    m_misc.m_bFriendlyFire = false;
+    m_misc.m_bGrabAll = false;
+    m_misc.m_bGrabAccess = false;
+    m_misc.m_bInstaDrill = false;
+    m_misc.m_bSilentKillCops = false;
+    m_misc.m_bGodMode = false;
+    m_misc.m_bInfiniteAmmo = false;
+    m_misc.m_bInstaKill = false;
+    m_misc.m_bCarryMoreBags = false;
+    m_misc.m_bNoCivPenalty = false;
+
     Read("esp.enabled", espConfig.bESP);
 
     Read("esp.normal.box", espConfig.m_stNormalEnemies.m_bBox);
@@ -512,12 +610,43 @@ bool CheatConfig::Load()
     Read("esp.debug.skeletonDrawBoneNames", espConfig.bDebugSkeletonDrawBoneNames);
     Read("esp.debug.esp", espConfig.bDebugESP);
 
-    m_misc.m_keyClientMove.m_bActive = false;
-    m_misc.m_keyClientMove.m_bPressedThisFrame = false;
-    m_misc.m_keyClientMoveTeleport.m_bActive = false;
-    m_misc.m_keyClientMoveTeleport.m_bPressedThisFrame = false;
-    m_misc.m_keyClientMoveFaster.m_bActive = false;
-    m_misc.m_keyClientMoveFaster.m_bPressedThisFrame = false;
+    auto ResetKey = [](Menu::Hotkey_t& k)
+    {
+        k.m_bActive = false;
+        k.m_bPressedThisFrame = false;
+    };
+    ResetKey(m_misc.m_keyClientMove);
+    ResetKey(m_misc.m_keyClientMoveTeleport);
+    ResetKey(m_misc.m_keyClientMoveFaster);
+    ResetKey(m_misc.m_keyGodMode);
+    ResetKey(m_misc.m_keyInfiniteAmmo);
+    ResetKey(m_misc.m_keyInstaKill);
+    ResetKey(m_misc.m_keyCarryMoreBags);
+    ResetKey(m_misc.m_keyNoCivPenalty);
+    ResetKey(m_misc.m_keyFriendlyFire);
+    ResetKey(m_misc.m_keyGrabAll);
+    ResetKey(m_misc.m_keyGrabAccess);
+    ResetKey(m_misc.m_keyInstaDrill);
+    ResetKey(m_misc.m_keySilentKillCops);
+    ResetKey(m_misc.m_keySpawnMeth);
+    ResetKey(m_misc.m_keySpawnVan);
+    ResetKey(m_misc.m_keySpawnGreenExit);
+    ResetKey(m_misc.m_keySpawnMoney);
+
+    Read("misc.keyGodMode", m_misc.m_keyGodMode);
+    Read("misc.keyInfiniteAmmo", m_misc.m_keyInfiniteAmmo);
+    Read("misc.keyInstaKill", m_misc.m_keyInstaKill);
+    Read("misc.keyCarryMoreBags", m_misc.m_keyCarryMoreBags);
+    Read("misc.keyNoCivPenalty", m_misc.m_keyNoCivPenalty);
+    Read("misc.keyFriendlyFire", m_misc.m_keyFriendlyFire);
+    Read("misc.keyGrabAll", m_misc.m_keyGrabAll);
+    Read("misc.keyGrabAccess", m_misc.m_keyGrabAccess);
+    Read("misc.keyInstaDrill", m_misc.m_keyInstaDrill);
+    Read("misc.keySilentKillCops", m_misc.m_keySilentKillCops);
+    Read("misc.keySpawnMeth", m_misc.m_keySpawnMeth);
+    Read("misc.keySpawnVan", m_misc.m_keySpawnVan);
+    Read("misc.keySpawnGreenExit", m_misc.m_keySpawnGreenExit);
+    Read("misc.keySpawnMoney", m_misc.m_keySpawnMoney);
 
     auto& lootespConfig = LootESP::GetConfig();
     Read("lootesp.enabled", lootespConfig.bLootESP);
@@ -615,6 +744,42 @@ void CheatConfig::Visuals_t::Draw(){
 
 
 
+void CheatConfig::Misc_t::UpdateFeatureHotkeys()
+{
+    // Don't toggle features while a "..." key-bind button is listening.
+    if (ImGui::GetActiveID() != 0 && ImGui::GetCurrentContext()->ActiveIdAllowOverlap)
+        return;
+
+    auto PollToggle = [](Menu::Hotkey_t& key, bool& bFlag)
+    {
+        key.UpdateState();
+        if (key.Pressed() && key.m_eKeyCode != ImGuiKey_None)
+            bFlag = !bFlag;
+    };
+
+    PollToggle(m_keyGodMode, m_bGodMode);
+    PollToggle(m_keyInfiniteAmmo, m_bInfiniteAmmo);
+    PollToggle(m_keyInstaKill, m_bInstaKill);
+    PollToggle(m_keyCarryMoreBags, m_bCarryMoreBags);
+    PollToggle(m_keyNoCivPenalty, m_bNoCivPenalty);
+    PollToggle(m_keyFriendlyFire, m_bFriendlyFire);
+    PollToggle(m_keyGrabAll, m_bGrabAll);
+    PollToggle(m_keyGrabAccess, m_bGrabAccess);
+    PollToggle(m_keyInstaDrill, m_bInstaDrill);
+    PollToggle(m_keySilentKillCops, m_bSilentKillCops);
+
+    auto PollOneShot = [](Menu::Hotkey_t& key, auto&& fn)
+    {
+        key.UpdateState();
+        if (key.Pressed() && key.m_eKeyCode != ImGuiKey_None)
+            fn();
+    };
+    PollOneShot(m_keySpawnMeth, [] { Cheat::SpawnerTools::RequestMeth(); });
+    PollOneShot(m_keySpawnVan, [] { Cheat::SpawnerTools::RequestVan(); });
+    PollOneShot(m_keySpawnGreenExit, [] { Cheat::SpawnerTools::RequestGreenExit(); });
+    PollOneShot(m_keySpawnMoney, [] { Cheat::SpawnerTools::RequestMoneyScreen(); });
+}
+
 void CheatConfig::Misc_t::Draw(){
     Hotkey("Client Move", m_keyClientMove);
     if(m_keyClientMove.m_eType != Menu::Hotkey_t::EType::AlwaysOff){
@@ -665,6 +830,123 @@ void CheatConfig::Misc_t::Draw(){
         ImGui::SameLine();
         ImGui::SliderFloat("###Super Toss Speed", &m_flSuperToss, 1000.f, 5000.f);
     }
+
+    CheckboxWithHotkey("God Mode", &m_bGodMode, m_keyGodMode);
+    if (m_bGodMode)
+    {
+        ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.4f, 1.f, 0.55f, 1.f));
+        ImGui::TextWrapped("%s", Cheat::GodAmmo::g_sStatusGod.c_str());
+        ImGui::PopStyleColor();
+        ImGui::TextDisabled("Incoming dmg×0 + HP/armor top-up (does not block tasers).");
+    }
+
+    CheckboxWithHotkey("Infinite Ammo", &m_bInfiniteAmmo, m_keyInfiniteAmmo);
+    if (m_bInfiniteAmmo)
+    {
+        ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.55f, 0.85f, 1.f, 1.f));
+        ImGui::TextWrapped("%s", Cheat::GodAmmo::g_sStatusAmmo.c_str());
+        ImGui::PopStyleColor();
+        ImGui::TextDisabled("True-inf game flag + mag refill backup. Guns only (not placeables).");
+    }
+
+    CheckboxWithHotkey("More Bullet Damage (×1000)", &m_bInstaKill, m_keyInstaKill);
+    if (m_bInstaKill)
+    {
+        ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.f, 0.45f, 0.45f, 1.f));
+        ImGui::TextWrapped("%s", Cheat::GodAmmo::g_sStatusInstaKill.c_str());
+        ImGui::PopStyleColor();
+        ImGui::TextDisabled("Bullets hit harder — same FireData path as Nexus InstantKill.");
+    }
+
+    CheckboxWithHotkey("Carry More Bags (you + AI)", &m_bCarryMoreBags, m_keyCarryMoreBags);
+    if (m_bCarryMoreBags)
+    {
+        ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.85f, 0.75f, 1.f, 1.f));
+        ImGui::TextWrapped("%s", Cheat::CarryBags::g_sStatus.c_str());
+        ImGui::PopStyleColor();
+        ImGui::TextDisabled("MaxCarryBagCount → 50 for you and AI crew (SkysBags-style).");
+    }
+
+    CheckboxWithHotkey("No Civ / Custody Penalty", &m_bNoCivPenalty, m_keyNoCivPenalty);
+    if (m_bNoCivPenalty)
+    {
+        ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.7f, 0.95f, 0.7f, 1.f));
+        ImGui::TextWrapped("%s", Cheat::NoCivPenalty::g_sStatus.c_str());
+        ImGui::PopStyleColor();
+        ImGui::TextDisabled("Clears civ-kill + jail/custody cash docks on results. Solo/host best.");
+    }
+
+    CheckboxWithHotkey("Friendly Fire (HOST you->them SAFE)", &m_bFriendlyFire, m_keyFriendlyFire);
+    if (m_bFriendlyFire)
+    {
+        ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.f, 0.85f, 0.2f, 1.f));
+        ImGui::TextWrapped("%s", Cheat::FriendlyFire::g_sDebugStatus.c_str());
+        ImGui::PopStyleColor();
+        ImGui::TextDisabled("Crash-safe: hold LMB to damage other players. Friend cannot kill you yet.");
+    }
+
+    CheckboxWithHotkey("Grab All (loot)", &m_bGrabAll, m_keyGrabAll);
+    if (m_bGrabAll)
+    {
+        ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.55f, 0.9f, 0.55f, 1.f));
+        ImGui::TextWrapped("%s", Cheat::GrabAll::g_sDebugStatus.c_str());
+        ImGui::PopStyleColor();
+        ImGui::TextDisabled("Real F/Claim + floor bags — Num7 still free for leftovers.");
+    }
+
+    CheckboxWithHotkey("Grab Access (keys / RFID / press badge)", &m_bGrabAccess, m_keyGrabAccess);
+    if (m_bGrabAccess)
+    {
+        ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.55f, 0.85f, 1.f, 1.f));
+        ImGui::TextWrapped("%s", Cheat::GrabAccess::g_sDebugStatus.c_str());
+        ImGui::PopStyleColor();
+        ImGui::TextDisabled("Num/ equivalent — keycards, RFID, press badge. Num/ still free for Lua.");
+    }
+
+    CheckboxWithHotkey("Insta Drill (drills / PCs / thermite / cleaner)", &m_bInstaDrill, m_keyInstaDrill);
+    if (m_bInstaDrill)
+    {
+        ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.f, 0.75f, 0.4f, 1.f));
+        ImGui::TextWrapped("%s", Cheat::InstaDrill::g_sDebugStatus.c_str());
+        ImGui::PopStyleColor();
+        ImGui::TextDisabled("Drills / PCs / thermite / lance + cash/jewelry cleaner + minigame.");
+    }
+
+    CheckboxWithHotkey("Silent Despawn Cops", &m_bSilentKillCops, m_keySilentKillCops);
+    if (m_bSilentKillCops)
+    {
+        ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.f, 0.45f, 0.45f, 1.f));
+        ImGui::TextWrapped("%s", Cheat::SilentKill::g_sDebugStatus.c_str());
+        ImGui::PopStyleColor();
+        ImGui::TextDisabled("CH_BaseCop only — never Houston / FWB inside man / civs.");
+    }
+
+    ImGui::Separator();
+    ImGui::TextDisabled("Spawner");
+
+    if (ButtonWithHotkey("Meth spawn", m_keySpawnMeth))
+        Cheat::SpawnerTools::RequestMeth();
+    ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.85f, 0.75f, 1.f, 1.f));
+    ImGui::TextWrapped("%s", Cheat::SpawnerTools::g_sStatusMeth.c_str());
+    ImGui::PopStyleColor();
+
+    if (ButtonWithHotkey("Van drive-in", m_keySpawnVan))
+        Cheat::SpawnerTools::RequestVan();
+    ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.7f, 0.85f, 1.f, 1.f));
+    ImGui::TextWrapped("%s", Cheat::SpawnerTools::g_sStatusVan.c_str());
+    ImGui::PopStyleColor();
+
+    if (ButtonWithHotkey("Green exit", m_keySpawnGreenExit))
+        Cheat::SpawnerTools::RequestGreenExit();
+    ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.55f, 0.95f, 0.55f, 1.f));
+    ImGui::TextWrapped("%s", Cheat::SpawnerTools::g_sStatusExit.c_str());
+    ImGui::PopStyleColor();
+
+    if (ButtonWithHotkey("Money / results", m_keySpawnMoney))
+        Cheat::SpawnerTools::RequestMoneyScreen();
+    ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.f, 0.9f, 0.45f, 1.f));
+    ImGui::TextWrapped("%s", Cheat::SpawnerTools::g_sStatusMoney.c_str());
+    ImGui::PopStyleColor();
 }
 
 namespace Menu
@@ -706,32 +988,46 @@ namespace Menu
 
     void PreDraw()
     {
-        CheatConfig::Get().m_misc.m_keyClientMove.UpdateState();
-        CheatConfig::Get().m_misc.m_keyClientMoveTeleport.UpdateState();
-        CheatConfig::Get().m_misc.m_keyClientMoveFaster.UpdateState();
+        // Present-hook can run during lobby/heist transitions with empty LocalPlayers.
+        // TArray::operator[] throws std::out_of_range -> unhandled 0xe06d7363 crash.
+        try
+        {
+            CheatConfig::Get().m_misc.m_keyClientMove.UpdateState();
+            CheatConfig::Get().m_misc.m_keyClientMoveTeleport.UpdateState();
+            CheatConfig::Get().m_misc.m_keyClientMoveFaster.UpdateState();
+            CheatConfig::Get().m_misc.UpdateFeatureHotkeys();
+            Cheat::PresetTeleport::PollPendingUi();
 
-        SDK::UWorld* pGWorld = SDK::UWorld::GetWorld();
-        if (!pGWorld)
-            return;
+            SDK::UWorld* pGWorld = SDK::UWorld::GetWorld();
+            if (!pGWorld)
+                return;
 
-        SDK::UGameInstance* pGameInstance = pGWorld->OwningGameInstance;
-        if (!pGameInstance)
-            return;
+            SDK::UGameInstance* pGameInstance = pGWorld->OwningGameInstance;
+            if (!pGameInstance)
+                return;
 
-        SDK::ULocalPlayer* pLocalPlayer = pGameInstance->LocalPlayers[0];
-        if (!pLocalPlayer)
-            return;
+            if (pGameInstance->LocalPlayers.Num() <= 0)
+                return;
 
-        SDK::APlayerController* pPlayerController = pLocalPlayer->PlayerController;
-        if (!pPlayerController)
-            return;
+            SDK::ULocalPlayer* pLocalPlayer = pGameInstance->LocalPlayers[0];
+            if (!pLocalPlayer)
+                return;
 
-        SDK::ULevel* pPersistentLevel = pGWorld->PersistentLevel;
-        if (!pPersistentLevel)
-            return;
+            SDK::APlayerController* pPlayerController = pLocalPlayer->PlayerController;
+            if (!pPlayerController)
+                return;
 
-        ESP::Render(pGWorld, pPlayerController);
-        ESP::RenderDebugESP(pPersistentLevel, pPlayerController);
+            SDK::ULevel* pPersistentLevel = pGWorld->PersistentLevel;
+            if (!pPersistentLevel)
+                return;
+
+            ESP::Render(pGWorld, pPlayerController);
+            ESP::RenderDebugESP(pPersistentLevel, pPlayerController);
+        }
+        catch (...)
+        {
+            // Swallow SDK/layout hiccups so Present never hard-kills the game.
+        }
     }
 
     
@@ -762,25 +1058,51 @@ namespace Menu
                 ImGui::EndTabItem();
             }
 
+            if (ImGui::BeginTabItem("Teleport")){
+                Cheat::PresetTeleport::DrawTab();
+                ImGui::EndTabItem();
+            }
+
             if (ImGui::BeginTabItem("Debug")){
-                auto sHostStatus = [](){
+                // Host / session — AccelByte path can be null in menus → "Unknown" is normal there.
+                auto sHostStatus = []() -> const char* {
                     SDK::UWorld* pGWorld = SDK::UWorld::GetWorld();
                     if (!pGWorld)
-                        return "Unknown";
+                        return "no world";
 
                     SDK::UGameInstance* pGameInstance = pGWorld->OwningGameInstance;
                     if (!pGameInstance || !pGameInstance->IsA(SDK::USBZGameInstance::StaticClass()))
-                        return "Unknown";
+                        return "no game instance";
 
                     SDK::USBZGameInstance* pSBZGameInstance = static_cast<SDK::USBZGameInstance*>(pGameInstance);
                     auto pAccelByteUser = pSBZGameInstance->AccelByteUser;
                     if (!pAccelByteUser)
-                        return "Unknown";
+                        return "no AccelByte (lobby?)";
 
-                    auto pUserActivity = pAccelByteUser->UserActivity;
-                    return pUserActivity.bIsHost ? "Host" : "Client";    
+                    return pAccelByteUser->UserActivity.bIsHost ? "Host" : "Client";
                 };
-                ImGui::Text(std::format("bIsHost: {}", sHostStatus()).c_str());
+
+                ImGui::Text("Session: %s", sHostStatus());
+                ImGui::Text("In heist: %s | Stealth: %s | Solo: %s",
+                    Cheat::g_bIsInGame ? "yes" : "no",
+                    Cheat::g_bIsInStealth ? "yes" : "no",
+                    Cheat::g_bIsSoloGame ? "yes" : "no");
+
+                ImGui::Separator();
+                ImGui::TextDisabled("Feature status (updates while Misc checkboxes are on)");
+                ImGui::TextWrapped("Grab All: %s", Cheat::GrabAll::g_sDebugStatus.c_str());
+                ImGui::TextWrapped("Grab Access: %s", Cheat::GrabAccess::g_sDebugStatus.c_str());
+                ImGui::TextWrapped("Insta Drill: %s", Cheat::InstaDrill::g_sDebugStatus.c_str());
+                ImGui::TextWrapped("Silent Despawn: %s", Cheat::SilentKill::g_sDebugStatus.c_str());
+                ImGui::TextWrapped("God Mode: %s", Cheat::GodAmmo::g_sStatusGod.c_str());
+                ImGui::TextWrapped("Infinite Ammo: %s", Cheat::GodAmmo::g_sStatusAmmo.c_str());
+                ImGui::TextWrapped("Insta Kill: %s", Cheat::GodAmmo::g_sStatusInstaKill.c_str());
+                ImGui::TextWrapped("Carry Bags: %s", Cheat::CarryBags::g_sStatus.c_str());
+                ImGui::TextWrapped("No Civ Penalty: %s", Cheat::NoCivPenalty::g_sStatus.c_str());
+                ImGui::TextWrapped("Friendly Fire: %s", Cheat::FriendlyFire::g_sDebugStatus.c_str());
+
+                ImGui::Separator();
+                ImGui::Text("%.1f FPS (%.3f ms)", ImGui::GetIO().Framerate, 1000.0f / ImGui::GetIO().Framerate);
                 ImGui::EndTabItem();
             }
 
