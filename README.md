@@ -1,6 +1,10 @@
 # Note
 > UnknownCheats Thread: https://www.unknowncheats.me/forum/payday-3-a/736601-internal-cheeto.html
 
+### Sky fork additions (`sky-features`)
+Extra Misc features on this fork (god/ammo, bullet damage, bags, civ/custody, grab tools, drill, silent cops, spawners, preset teleport tab, click-to-bind hotkeys).  
+**Full list:** [FEATURES.md](./FEATURES.md)
+
 # Payday 3 Internal
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Omega172/Payday3-Internal/total)
 [![Discord](https://img.shields.io/discord/1209142443627257856)](https://discord.gg/zc8E7dYYRe)
