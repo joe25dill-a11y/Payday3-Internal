@@ -194,7 +194,7 @@ void Misc::HandleMenu()
 		if (m_pVaultScanKey->GetKey() == ImGuiKey_None)
 			m_pVaultScanKey->SetKey(ImGuiKey_F10);
 		m_pVaultScanKey->SetMode(Hotkey::EHotkeyMode::Toggle);
-		m_pKeypadHelper->SetValue(true);
+		m_pKeypadHelper->SetValue(false);
 
 		m_pSpawnMeth->SetCallback([]() { SpawnerTools::RequestMeth(); });
 		m_pSpawnVan->SetCallback([]() { SpawnerTools::RequestVan(); });

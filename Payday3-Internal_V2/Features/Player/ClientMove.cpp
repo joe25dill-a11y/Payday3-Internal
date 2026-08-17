@@ -36,6 +36,18 @@ namespace FreecamFly
 			return v;
 		}
 
+		void SetCollisionFlag(SDK::ASBZPlayerCharacter* pLocal, bool bEnable)
+		{
+			if (!pLocal)
+				return;
+			// AActor::bActorEnableCollision @ 0x64 bit 7 — avoid ProcessEvent (UE4SS races)
+			auto* pByte = reinterpret_cast<uint8_t*>(reinterpret_cast<uintptr_t>(pLocal) + 0x64);
+			if (bEnable)
+				*pByte |= (1u << 7);
+			else
+				*pByte &= static_cast<uint8_t>(~(1u << 7));
+		}
+
 		void ApplyFreecam(SDK::ASBZPlayerCharacter* pLocal, SDK::USBZPlayerMovementComponent* pMove, bool bOn, bool bFaster, float flSpeed)
 		{
 			if (!pLocal || !pMove)
@@ -45,7 +57,7 @@ namespace FreecamFly
 			{
 				if (!s_bCollisionOff)
 				{
-					pLocal->SetActorEnableCollision(false);
+					SetCollisionFlag(pLocal, false);
 					s_bCollisionOff = true;
 				}
 
@@ -63,7 +75,7 @@ namespace FreecamFly
 			{
 				if (s_bCollisionOff)
 				{
-					pLocal->SetActorEnableCollision(true);
+					SetCollisionFlag(pLocal, true);
 					s_bCollisionOff = false;
 				}
 				pMove->MovementMode = SDK::EMovementMode::MOVE_Walking;

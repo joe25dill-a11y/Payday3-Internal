@@ -24,9 +24,10 @@ namespace GrabAll
         // v2: floor bags first (already), harden live-Claim, friends pacing, one retry pass.
         enum class EKind : uint8_t
         {
-            Pile,
+            Instant,
             Bag,
-            Instant
+            Pile,
+            Multi
         };
 
         struct Target_t
@@ -35,13 +36,14 @@ namespace GrabAll
             SDK::AActor* m_pActor = nullptr;
         };
 
-        constexpr int kBatchSolo = 12;
-        constexpr int kBatchFriends = 8;
-        constexpr int kMaxQueuePerWave = 250;
-        constexpr auto kWaveGapSolo = std::chrono::milliseconds(350);
-        constexpr auto kWaveGapFriends = std::chrono::milliseconds(550);
-        constexpr auto kRetryGap = std::chrono::milliseconds(350);
-        constexpr auto kRescanGap = std::chrono::milliseconds(1200);
+        // One press = one full sweep (instant + bags + piles), then STOP.
+        // Continuous InstantLoot pulses were crashing after long sessions (AV via UE4SS).
+        constexpr int kBatchSolo = 10;
+        constexpr int kBatchFriends = 6;
+        constexpr int kMaxRetries = 2;
+        constexpr auto kWaveGapSolo = std::chrono::milliseconds(280);
+        constexpr auto kWaveGapFriends = std::chrono::milliseconds(450);
+        constexpr auto kRetryGap = std::chrono::milliseconds(400);
 
         static bool s_bBusy = false;
         static uint32_t s_uGen = 0;
@@ -49,12 +51,13 @@ namespace GrabAll
         static int s_iTotal = 0;
         static size_t s_iIndex = 0;
         static bool s_bFriends = false;
-        static bool s_bRetryPassDone = false;
         static bool s_bAllowCreateBag = false;
+        static bool s_bSweepDone = false;
+        static bool s_bWasEnabled = false;
+        static int s_iRetryPass = 0;
         static std::vector<Target_t> s_vecQueue{};
         static std::unordered_set<uintptr_t> s_setDone{};
         static std::chrono::steady_clock::time_point s_timeNextBatch{};
-        static std::chrono::steady_clock::time_point s_timeLastStart{};
 
         static std::string ToLower(std::string s)
         {
@@ -410,6 +413,93 @@ namespace GrabAll
             return false;
         }
 
+        static bool PickupMultiSeh(
+            SDK::ASBZMultiBagGenerator* pGen,
+            SDK::ASBZPlayerCharacter* pPawn,
+            SDK::USBZBagManager* pBagMgr,
+            SDK::USBZInteractorComponent* pInteractor,
+            bool bFriends)
+        {
+            bool bDid = false;
+            __try
+            {
+                if (!pGen || !pPawn)
+                    return false;
+
+                if (pBagMgr)
+                {
+                    const int n = pGen->BagHandleArray.Num();
+                    for (int i = 0; i < n; ++i)
+                    {
+                        SDK::FSBZBagHandle handle = pGen->BagHandleArray[i];
+                        if (handle.Id > 0 && handle.BagType)
+                        {
+                            pBagMgr->ClaimBag(handle, pPawn);
+                            if (!bFriends)
+                                pBagMgr->Multicast_ClaimBag(handle.Id, pPawn);
+                            bDid = true;
+                        }
+                    }
+                }
+
+                auto* pInter = pGen->InteractableComponent;
+                if (pInteractor && pInter)
+                {
+                    if (!bFriends && pInter->IsA(SDK::USBZInteractableComponent::StaticClass()))
+                    {
+                        const int32_t id = ++pInteractor->InteractId;
+                        pInteractor->Server_StartInteraction(pInter, id, 0);
+                        pInteractor->Server_CompleteInteraction(pInter, id);
+                    }
+                    pGen->OnServerCompleteInteraction(pInter, pInteractor, true);
+                    bDid = true;
+                }
+
+                pGen->SetEnabled(false);
+            }
+            __except (EXCEPTION_EXECUTE_HANDLER)
+            {
+            }
+            return bDid;
+        }
+
+        static bool PickupMulti(
+            SDK::ASBZMultiBagGenerator* pGen,
+            SDK::ASBZPlayerCharacter* pPawn,
+            SDK::USBZBagManager* pBagMgr,
+            SDK::USBZInteractorComponent* pInteractor,
+            bool bFriends)
+        {
+            if (!ActorOk(pGen) || !pPawn || AlreadyDone(pGen))
+                return false;
+
+            const std::string low = ToLower(ActorName(pGen));
+            if (Contains(low, "methpure") || Contains(low, "cookingstation"))
+            {
+                SetDone(pGen);
+                return false;
+            }
+
+            bool bDid = PickupMultiSeh(pGen, pPawn, pBagMgr, pInteractor, bFriends);
+
+            if (s_bAllowCreateBag && pBagMgr && pGen->BagType)
+            {
+                int bags = pGen->NumberOfBags;
+                if (bags < 1)
+                    bags = 1;
+                if (bags > 16)
+                    bags = 16;
+                for (int i = 0; i < bags; ++i)
+                {
+                    if (SafeCreateAndClaimRaw(pBagMgr, pGen->BagType, pPawn, bFriends))
+                        bDid = true;
+                }
+            }
+
+            SetDone(pGen);
+            return bDid;
+        }
+
         // Floor bags: Claim + Multicast(by id) like v1/Num7.
         // Only OnPickup/Server if the bag actor is STILL alive after claim.
         static bool SafeClaimFloorBagSeh(
@@ -519,7 +609,8 @@ namespace GrabAll
                             pInteractor->Server_StartInteraction(pInter, id, 0);
                             pInteractor->Server_CompleteInteraction(pInter, id);
                             bOk = true;
-                            bMarkDone = true;
+                            // Only permanent-done when game says looted — else rescan can retry
+                            bMarkDone = pLoot->bIsLooted;
                         }
                     }
                 }
@@ -603,6 +694,23 @@ namespace GrabAll
                     pushUnique(EKind::Pile, pPile);
                 }
             }
+
+            {
+                SDK::TArray<SDK::AActor*> multis{};
+                SDK::UGameplayStatics::GetAllActorsOfClass(pGWorld, SDK::ASBZMultiBagGenerator::StaticClass(), &multis);
+                for (int i = 0; i < multis.Num(); ++i)
+                {
+                    auto* pMulti = reinterpret_cast<SDK::ASBZMultiBagGenerator*>(multis[i]);
+                    if (!pMulti)
+                        continue;
+                    const std::string low = ToLower(ActorName(pMulti));
+                    if (Contains(low, "methpure") || Contains(low, "cookingstation"))
+                        continue;
+                    if (!IsLootPileName(low) && !Contains(low, "multibag"))
+                        continue;
+                    pushUnique(EKind::Multi, pMulti);
+                }
+            }
         }
 
         static void CancelGrab(const char* reason)
@@ -623,39 +731,34 @@ namespace GrabAll
             SDK::ASBZPlayerController* pController,
             SDK::ASBZPlayerCharacter* pLocal)
         {
-            if (s_bBusy || !pLocal)
+            if (s_bBusy || s_bSweepDone || !pLocal)
                 return;
-
-            const auto now = std::chrono::steady_clock::now();
-            if (now - s_timeLastStart < kRescanGap)
-                return;
-            s_timeLastStart = now;
 
             ++s_uGen;
             s_bBusy = true;
             s_iOk = 0;
             s_iIndex = 0;
-            s_bRetryPassDone = false;
+            s_iRetryPass = 0;
             s_bAllowCreateBag = false;
             s_bFriends = IsFriendsLobby(pGWorld, pLocal);
+            ClearDoneCache();
 
-            // v1/Num7: bulk grab all InstantLoot (loose desk/floor cash) immediately
+            // Loose cash / jewelry once at the start of the sweep
             const bool bInstantBulk = SafeGrabInstantLootRaw(pController);
             if (bInstantBulk)
                 ++s_iOk;
 
-            CollectTargets(pGWorld, s_vecQueue, !bInstantBulk);
-            if (static_cast<int>(s_vecQueue.size()) > kMaxQueuePerWave)
-                s_vecQueue.resize(static_cast<size_t>(kMaxQueuePerWave));
+            CollectTargets(pGWorld, s_vecQueue, true);
             s_iTotal = static_cast<int>(s_vecQueue.size());
-            s_timeNextBatch = now;
+            s_timeNextBatch = std::chrono::steady_clock::now();
 
             if (s_vecQueue.empty())
             {
                 s_bBusy = false;
+                s_bSweepDone = true;
                 g_sDebugStatus = bInstantBulk
-                    ? "GrabAll instant OK — waiting for more loot"
-                    : "GrabAll ON — no loot left";
+                    ? "GrabAll done — instant loot grabbed"
+                    : "GrabAll done — nothing left";
                 return;
             }
 
@@ -691,6 +794,10 @@ namespace GrabAll
                 if (pActor->IsA(SDK::ASBZInstantLoot::StaticClass()))
                     return PickupInstant(reinterpret_cast<SDK::ASBZInstantLoot*>(pActor), pInteractor);
                 break;
+            case EKind::Multi:
+                if (pActor->IsA(SDK::ASBZMultiBagGenerator::StaticClass()))
+                    return PickupMulti(reinterpret_cast<SDK::ASBZMultiBagGenerator*>(pActor), pLocal, pBagMgr, pInteractor, bFriends);
+                break;
             }
             return false;
         }
@@ -718,7 +825,6 @@ namespace GrabAll
                     break;
 
                 Target_t& t = s_vecQueue[s_iIndex];
-                // Re-check every item — Carry50 claims destroy bag actors mid-queue
                 if (!ActorOk(t.m_pActor) || AlreadyDone(t.m_pActor))
                 {
                     SetDone(t.m_pActor);
@@ -734,28 +840,29 @@ namespace GrabAll
 
             if (static_cast<int>(s_iIndex) >= s_iTotal)
             {
-                // One retry pass for piles/bags that failed (not SetDone) — then idle
-                if (!s_bRetryPassDone)
+                if (s_iRetryPass < kMaxRetries)
                 {
-                    s_bRetryPassDone = true;
-                    s_bAllowCreateBag = true; // Num7 CreateBag leftovers on this pass
+                    ++s_iRetryPass;
+                    s_bAllowCreateBag = true;
                     SafeGrabInstantLootRaw(HeistUtil::GetLocalSBZController());
                     CollectTargets(pGWorld, s_vecQueue, true);
-                    if (static_cast<int>(s_vecQueue.size()) > kMaxQueuePerWave)
-                        s_vecQueue.resize(static_cast<size_t>(kMaxQueuePerWave));
                     if (!s_vecQueue.empty())
                     {
                         s_iIndex = 0;
                         s_iTotal = static_cast<int>(s_vecQueue.size());
                         s_timeNextBatch = now + kRetryGap;
-                        g_sDebugStatus = "GrabAll retry+CreateBag " + std::to_string(s_iTotal);
+                        g_sDebugStatus = "GrabAll leftovers " + std::to_string(s_iTotal)
+                            + " (pass " + std::to_string(s_iRetryPass) + ")";
                         return;
                     }
                 }
+
+                SafeGrabInstantLootRaw(HeistUtil::GetLocalSBZController());
                 s_bBusy = false;
                 s_bAllowCreateBag = false;
-                g_sDebugStatus = "GrabAll wave " + std::to_string(s_iOk) + " — idle";
-                s_timeLastStart = now;
+                s_bSweepDone = true;
+                s_vecQueue.clear();
+                g_sDebugStatus = "GrabAll done (" + std::to_string(s_iOk) + ") — toggle to grab again";
                 return;
             }
 
@@ -769,13 +876,18 @@ namespace GrabAll
         SDK::ASBZPlayerCharacter* pLocalPlayer,
         bool bEnabled)
     {
+        if (Framework::bProcessExiting || !Framework::bShouldRun)
+            return;
+
         if (!bEnabled)
         {
-            if (s_bBusy || !s_setDone.empty() || g_sDebugStatus != "GrabAll off")
+            if (s_bBusy || s_bSweepDone || s_bWasEnabled || !s_setDone.empty() || g_sDebugStatus != "GrabAll off")
             {
                 ClearDoneCache();
+                s_bSweepDone = false;
                 CancelGrab("GrabAll off");
             }
+            s_bWasEnabled = false;
             return;
         }
 
@@ -789,8 +901,18 @@ namespace GrabAll
             else
                 g_sDebugStatus = "GrabAll ON — wait for heist";
             ClearDoneCache();
+            s_bSweepDone = false;
             return;
         }
+
+        if (!s_bWasEnabled)
+        {
+            s_bSweepDone = false;
+            s_bWasEnabled = true;
+        }
+
+        if (s_bSweepDone)
+            return;
 
         StartGrab(pGWorld, pLocalController, pLocalPlayer);
         ProcessBatch(pGWorld, pLocalPlayer);
