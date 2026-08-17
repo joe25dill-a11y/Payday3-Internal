@@ -1275,12 +1275,25 @@ protected:
 
 	bool m_bSetting = false;
 	bool m_bActive = false;
+	bool m_bSkipNextPoll = false;
 
 	bool SetKey() noexcept
 	{
 		for (int i = ImGuiKey_NamedKey_BEGIN; i < ImGuiKey_NamedKey_END; ++i) {
 			ImGuiKey _key = static_cast<ImGuiKey>(i);
-			if (!ImGui::IsKeyPressed(_key))
+			if (!ImGui::IsKeyPressed(_key, false))
+				continue;
+
+			if (_key == ImGuiKey_Escape)
+			{
+				m_eKey = ImGuiKey_None;
+				return true;
+			}
+
+			// Menu / unload keys, and MouseLeft (that's the click used to open bind / click-away)
+			if (_key == ImGuiKey_Insert || _key == ImGuiKey_Delete || _key == ImGuiKey_End)
+				continue;
+			if (_key == ImGuiKey_MouseLeft)
 				continue;
 
 			m_eKey = _key;
@@ -1321,10 +1334,25 @@ public:
 		m_eMode = mode;
 	}
 
+	EHotkeyMode GetMode() const
+	{
+		return m_eMode;
+	}
+
 	constexpr EElementType GetType() const override
 	{
 		return EElementType::Hotkey;
 	};
+
+	bool IsCapturing() const
+	{
+		return m_bSetting;
+	}
+
+	bool ShouldSkipPoll() const
+	{
+		return m_bSkipNextPoll;
+	}
 
 	void Render() override
 	{
@@ -1334,65 +1362,69 @@ public:
 		SameLine();
 
 		const std::string sLabel = GetName();
-		const auto id = ImGui::GetID(sLabel.c_str());
-		ImGui::PushID(sLabel.c_str());
+		ImGui::PushID(m_sUnique.c_str());
 
 		ImGui::TextUnformatted(sLabel.c_str());
 
-		if (ImAdd::BeginCombo(("##CMB" + GetName()).c_str(), "##", ImGuiComboFlags_NoPreview))
+		ImGui::SameLine(0.f, 8.f);
+
+		const ImGuiID id = ImGui::GetID("##bind");
+		const char* szBtn = m_bSetting ? "..." : ImGui::GetKeyName(m_eKey);
+
+		if (m_bSetting)
+		{
+			ImGui::PushStyleColor(ImGuiCol_Button, ImGui::GetColorU32(ImGuiCol_ButtonActive));
+			ImAdd::Button(szBtn, m_stStyle.vec2Size);
+			ImGui::PopStyleColor();
+
+			ImGui::SetActiveID(id, ImGui::GetCurrentWindow());
+			ImGui::SetKeyOwner(ImGuiKey_Escape, id);
+			ImGui::GetCurrentContext()->ActiveIdAllowOverlap = true;
+
+			const bool bClickOff = !ImGui::IsItemHovered() && ImGui::GetIO().MouseClicked[0];
+			if (bClickOff || SetKey())
+			{
+				ImGui::ClearActiveID();
+				m_bSetting = false;
+				m_bSkipNextPoll = true;
+			}
+		}
+		else if (ImAdd::Button(szBtn, m_stStyle.vec2Size))
+		{
+			ImGui::SetActiveID(id, ImGui::GetCurrentWindow());
+			m_bSetting = true;
+		}
+
+		ImGui::SameLine(0.f, 8.f);
+		if (ImAdd::BeginCombo("##mode", "##", ImGuiComboFlags_NoPreview))
 		{
 			bool bSelected;
 
 			bSelected = m_eMode == EHotkeyMode::AlwaysOn;
 			if (ImAdd::Selectable("Always On", bSelected))
 				m_eMode = EHotkeyMode::AlwaysOn;
-
 			if (bSelected)
 				ImGui::SetItemDefaultFocus();
 
 			bSelected = m_eMode == EHotkeyMode::Hold;
 			if (ImAdd::Selectable("Hold", bSelected))
 				m_eMode = EHotkeyMode::Hold;
-
 			if (bSelected)
 				ImGui::SetItemDefaultFocus();
 
 			bSelected = m_eMode == EHotkeyMode::Toggle;
 			if (ImAdd::Selectable("Toggle", bSelected))
 				m_eMode = EHotkeyMode::Toggle;
-
 			if (bSelected)
 				ImGui::SetItemDefaultFocus();
 
 			bSelected = m_eMode == EHotkeyMode::HoldOff;
 			if (ImAdd::Selectable("Hold Off", bSelected))
 				m_eMode = EHotkeyMode::HoldOff;
-
 			if (bSelected)
 				ImGui::SetItemDefaultFocus();
 
 			ImGui::EndCombo();
-		}
-
-		ImGui::SameLine(0.f, 8.f);
-
-		std::string BtnName = (m_bSetting) ? "..." : ImGui::GetKeyName(m_eKey);
-
-		if (ImGui::GetActiveID() == id) {
-			ImGui::PushStyleColor(ImGuiCol_Button, ImGui::GetColorU32(ImGuiCol_ButtonActive));
-			ImAdd::Button("...", m_stStyle.vec2Size);
-			ImGui::PopStyleColor();
-
-			ImGui::GetCurrentContext()->ActiveIdAllowOverlap = true;
-			if (!ImGui::IsItemHovered() && !ImGui::IsItemFocused() && SetKey())
-			{
-				ImGui::ClearActiveID();
-				m_bSetting = false;
-			}
-		}
-		else if (ImAdd::Button(BtnName.c_str(), m_stStyle.vec2Size) || m_bSetting) {
-			ImGui::SetActiveID(id, ImGui::GetCurrentWindow());
-			m_bSetting = true;
 		}
 
 		ImGui::PopID();
@@ -1437,9 +1469,18 @@ public:
 
 	void Update()
 	{
-		if (m_bSetting && m_eMode != EHotkeyMode::AlwaysOn)
+		if (m_bSetting)
 		{
-			m_bActive = false;
+			if (m_eMode != EHotkeyMode::AlwaysOn)
+				m_bActive = false;
+			return;
+		}
+
+		if (m_bSkipNextPoll)
+		{
+			m_bSkipNextPoll = false;
+			if (m_eMode != EHotkeyMode::AlwaysOn)
+				m_bActive = false;
 			return;
 		}
 

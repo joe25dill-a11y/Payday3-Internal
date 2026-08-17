@@ -14,6 +14,8 @@ namespace Framework {
 
 	inline bool bInitalized = false;
 	inline bool bShouldRun = true;
+	// Set when the game window is closing / process is exiting — skip heavy cleanup & UE calls
+	inline bool bProcessExiting = false;
 	inline HMODULE hModule = NULL;
 	inline size_t iModuleNameHash = {};
 

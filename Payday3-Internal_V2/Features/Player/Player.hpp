@@ -112,6 +112,16 @@ private:
 	std::unique_ptr<Checkbox> m_pNoFallDamage = std::make_unique<Checkbox>("PLAYER_NO_FALLDAMAGE", "PLAYER_NO_FALLDAMAGE"Hashed);
 	std::unique_ptr<Checkbox> m_pNoDetection = std::make_unique<Checkbox>("PLAYER_NO_DETECTION", "PLAYER_NO_DETECTION"Hashed);
 
+	// Freecam body-fly (ScoutFreecam ApplyFreecam, in-DLL — F7 toggle)
+	std::unique_ptr<Checkbox> m_pFreecam = std::make_unique<Checkbox>("PLAYER_FREECAM", "PLAYER_FREECAM"Hashed);
+	std::unique_ptr<Hotkey> m_pFreecamKey = std::make_unique<Hotkey>("PLAYER_FREECAM_KEY", "PLAYER_FREECAM_KEY"Hashed);
+	std::unique_ptr<Hotkey> m_pFreecamFasterKey = std::make_unique<Hotkey>("PLAYER_FREECAM_FASTER_KEY", "PLAYER_FREECAM_FASTER_KEY"Hashed);
+	std::unique_ptr<SliderFloat> m_pFreecamSpeed = std::make_unique<SliderFloat>("PLAYER_FREECAM_SPEED", "PLAYER_FREECAM_SPEED"Hashed, ElementBase::Style_t{}, 2500.f, 500.f, 5000.f, "%.0f");
+
+	bool m_bFreecamKeyWasDown = false;
+	bool m_bFreecamToggled = false;
+	bool m_bFreecamFlying = false;
+
 	//Tab 2
 	std::unique_ptr<Table> m_pPlayerTable = std::make_unique<Table>("PLAYER_TABLE", 4, ImGuiTableFlags_Resizable | ImGuiTableFlags_SizingStretchProp, ElementBase::Style_t{ .vec2Size = ImVec2(-10.0f, -200.0f) });
 
@@ -152,6 +162,7 @@ private:
 public:
 	bool Setup();
 	void HandleMenu();
+	void Render();
 	void Run();
 	RadioButtonIcon* GetMenuButton() const { return m_pMenuButton.get(); }
 	std::string GetName() { return "Player"; };

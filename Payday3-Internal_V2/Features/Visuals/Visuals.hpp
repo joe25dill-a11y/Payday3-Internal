@@ -64,6 +64,14 @@ private:
 	std::unique_ptr<ColorPicker> m_pSkeletonCivilianColor = std::make_unique<ColorPicker>("VISUALS_SKELETON_CIVILIAN_COLOR", "VISUALS_SKELETON_CIVILIAN_COLOR"Hashed);
 
 	std::unique_ptr<Checkbox> m_pHighlight = std::make_unique<Checkbox>("VISUALS_HIGHLIGHT", "VISUALS_HIGHLIGHT"Hashed);
+
+	std::unique_ptr<Checkbox> m_pOutline = std::make_unique<Checkbox>("VISUALS_OUTLINE", "VISUALS_OUTLINE"Hashed);
+	// Game outline palette only (Red/Yellow/White/Pink) — free RGB is not supported by PD3 outlines
+	std::unique_ptr<Combo> m_pOutlineCopColor = std::make_unique<Combo>("VISUALS_OUTLINE_COP_COLOR", "VISUALS_OUTLINE_COP_COLOR"Hashed);
+	std::unique_ptr<Combo> m_pOutlineCivilianColor = std::make_unique<Combo>("VISUALS_OUTLINE_CIVILIAN_COLOR", "VISUALS_OUTLINE_CIVILIAN_COLOR"Hashed);
+	std::unique_ptr<Combo> m_pOutlineCashColor = std::make_unique<Combo>("VISUALS_OUTLINE_CASH_COLOR", "VISUALS_OUTLINE_CASH_COLOR"Hashed);
+	std::unique_ptr<Combo> m_pOutlineDepositBoxColor = std::make_unique<Combo>("VISUALS_OUTLINE_DEPOSITBOX_COLOR", "VISUALS_OUTLINE_DEPOSITBOX_COLOR"Hashed);
+	std::unique_ptr<Combo> m_pOutlineKeycardColor = std::make_unique<Combo>("VISUALS_OUTLINE_KEYCARD_COLOR", "VISUALS_OUTLINE_KEYCARD_COLOR"Hashed);
 	
 	std::unique_ptr<Checkbox> m_pItem = std::make_unique<Checkbox>("VISUALS_ITEM", "VISUALS_ITEM"Hashed);
 	std::unique_ptr<ColorPicker> m_pItemCashColor = std::make_unique<ColorPicker>("VISUALS_ITEM_CASH_COLOR", "VISUALS_ITEM_CASH_COLOR"Hashed);
@@ -88,6 +96,7 @@ private:
 		bool DrawArmorBar = false;
 		bool DrawSkeleton = false;
 		bool DrawHighlight = false;
+		bool DrawOutline = false;
 		bool DrawItems = false;
 		bool ShowCops = false;
 		bool ShowCivilians = false;

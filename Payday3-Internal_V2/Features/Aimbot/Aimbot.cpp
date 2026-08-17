@@ -103,6 +103,12 @@ void Aimbot::Render()
 	if (!m_pAimbotEnabled->GetValue())
 		return;
 
+	if (m_pAimbotHotkey->IsCapturing() || m_pAimbotHotkey->ShouldSkipPoll())
+	{
+		m_pAimbotHotkey->Update();
+		return;
+	}
+
 	m_pAimbotHotkey->Update();
 	if (!m_pAimbotHotkey->GetValue())
 		return;

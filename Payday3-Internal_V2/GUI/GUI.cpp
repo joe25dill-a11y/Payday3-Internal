@@ -2,6 +2,7 @@
 #include "../Features/Player/Player.hpp"
 #include "../Features/Visuals/Visuals.hpp"
 #include "../Features/Aimbot/Aimbot.hpp"
+#include "../Features/Misc/Misc.hpp"
 
 void GUI::Render()
 {
@@ -51,6 +52,8 @@ void GUI::Render()
 				GuiSidebar->InsertElementAfter(pVisuals->GetMenuButton(), "PLAYER_BUTTON");
 			if (pAimbot)
 				GuiSidebar->InsertElementAfter(pAimbot->GetMenuButton(), "VISUALS_BUTTON");
+			if (pMisc)
+				GuiSidebar->InsertElementAfter(pMisc->GetMenuButton(), "AIMBOT_BUTTON");
 
 			// Set the default page (optional - defaults to 0 if not set)
 			ElementBase::SetDefaultPage(GuiConfig->GetPageId());

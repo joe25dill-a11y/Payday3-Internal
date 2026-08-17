@@ -133,14 +133,16 @@ static void RenderImGui(IDXGISwapChain* pSwapChain) {
 
 static Memory::Hook<HRESULT(WINAPI*)(IDXGISwapChain*, UINT, UINT)> oPresent;
 static HRESULT WINAPI hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags) {
-	RenderImGui(pSwapChain);
+	if (Framework::bShouldRun && !Framework::bProcessExiting)
+		RenderImGui(pSwapChain);
 
 	return oPresent(pSwapChain, SyncInterval, Flags);
 }
 
 static Memory::Hook<HRESULT(WINAPI*)(IDXGISwapChain*, UINT, UINT, const DXGI_PRESENT_PARAMETERS*)> oPresent1;
 static HRESULT WINAPI hkPresent1(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT PresentFlags, const DXGI_PRESENT_PARAMETERS* pPresentParameters) {
-	RenderImGui(pSwapChain);
+	if (Framework::bShouldRun && !Framework::bProcessExiting)
+		RenderImGui(pSwapChain);
 
 	return oPresent1(pSwapChain, SyncInterval, PresentFlags, pPresentParameters);
 }
@@ -266,6 +268,12 @@ void RendererHooks::D3D11Destroy()
 	oCreateSwapChainForHwnd.Remove();
 	oCreateSwapChainForCoreWindow.Remove();
 	oCreateSwapChainForComposition.Remove();
+
+	if (Framework::bProcessExiting)
+	{
+		Utils::LogDebug("DirectX 11 hooks removed (game exit, soft)");
+		return;
+	}
 
 	if (ImGui::GetCurrentContext()) {
 		ImGuiIO& io = ImGui::GetIO();

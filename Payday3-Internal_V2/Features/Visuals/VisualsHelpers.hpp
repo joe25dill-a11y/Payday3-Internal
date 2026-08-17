@@ -14,4 +14,9 @@ namespace VisualsHelpers
 	void DrawBone(ImDrawList* pDrawList, SDK::APlayerController* pPlayerController, SDK::USkeletalMeshComponent* mesh,
 		int parent, int child, ImU32 color);
 
+	// PD3 native outline ColorIndex palette (through-wall only):
+	// combo 0=Red(3) 1=Yellow(10) 2=White(9) 3=Pink(11)
+	int8_t ColorIndexFromPaletteCombo(int comboIndex);
+	void ApplyActorOutline(SDK::AActor* pActor, int8_t colorIndex);
+
 }

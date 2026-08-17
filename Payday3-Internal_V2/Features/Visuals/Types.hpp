@@ -56,8 +56,14 @@ namespace Types
 		{ "shotgun",    EnemyType::Shotgun },
 		{ "grenadier",  EnemyType::Grenadier },
 		{ "civilian",   EnemyType::Civilian },
+		{ "hostage",    EnemyType::Civilian },
 		{ "smg",        EnemyType::SMG },
-		{ "ar_",         EnemyType::AR }
+		{ "ar_",         EnemyType::AR },
+		{ "swat",       EnemyType::ArmedCop },
+		{ "guard",      EnemyType::Security },
+		{ "cop",        EnemyType::ArmedCop },
+		{ "enemy",      EnemyType::ArmedCop },
+		{ "sbzai",      EnemyType::ArmedCop }
 	};
 
 	inline constexpr EnemyInfo g_EnemyInfo[] =
@@ -168,6 +174,7 @@ namespace Types
 		SDK::FVector WorldLocation;
 		std::string Name;
 		ItemType Type;
+		SDK::AActor* Actor = nullptr;
 	};
 
 }

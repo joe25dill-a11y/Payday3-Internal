@@ -63,33 +63,52 @@ DWORD WINAPI FrameworkMainThread(LPVOID lpParam)
 
 	while (Framework::bShouldRun)
 	{
-		for (auto& pFeature : Framework::g_vecFeatures)
-			pFeature->Run();
+		// Game closed without End/Delete unload — stop before touching dead UE/DX
+		HWND hWnd = Framework::wndproc ? Framework::wndproc->hwndWindow : nullptr;
+		if (hWnd && !IsWindow(hWnd))
+		{
+			Framework::bProcessExiting = true;
+			Framework::bShouldRun = false;
+			break;
+		}
+
+		if (!Framework::bProcessExiting)
+		{
+			for (auto& pFeature : Framework::g_vecFeatures)
+				pFeature->Run();
+		}
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(10));
 	}
 
-	Framework::console->SetVisibility(true); // Set the console to be visible when the cheat is unloading
-	Utils::LogDebug(std::format("{}: Unloading...", Framework::Title)); // Log that the cheat is unloading
+	const bool bExiting = Framework::bProcessExiting;
+	Utils::LogDebug(std::format("{}: Unloading...{}", Framework::Title, bExiting ? " (game exit)" : ""));
 
+	if (!bExiting)
+		Framework::console->SetVisibility(true);
+
+	// Unhook first so Present/WndProc stop calling into us during teardown
 	Framework::wndproc.get()->Destroy();
 	Framework::renderer.get()->Destroy();
 	Framework::aimbotHooks.get()->Destroy();
 
-	// Destroy features
-	for (auto& pFeature : Framework::g_vecFeatures)
-		pFeature->Destroy();
+	if (!bExiting)
+	{
+		for (auto& pFeature : Framework::g_vecFeatures)
+			pFeature->Destroy();
 
-	std::this_thread::sleep_for(std::chrono::seconds(3));
+		std::this_thread::sleep_for(std::chrono::milliseconds(500));
+		Framework::console->Destroy();
+	}
 
-	Framework::console->Destroy();
-
-	// Uninitialize MinHook, will also disable any lurking hooks still active as a safety net
 	MH_Uninitialize();
 
-	// Unload the module and exit the thread
+	// Process is dying — don't FreeLibrary (can pop error dialogs during ExitProcess)
+	if (bExiting)
+		return 0;
+
 	FreeLibraryAndExitThread(Framework::hModule, EXIT_SUCCESS);
-	return true; // Return true if the initalization was successful
+	return true;
 }
 
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD ulReasonForCall, LPVOID lpReserved)

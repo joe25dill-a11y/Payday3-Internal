@@ -335,23 +335,27 @@ static void RenderImGui(IDXGISwapChain3* pSwapChain)
 
 static Memory::Hook<HRESULT(WINAPI*)(IDXGISwapChain3*, UINT, UINT)> oPresent;
 static HRESULT WINAPI hkPresent(IDXGISwapChain3* pSwapChain, UINT SyncInterval, UINT Flags) {
-	RenderImGui(pSwapChain);
+	if (Framework::bShouldRun && !Framework::bProcessExiting && !g_bShuttingDown)
+		RenderImGui(pSwapChain);
 
 	return oPresent(pSwapChain, SyncInterval, Flags);
 }
 
 static Memory::Hook<HRESULT(WINAPI*)(IDXGISwapChain3*, UINT, UINT, const DXGI_PRESENT_PARAMETERS*)> oPresent1;
 static HRESULT WINAPI hkPresent1(IDXGISwapChain3* pSwapChain, UINT SyncInterval, UINT PresentFlags, const DXGI_PRESENT_PARAMETERS* pPresentParameters) {
-	RenderImGui(pSwapChain);
+	if (Framework::bShouldRun && !Framework::bProcessExiting && !g_bShuttingDown)
+		RenderImGui(pSwapChain);
 
 	return oPresent1(pSwapChain, SyncInterval, PresentFlags, pPresentParameters);
 }
 
 static Memory::Hook<HRESULT(WINAPI*)(IDXGISwapChain*, UINT, UINT, UINT, DXGI_FORMAT, UINT)> oResizeBuffers;
 static HRESULT WINAPI hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags) {
-	if (g_bInitialized)
+	// Zero-size resize = game shutting down — don't touch GPU/ImGui
+	const bool bDying = Framework::bProcessExiting || g_bShuttingDown || Width == 0 || Height == 0;
+
+	if (g_bInitialized && !bDying)
 	{
-		// Wait for GPU to finish before invalidating  // Added
 		if (g_pd3dFence && g_pd3dCommandQueue)
 		{
 			g_fenceLastSignaledValue++;
@@ -359,11 +363,16 @@ static HRESULT WINAPI hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT BufferCou
 			if (g_pd3dFence->GetCompletedValue() < g_fenceLastSignaledValue)
 			{
 				g_pd3dFence->SetEventOnCompletion(g_fenceLastSignaledValue, g_hFenceEvent);
-				WaitForSingleObject(g_hFenceEvent, INFINITE);
+				WaitForSingleObject(g_hFenceEvent, 200);
 			}
 		}
 
 		ImGui_ImplDX12_InvalidateDeviceObjects();
+		CleanupRenderTarget();
+	}
+	else if (g_bInitialized && bDying)
+	{
+		g_bShuttingDown = true;
 		CleanupRenderTarget();
 	}
 
@@ -371,7 +380,7 @@ static HRESULT WINAPI hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT BufferCou
 
 	HRESULT result = oResizeBuffers(pSwapChain, BufferCount, Width, Height, NewFormat, SwapChainFlags);
 
-	if (SUCCEEDED(result) && g_bInitialized)
+	if (SUCCEEDED(result) && g_bInitialized && !bDying && Width > 0 && Height > 0)
 	{
 		CreateRenderTarget();
 		ImGui_ImplDX12_CreateDeviceObjects();
@@ -382,9 +391,10 @@ static HRESULT WINAPI hkResizeBuffers(IDXGISwapChain* pSwapChain, UINT BufferCou
 
 static Memory::Hook<HRESULT(WINAPI*)(IDXGISwapChain3*, UINT, UINT, UINT, DXGI_FORMAT, UINT, const UINT*, IUnknown* const*)> oResizeBuffers1;
 static HRESULT WINAPI hkResizeBuffers1(IDXGISwapChain3* pSwapChain, UINT BufferCount, UINT Width, UINT Height, DXGI_FORMAT NewFormat, UINT SwapChainFlags, const UINT* pCreationNodeMask, IUnknown* const* ppPresentQueue) {
-	if (g_bInitialized)
+	const bool bDying = Framework::bProcessExiting || g_bShuttingDown || Width == 0 || Height == 0;
+
+	if (g_bInitialized && !bDying)
 	{
-		// Wait for GPU to finish before invalidating  // Added
 		if (g_pd3dFence && g_pd3dCommandQueue)
 		{
 			g_fenceLastSignaledValue++;
@@ -392,11 +402,16 @@ static HRESULT WINAPI hkResizeBuffers1(IDXGISwapChain3* pSwapChain, UINT BufferC
 			if (g_pd3dFence->GetCompletedValue() < g_fenceLastSignaledValue)
 			{
 				g_pd3dFence->SetEventOnCompletion(g_fenceLastSignaledValue, g_hFenceEvent);
-				WaitForSingleObject(g_hFenceEvent, INFINITE);
+				WaitForSingleObject(g_hFenceEvent, 200);
 			}
 		}
 
 		ImGui_ImplDX12_InvalidateDeviceObjects();
+		CleanupRenderTarget();
+	}
+	else if (g_bInitialized && bDying)
+	{
+		g_bShuttingDown = true;
 		CleanupRenderTarget();
 	}
 
@@ -404,7 +419,7 @@ static HRESULT WINAPI hkResizeBuffers1(IDXGISwapChain3* pSwapChain, UINT BufferC
 
 	HRESULT result = oResizeBuffers1(pSwapChain, BufferCount, Width, Height, NewFormat, SwapChainFlags, pCreationNodeMask, ppPresentQueue);
 
-	if (SUCCEEDED(result) && g_bInitialized)
+	if (SUCCEEDED(result) && g_bInitialized && !bDying && Width > 0 && Height > 0)
 	{
 		CreateRenderTarget();
 		ImGui_ImplDX12_CreateDeviceObjects();
@@ -605,7 +620,29 @@ bool RendererHooks::D3D12Setup()
 void RendererHooks::D3D12Destroy()
 {
 	g_bShuttingDown = true;
-	Sleep(100); // Give Present a chance to see shutdown flag
+	Sleep(50);
+
+	// Unhook first so Present/Resize can't re-enter during cleanup
+	oPresent.Remove();
+	oPresent1.Remove();
+	oResizeBuffers.Remove();
+	oResizeBuffers1.Remove();
+	oCreateSwapChain.Remove();
+	oCreateSwapChainForHwnd.Remove();
+	oCreateSwapChainForCoreWindow.Remove();
+	oCreateSwapChainForComposition.Remove();
+	oExecuteCommandLists.Remove();
+
+	// Game already tearing down DX — skip ImGui/device Release (causes exit crash boxes)
+	if (Framework::bProcessExiting)
+	{
+		g_bInitialized = false;
+		g_pd3dCommandQueue = nullptr;
+		g_pd3dDevice = nullptr;
+		g_pSwapChain = nullptr;
+		Utils::LogDebug("DirectX 12 hooks removed (game exit, soft)");
+		return;
+	}
 
 	if (g_bInitialized)
 	{
@@ -623,16 +660,6 @@ void RendererHooks::D3D12Destroy()
 
 		g_bInitialized = false;
 	}
-
-	oPresent.Remove();
-	oPresent1.Remove();
-	oResizeBuffers.Remove();
-	oResizeBuffers1.Remove();
-	oCreateSwapChain.Remove();
-	oCreateSwapChainForHwnd.Remove();
-	oCreateSwapChainForCoreWindow.Remove();
-	oCreateSwapChainForComposition.Remove();
-	oExecuteCommandLists.Remove();
 
 	Utils::LogDebug("DirectX 12 hook shutdown complete");
 }

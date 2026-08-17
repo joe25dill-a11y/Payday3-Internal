@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "../Localization.hpp"
 
 Locale_t localeEnglish{
@@ -35,6 +35,11 @@ Locale_t localeEnglish{
 		{ "PLAYER_NO_SCREENSHAKE"Hashed, "No Screenshake" },
 		{ "PLAYER_NO_FALLDAMAGE"Hashed, "No Fall Damage" },
 		{ "PLAYER_NO_DETECTION"Hashed, "No Detection" },
+
+		{ "PLAYER_FREECAM"Hashed, "Freecam" },
+		{ "PLAYER_FREECAM_KEY"Hashed, "Freecam Key" },
+		{ "PLAYER_FREECAM_FASTER_KEY"Hashed, "Fly Faster Key" },
+		{ "PLAYER_FREECAM_SPEED"Hashed, "Fly Speed" },
 
 		//Tab2
 		{ "PLAYER_TABLE"Hashed, "Players" },
@@ -81,6 +86,13 @@ Locale_t localeEnglish{
 
         { "VISUALS_HIGHLIGHT"Hashed, "Highlight" },
 
+        { "VISUALS_OUTLINE"Hashed, "Outline" },
+        { "VISUALS_OUTLINE_COP_COLOR"Hashed, "Outline Cop" },
+        { "VISUALS_OUTLINE_CIVILIAN_COLOR"Hashed, "Outline Civilian" },
+        { "VISUALS_OUTLINE_CASH_COLOR"Hashed, "Outline Cash" },
+        { "VISUALS_OUTLINE_DEPOSITBOX_COLOR"Hashed, "Outline Deposit Box" },
+        { "VISUALS_OUTLINE_KEYCARD_COLOR"Hashed, "Outline Keycard" },
+
         { "VISUALS_ITEM"Hashed, "Items" },
         { "VISUALS_ITEM_CASH_COLOR"Hashed, "Cash Color" },
         { "VISUALS_ITEM_DEPOSITBOX_COLOR"Hashed, "Deposit Box Color" },
@@ -106,6 +118,56 @@ Locale_t localeEnglish{
 		{ "AIMBOT_FOV_COLOR"Hashed, "FOV Color" },
 		{ "AIMBOT_FOV"Hashed, "FOV" },
 		{ "AIMBOT_SMOOTHING"Hashed, "Smoothing" },
+
+		//------------------------------------------------------------
+
+		{ "MISC_BUTTON"Hashed, "Heist" },
+		{ "MISC_TAB1"Hashed, "Tools" },
+		{ "MISC_TAB2"Hashed, "Teleport" },
+		{ "MISC_TAB3"Hashed, "Vault / Spawn" },
+		{ "MISC_TAB1_LEFT"Hashed, "Ghost / Kill / Drill" },
+		{ "MISC_TAB1_RIGHT"Hashed, "Grab" },
+		{ "MISC_TAB2_LEFT"Hashed, "Presets" },
+		{ "MISC_TAB3_LEFT"Hashed, "Vault Codes" },
+		{ "MISC_TAB3_RIGHT"Hashed, "Spawners" },
+
+		{ "MISC_GHOST"Hashed, "Ghost Mode" },
+		{ "MISC_GHOST_KEY"Hashed, "Ghost Key" },
+		{ "MISC_SILENT_BURY"Hashed, "Silent Bury Kill" },
+		{ "MISC_SILENT_BURY_KEY"Hashed, "Silent Bury Key" },
+		{ "MISC_GRAB_LOOT"Hashed, "Grab All Loot" },
+		{ "MISC_GRAB_LOOT_KEY"Hashed, "Grab Loot Key" },
+		{ "MISC_GRAB_KEYS"Hashed, "Grab All Keycards" },
+		{ "MISC_GRAB_KEYS_KEY"Hashed, "Grab Keycards Key" },
+		{ "MISC_CARRY_BAGS"Hashed, "Carry 50 Bags (You + AI + Players)" },
+		{ "MISC_CARRY_BAGS_KEY"Hashed, "Carry Bags Key" },
+		{ "MISC_NO_CIV"Hashed, "No Civ / Custody Penalty" },
+		{ "MISC_NO_CIV_KEY"Hashed, "No Civ Key" },
+		{ "MISC_INSTA_DRILL"Hashed, "Insta Drill (Drills / PCs / Thermite)" },
+		{ "MISC_INSTA_DRILL_KEY"Hashed, "Insta Drill Key" },
+
+		{ "MISC_TP_LOAD"Hashed, "Load JSON" },
+		{ "MISC_TP_PREV"Hashed, "Prev" },
+		{ "MISC_TP_NEXT"Hashed, "Next" },
+		{ "MISC_TP_HERE"Hashed, "TP Here" },
+		{ "MISC_TP_ALL"Hashed, "TP All" },
+		{ "MISC_TP_TOUR"Hashed, "Tour Spots" },
+		{ "MISC_TP_STOP"Hashed, "Stop" },
+		{ "MISC_TP_HERE_KEY"Hashed, "TP Here Key" },
+		{ "MISC_TP_ALL_KEY"Hashed, "TP All Key" },
+		{ "MISC_TP_PREV_KEY"Hashed, "Prev Spot Key" },
+		{ "MISC_TP_NEXT_KEY"Hashed, "Next Spot Key" },
+		{ "MISC_TP_TOUR_KEY"Hashed, "Tour Key" },
+		{ "MISC_TP_DELAY"Hashed, "Tour Delay" },
+		{ "MISC_TP_SPOTS"Hashed, "Spot" },
+
+		{ "MISC_VAULT_SCAN"Hashed, "Scan Vault Codes" },
+		{ "MISC_VAULT_SCAN_KEY"Hashed, "Vault Codes Key" },
+		{ "MISC_KEYPAD_HELPER"Hashed, "Keypad Helper (Only Correct Digit)" },
+		{ "MISC_SPAWN_METH"Hashed, "Spawn Meth Bags" },
+		{ "MISC_SPAWN_VAN"Hashed, "Call Escape Van" },
+		{ "MISC_SPAWN_EXIT"Hashed, "Green Exit / Arm Leave" },
+		{ "MISC_SPAWN_MONEY"Hashed, "Money Screen / End Heist" },
 
 		//------------------------------------------------------------
 

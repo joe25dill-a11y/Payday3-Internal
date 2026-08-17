@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "Player.hpp"
+#include "ClientMove.hpp"
 #include <vector>
 #include <algorithm>
 
@@ -159,6 +160,19 @@ void Player::HandleMenu()
 
 		// No Detection Toggle
 		m_pTab1Left->AddElement(m_pNoDetection.get());
+
+		// Freecam (ScoutFreecam ApplyFreecam, in-DLL — F7)
+		m_pTab1Left->AddElement(m_pFreecam.get());
+		m_pTab1Left->AddElement(m_pFreecamKey.get());
+		m_pTab1Left->AddElement(m_pFreecamFasterKey.get());
+		m_pTab1Right->AddElement(m_pFreecamSpeed.get());
+		if (m_pFreecamKey->GetKey() == ImGuiKey_None)
+			m_pFreecamKey->SetKey(ImGuiKey_F7);
+		m_pFreecamKey->SetMode(Hotkey::EHotkeyMode::Toggle);
+		if (m_pFreecamFasterKey->GetKey() == ImGuiKey_None)
+			m_pFreecamFasterKey->SetKey(ImGuiKey_LeftShift);
+		m_pFreecamFasterKey->SetMode(Hotkey::EHotkeyMode::Hold);
+		m_pFreecam->SetValue(false);
 
 		// Godmode Type
 		m_pTab1Right->AddElement(m_pGodModeType.get());
@@ -589,7 +603,8 @@ void Player::Run()
 			if (m_pGodModeType->GetSelectedIndex() == 0)
 			{
 				auto* PlayerAttributeSet = localChar->PlayerAttributeSet;
-				PlayerAttributeSet->Health.CurrentValue = PlayerAttributeSet->HealthMax.CurrentValue * 10;
+				if (PlayerAttributeSet)
+					PlayerAttributeSet->Health.CurrentValue = PlayerAttributeSet->HealthMax.CurrentValue * 10;
 			}
 			if (m_pGodModeType->GetSelectedIndex() == 1)
 			{
@@ -604,7 +619,8 @@ void Player::Run()
 		if (auto* localChar = Unreal::GetLocalCharacter())
 		{
 			auto* PlayerAttributeSet = localChar->PlayerAttributeSet;
-			PlayerAttributeSet->Stamina.CurrentValue = 100.0f;
+			if (PlayerAttributeSet)
+				PlayerAttributeSet->Stamina.CurrentValue = 100.0f;
 		}
 	}
 
@@ -670,18 +686,20 @@ void Player::Run()
 		if(auto* localChar = Unreal::GetLocalCharacter())
 		{
 			auto* Att = localChar->PlayerAttributeSet;
+			if (Att)
+			{
+				Att->PrimaryEquippableAmmoInventory.CurrentValue = 999;
+				Att->SecondaryEquippableAmmoInventory.CurrentValue = 999;
+				Att->TertiaryEquippableAmmoInventory.CurrentValue = 999;
 
-			Att->PrimaryEquippableAmmoInventory.CurrentValue = 999;
-			Att->SecondaryEquippableAmmoInventory.CurrentValue = 999;
-			Att->TertiaryEquippableAmmoInventory.CurrentValue = 999;
+				Att->PrimaryThrowableAmmoInventory.CurrentValue = 999;
+				Att->SecondaryThrowableAmmoInventory.CurrentValue = 999;
+				Att->TertiaryThrowableAmmoInventory.CurrentValue = 999;
 
-			Att->PrimaryThrowableAmmoInventory.CurrentValue = 999;
-			Att->SecondaryThrowableAmmoInventory.CurrentValue = 999;
-			Att->TertiaryThrowableAmmoInventory.CurrentValue = 999;
-
-			Att->PrimaryToolAmmoInventory.CurrentValue = 999;
-			Att->SecondaryToolAmmoInventory.CurrentValue = 999;
-			Att->TertiaryToolAmmoInventory.CurrentValue = 999;
+				Att->PrimaryToolAmmoInventory.CurrentValue = 999;
+				Att->SecondaryToolAmmoInventory.CurrentValue = 999;
+				Att->TertiaryToolAmmoInventory.CurrentValue = 999;
+			}
 		}
 	}
 
@@ -702,4 +720,54 @@ void Player::Run()
 	{
 		fireRate(true);
 	}
+
+	FreecamFly::Tick(
+		m_pFreecam->GetValue(),
+		m_bFreecamFlying,
+		m_pFreecamFasterKey->GetValue(),
+		m_pFreecamSpeed->GetValue());
+}
+
+void Player::Render()
+{
+	if (m_pFreecamKey->IsCapturing() || m_pFreecamFasterKey->IsCapturing()
+		|| m_pFreecamKey->ShouldSkipPoll() || m_pFreecamFasterKey->ShouldSkipPoll())
+	{
+		m_pFreecamKey->Update();
+		m_pFreecamFasterKey->Update();
+		return;
+	}
+
+	m_pFreecamKey->Update();
+	m_pFreecamFasterKey->Update();
+
+	bool bFlying = false;
+	if (m_pFreecam->GetValue())
+	{
+		switch (m_pFreecamKey->GetMode())
+		{
+		case Hotkey::EHotkeyMode::AlwaysOn:
+			bFlying = true;
+			break;
+		case Hotkey::EHotkeyMode::Hold:
+		case Hotkey::EHotkeyMode::HoldOff:
+			bFlying = m_pFreecamKey->GetValue();
+			break;
+		default:
+		{
+			const bool bKeyDown = ImGui::IsKeyDown(m_pFreecamKey->GetKey());
+			if (bKeyDown && !m_bFreecamKeyWasDown)
+				m_bFreecamToggled = !m_bFreecamToggled;
+			m_bFreecamKeyWasDown = bKeyDown;
+			bFlying = m_bFreecamToggled;
+			break;
+		}
+		}
+	}
+	else
+	{
+		m_bFreecamToggled = false;
+	}
+
+	m_bFreecamFlying = bFlying;
 }

@@ -36,7 +36,40 @@ static bool ShouldBlockMenuInput(UINT uMsg) {
     }
 }
 
+static void SignalGameExiting()
+{
+    if (Framework::bProcessExiting)
+        return;
+
+    Framework::bProcessExiting = true;
+    Framework::bShouldRun = false;
+
+    // Restore original WndProc immediately so teardown doesn't call into our DLL
+    if (oWndProc && Framework::wndproc && Framework::wndproc->hwndWindow)
+    {
+        SetWindowLongPtr(Framework::wndproc->hwndWindow, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(oWndProc));
+        oWndProc = nullptr;
+    }
+}
+
 static LRESULT hkWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
+    // Game is closing — stop cheat work before Unreal/DX tear down (avoids pure-virtual box)
+    if (uMsg == WM_CLOSE || uMsg == WM_DESTROY || uMsg == WM_QUIT || uMsg == WM_NCDESTROY)
+    {
+        const WNDPROC pOrig = oWndProc;
+        SignalGameExiting();
+        if (pOrig)
+            return CallWindowProcA(pOrig, hWnd, uMsg, wParam, lParam);
+        return DefWindowProcA(hWnd, uMsg, wParam, lParam);
+    }
+
+    if (!Framework::bShouldRun || Framework::bProcessExiting)
+    {
+        if (oWndProc)
+            return CallWindowProcA(oWndProc, hWnd, uMsg, wParam, lParam);
+        return DefWindowProcA(hWnd, uMsg, wParam, lParam);
+    }
+
     std::call_once(g_InputInit, [hWnd]() {
         ImGui::CreateContext();
         ImGui_ImplWin32_Init(hWnd);
@@ -101,6 +134,8 @@ void WndProcHooks::Destroy()
     if (!oWndProc)
         return;
 
-    SetWindowLongPtr(hwndWindow, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(oWndProc));
+    if (hwndWindow && IsWindow(hwndWindow))
+        SetWindowLongPtr(hwndWindow, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(oWndProc));
+    oWndProc = nullptr;
     Utils::LogDebug("WndProc removed.");
 }

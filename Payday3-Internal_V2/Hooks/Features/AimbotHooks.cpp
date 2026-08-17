@@ -15,6 +15,9 @@ static void hkLocalPlayerGetViewPoint(SDK::ULocalPlayer* pLocalPlayer, SDK::FMin
 {
 	oLocalPlayerGetViewPoint(pLocalPlayer, pViewInfo);
 
+	if (!Framework::bShouldRun || Framework::bProcessExiting)
+		return;
+
 	if (pAimbot->CurrentAimbotType() == 0)
 		return;
 
@@ -33,6 +36,10 @@ static void hkGetPlayerViewPoint(SDK::APlayerController* pPlayerController, SDK:
 	static uintptr_t pGoalRet1 = 0;
 	static uintptr_t pGoalRet2 = 0;
 	oGetPlayerViewPoint(pPlayerController, pLocation, pRotation);
+
+	if (!Framework::bShouldRun || Framework::bProcessExiting)
+		return;
+
 	if(!pAimbot->ShouldOverrideView){
 		vecHackyShitVector.clear();
 		return;

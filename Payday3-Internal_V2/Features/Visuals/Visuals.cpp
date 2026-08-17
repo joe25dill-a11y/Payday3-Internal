@@ -73,7 +73,14 @@ void Visuals::UpdateMenuVisibility()
     m_pSkeletonCopColor->SetVisible(m_pSkeleton->GetValue() && copSelected);
     m_pSkeletonCivilianColor->SetVisible(m_pSkeleton->GetValue() && civilianSelected);
 
-    // Key Items
+    // Outline (native freecam-style glow) — palette combos
+    m_pOutlineCopColor->SetVisible(m_pOutline->GetValue() && copSelected);
+    m_pOutlineCivilianColor->SetVisible(m_pOutline->GetValue() && civilianSelected);
+    m_pOutlineCashColor->SetVisible(m_pOutline->GetValue() && cashSelected);
+    m_pOutlineDepositBoxColor->SetVisible(m_pOutline->GetValue() && depositBoxSelected);
+    m_pOutlineKeycardColor->SetVisible(m_pOutline->GetValue() && keycardSelected);
+
+    // Item name colors (free RGB) — Items checkbox only
     m_pItemCashColor->SetVisible(m_pItem->GetValue() && cashSelected);
     m_pItemDepositBoxColor->SetVisible(m_pItem->GetValue() && depositBoxSelected);
     m_pItemKeycardColor->SetVisible(m_pItem->GetValue() && keycardSelected);
@@ -134,6 +141,26 @@ void Visuals::HandleMenu()
 
         m_pTab1Left->AddElement(m_pHighlight.get());
 
+        m_pTab1Left->AddElement(m_pOutline.get());
+        auto AddOutlinePalette = [](Combo* combo, int defaultIndex)
+        {
+            combo->AddOption("Red");
+            combo->AddOption("Yellow");
+            combo->AddOption("White");
+            combo->AddOption("Pink");
+            combo->SetSelectedIndex(defaultIndex);
+        };
+        m_pTab1Right->AddElement(m_pOutlineCopColor.get());
+        m_pTab1Right->AddElement(m_pOutlineCivilianColor.get());
+        m_pTab1Right->AddElement(m_pOutlineCashColor.get());
+        m_pTab1Right->AddElement(m_pOutlineDepositBoxColor.get());
+        m_pTab1Right->AddElement(m_pOutlineKeycardColor.get());
+        AddOutlinePalette(m_pOutlineCopColor.get(), 0);      // Red for cops (freecam F3)
+        AddOutlinePalette(m_pOutlineCivilianColor.get(), 2); // White
+        AddOutlinePalette(m_pOutlineCashColor.get(), 1);     // Yellow
+        AddOutlinePalette(m_pOutlineDepositBoxColor.get(), 0);
+        AddOutlinePalette(m_pOutlineKeycardColor.get(), 3);  // Pink
+
         m_pTab1Left->AddElement(m_pItem.get());
         m_pTab1Right->AddElement(m_pItemCashColor.get());
         m_pTab1Right->AddElement(m_pItemDepositBoxColor.get());
@@ -142,13 +169,15 @@ void Visuals::HandleMenu()
         m_pItemDepositBoxColor->SetValue(ImVec4(1.0f, 0.0f, 0.0f, 1.0f));
         m_pItemKeycardColor->SetValue(ImVec4(0.0f, 0.0f, 1.0f, 1.0f));
 
-        // Filters
+        // Filters — default on so Outline works without hunting the Filters panel
         m_pFilters->AddOption("COP", [](bool bEnabled) {
             //Utils::LogDebug("Cops selected");
         });
         m_pFilters->AddOption("CIVILIAN", [](bool bEnabled) {
             //Utils::LogDebug("Civilians selected");
         });
+        m_pFilters->SetSelectedIndex(0, true);
+        m_pFilters->SetSelectedIndex(1, true);
 
         // Item Filters
         m_pItemFilters->AddOption("CASH", [](bool bEnabled) {
@@ -160,6 +189,9 @@ void Visuals::HandleMenu()
         m_pItemFilters->AddOption("KEYCARDS", [](bool bEnabled) {
             //Utils::LogDebug("KEYCARDS selected");
         });
+        m_pItemFilters->SetSelectedIndex(0, true);
+        m_pItemFilters->SetSelectedIndex(1, true);
+        m_pItemFilters->SetSelectedIndex(2, true);
 
         m_pTab1Bottom->AddElement(m_pFilters.get());
         m_pTab1Bottom->AddElement(m_pItemFilters.get());
@@ -187,6 +219,7 @@ void Visuals::Render()
     const bool drawArmorBar = m_pArmorBar->GetValue();
     const bool drawSkeleton = m_pSkeleton->GetValue();
     const bool drawHighlight = m_pHighlight->GetValue();
+    const bool drawOutline = m_pOutline->GetValue();
     const bool drawItems = m_pItem->GetValue();
 
     const ImU32 boxCopColor = ImGui::ColorConvertFloat4ToU32(m_pBoundingBoxCopColor->GetValue());
@@ -206,11 +239,17 @@ void Visuals::Render()
     const ImU32 skeletonCopColor = ImGui::ColorConvertFloat4ToU32(m_pSkeletonCopColor->GetValue());
     const ImU32 skeletonCivilianColor = ImGui::ColorConvertFloat4ToU32(m_pSkeletonCivilianColor->GetValue());
 
+    const int8_t outlineCopIdx = VisualsHelpers::ColorIndexFromPaletteCombo(m_pOutlineCopColor->GetSelectedIndex());
+    const int8_t outlineCivIdx = VisualsHelpers::ColorIndexFromPaletteCombo(m_pOutlineCivilianColor->GetSelectedIndex());
+    const int8_t outlineCashIdx = VisualsHelpers::ColorIndexFromPaletteCombo(m_pOutlineCashColor->GetSelectedIndex());
+    const int8_t outlineDepositIdx = VisualsHelpers::ColorIndexFromPaletteCombo(m_pOutlineDepositBoxColor->GetSelectedIndex());
+    const int8_t outlineKeycardIdx = VisualsHelpers::ColorIndexFromPaletteCombo(m_pOutlineKeycardColor->GetSelectedIndex());
+
     const ImU32 itemCashColor = ImGui::ColorConvertFloat4ToU32(m_pItemCashColor->GetValue());
     const ImU32 itemDepositBoxColor = ImGui::ColorConvertFloat4ToU32(m_pItemDepositBoxColor->GetValue());
     const ImU32 itemKeycardColor = ImGui::ColorConvertFloat4ToU32(m_pItemKeycardColor->GetValue());
 
-    if (!drawBox && !drawName && !drawDistance && !drawHealthBar && !drawArmorBar && !drawSkeleton && !drawHighlight && !drawItems)
+    if (!drawBox && !drawName && !drawDistance && !drawHealthBar && !drawArmorBar && !drawSkeleton && !drawHighlight && !drawOutline && !drawItems)
         return;
 
     SDK::UWorld* pGWorld = SDK::UWorld::GetWorld();
@@ -236,6 +275,7 @@ void Visuals::Render()
         drawArmorBar,
         drawSkeleton,
         drawHighlight,
+        drawOutline,
         drawItems,
         m_pFilters->IsSelected(0),
         m_pFilters->IsSelected(1),
@@ -455,10 +495,25 @@ void Visuals::Render()
         {
             entity.Character->Multicast_SetMarked(true);
         }
+
+        if (drawOutline && entity.Character)
+        {
+            const int8_t idx = entity.IsCop ? outlineCopIdx : outlineCivIdx;
+            VisualsHelpers::ApplyActorOutline(entity.Character, idx);
+        }
     }
 
     for (auto& item : m_vItemData)
     {
+        if (drawOutline && item.Actor)
+        {
+            const int8_t idx =
+                Types::ItemType::Cash == item.Type ? outlineCashIdx :
+                Types::ItemType::DepositBox == item.Type ? outlineDepositIdx :
+                Types::ItemType::Keycard == item.Type ? outlineKeycardIdx : outlineCashIdx;
+            VisualsHelpers::ApplyActorOutline(item.Actor, idx);
+        }
+
         if (drawItems)
         {
             if (!pPlayerController->ProjectWorldLocationToScreen(item.WorldLocation, &item.ScreenLocation, false))
