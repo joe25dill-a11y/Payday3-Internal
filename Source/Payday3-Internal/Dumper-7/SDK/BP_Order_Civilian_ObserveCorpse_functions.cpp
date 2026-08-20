@@ -16,26 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Order_Civilian_ObserveCorpse.BP_Order_Civilian_ObserveCorpse_C.OnStartedBP
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class APawn*                            Pawn_OnStartedBP                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UBP_Order_Civilian_ObserveCorpse_C::OnStartedBP(class APawn* Pawn_OnStartedBP)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Order_Civilian_ObserveCorpse_C", "OnStartedBP");
-
-	Params::BP_Order_Civilian_ObserveCorpse_C_OnStartedBP Parms{};
-
-	Parms.Pawn_OnStartedBP = Pawn_OnStartedBP;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_Order_Civilian_ObserveCorpse.BP_Order_Civilian_ObserveCorpse_C.ExecuteUbergraph_BP_Order_Civilian_ObserveCorpse
 // (Final, UbergraphFunction)
 // Parameters:
@@ -51,6 +31,26 @@ void UBP_Order_Civilian_ObserveCorpse_C::ExecuteUbergraph_BP_Order_Civilian_Obse
 	Params::BP_Order_Civilian_ObserveCorpse_C_ExecuteUbergraph_BP_Order_Civilian_ObserveCorpse Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Order_Civilian_ObserveCorpse.BP_Order_Civilian_ObserveCorpse_C.OnStartedBP
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class APawn*                            Pawn                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBP_Order_Civilian_ObserveCorpse_C::OnStartedBP(class APawn* Pawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Order_Civilian_ObserveCorpse_C", "OnStartedBP");
+
+	Params::BP_Order_Civilian_ObserveCorpse_C_OnStartedBP Parms{};
+
+	Parms.Pawn = Pawn;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -16,189 +16,59 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_LocationBase.BP_LocationBase_C.GetMarkerText
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function BP_LocationBase.BP_LocationBase_C.ExecuteUbergraph_BP_LocationBase
+// (Final, UbergraphFunction)
 // Parameters:
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-class FText ABP_LocationBase_C::GetMarkerText()
+void ABP_LocationBase_C::ExecuteUbergraph_BP_LocationBase(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LocationBase_C", "GetMarkerText");
+		Func = Class->GetFunction("BP_LocationBase_C", "ExecuteUbergraph_BP_LocationBase");
 
-	Params::BP_LocationBase_C_GetMarkerText Parms{};
+	Params::BP_LocationBase_C_ExecuteUbergraph_BP_LocationBase Parms{};
 
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BP_LocationBase.BP_LocationBase_C.setStateInteractable
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// Enum_LocationBase_DefaultState          state                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_LocationBase_C::setStateInteractable(Enum_LocationBase_DefaultState state)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LocationBase_C", "setStateInteractable");
-
-	Params::BP_LocationBase_C_setStateInteractable Parms{};
-
-	Parms.state = state;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_LocationBase.BP_LocationBase_C.addMarker
-// (Private, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const class USBZMarkerDataAsset*        MarkerDataAsset                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_LocationBase_C::addMarker(const class USBZMarkerDataAsset* MarkerDataAsset)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LocationBase_C", "addMarker");
-
-	Params::BP_LocationBase_C_addMarker Parms{};
-
-	Parms.MarkerDataAsset = MarkerDataAsset;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_LocationBase.BP_LocationBase_C.setMeshVisibility
-// (Private, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    visible                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// bool                                    ghost                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void ABP_LocationBase_C::setMeshVisibility(bool visible, bool ghost)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LocationBase_C", "setMeshVisibility");
-
-	Params::BP_LocationBase_C_setMeshVisibility Parms{};
-
-	Parms.visible = visible;
-	Parms.ghost = ghost;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_LocationBase.BP_LocationBase_C.setObjectRemovable
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    addMarker                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void ABP_LocationBase_C::setObjectRemovable(bool addMarker)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LocationBase_C", "setObjectRemovable");
-
-	Params::BP_LocationBase_C_setObjectRemovable Parms{};
-
-	Parms.addMarker = addMarker;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_LocationBase.BP_LocationBase_C.setObjectVisible
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_LocationBase_C::setObjectVisible()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LocationBase_C", "setObjectVisible");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_LocationBase.BP_LocationBase_C.setInvisible
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_LocationBase_C::setInvisible()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LocationBase_C", "setInvisible");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_LocationBase.BP_LocationBase_C.setGhostVisible
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    addMarker                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void ABP_LocationBase_C::setGhostVisible(bool addMarker)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LocationBase_C", "setGhostVisible");
-
-	Params::BP_LocationBase_C_setGhostVisible Parms{};
-
-	Parms.addMarker = addMarker;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_LocationBase.BP_LocationBase_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_LocationBase_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LocationBase_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_LocationBase.BP_LocationBase_C.OnStateChanged
+// Function BP_LocationBase.BP_LocationBase_C.ReceiveBeginPlay
 // (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   OldState_OnStateChanged                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   NewState_OnStateChanged                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bDoCosmetics_OnStateChanged                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_LocationBase_C::OnStateChanged(int32 OldState_OnStateChanged, int32 NewState_OnStateChanged, bool bDoCosmetics_OnStateChanged)
+void ABP_LocationBase_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LocationBase_C", "OnStateChanged");
+		Func = Class->GetFunction("BP_LocationBase_C", "ReceiveBeginPlay");
 
-	Params::BP_LocationBase_C_OnStateChanged Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.OldState_OnStateChanged = OldState_OnStateChanged;
-	Parms.NewState_OnStateChanged = NewState_OnStateChanged;
-	Parms.bDoCosmetics_OnStateChanged = bDoCosmetics_OnStateChanged;
+
+// Function BP_LocationBase.BP_LocationBase_C.BndEvt__BP_LocationBase_SBZInteractableGhost_K2Node_ComponentBoundEvent_3_SBZOnInteraction__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class USBZBaseInteractableComponent*    Interactable                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class USBZInteractorComponent*          Interactor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsLocallyControlledInteractor                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_LocationBase_C::BndEvt__BP_LocationBase_SBZInteractableGhost_K2Node_ComponentBoundEvent_3_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_LocationBase_C", "BndEvt__BP_LocationBase_SBZInteractableGhost_K2Node_ComponentBoundEvent_3_SBZOnInteraction__DelegateSignature");
+
+	Params::BP_LocationBase_C_BndEvt__BP_LocationBase_SBZInteractableGhost_K2Node_ComponentBoundEvent_3_SBZOnInteraction__DelegateSignature Parms{};
+
+	Parms.Interactable = Interactable;
+	Parms.Interactor = Interactor;
+	Parms.bIsLocallyControlledInteractor = bIsLocallyControlledInteractor;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -228,61 +98,191 @@ void ABP_LocationBase_C::BndEvt__BP_LocationBase_SBZInteractableObject_K2Node_Co
 }
 
 
-// Function BP_LocationBase.BP_LocationBase_C.BndEvt__BP_LocationBase_SBZInteractableGhost_K2Node_ComponentBoundEvent_3_SBZOnInteraction__DelegateSignature
-// (BlueprintEvent)
+// Function BP_LocationBase.BP_LocationBase_C.OnStateChanged
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// class USBZBaseInteractableComponent*    Interactable                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class USBZInteractorComponent*          Interactor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bIsLocallyControlledInteractor                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   OldState                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   NewState                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bDoCosmetics                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_LocationBase_C::BndEvt__BP_LocationBase_SBZInteractableGhost_K2Node_ComponentBoundEvent_3_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor)
+void ABP_LocationBase_C::OnStateChanged(int32 OldState, int32 NewState, bool bDoCosmetics)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LocationBase_C", "BndEvt__BP_LocationBase_SBZInteractableGhost_K2Node_ComponentBoundEvent_3_SBZOnInteraction__DelegateSignature");
+		Func = Class->GetFunction("BP_LocationBase_C", "OnStateChanged");
 
-	Params::BP_LocationBase_C_BndEvt__BP_LocationBase_SBZInteractableGhost_K2Node_ComponentBoundEvent_3_SBZOnInteraction__DelegateSignature Parms{};
+	Params::BP_LocationBase_C_OnStateChanged Parms{};
 
-	Parms.Interactable = Interactable;
-	Parms.Interactor = Interactor;
-	Parms.bIsLocallyControlledInteractor = bIsLocallyControlledInteractor;
+	Parms.OldState = OldState;
+	Parms.NewState = NewState;
+	Parms.bDoCosmetics = bDoCosmetics;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_LocationBase.BP_LocationBase_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_LocationBase.BP_LocationBase_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_LocationBase_C::ReceiveBeginPlay()
+void ABP_LocationBase_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LocationBase_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_LocationBase_C", "UserConstructionScript");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_LocationBase.BP_LocationBase_C.ExecuteUbergraph_BP_LocationBase
-// (Final, UbergraphFunction)
+// Function BP_LocationBase.BP_LocationBase_C.setGhostVisible
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    addMarker_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_LocationBase_C::ExecuteUbergraph_BP_LocationBase(int32 EntryPoint)
+void ABP_LocationBase_C::setGhostVisible(bool addMarker_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LocationBase_C", "ExecuteUbergraph_BP_LocationBase");
+		Func = Class->GetFunction("BP_LocationBase_C", "setGhostVisible");
 
-	Params::BP_LocationBase_C_ExecuteUbergraph_BP_LocationBase Parms{};
+	Params::BP_LocationBase_C_setGhostVisible Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.addMarker_0 = addMarker_0;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_LocationBase.BP_LocationBase_C.setInvisible
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_LocationBase_C::setInvisible()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_LocationBase_C", "setInvisible");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_LocationBase.BP_LocationBase_C.setObjectVisible
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_LocationBase_C::setObjectVisible()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_LocationBase_C", "setObjectVisible");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_LocationBase.BP_LocationBase_C.setObjectRemovable
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    addMarker_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_LocationBase_C::setObjectRemovable(bool addMarker_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_LocationBase_C", "setObjectRemovable");
+
+	Params::BP_LocationBase_C_setObjectRemovable Parms{};
+
+	Parms.addMarker_0 = addMarker_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_LocationBase.BP_LocationBase_C.setMeshVisibility
+// (Private, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    visible                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    ghost                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_LocationBase_C::setMeshVisibility(bool visible, bool ghost)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_LocationBase_C", "setMeshVisibility");
+
+	Params::BP_LocationBase_C_setMeshVisibility Parms{};
+
+	Parms.visible = visible;
+	Parms.ghost = ghost;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_LocationBase.BP_LocationBase_C.addMarker
+// (Private, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class USBZMarkerDataAsset*        MarkerDataAsset                                        (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_LocationBase_C::addMarker(const class USBZMarkerDataAsset* MarkerDataAsset)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_LocationBase_C", "addMarker");
+
+	Params::BP_LocationBase_C_addMarker Parms{};
+
+	Parms.MarkerDataAsset = MarkerDataAsset;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_LocationBase.BP_LocationBase_C.setStateInteractable
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// Enum_LocationBase_DefaultState          state                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_LocationBase_C::setStateInteractable(Enum_LocationBase_DefaultState state)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_LocationBase_C", "setStateInteractable");
+
+	Params::BP_LocationBase_C_setStateInteractable Parms{};
+
+	Parms.state = state;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_LocationBase.BP_LocationBase_C.GetMarkerText
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm)
+
+class FText ABP_LocationBase_C::GetMarkerText()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_LocationBase_C", "GetMarkerText");
+
+	Params::BP_LocationBase_C_GetMarkerText Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 

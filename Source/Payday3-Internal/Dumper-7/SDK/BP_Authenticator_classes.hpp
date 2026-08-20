@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "Enum_ScannerStates_structs.hpp"
-#include "Starbreeze_classes.hpp"
 #include "AkAudio_structs.hpp"
+#include "Enum_ScannerStates_structs.hpp"
+#include "Engine_structs.hpp"
+#include "Starbreeze_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -51,19 +51,19 @@ public:
 	TMulticastInlineDelegate<void()>              OnCorrectFound;                                    // 0x03A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
-	void OnRep_States();
-	void Timeline_0__FinishedFunc();
-	void Timeline_0__UpdateFunc();
-	void ReceiveBeginPlay();
-	void Search();
-	void BndEvt__BP_Authenticator_SBZInteractable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor);
-	void SetValues();
-	void Initiate();
-	void FunctionTimer();
-	void Complete();
-	void SetVisible(bool Visibility);
-	void Test();
 	void ExecuteUbergraph_BP_Authenticator(int32 EntryPoint);
+	void Test();
+	void SetVisible(bool Visibility);
+	void Complete();
+	void FunctionTimer();
+	void Initiate();
+	void SetValues();
+	void BndEvt__BP_Authenticator_SBZInteractable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable_0, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor);
+	void Search();
+	void ReceiveBeginPlay();
+	void Timeline_0__UpdateFunc();
+	void Timeline_0__FinishedFunc();
+	void OnRep_States();
 
 public:
 	static class UClass* StaticClass()

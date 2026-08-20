@@ -18,9 +18,8 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_WoodenCrate.BP_WoodenCrate_C
-// 0x00D8 (0x03B0 - 0x02D8)
-#pragma pack(push, 0x1)
-class SDK_ALIGN(0x10) ABP_WoodenCrate_C : public ASBZReplicatedBinaryStateActor
+// 0x00B8 (0x0390 - 0x02D8)
+class ABP_WoodenCrate_C final : public ASBZReplicatedBinaryStateActor
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02D8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -41,17 +40,14 @@ public:
 	uint8                                         Pad_349[0x7];                                      // 0x0349(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             Boxsizer;                                          // 0x0350(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	TMulticastInlineDelegate<void()>              onCrateOpened;                                     // 0x0380(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
-	TArray<TScriptInterface<class IBPI_BinaryReactor_C>> binaryReactorActors;                        // 0x0390(0x0010)(Edit, BlueprintVisible)
-	bool                                          binaryReactorState;                                // 0x03A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void setMarking(bool visible);
-	void UserConstructionScript();
-	void OnStateChanged(bool bStateToChangeTo, bool bDoCosmetics);
-	void BndEvt__BP_ReplicatedBinaryActorVent_SBZInteractable_K2Node_ComponentBoundEvent_2_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor);
-	void BndEvt__BP_WoodenCrate_marked_SBZBinaryState_K2Node_ComponentBoundEvent_0_SBZBinaryStateChangedSignature__DelegateSignature(bool bState_0, bool bDoCosmetics);
-	void setBinaryState(bool state, bool doCosmetics);
 	void ExecuteUbergraph_BP_WoodenCrate(int32 EntryPoint);
+	void BndEvt__BP_WoodenCrate_marked_SBZBinaryState_K2Node_ComponentBoundEvent_0_SBZBinaryStateChangedSignature__DelegateSignature(bool bState_0, bool bDoCosmetics);
+	void BndEvt__BP_ReplicatedBinaryActorVent_SBZInteractable_K2Node_ComponentBoundEvent_2_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor);
+	void OnStateChanged(bool bStateToChangeTo, bool bDoCosmetics);
+	void UserConstructionScript();
+	void setMarking(bool visible);
 
 public:
 	static class UClass* StaticClass()
@@ -67,7 +63,6 @@ public:
 		return GetDefaultObjImpl<ABP_WoodenCrate_C>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_ABP_WoodenCrate_C;
 
 SDK_NAMESPACE_END

@@ -16,35 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_InteractablePainting_MediumValue.BP_InteractablePainting_MediumValue_C.UserConstructionScript
-// 0x0004 (0x0004 - 0x0000)
-struct BP_InteractablePainting_MediumValue_C_UserConstructionScript final
-{
-public:
-	float                                         CallFunc_Conv_BoolToFloat_ReturnValue;             // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_InteractablePainting_MediumValue_C_UserConstructionScript;
-
-// Function BP_InteractablePainting_MediumValue.BP_InteractablePainting_MediumValue_C.SetAsSecret
-// 0x0001 (0x0001 - 0x0000)
-struct BP_InteractablePainting_MediumValue_C_SetAsSecret final
-{
-public:
-	bool                                          IsSecret;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_BP_InteractablePainting_MediumValue_C_SetAsSecret;
-
-// Function BP_InteractablePainting_MediumValue.BP_InteractablePainting_MediumValue_C.BndEvt__BP_InteractablePainting_MediumValue_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature
-// 0x0018 (0x0018 - 0x0000)
-struct BP_InteractablePainting_MediumValue_C_BndEvt__BP_InteractablePainting_MediumValue_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature final
-{
-public:
-	class USBZBaseInteractableComponent*          Interactable;                                      // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class USBZInteractorComponent*                Interactor;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bIsLocallyControlledInteractor;                    // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_BP_InteractablePainting_MediumValue_C_BndEvt__BP_InteractablePainting_MediumValue_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature;
-
 // Function BP_InteractablePainting_MediumValue.BP_InteractablePainting_MediumValue_C.ExecuteUbergraph_BP_InteractablePainting_MediumValue
 // 0x0050 (0x0050 - 0x0000)
 struct BP_InteractablePainting_MediumValue_C_ExecuteUbergraph_BP_InteractablePainting_MediumValue final
@@ -62,6 +33,35 @@ public:
 	bool                                          K2Node_ComponentBoundEvent_bIsLocallyControlledInteractor; // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_InteractablePainting_MediumValue_C_ExecuteUbergraph_BP_InteractablePainting_MediumValue;
+
+// Function BP_InteractablePainting_MediumValue.BP_InteractablePainting_MediumValue_C.BndEvt__BP_InteractablePainting_MediumValue_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature
+// 0x0018 (0x0018 - 0x0000)
+struct BP_InteractablePainting_MediumValue_C_BndEvt__BP_InteractablePainting_MediumValue_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature final
+{
+public:
+	class USBZBaseInteractableComponent*          Interactable_0;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class USBZInteractorComponent*                Interactor;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsLocallyControlledInteractor;                    // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_InteractablePainting_MediumValue_C_BndEvt__BP_InteractablePainting_MediumValue_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature;
+
+// Function BP_InteractablePainting_MediumValue.BP_InteractablePainting_MediumValue_C.SetAsSecret
+// 0x0001 (0x0001 - 0x0000)
+struct BP_InteractablePainting_MediumValue_C_SetAsSecret final
+{
+public:
+	bool                                          IsSecret_0;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_InteractablePainting_MediumValue_C_SetAsSecret;
+
+// Function BP_InteractablePainting_MediumValue.BP_InteractablePainting_MediumValue_C.UserConstructionScript
+// 0x0004 (0x0004 - 0x0000)
+struct BP_InteractablePainting_MediumValue_C_UserConstructionScript final
+{
+public:
+	float                                         CallFunc_Conv_BoolToFloat_ReturnValue;             // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_InteractablePainting_MediumValue_C_UserConstructionScript;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

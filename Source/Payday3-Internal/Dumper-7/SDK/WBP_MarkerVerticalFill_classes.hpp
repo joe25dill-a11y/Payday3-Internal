@@ -26,9 +26,9 @@ public:
 	bool                                          HasProgress;                                       // 0x02F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void BP_OnDataSet(const class USBZMarkerDataAsset* InMarkerAsset_BP_OnDataSet);
-	void BP_OnProgressChanged(float NewProgress_BP_OnProgressChanged);
 	void ExecuteUbergraph_WBP_MarkerVerticalFill(int32 EntryPoint);
+	void BP_OnProgressChanged(float NewProgress);
+	void BP_OnDataSet(const class USBZMarkerDataAsset* InMarkerAsset);
 
 public:
 	static class UClass* StaticClass()

@@ -18,18 +18,18 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_InteractableServer.BP_InteractableServer_C
-// 0x0018 (0x0370 - 0x0358)
+// 0x0018 (0x0340 - 0x0328)
 class ABP_InteractableServer_C final : public ABP_SingleBagGeneratorBase_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_InteractableServer_C;            // 0x0358(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UAkComponent*                           Ak;                                                // 0x0360(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   StaticMesh;                                        // 0x0368(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0328(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UAkComponent*                           Ak;                                                // 0x0330(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   StaticMesh;                                        // 0x0338(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnRep_RenderOutlines();
-	void BndEvt__BP_InteractableServer_Interactable_K2Node_ComponentBoundEvent_2_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor);
 	void ExecuteUbergraph_BP_InteractableServer(int32 EntryPoint);
+	void BndEvt__BP_InteractableServer_Interactable_K2Node_ComponentBoundEvent_2_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable_0, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor);
+	void OnRep_RenderOutlines();
 
 public:
 	static class UClass* StaticClass()

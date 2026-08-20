@@ -14,15 +14,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_InteractableGold.BP_InteractableGold_C.BP_OnChangedToSecondaryType
-// 0x0001 (0x0001 - 0x0000)
-struct BP_InteractableGold_C_BP_OnChangedToSecondaryType final
-{
-public:
-	bool                                          bDoCosmetics_BP_OnChangedToSecondaryType;          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_BP_InteractableGold_C_BP_OnChangedToSecondaryType;
-
 // Function BP_InteractableGold.BP_InteractableGold_C.ExecuteUbergraph_BP_InteractableGold
 // 0x000C (0x000C - 0x0000)
 struct BP_InteractableGold_C_ExecuteUbergraph_BP_InteractableGold final
@@ -34,6 +25,15 @@ public:
 	float                                         CallFunc_GetGameTimeInSeconds_ReturnValue;         // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_InteractableGold_C_ExecuteUbergraph_BP_InteractableGold;
+
+// Function BP_InteractableGold.BP_InteractableGold_C.BP_OnChangedToSecondaryType
+// 0x0001 (0x0001 - 0x0000)
+struct BP_InteractableGold_C_BP_OnChangedToSecondaryType final
+{
+public:
+	bool                                          bDoCosmetics;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_InteractableGold_C_BP_OnChangedToSecondaryType;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

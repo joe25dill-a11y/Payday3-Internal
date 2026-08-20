@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "CH_BaseCop_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Starbreeze_structs.hpp"
-#include "CH_BaseCop_classes.hpp"
 #include "AkAudio_structs.hpp"
 
 
@@ -27,11 +27,11 @@ public:
 	class UNiagaraComponent*                      Niagara;                                           // 0x1D98(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveBeginPlay();
-	void BP_OnTagReactionPlayed();
-	void BP_OnHeistStateChanged(EPD3HeistState OldState_BP_OnHeistStateChanged, EPD3HeistState NewState_BP_OnHeistStateChanged);
-	void BP_OnKill();
 	void ExecuteUbergraph_CH_Cloaker(int32 EntryPoint);
+	void BP_OnKill();
+	void BP_OnHeistStateChanged(EPD3HeistState OldState, EPD3HeistState NewState);
+	void BP_OnTagReactionPlayed();
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

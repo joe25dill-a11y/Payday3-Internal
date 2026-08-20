@@ -19,7 +19,7 @@ SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_Settings_SliderButton.WBP_Settings_SliderButton_C
 // 0x0040 (0x0468 - 0x0428)
-class UWBP_Settings_SliderButton_C final : public USBZSettingsButtonSlider
+class UWBP_Settings_SliderButton_C : public USBZSettingsButtonSlider
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0428(0x0008)(ZeroConstructor, Transient, DuplicateTransient)

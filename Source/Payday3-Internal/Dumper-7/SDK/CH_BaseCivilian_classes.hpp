@@ -19,7 +19,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass CH_BaseCivilian.CH_BaseCivilian_C
 // 0x0050 (0x1DD0 - 0x1D80)
-class ACH_BaseCivilian_C : public ACH_BaseHumanAI_C
+class ACH_BaseCivilian_C final : public ACH_BaseHumanAI_C
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x1D80(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -31,8 +31,8 @@ public:
 	TArray<struct FLinearColor>                   BlueZoneColors;                                    // 0x1DC0(0x0010)(Edit, BlueprintVisible)
 
 public:
-	void ReceiveBeginPlay();
 	void ExecuteUbergraph_CH_BaseCivilian(int32 EntryPoint);
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

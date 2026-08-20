@@ -10,13 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "BP_LocationBase_classes.hpp"
 #include "Engine_structs.hpp"
+#include "BP_LocationBase_classes.hpp"
 #include "AkAudio_structs.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_FOR_USBDrive.BP_FOR_USBDrive_C
 // 0x0010 (0x0378 - 0x0368)
@@ -27,9 +26,9 @@ public:
 	class USBZAIObjectiveComponent*               SBZAIObjective;                                    // 0x0370(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	class FText GetMarkerText();
-	void OnStateChanged(int32 OldState_OnStateChanged, int32 NewState_OnStateChanged, bool bDoCosmetics_OnStateChanged);
 	void ExecuteUbergraph_BP_FOR_USBDrive(int32 EntryPoint);
+	void OnStateChanged(int32 OldState, int32 NewState, bool bDoCosmetics);
+	class FText GetMarkerText();
 
 public:
 	static class UClass* StaticClass()
@@ -45,5 +44,6 @@ public:
 		return GetDefaultObjImpl<ABP_FOR_USBDrive_C>();
 	}
 };
+DUMPER7_ASSERTS_ABP_FOR_USBDrive_C;
 
-}
+SDK_NAMESPACE_END

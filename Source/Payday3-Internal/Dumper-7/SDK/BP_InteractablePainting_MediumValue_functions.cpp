@@ -16,78 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_InteractablePainting_MediumValue.BP_InteractablePainting_MediumValue_C.OnRep_RenderOutlines
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_InteractablePainting_MediumValue_C::OnRep_RenderOutlines()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InteractablePainting_MediumValue_C", "OnRep_RenderOutlines");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_InteractablePainting_MediumValue.BP_InteractablePainting_MediumValue_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_InteractablePainting_MediumValue_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InteractablePainting_MediumValue_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_InteractablePainting_MediumValue.BP_InteractablePainting_MediumValue_C.SetAsSecret
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    IsSecret                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void ABP_InteractablePainting_MediumValue_C::SetAsSecret(bool IsSecret)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InteractablePainting_MediumValue_C", "SetAsSecret");
-
-	Params::BP_InteractablePainting_MediumValue_C_SetAsSecret Parms{};
-
-	Parms.IsSecret = IsSecret;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_InteractablePainting_MediumValue.BP_InteractablePainting_MediumValue_C.BndEvt__BP_InteractablePainting_MediumValue_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class USBZBaseInteractableComponent*    Interactable                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class USBZInteractorComponent*          Interactor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bIsLocallyControlledInteractor                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void ABP_InteractablePainting_MediumValue_C::BndEvt__BP_InteractablePainting_MediumValue_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InteractablePainting_MediumValue_C", "BndEvt__BP_InteractablePainting_MediumValue_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature");
-
-	Params::BP_InteractablePainting_MediumValue_C_BndEvt__BP_InteractablePainting_MediumValue_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature Parms{};
-
-	Parms.Interactable = Interactable;
-	Parms.Interactor = Interactor;
-	Parms.bIsLocallyControlledInteractor = bIsLocallyControlledInteractor;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_InteractablePainting_MediumValue.BP_InteractablePainting_MediumValue_C.ExecuteUbergraph_BP_InteractablePainting_MediumValue
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -105,6 +33,78 @@ void ABP_InteractablePainting_MediumValue_C::ExecuteUbergraph_BP_InteractablePai
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_InteractablePainting_MediumValue.BP_InteractablePainting_MediumValue_C.BndEvt__BP_InteractablePainting_MediumValue_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class USBZBaseInteractableComponent*    Interactable_0                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class USBZInteractorComponent*          Interactor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsLocallyControlledInteractor                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_InteractablePainting_MediumValue_C::BndEvt__BP_InteractablePainting_MediumValue_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable_0, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InteractablePainting_MediumValue_C", "BndEvt__BP_InteractablePainting_MediumValue_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature");
+
+	Params::BP_InteractablePainting_MediumValue_C_BndEvt__BP_InteractablePainting_MediumValue_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature Parms{};
+
+	Parms.Interactable_0 = Interactable_0;
+	Parms.Interactor = Interactor;
+	Parms.bIsLocallyControlledInteractor = bIsLocallyControlledInteractor;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_InteractablePainting_MediumValue.BP_InteractablePainting_MediumValue_C.SetAsSecret
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    IsSecret_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_InteractablePainting_MediumValue_C::SetAsSecret(bool IsSecret_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InteractablePainting_MediumValue_C", "SetAsSecret");
+
+	Params::BP_InteractablePainting_MediumValue_C_SetAsSecret Parms{};
+
+	Parms.IsSecret_0 = IsSecret_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_InteractablePainting_MediumValue.BP_InteractablePainting_MediumValue_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_InteractablePainting_MediumValue_C::UserConstructionScript()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InteractablePainting_MediumValue_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_InteractablePainting_MediumValue.BP_InteractablePainting_MediumValue_C.OnRep_RenderOutlines
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_InteractablePainting_MediumValue_C::OnRep_RenderOutlines()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InteractablePainting_MediumValue_C", "OnRep_RenderOutlines");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

@@ -16,167 +16,21 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_WheelRamp_interactable.BP_WheelRamp_interactable_C.Disable_interaction_location
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_WheelRamp_interactable_C::Disable_interaction_location()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WheelRamp_interactable_C", "Disable_interaction_location");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_WheelRamp_interactable.BP_WheelRamp_interactable_C.Enable_interaction_location
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_WheelRamp_interactable_C::Enable_interaction_location()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WheelRamp_interactable_C", "Enable_interaction_location");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_WheelRamp_interactable.BP_WheelRamp_interactable_C.Enable_Interaction
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_WheelRamp_interactable_C::Enable_Interaction()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WheelRamp_interactable_C", "Enable_Interaction");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_WheelRamp_interactable.BP_WheelRamp_interactable_C.Disable_interaction
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_WheelRamp_interactable_C::Disable_interaction()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WheelRamp_interactable_C", "Disable_interaction");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_WheelRamp_interactable.BP_WheelRamp_interactable_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_WheelRamp_interactable_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WheelRamp_interactable_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_WheelRamp_interactable.BP_WheelRamp_interactable_C.BndEvt__BP_WheelRamp_interactable_SBZInteractable_location_K2Node_ComponentBoundEvent_2_SBZOnInteraction__DelegateSignature
-// (BlueprintEvent)
+// Function BP_WheelRamp_interactable.BP_WheelRamp_interactable_C.ExecuteUbergraph_BP_WheelRamp_interactable
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// class USBZBaseInteractableComponent*    Interactable                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class USBZInteractorComponent*          Interactor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bIsLocallyControlledInteractor                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_WheelRamp_interactable_C::BndEvt__BP_WheelRamp_interactable_SBZInteractable_location_K2Node_ComponentBoundEvent_2_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor)
+void ABP_WheelRamp_interactable_C::ExecuteUbergraph_BP_WheelRamp_interactable(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WheelRamp_interactable_C", "BndEvt__BP_WheelRamp_interactable_SBZInteractable_location_K2Node_ComponentBoundEvent_2_SBZOnInteraction__DelegateSignature");
+		Func = Class->GetFunction("BP_WheelRamp_interactable_C", "ExecuteUbergraph_BP_WheelRamp_interactable");
 
-	Params::BP_WheelRamp_interactable_C_BndEvt__BP_WheelRamp_interactable_SBZInteractable_location_K2Node_ComponentBoundEvent_2_SBZOnInteraction__DelegateSignature Parms{};
+	Params::BP_WheelRamp_interactable_C_ExecuteUbergraph_BP_WheelRamp_interactable Parms{};
 
-	Parms.Interactable = Interactable;
-	Parms.Interactor = Interactor;
-	Parms.bIsLocallyControlledInteractor = bIsLocallyControlledInteractor;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_WheelRamp_interactable.BP_WheelRamp_interactable_C.BndEvt__BP_WheelRamp_interactable_SBZInteractable_location_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class USBZBaseInteractableComponent*    Interactable                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class USBZInteractorComponent*          Interactor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bIsLocallyControlledInteractor                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void ABP_WheelRamp_interactable_C::BndEvt__BP_WheelRamp_interactable_SBZInteractable_location_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WheelRamp_interactable_C", "BndEvt__BP_WheelRamp_interactable_SBZInteractable_location_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature");
-
-	Params::BP_WheelRamp_interactable_C_BndEvt__BP_WheelRamp_interactable_SBZInteractable_location_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature Parms{};
-
-	Parms.Interactable = Interactable;
-	Parms.Interactor = Interactor;
-	Parms.bIsLocallyControlledInteractor = bIsLocallyControlledInteractor;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_WheelRamp_interactable.BP_WheelRamp_interactable_C.OnStateChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   OldState_OnStateChanged                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   NewState_OnStateChanged                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bDoCosmetics_OnStateChanged                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void ABP_WheelRamp_interactable_C::OnStateChanged(int32 OldState_OnStateChanged, int32 NewState_OnStateChanged, bool bDoCosmetics_OnStateChanged)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WheelRamp_interactable_C", "OnStateChanged");
-
-	Params::BP_WheelRamp_interactable_C_OnStateChanged Parms{};
-
-	Parms.OldState_OnStateChanged = OldState_OnStateChanged;
-	Parms.NewState_OnStateChanged = NewState_OnStateChanged;
-	Parms.bDoCosmetics_OnStateChanged = bDoCosmetics_OnStateChanged;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_WheelRamp_interactable.BP_WheelRamp_interactable_C.BndEvt__BP_WheelRamp_interactable_SBZInteractable_pickup_K2Node_ComponentBoundEvent_4_SBZOnInteraction__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class USBZBaseInteractableComponent*    Interactable                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class USBZInteractorComponent*          Interactor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bIsLocallyControlledInteractor                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void ABP_WheelRamp_interactable_C::BndEvt__BP_WheelRamp_interactable_SBZInteractable_pickup_K2Node_ComponentBoundEvent_4_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WheelRamp_interactable_C", "BndEvt__BP_WheelRamp_interactable_SBZInteractable_pickup_K2Node_ComponentBoundEvent_4_SBZOnInteraction__DelegateSignature");
-
-	Params::BP_WheelRamp_interactable_C_BndEvt__BP_WheelRamp_interactable_SBZInteractable_pickup_K2Node_ComponentBoundEvent_4_SBZOnInteraction__DelegateSignature Parms{};
-
-	Parms.Interactable = Interactable;
-	Parms.Interactor = Interactor;
-	Parms.bIsLocallyControlledInteractor = bIsLocallyControlledInteractor;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -206,23 +60,169 @@ void ABP_WheelRamp_interactable_C::BndEvt__BP_WheelRamp_interactable_SBZInteract
 }
 
 
-// Function BP_WheelRamp_interactable.BP_WheelRamp_interactable_C.ExecuteUbergraph_BP_WheelRamp_interactable
-// (Final, UbergraphFunction, HasDefaults)
+// Function BP_WheelRamp_interactable.BP_WheelRamp_interactable_C.BndEvt__BP_WheelRamp_interactable_SBZInteractable_pickup_K2Node_ComponentBoundEvent_4_SBZOnInteraction__DelegateSignature
+// (BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class USBZBaseInteractableComponent*    Interactable                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class USBZInteractorComponent*          Interactor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsLocallyControlledInteractor                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_WheelRamp_interactable_C::ExecuteUbergraph_BP_WheelRamp_interactable(int32 EntryPoint)
+void ABP_WheelRamp_interactable_C::BndEvt__BP_WheelRamp_interactable_SBZInteractable_pickup_K2Node_ComponentBoundEvent_4_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WheelRamp_interactable_C", "ExecuteUbergraph_BP_WheelRamp_interactable");
+		Func = Class->GetFunction("BP_WheelRamp_interactable_C", "BndEvt__BP_WheelRamp_interactable_SBZInteractable_pickup_K2Node_ComponentBoundEvent_4_SBZOnInteraction__DelegateSignature");
 
-	Params::BP_WheelRamp_interactable_C_ExecuteUbergraph_BP_WheelRamp_interactable Parms{};
+	Params::BP_WheelRamp_interactable_C_BndEvt__BP_WheelRamp_interactable_SBZInteractable_pickup_K2Node_ComponentBoundEvent_4_SBZOnInteraction__DelegateSignature Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.Interactable = Interactable;
+	Parms.Interactor = Interactor;
+	Parms.bIsLocallyControlledInteractor = bIsLocallyControlledInteractor;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_WheelRamp_interactable.BP_WheelRamp_interactable_C.OnStateChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   OldState                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   NewState                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bDoCosmetics                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_WheelRamp_interactable_C::OnStateChanged(int32 OldState, int32 NewState, bool bDoCosmetics)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WheelRamp_interactable_C", "OnStateChanged");
+
+	Params::BP_WheelRamp_interactable_C_OnStateChanged Parms{};
+
+	Parms.OldState = OldState;
+	Parms.NewState = NewState;
+	Parms.bDoCosmetics = bDoCosmetics;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_WheelRamp_interactable.BP_WheelRamp_interactable_C.BndEvt__BP_WheelRamp_interactable_SBZInteractable_location_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class USBZBaseInteractableComponent*    Interactable                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class USBZInteractorComponent*          Interactor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsLocallyControlledInteractor                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_WheelRamp_interactable_C::BndEvt__BP_WheelRamp_interactable_SBZInteractable_location_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WheelRamp_interactable_C", "BndEvt__BP_WheelRamp_interactable_SBZInteractable_location_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature");
+
+	Params::BP_WheelRamp_interactable_C_BndEvt__BP_WheelRamp_interactable_SBZInteractable_location_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature Parms{};
+
+	Parms.Interactable = Interactable;
+	Parms.Interactor = Interactor;
+	Parms.bIsLocallyControlledInteractor = bIsLocallyControlledInteractor;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_WheelRamp_interactable.BP_WheelRamp_interactable_C.BndEvt__BP_WheelRamp_interactable_SBZInteractable_location_K2Node_ComponentBoundEvent_2_SBZOnInteraction__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class USBZBaseInteractableComponent*    Interactable                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class USBZInteractorComponent*          Interactor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsLocallyControlledInteractor                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_WheelRamp_interactable_C::BndEvt__BP_WheelRamp_interactable_SBZInteractable_location_K2Node_ComponentBoundEvent_2_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WheelRamp_interactable_C", "BndEvt__BP_WheelRamp_interactable_SBZInteractable_location_K2Node_ComponentBoundEvent_2_SBZOnInteraction__DelegateSignature");
+
+	Params::BP_WheelRamp_interactable_C_BndEvt__BP_WheelRamp_interactable_SBZInteractable_location_K2Node_ComponentBoundEvent_2_SBZOnInteraction__DelegateSignature Parms{};
+
+	Parms.Interactable = Interactable;
+	Parms.Interactor = Interactor;
+	Parms.bIsLocallyControlledInteractor = bIsLocallyControlledInteractor;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_WheelRamp_interactable.BP_WheelRamp_interactable_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_WheelRamp_interactable_C::UserConstructionScript()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WheelRamp_interactable_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_WheelRamp_interactable.BP_WheelRamp_interactable_C.Disable_interaction
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_WheelRamp_interactable_C::Disable_interaction()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WheelRamp_interactable_C", "Disable_interaction");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_WheelRamp_interactable.BP_WheelRamp_interactable_C.Enable_Interaction
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_WheelRamp_interactable_C::Enable_Interaction()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WheelRamp_interactable_C", "Enable_Interaction");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_WheelRamp_interactable.BP_WheelRamp_interactable_C.Enable_interaction_location
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_WheelRamp_interactable_C::Enable_interaction_location()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WheelRamp_interactable_C", "Enable_interaction_location");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_WheelRamp_interactable.BP_WheelRamp_interactable_C.Disable_interaction_location
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_WheelRamp_interactable_C::Disable_interaction_location()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_WheelRamp_interactable_C", "Disable_interaction_location");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

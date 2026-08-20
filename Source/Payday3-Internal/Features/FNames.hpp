@@ -30,6 +30,10 @@ namespace FNames{
         fn(BP_Meth_HydrogenChloride_C) \
         fn(BP_FOR_USBDrive_C) \
         fn(BP_Plankspile_C) \
+        fn(BP_CheckRequirement) \
+        fn(Client_OnPickupCarryActorFailed) \
+        fn(Multicast_OnPickupCarryActor) \
+        fn(Multicast_OnThrowCarryActor) \
     
     #define DefineFName(name) inline SDK::FName name{};
     ForEachFName(DefineFName)

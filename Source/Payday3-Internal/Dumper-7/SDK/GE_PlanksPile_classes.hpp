@@ -13,8 +13,7 @@
 #include "GameplayAbilities_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass GE_PlanksPile.GE_PlanksPile_C
 // 0x0000 (0x08C0 - 0x08C0)
@@ -34,5 +33,6 @@ public:
 		return GetDefaultObjImpl<UGE_PlanksPile_C>();
 	}
 };
+DUMPER7_ASSERTS_UGE_PlanksPile_C;
 
-}
+SDK_NAMESPACE_END

@@ -16,57 +16,37 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_LootableCarBagBase.BP_LootableCarBagBase_C.setLootVisibility
-// (Private, BlueprintCallable, BlueprintEvent)
+// Function BP_LootableCarBagBase.BP_LootableCarBagBase_C.ExecuteUbergraph_BP_LootableCarBagBase
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    visible                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_LootableCarBagBase_C::setLootVisibility(bool visible)
+void ABP_LootableCarBagBase_C::ExecuteUbergraph_BP_LootableCarBagBase(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LootableCarBagBase_C", "setLootVisibility");
+		Func = Class->GetFunction("BP_LootableCarBagBase_C", "ExecuteUbergraph_BP_LootableCarBagBase");
 
-	Params::BP_LootableCarBagBase_C_setLootVisibility Parms{};
+	Params::BP_LootableCarBagBase_C_ExecuteUbergraph_BP_LootableCarBagBase Parms{};
 
-	Parms.visible = visible;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_LootableCarBagBase.BP_LootableCarBagBase_C.UserConstructionScript
-// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function BP_LootableCarBagBase.BP_LootableCarBagBase_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_LootableCarBagBase_C::UserConstructionScript()
+void ABP_LootableCarBagBase_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LootableCarBagBase_C", "UserConstructionScript");
+		Func = Class->GetFunction("BP_LootableCarBagBase_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_LootableCarBagBase.BP_LootableCarBagBase_C.BP_OnChangedToSecondaryType
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bDoCosmetics                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void ABP_LootableCarBagBase_C::BP_OnChangedToSecondaryType(bool bDoCosmetics)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LootableCarBagBase_C", "BP_OnChangedToSecondaryType");
-
-	Params::BP_LootableCarBagBase_C_BP_OnChangedToSecondaryType Parms{};
-
-	Parms.bDoCosmetics = bDoCosmetics;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -92,35 +72,55 @@ void ABP_LootableCarBagBase_C::BndEvt__BP_LootableCarBagBase_Interactable_K2Node
 }
 
 
-// Function BP_LootableCarBagBase.BP_LootableCarBagBase_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_LootableCarBagBase.BP_LootableCarBagBase_C.BP_OnChangedToSecondaryType
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bDoCosmetics                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_LootableCarBagBase_C::ReceiveBeginPlay()
+void ABP_LootableCarBagBase_C::BP_OnChangedToSecondaryType(bool bDoCosmetics)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LootableCarBagBase_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_LootableCarBagBase_C", "BP_OnChangedToSecondaryType");
+
+	Params::BP_LootableCarBagBase_C_BP_OnChangedToSecondaryType Parms{};
+
+	Parms.bDoCosmetics = bDoCosmetics;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_LootableCarBagBase.BP_LootableCarBagBase_C.UserConstructionScript
+// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_LootableCarBagBase_C::UserConstructionScript()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_LootableCarBagBase_C", "UserConstructionScript");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_LootableCarBagBase.BP_LootableCarBagBase_C.ExecuteUbergraph_BP_LootableCarBagBase
-// (Final, UbergraphFunction)
+// Function BP_LootableCarBagBase.BP_LootableCarBagBase_C.setLootVisibility
+// (Private, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    visible                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_LootableCarBagBase_C::ExecuteUbergraph_BP_LootableCarBagBase(int32 EntryPoint)
+void ABP_LootableCarBagBase_C::setLootVisibility(bool visible)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LootableCarBagBase_C", "ExecuteUbergraph_BP_LootableCarBagBase");
+		Func = Class->GetFunction("BP_LootableCarBagBase_C", "setLootVisibility");
 
-	Params::BP_LootableCarBagBase_C_ExecuteUbergraph_BP_LootableCarBagBase Parms{};
+	Params::BP_LootableCarBagBase_C_setLootVisibility Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.visible = visible;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

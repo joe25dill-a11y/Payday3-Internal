@@ -25,9 +25,9 @@ public:
 	class USBZAIVisualDetectionComponent*         SBZAIVisualDetection;                              // 0x06A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceivePossess(class APawn* PossessedPawn_ReceivePossess);
-	void BP_OnCurrentEnemyAssigned();
 	void ExecuteUbergraph_BP_CivilianController(int32 EntryPoint);
+	void BP_OnCurrentEnemyAssigned();
+	void ReceivePossess(class APawn* PossessedPawn);
 
 public:
 	static class UClass* StaticClass()

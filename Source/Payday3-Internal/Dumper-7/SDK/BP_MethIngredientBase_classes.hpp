@@ -14,8 +14,7 @@
 #include "Starbreeze_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MethIngredientBase.BP_MethIngredientBase_C
 // 0x0030 (0x0320 - 0x02F0)
@@ -48,4 +47,6 @@ public:
 		return GetDefaultObjImpl<ABP_MethIngredientBase_C>();
 	}
 };
-}
+DUMPER7_ASSERTS_ABP_MethIngredientBase_C;
+
+SDK_NAMESPACE_END

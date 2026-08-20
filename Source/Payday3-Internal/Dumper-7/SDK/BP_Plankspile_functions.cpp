@@ -14,8 +14,7 @@
 #include "BP_Plankspile_parameters.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // Function BP_Plankspile.BP_Plankspile_C.ExecuteUbergraph_BP_Plankspile
 // (Final, UbergraphFunction)
@@ -116,5 +115,5 @@ void ABP_Plankspile_C::Set_Visibility_OFF()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-}
 
+SDK_NAMESPACE_END

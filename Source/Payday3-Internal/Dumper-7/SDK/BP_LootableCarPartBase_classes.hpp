@@ -20,7 +20,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_LootableCarPartBase.BP_LootableCarPartBase_C
 // 0x00D8 (0x03C8 - 0x02F0)
-class ABP_LootableCarPartBase_C : public ASBZReplicatedIntStateActor
+class ABP_LootableCarPartBase_C final : public ASBZReplicatedIntStateActor
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02F0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -56,18 +56,18 @@ public:
 	class UAkAudioEvent*                          secondInteractionAk;                               // 0x03C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void updatePartState(bool doCosmetics);
-	void searchPart(bool fullySearched, bool removeLoot, bool* lootSuccessfullyRemoved);
-	void setLootable(bool lootable);
-	void setInteraction(bool enabled);
-	void UserConstructionScript();
-	void open_timeline__FinishedFunc();
-	void open_timeline__UpdateFunc();
-	void BndEvt__BP_LootableCarPartBase_initialOpen_SBZInteractable_K2Node_ComponentBoundEvent_2_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor);
-	void BndEvt__BP_LootableCarPartBase_removePart_SBZInteractable_K2Node_ComponentBoundEvent_5_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor);
-	void OnStateChanged(int32 OldState_OnStateChanged, int32 NewState_OnStateChanged, bool bDoCosmetics_OnStateChanged);
-	void BndEvt__BP_LootableCarPartBase_bagGenerator_K2Node_ComponentBoundEvent_0_SBZBagPickedUp__DelegateSignature();
 	void ExecuteUbergraph_BP_LootableCarPartBase(int32 EntryPoint);
+	void BndEvt__BP_LootableCarPartBase_bagGenerator_K2Node_ComponentBoundEvent_0_SBZBagPickedUp__DelegateSignature();
+	void OnStateChanged(int32 OldState, int32 NewState, bool bDoCosmetics);
+	void BndEvt__BP_LootableCarPartBase_removePart_SBZInteractable_K2Node_ComponentBoundEvent_5_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor);
+	void BndEvt__BP_LootableCarPartBase_initialOpen_SBZInteractable_K2Node_ComponentBoundEvent_2_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor);
+	void open_timeline__UpdateFunc();
+	void open_timeline__FinishedFunc();
+	void UserConstructionScript();
+	void setInteraction(bool enabled);
+	void setLootable(bool lootable);
+	void searchPart(bool fullySearched, bool removeLoot, bool* lootSuccessfullyRemoved);
+	void updatePartState(bool doCosmetics);
 
 public:
 	static class UClass* StaticClass()

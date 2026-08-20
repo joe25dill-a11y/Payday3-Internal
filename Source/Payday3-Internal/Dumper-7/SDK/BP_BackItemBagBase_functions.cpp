@@ -36,26 +36,6 @@ void ABP_BackItemBagBase_C::ExecuteUbergraph_BP_BackItemBagBase(int32 EntryPoint
 }
 
 
-// Function BP_BackItemBagBase.BP_BackItemBagBase_C.ReceiveEndPlay
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_BackItemBagBase_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BackItemBagBase_C", "ReceiveEndPlay");
-
-	Params::BP_BackItemBagBase_C_ReceiveEndPlay Parms{};
-
-	Parms.EndPlayReason = EndPlayReason;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_BackItemBagBase.BP_BackItemBagBase_C.BP_AttachmentComplete
 // (Event, Protected, BlueprintEvent)
 // Parameters:

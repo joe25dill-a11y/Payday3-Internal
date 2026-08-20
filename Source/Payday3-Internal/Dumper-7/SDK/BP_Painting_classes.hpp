@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Painting.BP_Painting_C
-// 0x0000 (0x0370 - 0x0370)
+// 0x0000 (0x0340 - 0x0340)
 class ABP_Painting_C final : public ABP_InteractableMoneyPile_C
 {
 public:

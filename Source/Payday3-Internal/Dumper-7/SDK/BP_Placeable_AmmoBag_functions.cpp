@@ -16,139 +16,21 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Placeable_AmmoBag.BP_Placeable_AmmoBag_C.UpdateCharges
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BP_Placeable_AmmoBag.BP_Placeable_AmmoBag_C.ExecuteUbergraph_BP_Placeable_AmmoBag
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// float                                   NewChargeCount                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Placeable_AmmoBag_C::UpdateCharges(float NewChargeCount)
+void ABP_Placeable_AmmoBag_C::ExecuteUbergraph_BP_Placeable_AmmoBag(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Placeable_AmmoBag_C", "UpdateCharges");
+		Func = Class->GetFunction("BP_Placeable_AmmoBag_C", "ExecuteUbergraph_BP_Placeable_AmmoBag");
 
-	Params::BP_Placeable_AmmoBag_C_UpdateCharges Parms{};
+	Params::BP_Placeable_AmmoBag_C_ExecuteUbergraph_BP_Placeable_AmmoBag Parms{};
 
-	Parms.NewChargeCount = NewChargeCount;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Placeable_AmmoBag.BP_Placeable_AmmoBag_C.Timeline_0__FinishedFunc
-// (BlueprintEvent)
-
-void ABP_Placeable_AmmoBag_C::Timeline_0__FinishedFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Placeable_AmmoBag_C", "Timeline_0__FinishedFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Placeable_AmmoBag.BP_Placeable_AmmoBag_C.Timeline_0__UpdateFunc
-// (BlueprintEvent)
-
-void ABP_Placeable_AmmoBag_C::Timeline_0__UpdateFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Placeable_AmmoBag_C", "Timeline_0__UpdateFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Placeable_AmmoBag.BP_Placeable_AmmoBag_C.BndEvt__SBZShoutTarget_K2Node_ComponentBoundEvent_2_SBZShoutedAtDelegate__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class USBZShoutTargetComponent*         ShoutTarget                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            Shouter                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Placeable_AmmoBag_C::BndEvt__SBZShoutTarget_K2Node_ComponentBoundEvent_2_SBZShoutedAtDelegate__DelegateSignature(class USBZShoutTargetComponent* ShoutTarget, class APawn* Shouter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Placeable_AmmoBag_C", "BndEvt__SBZShoutTarget_K2Node_ComponentBoundEvent_2_SBZShoutedAtDelegate__DelegateSignature");
-
-	Params::BP_Placeable_AmmoBag_C_BndEvt__SBZShoutTarget_K2Node_ComponentBoundEvent_2_SBZShoutedAtDelegate__DelegateSignature Parms{};
-
-	Parms.ShoutTarget = ShoutTarget;
-	Parms.Shouter = Shouter;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Placeable_AmmoBag.BP_Placeable_AmmoBag_C.OnChargesChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   ChargesChangeTo                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bDoCosmetics                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void ABP_Placeable_AmmoBag_C::OnChargesChanged(float ChargesChangeTo, bool bDoCosmetics)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Placeable_AmmoBag_C", "OnChargesChanged");
-
-	Params::BP_Placeable_AmmoBag_C_OnChargesChanged Parms{};
-
-	Parms.ChargesChangeTo = ChargesChangeTo;
-	Parms.bDoCosmetics = bDoCosmetics;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Placeable_AmmoBag.BP_Placeable_AmmoBag_C.BndEvt__BP_Placeable_AmmoBag_ProjectileMovementComponent_K2Node_ComponentBoundEvent_1_ActorComponentActivatedSignature__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class UActorComponent*                  Component                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bReset                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void ABP_Placeable_AmmoBag_C::BndEvt__BP_Placeable_AmmoBag_ProjectileMovementComponent_K2Node_ComponentBoundEvent_1_ActorComponentActivatedSignature__DelegateSignature(class UActorComponent* Component, bool bReset)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Placeable_AmmoBag_C", "BndEvt__BP_Placeable_AmmoBag_ProjectileMovementComponent_K2Node_ComponentBoundEvent_1_ActorComponentActivatedSignature__DelegateSignature");
-
-	Params::BP_Placeable_AmmoBag_C_BndEvt__BP_Placeable_AmmoBag_ProjectileMovementComponent_K2Node_ComponentBoundEvent_1_ActorComponentActivatedSignature__DelegateSignature Parms{};
-
-	Parms.Component = Component;
-	Parms.bReset = bReset;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Placeable_AmmoBag.BP_Placeable_AmmoBag_C.BndEvt__BP_Placeable_AmmoBag_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class USBZBaseInteractableComponent*    Interactable_0                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class USBZInteractorComponent*          Interactor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bIsLocallyControlledInteractor                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void ABP_Placeable_AmmoBag_C::BndEvt__BP_Placeable_AmmoBag_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable_0, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Placeable_AmmoBag_C", "BndEvt__BP_Placeable_AmmoBag_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature");
-
-	Params::BP_Placeable_AmmoBag_C_BndEvt__BP_Placeable_AmmoBag_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature Parms{};
-
-	Parms.Interactable_0 = Interactable_0;
-	Parms.Interactor = Interactor;
-	Parms.bIsLocallyControlledInteractor = bIsLocallyControlledInteractor;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -178,21 +60,139 @@ void ABP_Placeable_AmmoBag_C::BndEvt__BP_Placeable_AmmoBag_Interactable_K2Node_C
 }
 
 
-// Function BP_Placeable_AmmoBag.BP_Placeable_AmmoBag_C.ExecuteUbergraph_BP_Placeable_AmmoBag
-// (Final, UbergraphFunction, HasDefaults)
+// Function BP_Placeable_AmmoBag.BP_Placeable_AmmoBag_C.BndEvt__BP_Placeable_AmmoBag_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature
+// (BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class USBZBaseInteractableComponent*    Interactable_0                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class USBZInteractorComponent*          Interactor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bIsLocallyControlledInteractor                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_Placeable_AmmoBag_C::ExecuteUbergraph_BP_Placeable_AmmoBag(int32 EntryPoint)
+void ABP_Placeable_AmmoBag_C::BndEvt__BP_Placeable_AmmoBag_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable_0, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Placeable_AmmoBag_C", "ExecuteUbergraph_BP_Placeable_AmmoBag");
+		Func = Class->GetFunction("BP_Placeable_AmmoBag_C", "BndEvt__BP_Placeable_AmmoBag_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature");
 
-	Params::BP_Placeable_AmmoBag_C_ExecuteUbergraph_BP_Placeable_AmmoBag Parms{};
+	Params::BP_Placeable_AmmoBag_C_BndEvt__BP_Placeable_AmmoBag_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.Interactable_0 = Interactable_0;
+	Parms.Interactor = Interactor;
+	Parms.bIsLocallyControlledInteractor = bIsLocallyControlledInteractor;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Placeable_AmmoBag.BP_Placeable_AmmoBag_C.BndEvt__BP_Placeable_AmmoBag_ProjectileMovementComponent_K2Node_ComponentBoundEvent_1_ActorComponentActivatedSignature__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class UActorComponent*                  Component                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bReset                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_Placeable_AmmoBag_C::BndEvt__BP_Placeable_AmmoBag_ProjectileMovementComponent_K2Node_ComponentBoundEvent_1_ActorComponentActivatedSignature__DelegateSignature(class UActorComponent* Component, bool bReset)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Placeable_AmmoBag_C", "BndEvt__BP_Placeable_AmmoBag_ProjectileMovementComponent_K2Node_ComponentBoundEvent_1_ActorComponentActivatedSignature__DelegateSignature");
+
+	Params::BP_Placeable_AmmoBag_C_BndEvt__BP_Placeable_AmmoBag_ProjectileMovementComponent_K2Node_ComponentBoundEvent_1_ActorComponentActivatedSignature__DelegateSignature Parms{};
+
+	Parms.Component = Component;
+	Parms.bReset = bReset;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Placeable_AmmoBag.BP_Placeable_AmmoBag_C.OnChargesChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   ChargesChangeTo                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bDoCosmetics                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_Placeable_AmmoBag_C::OnChargesChanged(float ChargesChangeTo, bool bDoCosmetics)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Placeable_AmmoBag_C", "OnChargesChanged");
+
+	Params::BP_Placeable_AmmoBag_C_OnChargesChanged Parms{};
+
+	Parms.ChargesChangeTo = ChargesChangeTo;
+	Parms.bDoCosmetics = bDoCosmetics;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Placeable_AmmoBag.BP_Placeable_AmmoBag_C.BndEvt__SBZShoutTarget_K2Node_ComponentBoundEvent_2_SBZShoutedAtDelegate__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class USBZShoutTargetComponent*         ShoutTarget                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            Shouter                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Placeable_AmmoBag_C::BndEvt__SBZShoutTarget_K2Node_ComponentBoundEvent_2_SBZShoutedAtDelegate__DelegateSignature(class USBZShoutTargetComponent* ShoutTarget, class APawn* Shouter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Placeable_AmmoBag_C", "BndEvt__SBZShoutTarget_K2Node_ComponentBoundEvent_2_SBZShoutedAtDelegate__DelegateSignature");
+
+	Params::BP_Placeable_AmmoBag_C_BndEvt__SBZShoutTarget_K2Node_ComponentBoundEvent_2_SBZShoutedAtDelegate__DelegateSignature Parms{};
+
+	Parms.ShoutTarget = ShoutTarget;
+	Parms.Shouter = Shouter;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Placeable_AmmoBag.BP_Placeable_AmmoBag_C.Timeline_0__UpdateFunc
+// (BlueprintEvent)
+
+void ABP_Placeable_AmmoBag_C::Timeline_0__UpdateFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Placeable_AmmoBag_C", "Timeline_0__UpdateFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Placeable_AmmoBag.BP_Placeable_AmmoBag_C.Timeline_0__FinishedFunc
+// (BlueprintEvent)
+
+void ABP_Placeable_AmmoBag_C::Timeline_0__FinishedFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Placeable_AmmoBag_C", "Timeline_0__FinishedFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Placeable_AmmoBag.BP_Placeable_AmmoBag_C.UpdateCharges
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   NewChargeCount                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Placeable_AmmoBag_C::UpdateCharges(float NewChargeCount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Placeable_AmmoBag_C", "UpdateCharges");
+
+	Params::BP_Placeable_AmmoBag_C_UpdateCharges Parms{};
+
+	Parms.NewChargeCount = NewChargeCount;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

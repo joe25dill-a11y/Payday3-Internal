@@ -17,11 +17,11 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_BackItem_DegradingTech.BP_BackItem_DegradingTech_C
-// 0x0008 (0x0320 - 0x0318)
+// 0x0008 (0x0310 - 0x0308)
 class ABP_BackItem_DegradingTech_C final : public ABP_BackItemBagBase_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_BackItem_DegradingTech_C;        // 0x0318(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_BackItem_DegradingTech_C;        // 0x0308(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_BP_BackItem_DegradingTech(int32 EntryPoint);

@@ -1,0 +1,52 @@
+add_rules("mode.debug", "mode.release")
+
+if is_mode("debug") then
+    set_symbols("debug", "edit")
+elseif is_mode("release") then
+    set_symbols("debug")
+    set_strip("all")
+end
+
+option("avx2")
+    set_default(true)
+    set_showmenu(true)
+    set_description("Enable AVX2 optimizations")
+option_end()
+
+set_targetdir(is_mode("debug") and "Build/Debug" or "Build/Release")
+set_runtimes(is_mode("debug") and "MTd" or "MT")
+
+add_requires("minhook")
+add_requires("imgui v1.91.9-docking", {configs = {win32 = true, dx12 = true}, system = false})
+
+target("Payday3-Internal")
+    if has_config("avx2") then
+        add_vectorexts("avx2")
+    end
+
+    set_languages("cxxlatest")
+    set_basename("Payday3-Internal-Fixed")`n    set_kind("shared")
+    add_files("Source/Payday3-Internal/DLLMain.cpp")
+    add_files("Source/Payday3-Internal/Utils/**.cpp")
+    add_files("Source/Payday3-Internal/Menu.cpp");
+    add_files("Source/Payday3-Internal/Features/**.cpp");
+
+    add_files("Source/Payday3-Internal/Dumper-7/SDK/Basic.cpp")
+    add_files("Source/Payday3-Internal/Dumper-7/SDK/CoreUObject_functions.cpp")
+    add_files("Source/Payday3-Internal/Dumper-7/SDK/Engine_functions.cpp")
+    add_files("Source/Payday3-Internal/Dumper-7/SDK/Starbreeze_functions.cpp")
+    add_files("Source/Payday3-Internal/Dumper-7/SDK/SBZWorldRuntime_functions.cpp")
+    add_files("Source/Payday3-Internal/Dumper-7/SDK/GameplayAbilities_functions.cpp")
+    add_files("Source/Payday3-Internal/Dumper-7/SDK/BP_FOR_USBDrive_functions.cpp")
+
+    add_packages("minhook", "imgui")
+    add_syslinks("d3d12", "dxgi")
+
+    add_links("user32", "minhook.x64")
+
+    add_cxflags("/wd4369")
+
+target("Injector")
+    set_languages("cxxlatest")
+    set_kind("binary")
+    add_files("Source/Injector/**.cpp")

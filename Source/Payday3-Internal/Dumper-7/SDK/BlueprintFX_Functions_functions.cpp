@@ -16,35 +16,31 @@
 
 SDK_NAMESPACE_START
 
-// Function BlueprintFX_Functions.BlueprintFX_Functions_C.VFX Prop Dest Surface Glass Loc
-// (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function BlueprintFX_Functions.BlueprintFX_Functions_C.VFX Prop Dest Surface Glass
+// (Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const struct FVector&                   Location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UStaticMeshComponent*             StaticMeshComponent                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   ParticleSizeMultiplier                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   ParticleCount                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UNiagaraComponent**               ParticleSystem                                         (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBlueprintFX_Functions_C::VFX_Prop_Dest_Surface_Glass_Loc(const struct FVector& Location, float ParticleSizeMultiplier, int32 ParticleCount, const struct FLinearColor& Color, class UObject* __WorldContext, class UNiagaraComponent** ParticleSystem)
+void UBlueprintFX_Functions_C::VFX_Prop_Dest_Surface_Glass(class UStaticMeshComponent* StaticMeshComponent, float ParticleSizeMultiplier, int32 ParticleCount, const struct FLinearColor& Color, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("BlueprintFX_Functions_C", "VFX Prop Dest Surface Glass Loc");
+		Func = StaticClass()->GetFunction("BlueprintFX_Functions_C", "VFX Prop Dest Surface Glass");
 
-	Params::BlueprintFX_Functions_C_VFX_Prop_Dest_Surface_Glass_Loc Parms{};
+	Params::BlueprintFX_Functions_C_VFX_Prop_Dest_Surface_Glass Parms{};
 
-	Parms.Location = std::move(Location);
+	Parms.StaticMeshComponent = StaticMeshComponent;
 	Parms.ParticleSizeMultiplier = ParticleSizeMultiplier;
 	Parms.ParticleCount = ParticleCount;
 	Parms.Color = std::move(Color);
 	Parms.__WorldContext = __WorldContext;
 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	if (ParticleSystem != nullptr)
-		*ParticleSystem = Parms.ParticleSystem;
 }
 
 
@@ -84,31 +80,35 @@ void UBlueprintFX_Functions_C::VFX_Prop_Cosmetic_Destruction(const struct FVecto
 }
 
 
-// Function BlueprintFX_Functions.BlueprintFX_Functions_C.VFX Prop Dest Surface Glass
-// (Static, Public, BlueprintCallable, BlueprintEvent)
+// Function BlueprintFX_Functions.BlueprintFX_Functions_C.VFX Prop Dest Surface Glass Loc
+// (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UStaticMeshComponent*             StaticMeshComponent                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Location                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   ParticleSizeMultiplier                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   ParticleCount                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UNiagaraComponent**               ParticleSystem                                         (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UBlueprintFX_Functions_C::VFX_Prop_Dest_Surface_Glass(class UStaticMeshComponent* StaticMeshComponent, float ParticleSizeMultiplier, int32 ParticleCount, const struct FLinearColor& Color, class UObject* __WorldContext)
+void UBlueprintFX_Functions_C::VFX_Prop_Dest_Surface_Glass_Loc(const struct FVector& Location, float ParticleSizeMultiplier, int32 ParticleCount, const struct FLinearColor& Color, class UObject* __WorldContext, class UNiagaraComponent** ParticleSystem)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("BlueprintFX_Functions_C", "VFX Prop Dest Surface Glass");
+		Func = StaticClass()->GetFunction("BlueprintFX_Functions_C", "VFX Prop Dest Surface Glass Loc");
 
-	Params::BlueprintFX_Functions_C_VFX_Prop_Dest_Surface_Glass Parms{};
+	Params::BlueprintFX_Functions_C_VFX_Prop_Dest_Surface_Glass_Loc Parms{};
 
-	Parms.StaticMeshComponent = StaticMeshComponent;
+	Parms.Location = std::move(Location);
 	Parms.ParticleSizeMultiplier = ParticleSizeMultiplier;
 	Parms.ParticleCount = ParticleCount;
 	Parms.Color = std::move(Color);
 	Parms.__WorldContext = __WorldContext;
 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	if (ParticleSystem != nullptr)
+		*ParticleSystem = Parms.ParticleSystem;
 }
 
 

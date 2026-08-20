@@ -14,15 +14,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function CH_SWAT_SHIELD.CH_SWAT_SHIELD_C.ReceiveActorBeginOverlap
-// 0x0008 (0x0008 - 0x0000)
-struct CH_SWAT_SHIELD_C_ReceiveActorBeginOverlap final
-{
-public:
-	class AActor*                                 OtherActor_ReceiveActorBeginOverlap;               // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_CH_SWAT_SHIELD_C_ReceiveActorBeginOverlap;
-
 // Function CH_SWAT_SHIELD.CH_SWAT_SHIELD_C.ExecuteUbergraph_CH_SWAT_SHIELD
 // 0x0010 (0x0010 - 0x0000)
 struct CH_SWAT_SHIELD_C_ExecuteUbergraph_CH_SWAT_SHIELD final
@@ -33,6 +24,15 @@ public:
 	class AActor*                                 K2Node_Event_OtherActor;                           // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_CH_SWAT_SHIELD_C_ExecuteUbergraph_CH_SWAT_SHIELD;
+
+// Function CH_SWAT_SHIELD.CH_SWAT_SHIELD_C.ReceiveActorBeginOverlap
+// 0x0008 (0x0008 - 0x0000)
+struct CH_SWAT_SHIELD_C_ReceiveActorBeginOverlap final
+{
+public:
+	class AActor*                                 OtherActor;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_CH_SWAT_SHIELD_C_ReceiveActorBeginOverlap;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

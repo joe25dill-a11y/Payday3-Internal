@@ -20,6 +20,7 @@ namespace Cheat::InstaDrill
         static std::chrono::steady_clock::time_point s_timeNextPoll{};
         static int s_iFinished = 0;
         static int s_iCleanerHits = 0;
+        static int s_iWires = 0;
         static bool s_bFriends = false;
 
         static bool ActorOk(SDK::AActor* pActor)
@@ -356,6 +357,73 @@ namespace Cheat::InstaDrill
         }
 
         // Num8 InstantLocalMiniGame — lockpick / computer UI while active.
+        // Camera / power cable boxes: open the door, then cut the current correct color.
+        // One action per box per poll so the game can update CurrentCorrectColorIndex.
+        static int FinishOneCableActionRaw(SDK::ASBZConnectedCableBox* pBox, SDK::USBZInteractorComponent* pInter)
+        {
+            __try
+            {
+                if (!pBox || !pBox->Class || pBox->IsActorBeingDestroyed() || pBox->bIsCompleted)
+                    return 0;
+                if (!pInter)
+                    return 0;
+                if (pBox->CurrentCorrectSequence.Num() <= 0)
+                    return 0;
+
+                if (!pBox->bIsDoorOpen && pBox->DoorInteractable)
+                {
+                    pBox->OnDoorInteractionComplete(pBox->DoorInteractable, pInter, true);
+                    return 1;
+                }
+
+                int idx = pBox->CurrentCorrectColorIndex;
+                auto& cables = pBox->CableInteractables;
+                if (idx < 0 || idx >= cables.Num())
+                {
+                    const int seqi = pBox->CurrentSequenceIndex;
+                    auto& seq = pBox->CurrentCorrectSequence;
+                    if (seqi < 0 || seqi >= seq.Num())
+                        return 0;
+                    idx = seq[seqi];
+                }
+                if (idx < 0 || idx >= cables.Num())
+                    return 0;
+                auto* pCable = cables[idx];
+                if (!pCable)
+                    return 0;
+                pBox->OnCableInteractionComplete(pCable, pInter, true);
+                return 1;
+            }
+            __except (EXCEPTION_EXECUTE_HANDLER)
+            {
+                return 0;
+            }
+        }
+
+        static void KickMaintenanceRaw(SDK::ASBZConnectedMaintenanceBox* pM, SDK::USBZInteractorComponent* pInter)
+        {
+            __try
+            {
+                if (!pM || !pM->Class || pM->IsActorBeingDestroyed())
+                    return;
+                const auto st = pM->CurrentState;
+                if (st == SDK::ESBZMaintenanceBoxState::Deactivate)
+                    return;
+                if (pM->ConnectedCableBoxes.Num() > 0
+                    && pM->CompletedCableBoxes >= pM->ConnectedCableBoxes.Num())
+                    return;
+
+                if (st == SDK::ESBZMaintenanceBoxState::Off && pM->InteractableComponent && pInter)
+                    pM->OnServerCompleteInteraction(pM->InteractableComponent, pInter, true);
+
+                if (st == SDK::ESBZMaintenanceBoxState::On || st == SDK::ESBZMaintenanceBoxState::Off)
+                    pM->EnableCutting();
+            }
+            __except (EXCEPTION_EXECUTE_HANDLER)
+            {
+            }
+        }
+
         static bool InstantMiniGameRaw(SDK::ASBZPlayerState* pPS)
         {
             __try
@@ -378,6 +446,82 @@ namespace Cheat::InstaDrill
             {
                 return false;
             }
+        }
+
+        static bool GetActorsSeh(SDK::UWorld* pGWorld, SDK::UClass* pClass, SDK::TArray<SDK::AActor*>* pOut)
+        {
+            __try
+            {
+                if (!pGWorld || !pClass || !pOut)
+                    return false;
+                SDK::UGameplayStatics::GetAllActorsOfClass(pGWorld, pClass, pOut);
+                return true;
+            }
+            __except (EXCEPTION_EXECUTE_HANDLER)
+            {
+                return false;
+            }
+        }
+
+        static SDK::USBZInteractorComponent* GetInteractorSeh(SDK::ASBZPlayerCharacter* pLocal)
+        {
+            __try
+            {
+                if (!pLocal)
+                    return nullptr;
+                return pLocal->Interactor;
+            }
+            __except (EXCEPTION_EXECUTE_HANDLER)
+            {
+                return nullptr;
+            }
+        }
+
+        static bool CableBoxCompletedSeh(SDK::ASBZConnectedCableBox* pBox)
+        {
+            __try
+            {
+                return pBox && pBox->bIsCompleted;
+            }
+            __except (EXCEPTION_EXECUTE_HANDLER)
+            {
+                return false;
+            }
+        }
+
+        static int ProcessWires(SDK::UWorld* pGWorld, SDK::ASBZPlayerCharacter* pLocal)
+        {
+            if (s_bFriends)
+                return 0;
+
+            SDK::USBZInteractorComponent* pInter = GetInteractorSeh(pLocal);
+            if (!pInter)
+                return 0;
+
+            {
+                SDK::TArray<SDK::AActor*> maint{};
+                if (GetActorsSeh(pGWorld, SDK::ASBZConnectedMaintenanceBox::StaticClass(), &maint))
+                {
+                    for (int i = 0; i < maint.Num(); ++i)
+                        KickMaintenanceRaw(reinterpret_cast<SDK::ASBZConnectedMaintenanceBox*>(maint[i]), pInter);
+                }
+            }
+
+            int n = 0;
+            SDK::TArray<SDK::AActor*> list{};
+            if (!GetActorsSeh(pGWorld, SDK::ASBZConnectedCableBox::StaticClass(), &list))
+                return 0;
+            for (int i = 0; i < list.Num(); ++i)
+            {
+                auto* pBox = reinterpret_cast<SDK::ASBZConnectedCableBox*>(list[i]);
+                if (!ActorOk(pBox) || AlreadyDone(pBox))
+                    continue;
+                if (FinishOneCableActionRaw(pBox, pInter) > 0)
+                    ++n;
+                if (CableBoxCompletedSeh(pBox))
+                    SetDone(pBox);
+            }
+            return n;
         }
 
         static int ProcessCleaners(SDK::UWorld* pGWorld, bool bFriends)
@@ -475,6 +619,7 @@ namespace Cheat::InstaDrill
                 s_mapCleanerCd.clear();
                 s_iFinished = 0;
                 s_iCleanerHits = 0;
+                s_iWires = 0;
                 g_sDebugStatus = "InstaDrill off";
             }
             return;
@@ -506,14 +651,18 @@ namespace Cheat::InstaDrill
         const int nHack = ProcessHackables(pGWorld);
         const int nClean = ProcessCleaners(pGWorld, s_bFriends);
         const int nDrill = ProcessDrills(pGWorld, s_bFriends);
+        const int nWire = ProcessWires(pGWorld, pLocalPlayer);
         if (nClean > 0)
             s_iCleanerHits += nClean;
         if (nDrill + nHack > 0)
             s_iFinished += nDrill + nHack;
+        if (nWire > 0)
+            s_iWires += nWire;
 
-        const int nPulse = nClean + nDrill + nHack + (bMini ? 1 : 0);
+        const int nPulse = nClean + nDrill + nHack + nWire + (bMini ? 1 : 0);
         g_sDebugStatus = "InstaDrill drills/pc=" + std::to_string(s_iFinished)
             + " cleaner=" + std::to_string(s_iCleanerHits)
+            + " wires=" + std::to_string(s_iWires)
             + (nPulse > 0 ? (" (+" + std::to_string(nPulse) + ")") : "")
             + (s_bFriends ? " FRIENDS" : " SOLO");
     }

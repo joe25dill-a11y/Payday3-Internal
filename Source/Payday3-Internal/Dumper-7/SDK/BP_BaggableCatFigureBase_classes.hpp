@@ -16,11 +16,11 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_BaggableCatFigureBase.BP_BaggableCatFigureBase_C
-// 0x0008 (0x0360 - 0x0358)
-class ABP_BaggableCatFigureBase_C : public ABP_SingleBagGeneratorBase_C
+// 0x0008 (0x0330 - 0x0328)
+class ABP_BaggableCatFigureBase_C final : public ABP_SingleBagGeneratorBase_C
 {
 public:
-	class UStaticMeshComponent*                   StaticMesh;                                        // 0x0358(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   StaticMesh;                                        // 0x0328(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void OnRep_RenderOutlines();

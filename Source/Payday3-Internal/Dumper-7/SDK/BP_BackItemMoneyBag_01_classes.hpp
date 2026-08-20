@@ -16,11 +16,11 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_BackItemMoneyBag_01.BP_BackItemMoneyBag_01_C
-// 0x0008 (0x0320 - 0x0318)
+// 0x0008 (0x0310 - 0x0308)
 class ABP_BackItemMoneyBag_01_C final : public ABP_BackItemBagBase_C
 {
 public:
-	class UNiagaraComponent*                      FX_Leak;                                           // 0x0318(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      FX_Leak;                                           // 0x0308(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

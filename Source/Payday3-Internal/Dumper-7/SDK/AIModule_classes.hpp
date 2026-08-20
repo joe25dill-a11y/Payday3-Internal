@@ -3163,7 +3163,7 @@ DUMPER7_ASSERTS_UBTTask_BlackboardBase;
 
 // Class AIModule.BTTask_BlueprintBase
 // 0x0038 (0x00B0 - 0x0078)
-class UBTTask_BlueprintBase : public UBTTaskNode
+class UBTTask_BlueprintBase final : public UBTTaskNode
 {
 public:
 	class AAIController*                          AIOwner;                                           // 0x0078(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)

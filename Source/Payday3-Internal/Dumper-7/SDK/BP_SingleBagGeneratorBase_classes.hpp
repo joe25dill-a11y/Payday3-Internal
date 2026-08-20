@@ -10,31 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Starbreeze_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_SingleBagGeneratorBase.BP_SingleBagGeneratorBase_C
-// 0x0040 (0x0358 - 0x0318)
+// 0x0010 (0x0328 - 0x0318)
 class ABP_SingleBagGeneratorBase_C : public ASBZSingleBagGenerator
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0318(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        EndPlayNiagaraTransform;                           // 0x0320(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USBZAIObjectiveComponent*               SBZAIObjective;                                    // 0x0328(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0330(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	TArray<TScriptInterface<class IBPI_BinaryReactor_C>> binaryReactorActors;                        // 0x0338(0x0010)(Edit, BlueprintVisible)
-	bool                                          binaryReactorState;                                // 0x0348(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_349[0x7];                                      // 0x0349(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraSystem*                         End_Play_Niagara_System;                           // 0x0350(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-public:
-	void setBinaryState(bool state, bool doCosmetics);
-	void BndEvt__BP_SingleBagGeneratorBase_Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature(class USBZBaseInteractableComponent* Interactable_0, class USBZInteractorComponent* Interactor, bool bIsLocallyControlledInteractor);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void ExecuteUbergraph_BP_SingleBagGeneratorBase(int32 EntryPoint);
+	class USBZAIObjectiveComponent*               SBZAIObjective;                                    // 0x0318(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0320(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

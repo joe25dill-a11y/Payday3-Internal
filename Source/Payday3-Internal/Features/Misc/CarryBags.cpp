@@ -2,6 +2,7 @@
 #include "../../Menu.hpp"
 
 #include <Windows.h>
+#include <cfloat>
 #include <chrono>
 #include <string>
 
@@ -44,6 +45,84 @@ namespace Cheat::CarryBags
                 return false;
             }
         }
+
+        static void RemoveEncumberedSeh(SDK::ASBZPlayerCharacter* pLocal)
+        {
+            __try
+            {
+                if (!pLocal || !pLocal->PlayerAbilitySystem)
+                    return;
+                pLocal->PlayerAbilitySystem->Multicast_RemoveEncumbered();
+            }
+            __except (EXCEPTION_EXECUTE_HANDLER)
+            {
+            }
+        }
+
+        static SDK::USBZPlayerMovementWeightAsset* FindLightestWeightAssetSeh(
+            SDK::USBZPlayerMovementComponent* pMove)
+        {
+            SDK::USBZPlayerMovementWeightAsset* pBest = nullptr;
+            float flBestTier = FLT_MAX;
+
+            __try
+            {
+                if (!pMove)
+                    return nullptr;
+
+                auto& assets = pMove->WeightAssetArray;
+                for (int i = 0; i < assets.Num(); ++i)
+                {
+                    auto* pAsset = assets[i];
+                    if (!pAsset || pAsset->TierWeight >= flBestTier)
+                        continue;
+                    flBestTier = pAsset->TierWeight;
+                    pBest = pAsset;
+                }
+
+                if (!pBest)
+                    pBest = pMove->WeightAsset;
+            }
+            __except (EXCEPTION_EXECUTE_HANDLER)
+            {
+                return nullptr;
+            }
+
+            return pBest;
+        }
+
+        static void ClearCarryWeightSeh(SDK::ASBZPlayerCharacter* pLocal)
+        {
+            __try
+            {
+                if (!pLocal)
+                    return;
+
+                RemoveEncumberedSeh(pLocal);
+
+                if (pLocal->PlayerAttributeSet)
+                {
+                    auto& tier = pLocal->PlayerAttributeSet->WeightTierOffset;
+                    tier.BaseValue = 0.f;
+                    tier.CurrentValue = 0.f;
+                }
+
+                auto* pMove = reinterpret_cast<SDK::USBZPlayerMovementComponent*>(pLocal->CharacterMovement);
+                if (!pMove || !pMove->IsA(SDK::USBZPlayerMovementComponent::StaticClass()))
+                    return;
+
+                pMove->WeightAssetOverride = nullptr;
+
+                if (auto* pLight = FindLightestWeightAssetSeh(pMove))
+                {
+                    pMove->WeightTierAsset = pLight;
+                    pMove->WeightAsset = pLight;
+                }
+            }
+            __except (EXCEPTION_EXECUTE_HANDLER)
+            {
+            }
+        }
     }
 
     void OnPlayerControllerTick(
@@ -69,8 +148,12 @@ namespace Cheat::CarryBags
             return;
         }
 
+        ClearCarryWeightSeh(pLocalPlayer);
+
         const auto now = std::chrono::steady_clock::now();
-        if (now - s_timeScan < kRescanGap && g_sStatus.find("you=") != std::string::npos)
+        const bool bDoScan = now - s_timeScan >= kRescanGap
+            || g_sStatus.find("you=") == std::string::npos;
+        if (!bDoScan)
             return;
         s_timeScan = now;
 
@@ -96,6 +179,7 @@ namespace Cheat::CarryBags
 
         g_sStatus = "Carry More Bags ON (cap " + std::to_string(kCarryCap)
             + ") you=" + std::to_string(you)
-            + " AI=" + std::to_string(ai);
+            + " AI=" + std::to_string(ai)
+            + " no-weight=on";
     }
 }

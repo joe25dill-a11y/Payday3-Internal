@@ -16,26 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_CloakerController.BP_CloakerController_C.ReceivePossess
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class APawn*                            PossessedPawn_ReceivePossess                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_CloakerController_C::ReceivePossess(class APawn* PossessedPawn_ReceivePossess)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloakerController_C", "ReceivePossess");
-
-	Params::BP_CloakerController_C_ReceivePossess Parms{};
-
-	Parms.PossessedPawn_ReceivePossess = PossessedPawn_ReceivePossess;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_CloakerController.BP_CloakerController_C.ExecuteUbergraph_BP_CloakerController
 // (Final, UbergraphFunction)
 // Parameters:
@@ -51,6 +31,26 @@ void ABP_CloakerController_C::ExecuteUbergraph_BP_CloakerController(int32 EntryP
 	Params::BP_CloakerController_C_ExecuteUbergraph_BP_CloakerController Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_CloakerController.BP_CloakerController_C.ReceivePossess
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class APawn*                            PossessedPawn                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_CloakerController_C::ReceivePossess(class APawn* PossessedPawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_CloakerController_C", "ReceivePossess");
+
+	Params::BP_CloakerController_C_ReceivePossess Parms{};
+
+	Parms.PossessedPawn = PossessedPawn;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

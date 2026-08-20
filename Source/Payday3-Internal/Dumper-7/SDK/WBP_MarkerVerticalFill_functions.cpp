@@ -16,46 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function WBP_MarkerVerticalFill.WBP_MarkerVerticalFill_C.BP_OnDataSet
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// const class USBZMarkerDataAsset*        InMarkerAsset_BP_OnDataSet                             (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_MarkerVerticalFill_C::BP_OnDataSet(const class USBZMarkerDataAsset* InMarkerAsset_BP_OnDataSet)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MarkerVerticalFill_C", "BP_OnDataSet");
-
-	Params::WBP_MarkerVerticalFill_C_BP_OnDataSet Parms{};
-
-	Parms.InMarkerAsset_BP_OnDataSet = InMarkerAsset_BP_OnDataSet;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_MarkerVerticalFill.WBP_MarkerVerticalFill_C.BP_OnProgressChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   NewProgress_BP_OnProgressChanged                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_MarkerVerticalFill_C::BP_OnProgressChanged(float NewProgress_BP_OnProgressChanged)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MarkerVerticalFill_C", "BP_OnProgressChanged");
-
-	Params::WBP_MarkerVerticalFill_C_BP_OnProgressChanged Parms{};
-
-	Parms.NewProgress_BP_OnProgressChanged = NewProgress_BP_OnProgressChanged;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function WBP_MarkerVerticalFill.WBP_MarkerVerticalFill_C.ExecuteUbergraph_WBP_MarkerVerticalFill
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -71,6 +31,46 @@ void UWBP_MarkerVerticalFill_C::ExecuteUbergraph_WBP_MarkerVerticalFill(int32 En
 	Params::WBP_MarkerVerticalFill_C_ExecuteUbergraph_WBP_MarkerVerticalFill Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_MarkerVerticalFill.WBP_MarkerVerticalFill_C.BP_OnProgressChanged
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   NewProgress                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_MarkerVerticalFill_C::BP_OnProgressChanged(float NewProgress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_MarkerVerticalFill_C", "BP_OnProgressChanged");
+
+	Params::WBP_MarkerVerticalFill_C_BP_OnProgressChanged Parms{};
+
+	Parms.NewProgress = NewProgress;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_MarkerVerticalFill.WBP_MarkerVerticalFill_C.BP_OnDataSet
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const class USBZMarkerDataAsset*        InMarkerAsset                                          (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_MarkerVerticalFill_C::BP_OnDataSet(const class USBZMarkerDataAsset* InMarkerAsset)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_MarkerVerticalFill_C", "BP_OnDataSet");
+
+	Params::WBP_MarkerVerticalFill_C_BP_OnDataSet Parms{};
+
+	Parms.InMarkerAsset = InMarkerAsset;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

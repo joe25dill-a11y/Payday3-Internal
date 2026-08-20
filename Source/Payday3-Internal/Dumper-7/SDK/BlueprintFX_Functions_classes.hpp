@@ -20,9 +20,9 @@ SDK_NAMESPACE_START
 class UBlueprintFX_Functions_C final : public UBlueprintFunctionLibrary
 {
 public:
-	static void VFX_Prop_Dest_Surface_Glass_Loc(const struct FVector& Location, float ParticleSizeMultiplier, int32 ParticleCount, const struct FLinearColor& Color, class UObject* __WorldContext, class UNiagaraComponent** ParticleSystem);
-	static void VFX_Prop_Cosmetic_Destruction(const struct FVector& HitLocation, float SpawnProbability, class USceneComponent* ObjectReference, bool UseObjectLocation, const struct FVector& ObjectLocationOffset, const struct FRotator& ObjectRotationOffset, const struct FVector& Random_Area_Multiplier, class UNiagaraSystem* Niagara_FX, class UObject* __WorldContext);
 	static void VFX_Prop_Dest_Surface_Glass(class UStaticMeshComponent* StaticMeshComponent, float ParticleSizeMultiplier, int32 ParticleCount, const struct FLinearColor& Color, class UObject* __WorldContext);
+	static void VFX_Prop_Cosmetic_Destruction(const struct FVector& HitLocation, float SpawnProbability, class USceneComponent* ObjectReference, bool UseObjectLocation, const struct FVector& ObjectLocationOffset, const struct FRotator& ObjectRotationOffset, const struct FVector& Random_Area_Multiplier, class UNiagaraSystem* Niagara_FX, class UObject* __WorldContext);
+	static void VFX_Prop_Dest_Surface_Glass_Loc(const struct FVector& Location, float ParticleSizeMultiplier, int32 ParticleCount, const struct FLinearColor& Color, class UObject* __WorldContext, class UNiagaraComponent** ParticleSystem);
 
 public:
 	static class UClass* StaticClass()

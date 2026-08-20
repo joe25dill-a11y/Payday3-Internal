@@ -17,17 +17,17 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_InteractableGold.BP_InteractableGold_C
-// 0x0018 (0x0370 - 0x0358)
+// 0x0018 (0x0340 - 0x0328)
 class ABP_InteractableGold_C final : public ABP_SingleBagGeneratorBase_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_InteractableGold_C;              // 0x0358(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UAkComponent*                           Ak;                                                // 0x0360(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   StaticMesh;                                        // 0x0368(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0328(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UAkComponent*                           Ak;                                                // 0x0330(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   StaticMesh;                                        // 0x0338(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void BP_OnChangedToSecondaryType(bool bDoCosmetics_BP_OnChangedToSecondaryType);
 	void ExecuteUbergraph_BP_InteractableGold(int32 EntryPoint);
+	void BP_OnChangedToSecondaryType(bool bDoCosmetics);
 
 public:
 	static class UClass* StaticClass()

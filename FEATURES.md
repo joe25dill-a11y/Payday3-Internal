@@ -8,6 +8,19 @@ Risky toggles (god, grab, spawners, etc.) **start OFF every launch**.
 
 ---
 
+## Visuals
+
+- Enemy / special / civilian ESP toggles (box, health, armor, name, flags, skeleton, outline)
+- **ESP color pickers** — Box / Health / Armor / Skeleton / Highlight (corner brackets when Outline on)
+- **Key Items ESP** — keycards, RFID, phones, meth ingredients, USB, C4, planks (+ color)
+
+## Aimbot
+
+- Targets / FOV / sorting / through walls / loud-only
+- **Aimbot Type: Silent** (bullets track, camera stays) or **Snapping** (camera follows, with smoothing)
+
+---
+
 ## Misc — toggles (click-to-bind hotkey next to each)
 
 | Feature | What it does |
@@ -22,8 +35,18 @@ Risky toggles (god, grab, spawners, etc.) **start OFF every launch**.
 | **Grab Access** | Keycards / RFID / press badge. Leaves Num/ free for Lua. |
 | **Insta Drill** | Drills / PCs / thermite / lance + cleaners + minigame. |
 | **Silent Despawn Cops** | Buries `CH_BaseCop` only — not Houston / FWB / civs. |
+| **Ghost Mode** | Invisible / inaudible + AI perception off + camera sight zeroed. Default **F11**. |
+| **3rd Person (self)** | Misc **button** (ON/OFF) + default **F9**. Camera behind your own body. Shooting still uses first-person aim. **F10 is Vault Codes.** Don't combine with F7 FreeCam. |
 
 Click the **None** (or key name) button next to a checkbox → press a key to bind → that key toggles the feature. Esc clears the bind. Binds save in config.
+
+---
+
+## Misc — Vault Codes (one-shot)
+
+| Control | Notes |
+|--------|--------|
+| **Vault Codes** (default **F10**) | Scans `ASBZKeypadBase` / multi-code / `ASBZCodeNote`. Yellow ImGui flash ~4s + Misc status text. No game chat/UMG. |
 
 ---
 
@@ -69,6 +92,7 @@ Same bind UI as Misc toggles: click **None** → press key → key fires that on
 - `Features/Misc/GrabAll.*` / `GrabAccess.*`
 - `Features/Misc/InstaDrill.*` / `SilentKill.*`
 - `Features/Misc/SpawnerTools.*` / `PresetTeleport.*`
+- `Features/Misc/VaultCodes.*` / `GhostMode.*`
 - `Menu.cpp` / `Menu.hpp` — UI, config save/load, hotkeys
 - `Features/Features.cpp` / `DLLMain.cpp` — wiring
 

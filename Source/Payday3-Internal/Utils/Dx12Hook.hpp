@@ -302,11 +302,17 @@ namespace Dx12Hook
 	ImGui_ImplWin32_NewFrame();
 	ImGui::NewFrame();
 
-	// Render ImGui content
+	// Render ImGui content — never let SDK throws kill Present
 	ImGui::GetIO().MouseDrawCursor = g_bShowMenu;
-    Menu::PreDraw();
-    Menu::Draw(g_bShowMenu);
-    Menu::PostDraw();
+	try
+	{
+		Menu::PreDraw();
+		Menu::Draw(g_bShowMenu);
+		Menu::PostDraw();
+	}
+	catch (...)
+	{
+	}
 
 	// Always end the frame (required by ImGui)
 	ImGui::Render();

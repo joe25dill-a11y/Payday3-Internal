@@ -26,7 +26,7 @@ public:
 	class FText                                   FailedText;                                        // 0x0040(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
-	bool BP_CheckRequirement(const class USBZInteractorComponent* Interactor_BP_CheckRequirement, struct FSBZInteractReqData* OutData_BP_CheckRequirement, bool bIsSignalRequired_BP_CheckRequirement, bool bInIsScreenInteract_BP_CheckRequirement, bool bIsCasing_BP_CheckRequirement, bool bIsEncumbered_BP_CheckRequirement) const;
+	bool BP_CheckRequirement(const class USBZInteractorComponent* Interactor, struct FSBZInteractReqData* OutData, bool bIsSignalRequired, bool bInIsScreenInteract, bool bIsCasing, bool bIsEncumbered) const;
 
 public:
 	static class UClass* StaticClass()

@@ -19,7 +19,7 @@ SDK_NAMESPACE_START
 // Function UTS_Constant.UTS_Constant_C.CalcScoreBP
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// float                                   ReturnValue_CalcScoreBP                                (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 float UUTS_Constant_C::CalcScoreBP() const
 {

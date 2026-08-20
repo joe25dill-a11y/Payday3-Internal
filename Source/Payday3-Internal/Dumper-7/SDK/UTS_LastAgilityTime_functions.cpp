@@ -39,7 +39,7 @@ void UUTS_LastAgilityTime_C::ExecuteUbergraph_UTS_LastAgilityTime(int32 EntryPoi
 // Function UTS_LastAgilityTime.UTS_LastAgilityTime_C.CalcScoreBP
 // (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
-// float                                   ReturnValue_CalcScoreBP                                (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 float UUTS_LastAgilityTime_C::CalcScoreBP() const
 {

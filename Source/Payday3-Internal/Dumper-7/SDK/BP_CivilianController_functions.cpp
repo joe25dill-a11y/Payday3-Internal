@@ -16,21 +16,21 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_CivilianController.BP_CivilianController_C.ReceivePossess
-// (Event, Protected, BlueprintEvent)
+// Function BP_CivilianController.BP_CivilianController_C.ExecuteUbergraph_BP_CivilianController
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// class APawn*                            PossessedPawn_ReceivePossess                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CivilianController_C::ReceivePossess(class APawn* PossessedPawn_ReceivePossess)
+void ABP_CivilianController_C::ExecuteUbergraph_BP_CivilianController(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CivilianController_C", "ReceivePossess");
+		Func = Class->GetFunction("BP_CivilianController_C", "ExecuteUbergraph_BP_CivilianController");
 
-	Params::BP_CivilianController_C_ReceivePossess Parms{};
+	Params::BP_CivilianController_C_ExecuteUbergraph_BP_CivilianController Parms{};
 
-	Parms.PossessedPawn_ReceivePossess = PossessedPawn_ReceivePossess;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -50,21 +50,21 @@ void ABP_CivilianController_C::BP_OnCurrentEnemyAssigned()
 }
 
 
-// Function BP_CivilianController.BP_CivilianController_C.ExecuteUbergraph_BP_CivilianController
-// (Final, UbergraphFunction, HasDefaults)
+// Function BP_CivilianController.BP_CivilianController_C.ReceivePossess
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            PossessedPawn                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CivilianController_C::ExecuteUbergraph_BP_CivilianController(int32 EntryPoint)
+void ABP_CivilianController_C::ReceivePossess(class APawn* PossessedPawn)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CivilianController_C", "ExecuteUbergraph_BP_CivilianController");
+		Func = Class->GetFunction("BP_CivilianController_C", "ReceivePossess");
 
-	Params::BP_CivilianController_C_ExecuteUbergraph_BP_CivilianController Parms{};
+	Params::BP_CivilianController_C_ReceivePossess Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.PossessedPawn = PossessedPawn;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

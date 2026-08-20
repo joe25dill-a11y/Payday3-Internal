@@ -23,9 +23,9 @@ public:
 	class FText                                   text;                                              // 0x0320(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
-	class USBZSensorComponent* GetSensorComponent();
-	class USBZOutlineComponent* GetSensorOutlineComponent();
 	void UserConstructionScript();
+	class USBZOutlineComponent* GetSensorOutlineComponent();
+	class USBZSensorComponent* GetSensorComponent();
 
 public:
 	static class UClass* StaticClass()

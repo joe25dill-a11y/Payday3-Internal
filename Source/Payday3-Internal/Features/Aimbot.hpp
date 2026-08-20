@@ -40,7 +40,8 @@ namespace Cheat{
 
             SDK::FVector vecTargetPosition = pHuman->Mesh->GetSocketLocation(nameHead);
             SDK::FVector vecAimPosition = vecTargetPosition;
-            SDK::FRotator rotAimRotation = SDK::UKismetMathLibrary::FindLookAtRotation(SDK::FVector{}, pHuman->GetVelocity()).Normalize();
+            // Proper look-at (was velocity-based — broke Snapping and was wrong for Silent too).
+            SDK::FRotator rotAimRotation = SDK::UKismetMathLibrary::FindLookAtRotation(vecCameraLocation, vecTargetPosition).Normalize();
             bool bIsCloaker = false;
             bool bIsSniperOrTaser = false;
             bool bIsGrenadierOrTechie = false;

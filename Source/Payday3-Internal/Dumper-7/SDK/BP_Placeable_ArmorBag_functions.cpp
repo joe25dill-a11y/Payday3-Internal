@@ -16,93 +16,21 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_Placeable_ArmorBag.BP_Placeable_ArmorBag_C.UpdateCharges
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BP_Placeable_ArmorBag.BP_Placeable_ArmorBag_C.ExecuteUbergraph_BP_Placeable_ArmorBag
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// float                                   NewChargeCount                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Placeable_ArmorBag_C::UpdateCharges(float NewChargeCount)
+void ABP_Placeable_ArmorBag_C::ExecuteUbergraph_BP_Placeable_ArmorBag(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Placeable_ArmorBag_C", "UpdateCharges");
+		Func = Class->GetFunction("BP_Placeable_ArmorBag_C", "ExecuteUbergraph_BP_Placeable_ArmorBag");
 
-	Params::BP_Placeable_ArmorBag_C_UpdateCharges Parms{};
+	Params::BP_Placeable_ArmorBag_C_ExecuteUbergraph_BP_Placeable_ArmorBag Parms{};
 
-	Parms.NewChargeCount = NewChargeCount;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Placeable_ArmorBag.BP_Placeable_ArmorBag_C.Timeline_0__FinishedFunc
-// (BlueprintEvent)
-
-void ABP_Placeable_ArmorBag_C::Timeline_0__FinishedFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Placeable_ArmorBag_C", "Timeline_0__FinishedFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Placeable_ArmorBag.BP_Placeable_ArmorBag_C.Timeline_0__UpdateFunc
-// (BlueprintEvent)
-
-void ABP_Placeable_ArmorBag_C::Timeline_0__UpdateFunc()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Placeable_ArmorBag_C", "Timeline_0__UpdateFunc");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Placeable_ArmorBag.BP_Placeable_ArmorBag_C.BndEvt__SBZShoutTarget_K2Node_ComponentBoundEvent_2_SBZShoutedAtDelegate__DelegateSignature
-// (BlueprintEvent)
-// Parameters:
-// class USBZShoutTargetComponent*         ShoutTarget                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class APawn*                            Shouter                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Placeable_ArmorBag_C::BndEvt__SBZShoutTarget_K2Node_ComponentBoundEvent_2_SBZShoutedAtDelegate__DelegateSignature(class USBZShoutTargetComponent* ShoutTarget, class APawn* Shouter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Placeable_ArmorBag_C", "BndEvt__SBZShoutTarget_K2Node_ComponentBoundEvent_2_SBZShoutedAtDelegate__DelegateSignature");
-
-	Params::BP_Placeable_ArmorBag_C_BndEvt__SBZShoutTarget_K2Node_ComponentBoundEvent_2_SBZShoutedAtDelegate__DelegateSignature Parms{};
-
-	Parms.ShoutTarget = ShoutTarget;
-	Parms.Shouter = Shouter;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Placeable_ArmorBag.BP_Placeable_ArmorBag_C.OnChargesChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   ChargesChangeTo                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    bDoCosmetics                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void ABP_Placeable_ArmorBag_C::OnChargesChanged(float ChargesChangeTo, bool bDoCosmetics)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Placeable_ArmorBag_C", "OnChargesChanged");
-
-	Params::BP_Placeable_ArmorBag_C_OnChargesChanged Parms{};
-
-	Parms.ChargesChangeTo = ChargesChangeTo;
-	Parms.bDoCosmetics = bDoCosmetics;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -130,21 +58,93 @@ void ABP_Placeable_ArmorBag_C::BndEvt__BP_Placeable_ArmorBag_ProjectileMovementC
 }
 
 
-// Function BP_Placeable_ArmorBag.BP_Placeable_ArmorBag_C.ExecuteUbergraph_BP_Placeable_ArmorBag
-// (Final, UbergraphFunction, HasDefaults)
+// Function BP_Placeable_ArmorBag.BP_Placeable_ArmorBag_C.OnChargesChanged
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ChargesChangeTo                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bDoCosmetics                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_Placeable_ArmorBag_C::ExecuteUbergraph_BP_Placeable_ArmorBag(int32 EntryPoint)
+void ABP_Placeable_ArmorBag_C::OnChargesChanged(float ChargesChangeTo, bool bDoCosmetics)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Placeable_ArmorBag_C", "ExecuteUbergraph_BP_Placeable_ArmorBag");
+		Func = Class->GetFunction("BP_Placeable_ArmorBag_C", "OnChargesChanged");
 
-	Params::BP_Placeable_ArmorBag_C_ExecuteUbergraph_BP_Placeable_ArmorBag Parms{};
+	Params::BP_Placeable_ArmorBag_C_OnChargesChanged Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.ChargesChangeTo = ChargesChangeTo;
+	Parms.bDoCosmetics = bDoCosmetics;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Placeable_ArmorBag.BP_Placeable_ArmorBag_C.BndEvt__SBZShoutTarget_K2Node_ComponentBoundEvent_2_SBZShoutedAtDelegate__DelegateSignature
+// (BlueprintEvent)
+// Parameters:
+// class USBZShoutTargetComponent*         ShoutTarget                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APawn*                            Shouter                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Placeable_ArmorBag_C::BndEvt__SBZShoutTarget_K2Node_ComponentBoundEvent_2_SBZShoutedAtDelegate__DelegateSignature(class USBZShoutTargetComponent* ShoutTarget, class APawn* Shouter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Placeable_ArmorBag_C", "BndEvt__SBZShoutTarget_K2Node_ComponentBoundEvent_2_SBZShoutedAtDelegate__DelegateSignature");
+
+	Params::BP_Placeable_ArmorBag_C_BndEvt__SBZShoutTarget_K2Node_ComponentBoundEvent_2_SBZShoutedAtDelegate__DelegateSignature Parms{};
+
+	Parms.ShoutTarget = ShoutTarget;
+	Parms.Shouter = Shouter;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Placeable_ArmorBag.BP_Placeable_ArmorBag_C.Timeline_0__UpdateFunc
+// (BlueprintEvent)
+
+void ABP_Placeable_ArmorBag_C::Timeline_0__UpdateFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Placeable_ArmorBag_C", "Timeline_0__UpdateFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Placeable_ArmorBag.BP_Placeable_ArmorBag_C.Timeline_0__FinishedFunc
+// (BlueprintEvent)
+
+void ABP_Placeable_ArmorBag_C::Timeline_0__FinishedFunc()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Placeable_ArmorBag_C", "Timeline_0__FinishedFunc");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Placeable_ArmorBag.BP_Placeable_ArmorBag_C.UpdateCharges
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   NewChargeCount                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Placeable_ArmorBag_C::UpdateCharges(float NewChargeCount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Placeable_ArmorBag_C", "UpdateCharges");
+
+	Params::BP_Placeable_ArmorBag_C_UpdateCharges Parms{};
+
+	Parms.NewChargeCount = NewChargeCount;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -8,11 +8,18 @@
 #include "./Misc/GrabAccess.hpp"
 #include "./Misc/InstaDrill.hpp"
 #include "./Misc/SilentKill.hpp"
+#include "./Misc/NoPagers.hpp"
 #include "./Misc/PresetTeleport.hpp"
 #include "./Misc/GodAmmo.hpp"
 #include "./Misc/CarryBags.hpp"
+#include "./Misc/CarryBodies.hpp"
 #include "./Misc/NoCivPenalty.hpp"
 #include "./Misc/SpawnerTools.hpp"
+#include "./Misc/VaultCodes.hpp"
+#include "./Misc/GhostMode.hpp"
+#include "./Misc/ThirdPerson.hpp"
+#include "./Misc/AlwaysOnQoL.hpp"
+#include "./ESP/ESP.hpp"
 
 #include <vector>
 #include <algorithm>
@@ -21,26 +28,75 @@
 #undef min
 #undef max
 
-void InstantInteraction(SDK::USBZPlayerInteractorComponent* pInteractor){
-    static std::chrono::time_point<std::chrono::steady_clock> timeInteractLast = std::chrono::steady_clock::now();
+namespace
+{
+    static bool PinDurationSeh(SDK::USBZBaseInteractableComponent* pInter)
+    {
+        __try
+        {
+            if (!pInter || !pInter->Class)
+                return false;
 
-    if(std::chrono::steady_clock::now() - timeInteractLast <= Cheat::g_durationPing || !pInteractor)
+            if (!pInter->IsA(SDK::USBZInteractableComponent::StaticClass()))
+            {
+                if (pInter->Duration > 0.02f)
+                    pInter->Duration = 0.01f;
+                return true;
+            }
+
+            auto* pSbZ = reinterpret_cast<SDK::USBZInteractableComponent*>(pInter);
+
+            // Corpses: only pin Pick Up. Instant-answering pager fights body carry.
+            if (pSbZ->IsA(SDK::USBZAICharacterInteractableComponent::StaticClass()))
+            {
+                auto* pAIInter = reinterpret_cast<SDK::USBZAICharacterInteractableComponent*>(pSbZ);
+                auto& pickup = pAIInter->ModeDataArray[static_cast<int>(SDK::ESBZAICharacterInteractableMode::PickUp)];
+                if (pickup.Duration > 0.02f)
+                    pickup.Duration = 0.01f;
+                return true;
+            }
+
+            if (pInter->Duration > 0.02f)
+                pInter->Duration = 0.01f;
+
+            auto& modes = pSbZ->AlternativeModeData;
+            const int n = modes.Num();
+            for (int i = 0; i < n; ++i)
+            {
+                if (modes[i].Duration > 0.02f)
+                    modes[i].Duration = 0.01f;
+            }
+            return true;
+        }
+        __except (EXCEPTION_EXECUTE_HANDLER)
+        {
+            return false;
+        }
+    }
+}
+
+// Always-on tap-F: pin hold durations to instant (no menu toggle).
+void InstantInteraction(SDK::USBZPlayerInteractorComponent* pInteractor)
+{
+    if (!pInteractor)
         return;
 
-    auto pInteraction = pInteractor->GetCurrentInteraction();
-    if(!pInteraction)
-        return;
+    __try
+    {
+        PinDurationSeh(pInteractor->CurrentInteraction);
+        PinDurationSeh(pInteractor->LastInteraction);
 
-    if(auto pOwner = pInteraction->GetOwner(); pOwner && pOwner->IsA(SDK::ASBZBagItem::StaticClass()))
-        return;
-        
+        // Don't instant-complete civilian zip-tie / orders — TickCompleteDuration
+        // on the player interactor would abort TieHands.
+        auto* pCur = pInteractor->CurrentInteraction;
+        if (pCur && pCur->IsA(SDK::USBZAICharacterInteractableComponent::StaticClass()))
+            return;
 
-    pInteractor->Server_CompleteInteraction(pInteraction, pInteractor->InteractId);
-    if(!Cheat::g_bIsSoloGame) // Makes the instant interaction look smoother in multiplayer
-        pInteractor->Multicast_CompletedInteraction(pInteraction, false);
-
-    // Dirty hack to prevent completing the interaction multiple times.
-    timeInteractLast = std::chrono::steady_clock::now();
+        pInteractor->TickCompleteDuration = 0.01f;
+    }
+    __except (EXCEPTION_EXECUTE_HANDLER)
+    {
+    }
 }
 
 void InstantMinigame(SDK::ASBZPlayerState* pPlayerState){
@@ -483,6 +539,9 @@ static void ApplyFriendlyFire(
 
 
 void Cheat::OnPlayerControllerTick(){
+    // TArray::operator[] throws C++ exceptions (0xe06d7363) on empty arrays during travel.
+    try
+    {
     SDK::UWorld* pGWorld = SDK::UWorld::GetWorld();
 	if (!pGWorld)
 		return;
@@ -506,6 +565,10 @@ void Cheat::OnPlayerControllerTick(){
     if(!g_bDidBackupWeaponData)
         g_bDidBackupWeaponData = BackupWeaponData(pGameInstance);
 
+	// Lobby / heist travel often has empty LocalPlayers — TArray[0] throws → game crash.
+	if (pGameInstance->LocalPlayers.Num() <= 0)
+		return;
+
 	SDK::ULocalPlayer* pULocalPlayer = pGameInstance->LocalPlayers[0];
 	if (!pULocalPlayer)
 		return;
@@ -516,18 +579,16 @@ void Cheat::OnPlayerControllerTick(){
 
     if(SDK::USBZSettingsFunctionsVideo::GetCameraVerticalFieldOfView(pGWorld) != CheatConfig::Get().m_misc.m_flCameraFOV)
         SDK::USBZSettingsFunctionsVideo::SetCameraVerticalFieldOfView(pGWorld, CheatConfig::Get().m_misc.m_flCameraFOV);
-    
+
     //pLocalPlayerController->ServerChangeName(SDK::FString(LR"()"));
 
 	auto pLocalPlayer = reinterpret_cast<SDK::ASBZPlayerCharacter*>(pLocalPlayerController->AcknowledgedPawn);
 	if (!pLocalPlayer || !pLocalPlayer->IsA(SDK::ASBZPlayerCharacter::StaticClass()))
 		return;
 
-    if(CheatConfig::Get().m_misc.m_bNoFallDamage)
-        pLocalPlayer->FallingStartHeight = pLocalPlayer->K2_GetActorLocation().Z;
-
-    if(CheatConfig::Get().m_misc.m_bInstantInteraction)
-        InstantInteraction(pLocalPlayer->Interactor);
+    Cheat::AlwaysOnQoL::ApplyMovement(pLocalPlayer);
+    LootESP::TickCheapGlow(pGWorld);
+    InstantInteraction(pLocalPlayer->Interactor);
 
 	if (pLocalPlayer->SBZPlayerState)
 	{
@@ -609,13 +670,20 @@ void Cheat::OnPlayerControllerTick(){
             ModifyWeaponData(pWeaponData);
 		}
 
-        if(pLocalPlayer->FPCameraAttachment->EquippedWeapon->IsA(SDK::ASBZRangedWeapon::StaticClass())){
+        if (pLocalPlayer->FPCameraAttachment->EquippedWeapon
+            && pLocalPlayer->FPCameraAttachment->EquippedWeapon->IsA(SDK::ASBZRangedWeapon::StaticClass())){
             auto pWeapon = reinterpret_cast<SDK::ASBZRangedWeapon*>(pLocalPlayer->FPCameraAttachment->EquippedWeapon);
-
+            (void)pWeapon;
         }
 	}
 
     SDK::USBZPlayerMovementComponent* pMovementComponent = reinterpret_cast<SDK::USBZPlayerMovementComponent*>(pLocalPlayer->GetComponentByClass(SDK::USBZPlayerMovementComponent::StaticClass()));
+
+    // Ghost / vault codes before movement early-out — must run even if move component is missing.
+    Cheat::VaultCodes::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
+    Cheat::GhostMode::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
+    Cheat::ThirdPerson::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
+
     if (!pMovementComponent)
         return;
 
@@ -634,7 +702,7 @@ void Cheat::OnPlayerControllerTick(){
     }
      */
 
-    if(CheatConfig::Get().m_misc.m_bNoCameraShake)
+    if (CheatConfig::Get().m_misc.m_bNoCameraShake && pLocalPlayerController->PlayerCameraManager)
 	    pLocalPlayerController->PlayerCameraManager->StopAllCameraShakes(true);
 
     if(pLocalPlayer->TiltCameraModifier){
@@ -648,14 +716,16 @@ void Cheat::OnPlayerControllerTick(){
     if(pLocalPlayerController->PlayerCameraManager && pLocalPlayerController->PlayerCameraManager->IsA(SDK::ASBZPlayerCameraManager::StaticClass())){
         auto pCameraManager = reinterpret_cast<SDK::ASBZPlayerCameraManager*>(pLocalPlayerController->PlayerCameraManager);
         for(int i = 0; i < pCameraManager->SBZCameraModifierList.Num(); ++i){
-            auto pModifier = pCameraManager->SBZCameraModifierList[i];
-            if(!pModifier || pModifier->Name != nameSBZFireKickBackCameraModifier)
+            if (!pCameraManager->SBZCameraModifierList.IsValidIndex(i))
+                continue;
+            auto pmodifier = pCameraManager->SBZCameraModifierList[i];
+            if(!pmodifier || pmodifier->Name != nameSBZFireKickBackCameraModifier)
                 continue;
 
             if(CheatConfig::Get().m_misc.m_bNoCameraShake)
-                pModifier->DisableModifier(true);
-            else if(pModifier->IsDisabled())
-                pModifier->EnableModifier();
+                pmodifier->DisableModifier(true);
+            else if(pmodifier->IsDisabled())
+                pmodifier->EnableModifier();
         }
     }   
 
@@ -667,12 +737,19 @@ void Cheat::OnPlayerControllerTick(){
 
     Cheat::GodAmmo::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
     Cheat::CarryBags::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
+    Cheat::CarryBodies::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
     Cheat::NoCivPenalty::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
     ApplyFriendlyFire(pGWorld, pWorldRuntime, pLocalPlayerController, pLocalPlayer);
     Cheat::GrabAll::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
     Cheat::GrabAccess::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
     Cheat::InstaDrill::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
     Cheat::SilentKill::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
+    Cheat::NoPagers::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
     Cheat::PresetTeleport::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
     Cheat::SpawnerTools::OnPlayerControllerTick(pGWorld, pLocalPlayerController, pLocalPlayer);
+    }
+    catch (...)
+    {
+        // Swallow travel/lobby edge cases — never let a C++ throw kill the game process.
+    }
 }

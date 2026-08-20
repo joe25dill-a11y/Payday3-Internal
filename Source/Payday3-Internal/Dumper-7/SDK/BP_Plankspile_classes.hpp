@@ -14,8 +14,7 @@
 #include "Starbreeze_classes.hpp"
 
 
-namespace SDK
-{
+SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Plankspile.BP_Plankspile_C
 // 0x0018 (0x02E8 - 0x02D0)
@@ -48,5 +47,6 @@ public:
 		return GetDefaultObjImpl<ABP_Plankspile_C>();
 	}
 };
+DUMPER7_ASSERTS_ABP_Plankspile_C;
 
-}
+SDK_NAMESPACE_END

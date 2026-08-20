@@ -19,7 +19,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ArmorRepairKit.BP_ArmorRepairKit_C
 // 0x0030 (0x05B0 - 0x0580)
-class ABP_ArmorRepairKit_C : public ASBZArmorRepairKit
+class ABP_ArmorRepairKit_C final : public ASBZArmorRepairKit
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0580(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -28,12 +28,12 @@ public:
 	TArray<class UStaticMeshComponent*>           chargeMeshes;                                      // 0x0598(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 
 public:
-	void createChargeMeshes(bool outline);
-	void UserConstructionScript();
-	void OnThrown();
-	void OnChargesChanged(float ChargesChangeTo_OnChargesChanged, bool bDoCosmetics_OnChargesChanged);
-	void ReceiveBeginPlay();
 	void ExecuteUbergraph_BP_ArmorRepairKit(int32 EntryPoint);
+	void ReceiveBeginPlay();
+	void OnChargesChanged(float ChargesChangeTo, bool bDoCosmetics);
+	void OnThrown();
+	void UserConstructionScript();
+	void createChargeMeshes(bool outline);
 
 public:
 	static class UClass* StaticClass()

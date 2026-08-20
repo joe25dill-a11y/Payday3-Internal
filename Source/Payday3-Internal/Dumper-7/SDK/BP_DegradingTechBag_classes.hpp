@@ -17,14 +17,14 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DegradingTechBag.BP_DegradingTechBag_C
-// 0x0028 (0x03F0 - 0x03C8)
+// 0x0028 (0x03D8 - 0x03B0)
 class ABP_DegradingTechBag_C final : public ABP_BaseValuableBag_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_DegradingTechBag_C;              // 0x03C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USBZOutlineComponent*                   SBZOutline;                                        // 0x03D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   StaticMesh;                                        // 0x03D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	TArray<class UMaterialInstance*>              Materials;                                         // 0x03E0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_DegradingTechBag_C;              // 0x03B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USBZOutlineComponent*                   SBZOutline;                                        // 0x03B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   StaticMesh;                                        // 0x03C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	TArray<class UMaterialInstance*>              Materials;                                         // 0x03C8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ExecuteUbergraph_BP_DegradingTechBag(int32 EntryPoint);

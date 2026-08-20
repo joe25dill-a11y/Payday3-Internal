@@ -36,6 +36,20 @@ void UWBP_UI_HUD_Overlay_Right_C::ExecuteUbergraph_WBP_UI_HUD_Overlay_Right(int3
 }
 
 
+// Function WBP_UI_HUD_Overlay_Right.WBP_UI_HUD_Overlay_Right_C.UpdateBags
+// (BlueprintCallable, BlueprintEvent)
+
+void UWBP_UI_HUD_Overlay_Right_C::UpdateBags()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_UI_HUD_Overlay_Right_C", "UpdateBags");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function WBP_UI_HUD_Overlay_Right.WBP_UI_HUD_Overlay_Right_C.OnInitialized
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 
@@ -50,23 +64,51 @@ void UWBP_UI_HUD_Overlay_Right_C::OnInitialized()
 }
 
 
-// Function WBP_UI_HUD_Overlay_Right.WBP_UI_HUD_Overlay_Right_C.OnLoaded_45950CCB4250C2A3A91CA382B6A32B48
+// Function WBP_UI_HUD_Overlay_Right.WBP_UI_HUD_Overlay_Right_C.OnLoaded_4C4FF35846BF292DCD0C939019476C7F
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class UObject*                          Loaded                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_UI_HUD_Overlay_Right_C::OnLoaded_45950CCB4250C2A3A91CA382B6A32B48(class UObject* Loaded)
+void UWBP_UI_HUD_Overlay_Right_C::OnLoaded_4C4FF35846BF292DCD0C939019476C7F(class UObject* Loaded)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_UI_HUD_Overlay_Right_C", "OnLoaded_45950CCB4250C2A3A91CA382B6A32B48");
+		Func = Class->GetFunction("WBP_UI_HUD_Overlay_Right_C", "OnLoaded_4C4FF35846BF292DCD0C939019476C7F");
 
-	Params::WBP_UI_HUD_Overlay_Right_C_OnLoaded_45950CCB4250C2A3A91CA382B6A32B48 Parms{};
+	Params::WBP_UI_HUD_Overlay_Right_C_OnLoaded_4C4FF35846BF292DCD0C939019476C7F Parms{};
 
 	Parms.Loaded = Loaded;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_UI_HUD_Overlay_Right.WBP_UI_HUD_Overlay_Right_C.SetHeistName
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UWBP_UI_HUD_Overlay_Right_C::SetHeistName()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_UI_HUD_Overlay_Right_C", "SetHeistName");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_UI_HUD_Overlay_Right.WBP_UI_HUD_Overlay_Right_C.SetSecurityCompaniesText
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UWBP_UI_HUD_Overlay_Right_C::SetSecurityCompaniesText()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_UI_HUD_Overlay_Right_C", "SetSecurityCompaniesText");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -84,29 +126,15 @@ void UWBP_UI_HUD_Overlay_Right_C::SetDifficultyText()
 }
 
 
-// Function WBP_UI_HUD_Overlay_Right.WBP_UI_HUD_Overlay_Right_C.Set Security Companies
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function WBP_UI_HUD_Overlay_Right.WBP_UI_HUD_Overlay_Right_C.UpdateFavorVisibility
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void UWBP_UI_HUD_Overlay_Right_C::Set_Security_Companies()
+void UWBP_UI_HUD_Overlay_Right_C::UpdateFavorVisibility()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_UI_HUD_Overlay_Right_C", "Set Security Companies");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_UI_HUD_Overlay_Right.WBP_UI_HUD_Overlay_Right_C.SetHeistName
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void UWBP_UI_HUD_Overlay_Right_C::SetHeistName()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_UI_HUD_Overlay_Right_C", "SetHeistName");
+		Func = Class->GetFunction("WBP_UI_HUD_Overlay_Right_C", "UpdateFavorVisibility");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -126,15 +154,55 @@ void UWBP_UI_HUD_Overlay_Right_C::UpdateDifficulityVisibility()
 }
 
 
-// Function WBP_UI_HUD_Overlay_Right.WBP_UI_HUD_Overlay_Right_C.UpdateFavorVisibility
+// Function WBP_UI_HUD_Overlay_Right.WBP_UI_HUD_Overlay_Right_C.SetBags
 // (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   TotalBags_0                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_UI_HUD_Overlay_Right_C::UpdateFavorVisibility()
+void UWBP_UI_HUD_Overlay_Right_C::SetBags(int32 TotalBags_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_UI_HUD_Overlay_Right_C", "UpdateFavorVisibility");
+		Func = Class->GetFunction("WBP_UI_HUD_Overlay_Right_C", "SetBags");
+
+	Params::WBP_UI_HUD_Overlay_Right_C_SetBags Parms{};
+
+	Parms.TotalBags_0 = TotalBags_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_UI_HUD_Overlay_Right.WBP_UI_HUD_Overlay_Right_C.SetCollectedBags
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   TotalCollectedBags                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_UI_HUD_Overlay_Right_C::SetCollectedBags(int32 TotalCollectedBags)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_UI_HUD_Overlay_Right_C", "SetCollectedBags");
+
+	Params::WBP_UI_HUD_Overlay_Right_C_SetCollectedBags Parms{};
+
+	Parms.TotalCollectedBags = TotalCollectedBags;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_UI_HUD_Overlay_Right.WBP_UI_HUD_Overlay_Right_C.RefreshBags
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UWBP_UI_HUD_Overlay_Right_C::RefreshBags()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_UI_HUD_Overlay_Right_C", "RefreshBags");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

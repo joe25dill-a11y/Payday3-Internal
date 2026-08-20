@@ -23,8 +23,8 @@ public:
 	class FName                                   BBKey;                                             // 0x0038(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ProvideActorsSet(class UObject* QuerierObject_ProvideActorsSet, class AActor* QuerierActor_ProvideActorsSet, TArray<class AActor*>* ResultingActorsSet_ProvideActorsSet) const;
-	void ProvideSingleActor(class UObject* QuerierObject_ProvideSingleActor, class AActor* QuerierActor_ProvideSingleActor, class AActor** ResultingActor_ProvideSingleActor) const;
+	void ProvideSingleActor(class UObject* QuerierObject, class AActor* QuerierActor, class AActor** ResultingActor) const;
+	void ProvideActorsSet(class UObject* QuerierObject, class AActor* QuerierActor, TArray<class AActor*>* ResultingActorsSet) const;
 
 public:
 	static class UClass* StaticClass()

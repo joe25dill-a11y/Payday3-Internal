@@ -27,10 +27,10 @@ public:
 	bool                                          Started;                                           // 0x006C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void OnSelectedBP();
-	void OnDeselectedBP();
-	void OnDeactivatedBP(EBTNodeResult NodeResult_OnDeactivatedBP);
 	void ExecuteUbergraph_UTS_Commit(int32 EntryPoint);
+	void OnDeactivatedBP(EBTNodeResult NodeResult);
+	void OnDeselectedBP();
+	void OnSelectedBP();
 
 	float CalcScoreBP() const;
 

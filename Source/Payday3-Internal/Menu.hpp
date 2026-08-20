@@ -184,6 +184,20 @@ namespace Menu{
         };
 
         void UpdateState(){
+            m_bPressedThisFrame = false;
+            // Bad config / unbound / ImGui not ready — never call IsKey* with junk keys.
+            if (m_eKeyCode == ImGuiKey_None
+                || m_eKeyCode < ImGuiKey_NamedKey_BEGIN
+                || m_eKeyCode >= ImGuiKey_NamedKey_END
+                || !ImGui::GetCurrentContext())
+            {
+                if (m_eType == EType::AlwaysOn)
+                    m_bActive = true;
+                else if (m_eType == EType::AlwaysOff || m_eType == EType::Hold)
+                    m_bActive = false;
+                return;
+            }
+
             m_bPressedThisFrame = ImGui::IsKeyPressed(m_eKeyCode, false);
             switch(m_eType){
             case EType::AlwaysOff:
@@ -193,10 +207,10 @@ namespace Menu{
                 m_bActive = true;
                 break;
             case EType::Hold:
-                m_bActive = ImGui::IsKeyDown(m_eKeyCode) && m_eKeyCode != ImGuiKey_None;
+                m_bActive = ImGui::IsKeyDown(m_eKeyCode);
                 break;
             case EType::HoldOff:
-                m_bActive = !ImGui::IsKeyDown(m_eKeyCode) || m_eKeyCode != ImGuiKey_None;
+                m_bActive = !ImGui::IsKeyDown(m_eKeyCode);
                 break;
             case EType::Toggle:
                 if(m_bPressedThisFrame)
@@ -242,7 +256,16 @@ struct CheatConfig{
             Threat
         };
 
+        // Silent = bullets track without camera move (current). Snapping = camera follows target.
+        enum class EAimType {
+            Silent = 0,
+            Snapping = 1
+        };
+
         ESorting m_eSorting = ESorting::Smart;
+        EAimType m_eAimType = EAimType::Silent;
+        // 0 = instant snap; higher = slower lerp toward target (Snapping mode).
+        int m_iSmoothing = 10;
 
         bool m_bGuards = true;
         bool m_bSpecials = true;
@@ -262,6 +285,12 @@ struct CheatConfig{
     };
 
     Visuals_t m_visuals{};
+
+    struct Stealth_t {
+        void Draw();
+    };
+
+    Stealth_t m_stealth{};
 
     struct Misc_t {
         Menu::Hotkey_t m_keyClientMove{ ImGuiKey_MouseX2, Menu::Hotkey_t::EType::Hold };
@@ -330,9 +359,25 @@ struct CheatConfig{
         bool m_bCarryMoreBags = false;
         Menu::Hotkey_t m_keyCarryMoreBags{ ImGuiKey_None, Menu::Hotkey_t::EType::Toggle, true };
 
+        // Body disposer pile cap (dumpsters etc.) — start OFF every launch.
+        bool m_bCarryMoreBodies = false;
+        Menu::Hotkey_t m_keyCarryMoreBodies{ ImGuiKey_None, Menu::Hotkey_t::EType::Toggle, true };
+
         // Civ + custody end penalties — start OFF every launch.
         bool m_bNoCivPenalty = false;
         Menu::Hotkey_t m_keyNoCivPenalty{ ImGuiKey_None, Menu::Hotkey_t::EType::Toggle, true };
+
+        // Vault/keypad codes one-shot (default F10). Ghost toggle (default F11).
+        Menu::Hotkey_t m_keyVaultCodes{ ImGuiKey_F10, Menu::Hotkey_t::EType::Toggle, true };
+        bool m_bGhostMode = false;
+        Menu::Hotkey_t m_keyGhostMode{ ImGuiKey_F11, Menu::Hotkey_t::EType::Toggle, true };
+
+        // Playable 3rd person behind YOUR body (not PD3 spectator). Default F9 — F10 is Vault Codes.
+        bool m_bThirdPerson = false;
+        Menu::Hotkey_t m_keyThirdPerson{ ImGuiKey_F9, Menu::Hotkey_t::EType::Toggle, true };
+        int m_iThirdPersonSide = 0; // -1 left, 0 center, +1 right
+        Menu::Hotkey_t m_keyThirdPersonLeft{ ImGuiKey_Q, Menu::Hotkey_t::EType::Toggle, true };
+        Menu::Hotkey_t m_keyThirdPersonRight{ ImGuiKey_E, Menu::Hotkey_t::EType::Toggle, true };
 
         // Spawner one-shots (bind next to buttons; start unbound).
         Menu::Hotkey_t m_keySpawnMeth{ ImGuiKey_None, Menu::Hotkey_t::EType::Toggle, true };

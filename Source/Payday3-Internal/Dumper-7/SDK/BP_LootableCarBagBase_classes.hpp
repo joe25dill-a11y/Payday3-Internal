@@ -18,7 +18,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_LootableCarBagBase.BP_LootableCarBagBase_C
 // 0x0048 (0x0360 - 0x0318)
-class ABP_LootableCarBagBase_C : public ASBZSingleBagGenerator
+class ABP_LootableCarBagBase_C final : public ASBZSingleBagGenerator
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0318(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -32,12 +32,12 @@ public:
 	TArray<class UStaticMeshComponent*>           lootMeshes;                                        // 0x0350(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
 
 public:
-	void setLootVisibility(bool visible);
-	void UserConstructionScript();
-	void BP_OnChangedToSecondaryType(bool bDoCosmetics);
-	void BndEvt__BP_LootableCarBagBase_Interactable_K2Node_ComponentBoundEvent_2_SBZOnInteractableStateChangedDelegate__DelegateSignature(const class USBZBaseInteractableComponent* InteractableComponent, bool bInNewState);
-	void ReceiveBeginPlay();
 	void ExecuteUbergraph_BP_LootableCarBagBase(int32 EntryPoint);
+	void ReceiveBeginPlay();
+	void BndEvt__BP_LootableCarBagBase_Interactable_K2Node_ComponentBoundEvent_2_SBZOnInteractableStateChangedDelegate__DelegateSignature(const class USBZBaseInteractableComponent* InteractableComponent, bool bInNewState);
+	void BP_OnChangedToSecondaryType(bool bDoCosmetics);
+	void UserConstructionScript();
+	void setLootVisibility(bool visible);
 
 public:
 	static class UClass* StaticClass()

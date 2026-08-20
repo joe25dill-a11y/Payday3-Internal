@@ -16,26 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function CH_SWAT_SHIELD.CH_SWAT_SHIELD_C.ReceiveActorBeginOverlap
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class AActor*                           OtherActor_ReceiveActorBeginOverlap                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ACH_SWAT_SHIELD_C::ReceiveActorBeginOverlap(class AActor* OtherActor_ReceiveActorBeginOverlap)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CH_SWAT_SHIELD_C", "ReceiveActorBeginOverlap");
-
-	Params::CH_SWAT_SHIELD_C_ReceiveActorBeginOverlap Parms{};
-
-	Parms.OtherActor_ReceiveActorBeginOverlap = OtherActor_ReceiveActorBeginOverlap;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function CH_SWAT_SHIELD.CH_SWAT_SHIELD_C.ExecuteUbergraph_CH_SWAT_SHIELD
 // (Final, UbergraphFunction)
 // Parameters:
@@ -51,6 +31,26 @@ void ACH_SWAT_SHIELD_C::ExecuteUbergraph_CH_SWAT_SHIELD(int32 EntryPoint)
 	Params::CH_SWAT_SHIELD_C_ExecuteUbergraph_CH_SWAT_SHIELD Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function CH_SWAT_SHIELD.CH_SWAT_SHIELD_C.ReceiveActorBeginOverlap
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class AActor*                           OtherActor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ACH_SWAT_SHIELD_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CH_SWAT_SHIELD_C", "ReceiveActorBeginOverlap");
+
+	Params::CH_SWAT_SHIELD_C_ReceiveActorBeginOverlap Parms{};
+
+	Parms.OtherActor = OtherActor;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

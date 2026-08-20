@@ -36,23 +36,21 @@ void ABP_ReplicatedBinaryActorPoisonBottle_C::ExecuteUbergraph_BP_ReplicatedBina
 }
 
 
-// Function BP_ReplicatedBinaryActorPoisonBottle.BP_ReplicatedBinaryActorPoisonBottle_C.OnStateChanged
-// (Event, Protected, BlueprintEvent)
+// Function BP_ReplicatedBinaryActorPoisonBottle.BP_ReplicatedBinaryActorPoisonBottle_C.SetInteractionEnabled
+// (BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    bStateToChangeTo                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// bool                                    bDoCosmetics                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    Emabled                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_ReplicatedBinaryActorPoisonBottle_C::OnStateChanged(bool bStateToChangeTo, bool bDoCosmetics)
+void ABP_ReplicatedBinaryActorPoisonBottle_C::SetInteractionEnabled(bool Emabled)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ReplicatedBinaryActorPoisonBottle_C", "OnStateChanged");
+		Func = Class->GetFunction("BP_ReplicatedBinaryActorPoisonBottle_C", "SetInteractionEnabled");
 
-	Params::BP_ReplicatedBinaryActorPoisonBottle_C_OnStateChanged Parms{};
+	Params::BP_ReplicatedBinaryActorPoisonBottle_C_SetInteractionEnabled Parms{};
 
-	Parms.bStateToChangeTo = bStateToChangeTo;
-	Parms.bDoCosmetics = bDoCosmetics;
+	Parms.Emabled = Emabled;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -82,21 +80,23 @@ void ABP_ReplicatedBinaryActorPoisonBottle_C::BndEvt__BP_ReplicatedBinaryActorWh
 }
 
 
-// Function BP_ReplicatedBinaryActorPoisonBottle.BP_ReplicatedBinaryActorPoisonBottle_C.SetInteractionEnabled
-// (BlueprintCallable, BlueprintEvent)
+// Function BP_ReplicatedBinaryActorPoisonBottle.BP_ReplicatedBinaryActorPoisonBottle_C.OnStateChanged
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool                                    Emabled                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    bStateToChangeTo                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    bDoCosmetics                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_ReplicatedBinaryActorPoisonBottle_C::SetInteractionEnabled(bool Emabled)
+void ABP_ReplicatedBinaryActorPoisonBottle_C::OnStateChanged(bool bStateToChangeTo, bool bDoCosmetics)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ReplicatedBinaryActorPoisonBottle_C", "SetInteractionEnabled");
+		Func = Class->GetFunction("BP_ReplicatedBinaryActorPoisonBottle_C", "OnStateChanged");
 
-	Params::BP_ReplicatedBinaryActorPoisonBottle_C_SetInteractionEnabled Parms{};
+	Params::BP_ReplicatedBinaryActorPoisonBottle_C_OnStateChanged Parms{};
 
-	Parms.Emabled = Emabled;
+	Parms.bStateToChangeTo = bStateToChangeTo;
+	Parms.bDoCosmetics = bDoCosmetics;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

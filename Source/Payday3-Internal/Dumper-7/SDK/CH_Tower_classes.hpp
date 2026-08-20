@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "CH_BaseCop_classes.hpp"
+#include "Engine_structs.hpp"
 #include "AkAudio_structs.hpp"
 
 
@@ -27,9 +27,9 @@ public:
 	class UStaticMeshComponent*                   Helmet;                                            // 0x1DA0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveBeginPlay();
-	void BP_OnKill();
 	void ExecuteUbergraph_CH_Tower(int32 EntryPoint);
+	void BP_OnKill();
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

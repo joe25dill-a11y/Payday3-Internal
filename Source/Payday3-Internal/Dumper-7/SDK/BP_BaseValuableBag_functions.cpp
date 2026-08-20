@@ -17,7 +17,7 @@
 SDK_NAMESPACE_START
 
 // Function BP_BaseValuableBag.BP_BaseValuableBag_C.ExecuteUbergraph_BP_BaseValuableBag
-// (Final, UbergraphFunction, HasDefaults)
+// (Final, UbergraphFunction)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -31,26 +31,6 @@ void ABP_BaseValuableBag_C::ExecuteUbergraph_BP_BaseValuableBag(int32 EntryPoint
 	Params::BP_BaseValuableBag_C_ExecuteUbergraph_BP_BaseValuableBag Parms{};
 
 	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_BaseValuableBag.BP_BaseValuableBag_C.ReceiveEndPlay
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_BaseValuableBag_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseValuableBag_C", "ReceiveEndPlay");
-
-	Params::BP_BaseValuableBag_C_ReceiveEndPlay Parms{};
-
-	Parms.EndPlayReason = EndPlayReason;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -16,17 +16,23 @@
 
 SDK_NAMESPACE_START
 
-// Function GA_AI_Run.GA_AI_Run_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
+// Function GA_AI_Run.GA_AI_Run_C.ExecuteUbergraph_GA_AI_Run
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_AI_Run_C::K2_ActivateAbility()
+void UGA_AI_Run_C::ExecuteUbergraph_GA_AI_Run(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_AI_Run_C", "K2_ActivateAbility");
+		Func = Class->GetFunction("GA_AI_Run_C", "ExecuteUbergraph_GA_AI_Run");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::GA_AI_Run_C_ExecuteUbergraph_GA_AI_Run Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -50,23 +56,17 @@ void UGA_AI_Run_C::K2_OnEndAbility(bool bWasCancelled)
 }
 
 
-// Function GA_AI_Run.GA_AI_Run_C.ExecuteUbergraph_GA_AI_Run
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function GA_AI_Run.GA_AI_Run_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
 
-void UGA_AI_Run_C::ExecuteUbergraph_GA_AI_Run(int32 EntryPoint)
+void UGA_AI_Run_C::K2_ActivateAbility()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_AI_Run_C", "ExecuteUbergraph_GA_AI_Run");
+		Func = Class->GetFunction("GA_AI_Run_C", "K2_ActivateAbility");
 
-	Params::GA_AI_Run_C_ExecuteUbergraph_GA_AI_Run Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

@@ -21,10 +21,10 @@ SDK_NAMESPACE_START
 class UBP_HelperLibrary_C final : public UBlueprintFunctionLibrary
 {
 public:
-	static void Set_All_Players_Ignore_Start_Penetrating(class AActor* Target, bool ShouldIgnore, class UObject* __WorldContext);
-	static void SetMeshIfValid(class UStaticMeshComponent* StaticMeshComponent, class UStaticMesh* NewStaticMesh, class UObject* __WorldContext);
-	static void GlassHit_MultiVFX(class UStaticMeshComponent* HitMesh, int32 VariationIndex, float VariationSetting, class UAkAudioEvent* Sound, bool bDoCosmetics, bool bDestroyed, class APawn* Instigator, TArray<struct FBPS_GlassHit_VFXData>& VFX, class UObject* __WorldContext);
 	static void GlassHit(class UStaticMeshComponent* HitMesh, int32 VariationIndex, float VariationSetting, class UAkAudioEvent* Sound, bool bDoCosmetics, bool bDestroyed, int32 ParticleCount, float ParticleSize, const struct FLinearColor& ParticleColor, class APawn* Instigator, class UObject* __WorldContext);
+	static void GlassHit_MultiVFX(class UStaticMeshComponent* HitMesh, int32 VariationIndex, float VariationSetting, class UAkAudioEvent* Sound, bool bDoCosmetics, bool bDestroyed, class APawn* Instigator, TArray<struct FBPS_GlassHit_VFXData>& VFX, class UObject* __WorldContext);
+	static void SetMeshIfValid(class UStaticMeshComponent* StaticMeshComponent, class UStaticMesh* NewStaticMesh, class UObject* __WorldContext);
+	static void Set_All_Players_Ignore_Start_Penetrating(class AActor* Target, bool ShouldIgnore, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

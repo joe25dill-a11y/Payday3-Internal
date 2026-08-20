@@ -1,5 +1,9 @@
 #include "GrabAccess.hpp"
 #include "../../Menu.hpp"
+#include "../../Dumper-7/SDK/BP_KeycardBase_classes.hpp"
+#include "../../Dumper-7/SDK/BP_RFIDTagBase_classes.hpp"
+#include "../../Dumper-7/SDK/BP_Chus_CarriedPressBadge_classes.hpp"
+#include "../../Dumper-7/SDK/BP_LiquidNitrogenCanister_classes.hpp"
 
 #include <Windows.h>
 #include <algorithm>
@@ -56,8 +60,21 @@ namespace Cheat::GrabAccess
             return hay.find(needle) != std::string::npos;
         }
 
+        static bool IsNitrogenName(const std::string& low)
+        {
+            if (low.empty())
+                return false;
+            if (Contains(low, "truck") || Contains(low, "refriger") || Contains(low, "lance")
+                || Contains(low, "thermal"))
+                return false;
+            return Contains(low, "liquidnitrogen") || Contains(low, "liquid_nitrogen")
+                || (Contains(low, "nitrogen") && Contains(low, "canister"));
+        }
+
         static bool IsAccessName(const std::string& low)
         {
+            if (IsNitrogenName(low))
+                return true;
             return Contains(low, "keycard")
                 || Contains(low, "rfid")
                 || Contains(low, "carriedhackablekey")
@@ -183,10 +200,188 @@ namespace Cheat::GrabAccess
             return true;
         }
 
+        static SDK::USBZBaseInteractableComponent* ResolveNitrogenInteractable(SDK::AActor* pActor)
+        {
+            if (!ActorOk(pActor))
+                return nullptr;
+            if (pActor->IsA(SDK::ASBZPlaceableToolBase::StaticClass()))
+                return reinterpret_cast<SDK::ASBZPlaceableToolBase*>(pActor)->Interactable;
+            if (pActor->IsA(SDK::ASBZBagItem::StaticClass()))
+                return reinterpret_cast<SDK::ASBZBagItem*>(pActor)->Interactable;
+            if (pActor->IsA(SDK::ABP_LiquidNitrogenCanister_C::StaticClass()))
+                return reinterpret_cast<SDK::ABP_LiquidNitrogenCanister_C*>(pActor)->Interactable;
+            if (auto* pComp = pActor->GetComponentByClass(SDK::USBZInteractableComponent::StaticClass()))
+                return reinterpret_cast<SDK::USBZInteractableComponent*>(pComp);
+            if (auto* pComp = pActor->GetComponentByClass(SDK::USBZBaseInteractableComponent::StaticClass()))
+                return reinterpret_cast<SDK::USBZBaseInteractableComponent*>(pComp);
+            return nullptr;
+        }
+
+        static void PrepHoldInteractForInstant(SDK::USBZBaseInteractableComponent* pInter)
+        {
+            if (!pInter)
+                return;
+            pInter->bIgnoreDistanceValidation = true;
+            pInter->Duration = 0.01f;
+            if (pInter->IsA(SDK::USBZInteractableComponent::StaticClass()))
+            {
+                auto* pSbZ = reinterpret_cast<SDK::USBZInteractableComponent*>(pInter);
+                pSbZ->SetInteractionEnabled(true);
+                pSbZ->SetDefaultsForInstant();
+            }
+        }
+
+        static bool CompleteNitrogenInteractSeh(
+            SDK::AActor* pActor,
+            SDK::USBZBaseInteractableComponent* pInter,
+            SDK::USBZInteractorComponent* pInteractor,
+            bool bFriends)
+        {
+            __try
+            {
+                if (!pActor || !pInter || !pInteractor || pActor->IsActorBeingDestroyed())
+                    return false;
+
+                PrepHoldInteractForInstant(pInter);
+
+                if (!bFriends)
+                {
+                    const int32_t id = ++pInteractor->InteractId;
+                    pInteractor->Server_StartInteraction(pInter, id, 0);
+                    pInteractor->Server_CompleteInteraction(pInter, id);
+                }
+
+                if (pActor->IsA(SDK::ASBZPlaceableToolBase::StaticClass()))
+                {
+                    auto* pTool = reinterpret_cast<SDK::ASBZPlaceableToolBase*>(pActor);
+                    pTool->OnAckCompleteInteraction(pInter, pInteractor, true);
+                    pTool->OnServerCompleteInteraction(pInter, pInteractor, true);
+                }
+                else if (pActor->IsA(SDK::ASBZBagItem::StaticClass()))
+                {
+                    reinterpret_cast<SDK::ASBZBagItem*>(pActor)->OnPickup(pInter, pInteractor, true);
+                }
+                return true;
+            }
+            __except (EXCEPTION_EXECUTE_HANDLER)
+            {
+                return false;
+            }
+        }
+
+        static bool PickupNitrogenBag(
+            SDK::ASBZBagItem* pBag,
+            SDK::ASBZPlayerCharacter* pPawn,
+            SDK::USBZBagManager* pBagMgr,
+            SDK::USBZInteractorComponent* pInteractor,
+            bool bFriends)
+        {
+            if (!ActorOk(pBag) || !pPawn || AlreadyDone(pBag))
+                return false;
+
+            bool bDid = false;
+            __try
+            {
+                const SDK::FSBZBagHandle handle = pBag->Bag;
+                const int32_t bagId = pBag->BagId;
+                if (pBagMgr && handle.Id > 0 && handle.BagType)
+                {
+                    pBagMgr->ClaimBag(handle, pPawn);
+                    bDid = true;
+                }
+                if (pBagMgr && bagId > 0)
+                {
+                    if (handle.Id > 0 && handle.BagType)
+                        pBagMgr->ClaimBag(handle, pPawn);
+                    if (!bFriends)
+                        pBagMgr->Multicast_ClaimBag(bagId, pPawn);
+                    bDid = true;
+                }
+                if (pBag->Class && !pBag->IsActorBeingDestroyed())
+                {
+                    auto* pInter = pBag->Interactable;
+                    if (pInteractor && pInter && CompleteNitrogenInteractSeh(pBag, pInter, pInteractor, bFriends))
+                        bDid = true;
+                }
+            }
+            __except (EXCEPTION_EXECUTE_HANDLER)
+            {
+                return false;
+            }
+
+            if (bDid)
+                SetDone(pBag);
+            return bDid;
+        }
+
+        static bool PickupNitrogen(
+            SDK::AActor* pActor,
+            SDK::ASBZPlayerCharacter* pPawn,
+            SDK::USBZBagManager* pBagMgr,
+            SDK::USBZInteractorComponent* pInteractor,
+            bool bFriends)
+        {
+            if (!ActorOk(pActor) || !pPawn || AlreadyDone(pActor))
+                return false;
+
+            if (pActor->IsA(SDK::ASBZBagItem::StaticClass()))
+                return PickupNitrogenBag(
+                    reinterpret_cast<SDK::ASBZBagItem*>(pActor),
+                    pPawn, pBagMgr, pInteractor, bFriends);
+
+            auto* pInter = ResolveNitrogenInteractable(pActor);
+            if (!pInter)
+                return false;
+            if (!CompleteNitrogenInteractSeh(pActor, pInter, pInteractor, bFriends))
+                return false;
+            SetDone(pActor);
+            return true;
+        }
+
+        static SDK::AActor* SafeReadHiddenItemRaw(SDK::ASBZItemContainer* pBox)
+        {
+            __try
+            {
+                if (!pBox)
+                    return nullptr;
+                return pBox->HiddenItem;
+            }
+            __except (EXCEPTION_EXECUTE_HANDLER)
+            {
+                return nullptr;
+            }
+        }
+
         static void CollectAccessTargets(SDK::UWorld* pGWorld, std::vector<SDK::AActor*>& out)
         {
             out.clear();
             std::unordered_set<uintptr_t> seen{};
+
+            auto pushActor = [&](SDK::AActor* pActor)
+            {
+                if (!ActorOk(pActor) || AlreadyDone(pActor))
+                    return;
+                const bool bInter = pActor->IsA(SDK::ASBZInteractionActor::StaticClass());
+                const bool bBag = pActor->IsA(SDK::ASBZBagItem::StaticClass());
+                if (!bInter && !bBag)
+                    return;
+                const uintptr_t key = reinterpret_cast<uintptr_t>(pActor);
+                if (!seen.insert(key).second)
+                    return;
+                out.push_back(pActor);
+            };
+
+            auto pushNitrogen = [&](SDK::AActor* pActor)
+            {
+                if (!ActorOk(pActor) || AlreadyDone(pActor))
+                    return;
+                if (!IsNitrogenName(ToLower(ActorName(pActor))))
+                    return;
+                const uintptr_t key = reinterpret_cast<uintptr_t>(pActor);
+                if (!seen.insert(key).second)
+                    return;
+                out.push_back(pActor);
+            };
 
             auto pushFiltered = [&](SDK::UClass* pClass, bool bNameFilter)
             {
@@ -197,26 +392,72 @@ namespace Cheat::GrabAccess
                 for (int i = 0; i < list.Num(); ++i)
                 {
                     auto* pActor = list[i];
-                    if (!ActorOk(pActor) || AlreadyDone(pActor))
-                        continue;
                     if (bNameFilter && !IsAccessName(ToLower(ActorName(pActor))))
                         continue;
-                    const uintptr_t key = reinterpret_cast<uintptr_t>(pActor);
-                    if (!seen.insert(key).second)
-                        continue;
-                    out.push_back(pActor);
+                    pushActor(pActor);
                 }
             };
 
+            auto pushN2Class = [&](SDK::UClass* pClass)
+            {
+                if (!pClass)
+                    return;
+                SDK::TArray<SDK::AActor*> list{};
+                SDK::UGameplayStatics::GetAllActorsOfClass(pGWorld, pClass, &list);
+                for (int i = 0; i < list.Num(); ++i)
+                    pushNitrogen(list[i]);
+            };
+
+            {
+                SDK::TArray<SDK::AActor*> crates{};
+                SDK::UGameplayStatics::GetAllActorsOfClass(
+                    pGWorld, SDK::ASBZItemContainer::StaticClass(), &crates);
+                for (int i = 0; i < crates.Num(); ++i)
+                {
+                    auto* pBox = reinterpret_cast<SDK::ASBZItemContainer*>(crates[i]);
+                    if (!ActorOk(pBox))
+                        continue;
+
+                    SDK::AActor* pHidden = SafeReadHiddenItemRaw(pBox);
+                    if (!ActorOk(pHidden))
+                        continue;
+                    if (IsNitrogenName(ToLower(ActorName(pHidden))))
+                    {
+                        pushNitrogen(pHidden);
+                        continue;
+                    }
+                    if (pHidden->IsA(SDK::ASBZInteractionActor::StaticClass()))
+                        pushActor(pHidden);
+                }
+            }
+
             pushFiltered(SDK::ASBZCarriedHackableKey::StaticClass(), false);
-            if (auto* pKey = SDK::ABP_KeycardBase_C::StaticClass())
-                pushFiltered(pKey, false);
-            if (auto* pRfid = SDK::ABP_RFIDTagBase_C::StaticClass())
-                pushFiltered(pRfid, false);
-            // Rock the Cradle press badge
-            if (auto* pBadge = SDK::ABP_Chus_CarriedPressBadge_C::StaticClass())
-                pushFiltered(pBadge, false);
+            pushFiltered(SDK::ABP_KeycardBase_C::StaticClass(), false);
+            pushFiltered(SDK::ABP_RFIDTagBase_C::StaticClass(), false);
+            pushFiltered(SDK::ABP_Chus_CarriedPressBadge_C::StaticClass(), false);
+            pushN2Class(SDK::ABP_LiquidNitrogenCanister_C::StaticClass());
+            {
+                SDK::TArray<SDK::AActor*> tools{};
+                SDK::UGameplayStatics::GetAllActorsOfClass(
+                    pGWorld, SDK::ASBZPlaceableToolBase::StaticClass(), &tools);
+                for (int i = 0; i < tools.Num(); ++i)
+                    pushNitrogen(tools[i]);
+            }
+            {
+                SDK::TArray<SDK::AActor*> sbzTools{};
+                SDK::UGameplayStatics::GetAllActorsOfClass(
+                    pGWorld, SDK::ASBZTool::StaticClass(), &sbzTools);
+                for (int i = 0; i < sbzTools.Num(); ++i)
+                    pushNitrogen(sbzTools[i]);
+            }
             pushFiltered(SDK::ASBZCarriedStaticInteractionActor::StaticClass(), true);
+            {
+                SDK::TArray<SDK::AActor*> bags{};
+                SDK::UGameplayStatics::GetAllActorsOfClass(
+                    pGWorld, SDK::ASBZBagItem::StaticClass(), &bags);
+                for (int i = 0; i < bags.Num(); ++i)
+                    pushNitrogen(bags[i]);
+            }
         }
 
         static void CancelGrab(const char* reason)
@@ -266,12 +507,19 @@ namespace Cheat::GrabAccess
             }
 
             s_bBusy = true;
+            int n2 = 0;
+            for (auto* pActor : s_vecQueue)
+            {
+                if (pActor && IsNitrogenName(ToLower(ActorName(pActor))))
+                    ++n2;
+            }
             g_sDebugStatus = "GrabAccess keys=" + std::to_string(s_iTotal)
-                + " (cards/RFID/badge)"
+                + (n2 > 0 ? " n2=" + std::to_string(n2) : "")
+                + " (cards/RFID/badge/N2)"
                 + (s_bFriends ? " FRIENDS" : " SOLO");
         }
 
-        static void ProcessBatch(SDK::ASBZPlayerCharacter* pLocal)
+        static void ProcessBatch(SDK::UWorld* pGWorld, SDK::ASBZPlayerCharacter* pLocal)
         {
             if (!s_bBusy || !pLocal)
                 return;
@@ -281,13 +529,20 @@ namespace Cheat::GrabAccess
                 return;
 
             auto* pInteractor = pLocal->Interactor;
+            auto* pBagMgr = SDK::USBZBagManager::Get(pGWorld);
             const int end = std::min(static_cast<int>(s_iIndex) + kBatchSize, s_iTotal);
 
             for (; static_cast<int>(s_iIndex) < end; ++s_iIndex)
             {
                 if (s_iIndex >= s_vecQueue.size())
                     break;
-                if (PickupAccess(s_vecQueue[s_iIndex], pInteractor))
+                auto* pActor = s_vecQueue[s_iIndex];
+                if (pActor && IsNitrogenName(ToLower(ActorName(pActor))))
+                {
+                    if (PickupNitrogen(pActor, pLocal, pBagMgr, pInteractor, s_bFriends))
+                        ++s_iOk;
+                }
+                else if (PickupAccess(pActor, pInteractor))
                     ++s_iOk;
             }
 
@@ -341,6 +596,6 @@ namespace Cheat::GrabAccess
         }
 
         StartGrab(pGWorld, pLocalPlayer);
-        ProcessBatch(pLocalPlayer);
+        ProcessBatch(pGWorld, pLocalPlayer);
     }
 }

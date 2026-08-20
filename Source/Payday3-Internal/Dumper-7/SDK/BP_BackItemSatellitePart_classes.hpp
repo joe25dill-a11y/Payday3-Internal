@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_BackItemSatellitePart.BP_BackItemSatellitePart_C
-// 0x0000 (0x0318 - 0x0318)
+// 0x0000 (0x0308 - 0x0308)
 class ABP_BackItemSatellitePart_C final : public ABP_BackItemBagBase_C
 {
 public:

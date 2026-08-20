@@ -16,51 +16,21 @@
 
 SDK_NAMESPACE_START
 
-// Function CH_Cloaker.CH_Cloaker_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ACH_Cloaker_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CH_Cloaker_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function CH_Cloaker.CH_Cloaker_C.BP_OnTagReactionPlayed
-// (Event, Public, BlueprintEvent)
-
-void ACH_Cloaker_C::BP_OnTagReactionPlayed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CH_Cloaker_C", "BP_OnTagReactionPlayed");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function CH_Cloaker.CH_Cloaker_C.BP_OnHeistStateChanged
-// (Event, Public, BlueprintEvent)
+// Function CH_Cloaker.CH_Cloaker_C.ExecuteUbergraph_CH_Cloaker
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// EPD3HeistState                          OldState_BP_OnHeistStateChanged                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// EPD3HeistState                          NewState_BP_OnHeistStateChanged                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ACH_Cloaker_C::BP_OnHeistStateChanged(EPD3HeistState OldState_BP_OnHeistStateChanged, EPD3HeistState NewState_BP_OnHeistStateChanged)
+void ACH_Cloaker_C::ExecuteUbergraph_CH_Cloaker(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CH_Cloaker_C", "BP_OnHeistStateChanged");
+		Func = Class->GetFunction("CH_Cloaker_C", "ExecuteUbergraph_CH_Cloaker");
 
-	Params::CH_Cloaker_C_BP_OnHeistStateChanged Parms{};
+	Params::CH_Cloaker_C_ExecuteUbergraph_CH_Cloaker Parms{};
 
-	Parms.OldState_BP_OnHeistStateChanged = OldState_BP_OnHeistStateChanged;
-	Parms.NewState_BP_OnHeistStateChanged = NewState_BP_OnHeistStateChanged;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -80,23 +50,53 @@ void ACH_Cloaker_C::BP_OnKill()
 }
 
 
-// Function CH_Cloaker.CH_Cloaker_C.ExecuteUbergraph_CH_Cloaker
-// (Final, UbergraphFunction, HasDefaults)
+// Function CH_Cloaker.CH_Cloaker_C.BP_OnHeistStateChanged
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EPD3HeistState                          OldState                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EPD3HeistState                          NewState                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ACH_Cloaker_C::ExecuteUbergraph_CH_Cloaker(int32 EntryPoint)
+void ACH_Cloaker_C::BP_OnHeistStateChanged(EPD3HeistState OldState, EPD3HeistState NewState)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CH_Cloaker_C", "ExecuteUbergraph_CH_Cloaker");
+		Func = Class->GetFunction("CH_Cloaker_C", "BP_OnHeistStateChanged");
 
-	Params::CH_Cloaker_C_ExecuteUbergraph_CH_Cloaker Parms{};
+	Params::CH_Cloaker_C_BP_OnHeistStateChanged Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.OldState = OldState;
+	Parms.NewState = NewState;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function CH_Cloaker.CH_Cloaker_C.BP_OnTagReactionPlayed
+// (Event, Public, BlueprintEvent)
+
+void ACH_Cloaker_C::BP_OnTagReactionPlayed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CH_Cloaker_C", "BP_OnTagReactionPlayed");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function CH_Cloaker.CH_Cloaker_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ACH_Cloaker_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CH_Cloaker_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

@@ -16,40 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function GA_Crouch.GA_Crouch_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
-
-void UGA_Crouch_C::K2_ActivateAbility()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Crouch_C", "K2_ActivateAbility");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Crouch.GA_Crouch_C.K2_OnEndAbility
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bWasCancelled_K2_OnEndAbility                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UGA_Crouch_C::K2_OnEndAbility(bool bWasCancelled_K2_OnEndAbility)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Crouch_C", "K2_OnEndAbility");
-
-	Params::GA_Crouch_C_K2_OnEndAbility Parms{};
-
-	Parms.bWasCancelled_K2_OnEndAbility = bWasCancelled_K2_OnEndAbility;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function GA_Crouch.GA_Crouch_C.ExecuteUbergraph_GA_Crouch
 // (Final, UbergraphFunction)
 // Parameters:
@@ -67,6 +33,40 @@ void UGA_Crouch_C::ExecuteUbergraph_GA_Crouch(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Crouch.GA_Crouch_C.K2_OnEndAbility
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bWasCancelled                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UGA_Crouch_C::K2_OnEndAbility(bool bWasCancelled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Crouch_C", "K2_OnEndAbility");
+
+	Params::GA_Crouch_C_K2_OnEndAbility Parms{};
+
+	Parms.bWasCancelled = bWasCancelled;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Crouch.GA_Crouch_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
+
+void UGA_Crouch_C::K2_ActivateAbility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Crouch_C", "K2_ActivateAbility");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

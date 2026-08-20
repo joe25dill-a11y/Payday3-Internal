@@ -33,7 +33,7 @@ target("Payday3-Internal")
 
     add_files("Source/Payday3-Internal/Dumper-7/SDK/Basic.cpp")
     add_files("Source/Payday3-Internal/Dumper-7/SDK/CoreUObject_functions.cpp")
-    add_files("Source/Payday3-Internal/Dumper-7/SDK/Engine_Functions.cpp")
+    add_files("Source/Payday3-Internal/Dumper-7/SDK/Engine_functions.cpp")
     add_files("Source/Payday3-Internal/Dumper-7/SDK/Starbreeze_functions.cpp")
     add_files("Source/Payday3-Internal/Dumper-7/SDK/SBZWorldRuntime_functions.cpp")
     add_files("Source/Payday3-Internal/Dumper-7/SDK/GameplayAbilities_functions.cpp")
@@ -42,7 +42,7 @@ target("Payday3-Internal")
     add_packages("minhook", "imgui")
     add_syslinks("d3d12", "dxgi")
 
-    add_links("user32", "minhook", "imgui")
+    add_links("user32", "comdlg32", "shell32", "minhook.x64")
 
     add_cxflags("/wd4369")
 

@@ -33,8 +33,12 @@
 #include "Features/Misc/PresetTeleport.hpp"
 #include "Features/Misc/GodAmmo.hpp"
 #include "Features/Misc/CarryBags.hpp"
+#include "Features/Misc/CarryBodies.hpp"
 #include "Features/Misc/NoCivPenalty.hpp"
 #include "Features/Misc/SpawnerTools.hpp"
+#include "Features/Misc/VaultCodes.hpp"
+#include "Features/Misc/GhostMode.hpp"
+#include "Features/Misc/ThirdPerson.hpp"
 #include "Menu.hpp"
 
 namespace
@@ -300,6 +304,8 @@ bool CheatConfig::Save() const{
     Write("aimbot.fov", m_aimbot.m_flAimFOV);
     Write("aimbot.fovCircle", espConfig.bDrawFovCircle);
     Write("aimbot.sorting", static_cast<int>(m_aimbot.m_eSorting));
+    Write("aimbot.type", static_cast<int>(m_aimbot.m_eAimType));
+    Write("aimbot.smoothing", m_aimbot.m_iSmoothing);
     Write("aimbot.targets.guards", m_aimbot.m_bGuards);
     Write("aimbot.targets.specials", m_aimbot.m_bSpecials);
     Write("aimbot.targets.fbiVan", m_aimbot.m_bFBIVan);
@@ -348,12 +354,17 @@ bool CheatConfig::Save() const{
     Write("misc.infiniteAmmo", m_misc.m_bInfiniteAmmo);
     Write("misc.instaKill", m_misc.m_bInstaKill);
     Write("misc.carryMoreBags", m_misc.m_bCarryMoreBags);
+    Write("misc.carryMoreBodies", m_misc.m_bCarryMoreBodies);
     Write("misc.noCivPenalty", m_misc.m_bNoCivPenalty);
+    Write("misc.ghostMode", m_misc.m_bGhostMode);
+    Write("misc.thirdPerson", m_misc.m_bThirdPerson);
+    Write("misc.thirdPersonSide", m_misc.m_iThirdPersonSide);
 
     Write("misc.keyGodMode", m_misc.m_keyGodMode);
     Write("misc.keyInfiniteAmmo", m_misc.m_keyInfiniteAmmo);
     Write("misc.keyInstaKill", m_misc.m_keyInstaKill);
     Write("misc.keyCarryMoreBags", m_misc.m_keyCarryMoreBags);
+    Write("misc.keyCarryMoreBodies", m_misc.m_keyCarryMoreBodies);
     Write("misc.keyNoCivPenalty", m_misc.m_keyNoCivPenalty);
     Write("misc.keyFriendlyFire", m_misc.m_keyFriendlyFire);
     Write("misc.keyGrabAll", m_misc.m_keyGrabAll);
@@ -364,8 +375,26 @@ bool CheatConfig::Save() const{
     Write("misc.keySpawnVan", m_misc.m_keySpawnVan);
     Write("misc.keySpawnGreenExit", m_misc.m_keySpawnGreenExit);
     Write("misc.keySpawnMoney", m_misc.m_keySpawnMoney);
+    Write("misc.keyVaultCodes", m_misc.m_keyVaultCodes);
+    Write("misc.keyGhostMode", m_misc.m_keyGhostMode);
+    Write("misc.keyThirdPerson", m_misc.m_keyThirdPerson);
+    Write("misc.keyThirdPersonLeft", m_misc.m_keyThirdPersonLeft);
+    Write("misc.keyThirdPersonRight", m_misc.m_keyThirdPersonRight);
 
     Write("esp.enabled", espConfig.bESP);
+    Write("esp.colors.box", static_cast<uint32_t>(espConfig.m_colors.m_colBox));
+    Write("esp.colors.health", static_cast<uint32_t>(espConfig.m_colors.m_colHealth));
+    Write("esp.colors.armor", static_cast<uint32_t>(espConfig.m_colors.m_colArmor));
+    Write("esp.colors.skeleton", static_cast<uint32_t>(espConfig.m_colors.m_colSkeleton));
+    Write("esp.colors.highlight", static_cast<uint32_t>(espConfig.m_colors.m_colHighlight));
+    Write("esp.colors.keyItems", static_cast<uint32_t>(espConfig.m_colors.m_colKeyItems));
+    Write("esp.colors.money", static_cast<uint32_t>(espConfig.m_colors.m_colMoney));
+    Write("esp.colors.chem", static_cast<uint32_t>(espConfig.m_colors.m_colChem));
+    Write("esp.colors.detection", static_cast<uint32_t>(espConfig.m_colors.m_colDetection));
+    Write("esp.colors.bagZone", static_cast<uint32_t>(espConfig.m_colors.m_colBagZone));
+    Write("esp.colors.suspicious", static_cast<uint32_t>(espConfig.m_colors.m_colSuspicious));
+    Write("esp.pagerHud", espConfig.bPagerHud);
+    Write("esp.bagZones", espConfig.bBagZones);
     Write("esp.normal.box", espConfig.m_stNormalEnemies.m_bBox);
     Write("esp.normal.health", espConfig.m_stNormalEnemies.m_bHealth);
     Write("esp.normal.armor", espConfig.m_stNormalEnemies.m_bArmor);
@@ -397,6 +426,9 @@ bool CheatConfig::Save() const{
 
     LootESP::Config& lootespConfig = LootESP::GetConfig();
     Write("lootesp.enabled", lootespConfig.bLootESP);
+    Write("lootesp.outline", lootespConfig.bOutline);
+    Write("lootesp.strongglow", lootespConfig.bStrongGlow);
+    Write("lootesp.labels", lootespConfig.bLabels);
 
     if (fileConfig.fail())
     {
@@ -521,6 +553,15 @@ bool CheatConfig::Load()
     {
         m_aimbot.m_eSorting = static_cast<Aimbot_t::ESorting>(iSorting);
     }
+    int iAimType{};
+    if (Read("aimbot.type", iAimType)
+        && iAimType >= static_cast<int>(Aimbot_t::EAimType::Silent)
+        && iAimType <= static_cast<int>(Aimbot_t::EAimType::Snapping))
+    {
+        m_aimbot.m_eAimType = static_cast<Aimbot_t::EAimType>(iAimType);
+    }
+    if (Read("aimbot.smoothing", m_aimbot.m_iSmoothing))
+        m_aimbot.m_iSmoothing = std::clamp(m_aimbot.m_iSmoothing, 0, 100);
 
     Read("aimbot.targets.guards", m_aimbot.m_bGuards);
     Read("aimbot.targets.specials", m_aimbot.m_bSpecials);
@@ -577,9 +618,45 @@ bool CheatConfig::Load()
     m_misc.m_bInfiniteAmmo = false;
     m_misc.m_bInstaKill = false;
     m_misc.m_bCarryMoreBags = false;
+    m_misc.m_bCarryMoreBodies = false;
     m_misc.m_bNoCivPenalty = false;
+    m_misc.m_bGhostMode = false;
+    m_misc.m_bThirdPerson = false;
+    if (Read("misc.thirdPersonSide", m_misc.m_iThirdPersonSide))
+        m_misc.m_iThirdPersonSide = std::clamp(m_misc.m_iThirdPersonSide, -1, 1);
+    else
+        m_misc.m_iThirdPersonSide = 0;
 
     Read("esp.enabled", espConfig.bESP);
+    {
+        auto ReadColor = [&](const char* szKey, ImU32& col)
+        {
+            const auto itr = mapConfigValues.find(szKey);
+            if (itr == mapConfigValues.end())
+                return;
+            try
+            {
+                col = static_cast<ImU32>(std::stoul(itr->second));
+            }
+            catch (...)
+            {
+            }
+        };
+        ReadColor("esp.colors.box", espConfig.m_colors.m_colBox);
+        ReadColor("esp.colors.health", espConfig.m_colors.m_colHealth);
+        ReadColor("esp.colors.armor", espConfig.m_colors.m_colArmor);
+        ReadColor("esp.colors.skeleton", espConfig.m_colors.m_colSkeleton);
+        ReadColor("esp.colors.highlight", espConfig.m_colors.m_colHighlight);
+        ReadColor("esp.colors.keyItems", espConfig.m_colors.m_colKeyItems);
+        ReadColor("esp.colors.money", espConfig.m_colors.m_colMoney);
+        ReadColor("esp.colors.chem", espConfig.m_colors.m_colChem);
+        ReadColor("esp.colors.detection", espConfig.m_colors.m_colDetection);
+        ReadColor("esp.colors.bagZone", espConfig.m_colors.m_colBagZone);
+        ReadColor("esp.colors.suspicious", espConfig.m_colors.m_colSuspicious);
+    }
+
+    Read("esp.pagerHud", espConfig.bPagerHud);
+    Read("esp.bagZones", espConfig.bBagZones);
 
     Read("esp.normal.box", espConfig.m_stNormalEnemies.m_bBox);
     Read("esp.normal.health", espConfig.m_stNormalEnemies.m_bHealth);
@@ -622,6 +699,7 @@ bool CheatConfig::Load()
     ResetKey(m_misc.m_keyInfiniteAmmo);
     ResetKey(m_misc.m_keyInstaKill);
     ResetKey(m_misc.m_keyCarryMoreBags);
+    ResetKey(m_misc.m_keyCarryMoreBodies);
     ResetKey(m_misc.m_keyNoCivPenalty);
     ResetKey(m_misc.m_keyFriendlyFire);
     ResetKey(m_misc.m_keyGrabAll);
@@ -632,11 +710,17 @@ bool CheatConfig::Load()
     ResetKey(m_misc.m_keySpawnVan);
     ResetKey(m_misc.m_keySpawnGreenExit);
     ResetKey(m_misc.m_keySpawnMoney);
+    ResetKey(m_misc.m_keyVaultCodes);
+    ResetKey(m_misc.m_keyGhostMode);
+    ResetKey(m_misc.m_keyThirdPerson);
+    ResetKey(m_misc.m_keyThirdPersonLeft);
+    ResetKey(m_misc.m_keyThirdPersonRight);
 
     Read("misc.keyGodMode", m_misc.m_keyGodMode);
     Read("misc.keyInfiniteAmmo", m_misc.m_keyInfiniteAmmo);
     Read("misc.keyInstaKill", m_misc.m_keyInstaKill);
     Read("misc.keyCarryMoreBags", m_misc.m_keyCarryMoreBags);
+    Read("misc.keyCarryMoreBodies", m_misc.m_keyCarryMoreBodies);
     Read("misc.keyNoCivPenalty", m_misc.m_keyNoCivPenalty);
     Read("misc.keyFriendlyFire", m_misc.m_keyFriendlyFire);
     Read("misc.keyGrabAll", m_misc.m_keyGrabAll);
@@ -647,21 +731,44 @@ bool CheatConfig::Load()
     Read("misc.keySpawnVan", m_misc.m_keySpawnVan);
     Read("misc.keySpawnGreenExit", m_misc.m_keySpawnGreenExit);
     Read("misc.keySpawnMoney", m_misc.m_keySpawnMoney);
+    Read("misc.keyVaultCodes", m_misc.m_keyVaultCodes);
+    Read("misc.keyGhostMode", m_misc.m_keyGhostMode);
+    Read("misc.keyThirdPerson", m_misc.m_keyThirdPerson);
+    Read("misc.keyThirdPersonLeft", m_misc.m_keyThirdPersonLeft);
+    Read("misc.keyThirdPersonRight", m_misc.m_keyThirdPersonRight);
 
     auto& lootespConfig = LootESP::GetConfig();
     Read("lootesp.enabled", lootespConfig.bLootESP);
+    lootespConfig.bOutline = false;
+    lootespConfig.bStrongGlow = false;
+    lootespConfig.bLabels = false;
 
     Utils::LogDebug(std::format("Config loaded: {}", pathConfig.string()));
     return true;
 }
 
 
+static void ColorEditU32(const char* szLabel, ImU32* pCol)
+{
+    ImVec4 v = ImGui::ColorConvertU32ToFloat4(*pCol);
+    if (ImGui::ColorEdit4(szLabel, &v.x, ImGuiColorEditFlags_NoInputs | ImGuiColorEditFlags_AlphaBar))
+        *pCol = ImGui::ColorConvertFloat4ToU32(v);
+}
+
 void CheatConfig::Aimbot_t::Draw(){
     ImGui::Checkbox("Enabled", &m_bEnabled);
     if(!m_bEnabled)
         return;
 
+    static const char* aAimTypeItems[]{ "Silent", "Snapping" };
+    ImGui::Combo("Aimbot Type", reinterpret_cast<int*>(&m_eAimType), aAimTypeItems, IM_ARRAYSIZE(aAimTypeItems));
+    ImGui::TextDisabled(m_eAimType == EAimType::Silent
+        ? "Silent: bullets track; camera stays put"
+        : "Snapping: camera aims at target (smoothed)");
+
     ImGui::SliderFloat("Aim FOV", &m_flAimFOV, 0.f, 180.f, "%0.0f");
+    if (m_eAimType == EAimType::Snapping)
+        ImGui::SliderInt("Smoothing", &m_iSmoothing, 0, 100);
 
     ImGui::Checkbox("Draw FOV Circle", &ESP::GetConfig().bDrawFovCircle);
 
@@ -713,6 +820,19 @@ void CheatConfig::Visuals_t::Draw(){
             {"Only When Special Enemy is Visible", "OnlyWhenSpecial", espConfig.m_stCivilians.m_bOnlyWhenSpecial}
         }));
 
+        ImGui::Separator();
+        ImGui::TextDisabled("ESP Colors");
+        auto& cols = espConfig.m_colors;
+        ColorEditU32("Box##espcol", &cols.m_colBox);
+        ImGui::SameLine();
+        ColorEditU32("Health##espcol", &cols.m_colHealth);
+        ImGui::SameLine();
+        ColorEditU32("Armor##espcol", &cols.m_colArmor);
+        ColorEditU32("Skeleton##espcol", &cols.m_colSkeleton);
+        ImGui::SameLine();
+        ColorEditU32("Highlight##espcol", &cols.m_colHighlight);
+        ImGui::TextDisabled("Highlight = corner brackets when Outline is on");
+
 #ifdef _DEBUG
         ImGui::Checkbox("Debug Draw Bone Indices", &espConfig.bDebugDrawBoneIndices);
         ImGui::Checkbox("Debug Draw Bone Names Instead of Indices", &espConfig.bDebugDrawBoneNames);
@@ -731,14 +851,63 @@ void CheatConfig::Visuals_t::Draw(){
     }
 
     auto& lootespConfig = LootESP::GetConfig();
-    ImGui::Checkbox("Enable Loot ESP", &lootespConfig.bLootESP);
+    ImGui::Checkbox("Loot ESP", &lootespConfig.bLootESP);
     if (lootespConfig.bLootESP) {
-        // Loot ESP options
+        ImGui::TextDisabled("Through-wall loot glow (V2 outlines). Nested ImGui extras optional.");
+        ImGui::Indent();
+        ImGui::Checkbox("Loot Outline", &lootespConfig.bOutline);
+        ImGui::SameLine();
+        ImGui::Checkbox("Strong Glow (F4+)", &lootespConfig.bStrongGlow);
+        ImGui::SameLine();
+        ImGui::Checkbox("Labels", &lootespConfig.bLabels);
+        ImGui::Text("Keys / tools");
+        ImGui::SameLine();
+        ColorEditU32("##keyitemscol", &ESP::GetConfig().m_colors.m_colKeyItems);
+        ImGui::Text("Money / bags");
+        ImGui::SameLine();
+        ColorEditU32("##moneycol", &ESP::GetConfig().m_colors.m_colMoney);
+        ImGui::Text("Chem");
+        ImGui::SameLine();
+        ColorEditU32("##chemcol", &ESP::GetConfig().m_colors.m_colChem);
+        ImGui::Unindent();
     }
 
 #ifdef _DEBUG
     ImGui::Checkbox("Debug ESP (Show Class Names)", &espConfig.bDebugESP);
 #endif
+}
+
+void CheatConfig::Stealth_t::Draw()
+{
+    auto& misc = CheatConfig::Get().m_misc;
+    auto& espConfig = ESP::GetConfig();
+
+    ImGui::TextDisabled("Actions");
+    CheckboxWithHotkey("Ghost Mode (cams + guards ignore you)", &misc.m_bGhostMode, misc.m_keyGhostMode);
+    if (misc.m_bGhostMode)
+    {
+        ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.75f, 0.85f, 1.f, 1.f));
+        ImGui::TextWrapped("%s", Cheat::GhostMode::g_sStatus.c_str());
+        ImGui::PopStyleColor();
+        ImGui::TextDisabled("Invisible / inaudible + AI perception off + camera sight zeroed. Default F11.");
+    }
+
+    if (ButtonWithHotkey("Vault Codes", misc.m_keyVaultCodes))
+        Cheat::VaultCodes::RequestScan();
+    ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.f, 0.95f, 0.55f, 1.f));
+    ImGui::TextWrapped("%s", Cheat::VaultCodes::g_sStatus.c_str());
+    ImGui::PopStyleColor();
+    ImGui::TextDisabled("Scans keypads + code notes. Flash on screen ~4s. Default F10.");
+
+    ImGui::Separator();
+    ImGui::TextDisabled("Stealth HUD / ESP");
+    ImGui::Checkbox("Pager HUD", &espConfig.bPagerHud);
+    ImGui::Checkbox("Bag Drop Zones", &espConfig.bBagZones);
+    if (espConfig.bBagZones) {
+        ImGui::SameLine();
+        ColorEditU32("##bagzonecol", &espConfig.m_colors.m_colBagZone);
+        ImGui::TextDisabled("Secure / van / escape volumes — count vs target");
+    }
 }
 
 
@@ -761,12 +930,15 @@ void CheatConfig::Misc_t::UpdateFeatureHotkeys()
     PollToggle(m_keyInfiniteAmmo, m_bInfiniteAmmo);
     PollToggle(m_keyInstaKill, m_bInstaKill);
     PollToggle(m_keyCarryMoreBags, m_bCarryMoreBags);
+    PollToggle(m_keyCarryMoreBodies, m_bCarryMoreBodies);
     PollToggle(m_keyNoCivPenalty, m_bNoCivPenalty);
     PollToggle(m_keyFriendlyFire, m_bFriendlyFire);
     PollToggle(m_keyGrabAll, m_bGrabAll);
     PollToggle(m_keyGrabAccess, m_bGrabAccess);
     PollToggle(m_keyInstaDrill, m_bInstaDrill);
     PollToggle(m_keySilentKillCops, m_bSilentKillCops);
+    PollToggle(m_keyGhostMode, m_bGhostMode);
+    PollToggle(m_keyThirdPerson, m_bThirdPerson);
 
     auto PollOneShot = [](Menu::Hotkey_t& key, auto&& fn)
     {
@@ -774,10 +946,21 @@ void CheatConfig::Misc_t::UpdateFeatureHotkeys()
         if (key.Pressed() && key.m_eKeyCode != ImGuiKey_None)
             fn();
     };
+    PollOneShot(m_keyVaultCodes, [] { Cheat::VaultCodes::RequestScan(); });
     PollOneShot(m_keySpawnMeth, [] { Cheat::SpawnerTools::RequestMeth(); });
     PollOneShot(m_keySpawnVan, [] { Cheat::SpawnerTools::RequestVan(); });
     PollOneShot(m_keySpawnGreenExit, [] { Cheat::SpawnerTools::RequestGreenExit(); });
     PollOneShot(m_keySpawnMoney, [] { Cheat::SpawnerTools::RequestMoneyScreen(); });
+    PollOneShot(m_keyThirdPersonLeft, [this]
+    {
+        if (m_bThirdPerson)
+            m_iThirdPersonSide = -1;
+    });
+    PollOneShot(m_keyThirdPersonRight, [this]
+    {
+        if (m_bThirdPerson)
+            m_iThirdPersonSide = 1;
+    });
 }
 
 void CheatConfig::Misc_t::Draw(){
@@ -795,8 +978,6 @@ void CheatConfig::Misc_t::Draw(){
     MultiSelect("Removals", ({
         {"No Spread", "Spread", m_bNoSpread},
         {"No Recoil", "Recoil", m_bNoRecoil},
-        {"No Fall Damage", "Fall", m_bNoFallDamage},
-        {"Instant Interaction", "Interact", m_bInstantInteraction},
         {"Instant Minigame", "Minigame", m_bInstantMinigame},
         {"Instant Reload", "Reload", m_bInstantReload},
         {"Instant Melee", "Melee", m_bInstantMelee},
@@ -830,6 +1011,20 @@ void CheatConfig::Misc_t::Draw(){
         ImGui::SameLine();
         ImGui::SliderFloat("###Super Toss Speed", &m_flSuperToss, 1000.f, 5000.f);
     }
+
+    if (ImGui::Button(m_bThirdPerson ? "3rd Person: ON" : "3rd Person: OFF"))
+        m_bThirdPerson = !m_bThirdPerson;
+    BindKeyButton("##hk_3rd Person", m_keyThirdPerson);
+    ImGui::SameLine();
+    if (ImGui::Button("3P Center"))
+        m_iThirdPersonSide = 0;
+    BindKeyButton("##hk_3rd Person Left", m_keyThirdPersonLeft);
+    ImGui::SameLine();
+    BindKeyButton("##hk_3rd Person Right", m_keyThirdPersonRight);
+    ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.85f, 0.9f, 1.f, 1.f));
+    ImGui::TextWrapped("%s", Cheat::ThirdPerson::g_sStatus.c_str());
+    ImGui::PopStyleColor();
+    ImGui::TextDisabled("F9 toggles 3P. Q = left shoulder, E = right shoulder, Center button puts camera back in the middle.");
 
     CheckboxWithHotkey("God Mode", &m_bGodMode, m_keyGodMode);
     if (m_bGodMode)
@@ -867,6 +1062,15 @@ void CheatConfig::Misc_t::Draw(){
         ImGui::TextDisabled("MaxCarryBagCount → 50 for you and AI crew (SkysBags-style).");
     }
 
+    CheckboxWithHotkey("Carry More Bodies (stack corpses)", &m_bCarryMoreBodies, m_keyCarryMoreBodies);
+    if (m_bCarryMoreBodies)
+    {
+        ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.85f, 0.75f, 1.f, 1.f));
+        ImGui::TextWrapped("%s", Cheat::CarryBodies::g_sStatus.c_str());
+        ImGui::PopStyleColor();
+        ImGui::TextDisabled("Pick up every body you kill — stacks on your back. Press G to drop the whole pile.");
+    }
+
     CheckboxWithHotkey("No Civ / Custody Penalty", &m_bNoCivPenalty, m_keyNoCivPenalty);
     if (m_bNoCivPenalty)
     {
@@ -894,7 +1098,7 @@ void CheatConfig::Misc_t::Draw(){
         ImGui::TextDisabled("Real F/Claim + floor bags — Num7 still free for leftovers.");
     }
 
-    CheckboxWithHotkey("Grab Access (keys / RFID / press badge)", &m_bGrabAccess, m_keyGrabAccess);
+    CheckboxWithHotkey("Grab Access (keys / RFID / badge / N2)", &m_bGrabAccess, m_keyGrabAccess);
     if (m_bGrabAccess)
     {
         ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.55f, 0.85f, 1.f, 1.f));
@@ -1053,6 +1257,11 @@ namespace Menu
                 ImGui::EndTabItem();
             }
 
+            if(ImGui::BeginTabItem("Stealth")){
+                CheatConfig::Get().m_stealth.Draw();
+                ImGui::EndTabItem();
+            }
+
             if(ImGui::BeginTabItem("Misc")){
                 CheatConfig::Get().m_misc.Draw();
                 ImGui::EndTabItem();
@@ -1100,6 +1309,9 @@ namespace Menu
                 ImGui::TextWrapped("Carry Bags: %s", Cheat::CarryBags::g_sStatus.c_str());
                 ImGui::TextWrapped("No Civ Penalty: %s", Cheat::NoCivPenalty::g_sStatus.c_str());
                 ImGui::TextWrapped("Friendly Fire: %s", Cheat::FriendlyFire::g_sDebugStatus.c_str());
+                ImGui::TextWrapped("Ghost Mode: %s", Cheat::GhostMode::g_sStatus.c_str());
+                ImGui::TextWrapped("Vault Codes: %s", Cheat::VaultCodes::g_sStatus.c_str());
+                ImGui::TextWrapped("3rd Person: %s", Cheat::ThirdPerson::g_sStatus.c_str());
 
                 ImGui::Separator();
                 ImGui::Text("%.1f FPS (%.3f ms)", ImGui::GetIO().Framerate, 1000.0f / ImGui::GetIO().Framerate);
@@ -1163,5 +1375,34 @@ namespace Menu
             vec2Pos.y += 16.f;
         }
         #endif
+
+        // Vault codes flash — top-center, always (not only DEBUG)
+        {
+            std::string flash;
+            if (Cheat::VaultCodes::TryGetFlashText(flash) && !flash.empty())
+            {
+                const ImVec2 screen = CheatConfig::Get().m_misc.vec2ScreenSize;
+                const ImVec2 size = ImGui::CalcTextSize(flash.c_str());
+                const ImVec2 pos{ (screen.x - size.x) * 0.5f, screen.y * 0.12f };
+                pDrawList->AddText(ImVec2{ pos.x + 2.f, pos.y + 2.f }, IM_COL32(0, 0, 0, 220), flash.c_str());
+                pDrawList->AddText(pos, IM_COL32(255, 230, 80, 255), flash.c_str());
+            }
+        }
+
+        // Ghost mode indicator (small corner tag while on)
+        if (CheatConfig::Get().m_misc.m_bGhostMode)
+        {
+            const char* tag = "GHOST";
+            const ImVec2 pos{ 24.f, 24.f };
+            pDrawList->AddText(ImVec2{ pos.x + 1.f, pos.y + 1.f }, IM_COL32(0, 0, 0, 255), tag);
+            pDrawList->AddText(pos, IM_COL32(140, 200, 255, 255), tag);
+        }
+        if (CheatConfig::Get().m_misc.m_bThirdPerson)
+        {
+            const char* tag = "3RD";
+            const ImVec2 pos{ 24.f, 44.f };
+            pDrawList->AddText(ImVec2{ pos.x + 1.f, pos.y + 1.f }, IM_COL32(0, 0, 0, 255), tag);
+            pDrawList->AddText(pos, IM_COL32(220, 220, 255, 255), tag);
+        }
     }
 }

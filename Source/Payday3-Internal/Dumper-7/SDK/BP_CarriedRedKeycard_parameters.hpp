@@ -14,24 +14,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_CarriedRedKeycard.BP_CarriedRedKeycard_C.GetSensorComponent
-// 0x0008 (0x0008 - 0x0000)
-struct BP_CarriedRedKeycard_C_GetSensorComponent final
-{
-public:
-	class USBZSensorComponent*                    ReturnValue_GetSensorComponent;                    // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_CarriedRedKeycard_C_GetSensorComponent;
-
-// Function BP_CarriedRedKeycard.BP_CarriedRedKeycard_C.GetSensorOutlineComponent
-// 0x0008 (0x0008 - 0x0000)
-struct BP_CarriedRedKeycard_C_GetSensorOutlineComponent final
-{
-public:
-	class USBZOutlineComponent*                   ReturnValue_GetSensorOutlineComponent;             // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_CarriedRedKeycard_C_GetSensorOutlineComponent;
-
 // Function BP_CarriedRedKeycard.BP_CarriedRedKeycard_C.UserConstructionScript
 // 0x0001 (0x0001 - 0x0000)
 struct BP_CarriedRedKeycard_C_UserConstructionScript final
@@ -40,6 +22,24 @@ public:
 	bool                                          CallFunc_IsDedicatedServer_ReturnValue;            // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_CarriedRedKeycard_C_UserConstructionScript;
+
+// Function BP_CarriedRedKeycard.BP_CarriedRedKeycard_C.GetSensorOutlineComponent
+// 0x0008 (0x0008 - 0x0000)
+struct BP_CarriedRedKeycard_C_GetSensorOutlineComponent final
+{
+public:
+	class USBZOutlineComponent*                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_CarriedRedKeycard_C_GetSensorOutlineComponent;
+
+// Function BP_CarriedRedKeycard.BP_CarriedRedKeycard_C.GetSensorComponent
+// 0x0008 (0x0008 - 0x0000)
+struct BP_CarriedRedKeycard_C_GetSensorComponent final
+{
+public:
+	class USBZSensorComponent*                    ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_CarriedRedKeycard_C_GetSensorComponent;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

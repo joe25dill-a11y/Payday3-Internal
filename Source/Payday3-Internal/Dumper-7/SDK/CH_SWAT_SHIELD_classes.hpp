@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "CH_BaseCop_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -30,8 +30,8 @@ public:
 	class UStaticMeshComponent*                   Helmet;                                            // 0x1DC0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveActorBeginOverlap(class AActor* OtherActor_ReceiveActorBeginOverlap);
 	void ExecuteUbergraph_CH_SWAT_SHIELD(int32 EntryPoint);
+	void ReceiveActorBeginOverlap(class AActor* OtherActor);
 
 public:
 	static class UClass* StaticClass()

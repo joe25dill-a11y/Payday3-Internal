@@ -39,14 +39,14 @@ public:
 	class UMaterialInstanceDynamic*               DisTexture;                                        // 0x03C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void UserConstructionScript();
-	void Timeline_InRange__FinishedFunc();
-	void Timeline_InRange__UpdateFunc();
-	void BP_OnPlayerInRangeChecked(const bool bInRange_BP_OnPlayerInRangeChecked, const bool bWasInRange_BP_OnPlayerInRangeChecked, const float Progress_BP_OnPlayerInRangeChecked);
-	void BP_OnHackStarted(bool bIsLocallyControlled_BP_OnHackStarted);
-	void BP_OnHackAborted();
-	void BP_OnHackComplete();
 	void ExecuteUbergraph_BP_CarriedHackablePhone(int32 EntryPoint);
+	void BP_OnHackComplete();
+	void BP_OnHackAborted();
+	void BP_OnHackStarted(bool bIsLocallyControlled);
+	void BP_OnPlayerInRangeChecked(const bool bInRange, const bool bWasInRange, const float Progress);
+	void Timeline_InRange__UpdateFunc();
+	void Timeline_InRange__FinishedFunc();
+	void UserConstructionScript();
 
 public:
 	static class UClass* StaticClass()

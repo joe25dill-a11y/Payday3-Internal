@@ -30,15 +30,14 @@ public:
 };
 DUMPER7_ASSERTS_BP_ReplicatedBinaryActorPoisonBottle_C_ExecuteUbergraph_BP_ReplicatedBinaryActorPoisonBottle;
 
-// Function BP_ReplicatedBinaryActorPoisonBottle.BP_ReplicatedBinaryActorPoisonBottle_C.OnStateChanged
-// 0x0002 (0x0002 - 0x0000)
-struct BP_ReplicatedBinaryActorPoisonBottle_C_OnStateChanged final
+// Function BP_ReplicatedBinaryActorPoisonBottle.BP_ReplicatedBinaryActorPoisonBottle_C.SetInteractionEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct BP_ReplicatedBinaryActorPoisonBottle_C_SetInteractionEnabled final
 {
 public:
-	bool                                          bStateToChangeTo;                                  // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bDoCosmetics;                                      // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          Emabled;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_BP_ReplicatedBinaryActorPoisonBottle_C_OnStateChanged;
+DUMPER7_ASSERTS_BP_ReplicatedBinaryActorPoisonBottle_C_SetInteractionEnabled;
 
 // Function BP_ReplicatedBinaryActorPoisonBottle.BP_ReplicatedBinaryActorPoisonBottle_C.BndEvt__BP_ReplicatedBinaryActorWhiskeyGlass_SBZInteractable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature
 // 0x0018 (0x0018 - 0x0000)
@@ -51,14 +50,15 @@ public:
 };
 DUMPER7_ASSERTS_BP_ReplicatedBinaryActorPoisonBottle_C_BndEvt__BP_ReplicatedBinaryActorWhiskeyGlass_SBZInteractable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature;
 
-// Function BP_ReplicatedBinaryActorPoisonBottle.BP_ReplicatedBinaryActorPoisonBottle_C.SetInteractionEnabled
-// 0x0001 (0x0001 - 0x0000)
-struct BP_ReplicatedBinaryActorPoisonBottle_C_SetInteractionEnabled final
+// Function BP_ReplicatedBinaryActorPoisonBottle.BP_ReplicatedBinaryActorPoisonBottle_C.OnStateChanged
+// 0x0002 (0x0002 - 0x0000)
+struct BP_ReplicatedBinaryActorPoisonBottle_C_OnStateChanged final
 {
 public:
-	bool                                          Emabled;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bStateToChangeTo;                                  // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bDoCosmetics;                                      // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_BP_ReplicatedBinaryActorPoisonBottle_C_SetInteractionEnabled;
+DUMPER7_ASSERTS_BP_ReplicatedBinaryActorPoisonBottle_C_OnStateChanged;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

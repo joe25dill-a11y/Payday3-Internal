@@ -22,6 +22,8 @@
 #include "Features/Misc/SpawnerTools.hpp"
 #include "Features/Misc/PresetTeleport.hpp"
 #include "Features/Misc/GodAmmo.hpp"
+#include "Features/Misc/ThirdPerson.hpp"
+#include "Features/Misc/CarryBodies.hpp"
 
 #include <intrin.h>
 #pragma intrinsic(_ReturnAddress)
@@ -242,6 +244,23 @@ void UObjectProcessEvent_hk(const SDK::UObject* pObject, class SDK::UFunction* p
 	if(nameFunction == FNames::ClientPlayForceFeedback_Internal)
 		return;
 
+	if(Cheat::CarryBodies::TryProcessEventHook(pObject, pFunction, pParams))
+		return;
+
+	if(CheatConfig::Get().m_misc.m_bCarryMoreBodies && Cheat::CarryBodies::IsThrowCarryEvent(pFunction))
+	{
+		UObjectProcessEvent_o(pObject, pFunction, pParams);
+		Cheat::CarryBodies::OnThrowCarryPostHook(const_cast<SDK::UObject*>(pObject));
+		return;
+	}
+
+	if(CheatConfig::Get().m_misc.m_bCarryMoreBodies && Cheat::CarryBodies::IsPickupFailedEvent(pFunction))
+	{
+		UObjectProcessEvent_o(pObject, pFunction, pParams);
+		Cheat::CarryBodies::OnPickupFailedPostHook(const_cast<SDK::UObject*>(pObject), pParams);
+		return;
+	}
+
 	if(nameFunction == FNames::ServerTryActivateAbility){
 		UObjectProcessEvent_o(pObject, pFunction, pParams);
 		auto& params = *reinterpret_cast<SDK::Params::AbilitySystemComponent_ServerTryActivateAbility*>(pParams);	
@@ -322,7 +341,7 @@ void UObjectProcessEvent_hk(const SDK::UObject* pObject, class SDK::UFunction* p
 				g_bAttemptedToShoot = true;
 			
 			auto pLocalPlayer = GetLocalPlayer();
-			if(pLocalPlayer && pLocalPlayer->SBZPlayerState && pLocalPlayer->PlayerAbilitySystem && CheatConfig::Get().m_misc.m_bInstantInteraction){
+			if(pLocalPlayer && pLocalPlayer->SBZPlayerState && pLocalPlayer->PlayerAbilitySystem){
 				if(!pLocalPlayer->SBZPlayerState->bIsMaskOn)
 					pLocalPlayer->PlayerAbilitySystem->Server_MaskOn();
 			}
@@ -346,6 +365,7 @@ void UObjectProcessEventPlayer_hk(const SDK::UObject* pObject, class SDK::UFunct
 	// Custom hide&seek maps often never reach SM_ActionPhase (g_bIsInGame=false).
 	// Still run player tick when Friendly Fire is on so PvP can work there.
 	const bool bRunPlayerLogic = Cheat::g_bIsInGame
+		|| LootESP::GetConfig().bLootESP
 		|| CheatConfig::Get().m_misc.m_bFriendlyFire
 		|| CheatConfig::Get().m_misc.m_bGrabAll
 		|| CheatConfig::Get().m_misc.m_bGrabAccess
@@ -355,7 +375,9 @@ void UObjectProcessEventPlayer_hk(const SDK::UObject* pObject, class SDK::UFunct
 		|| CheatConfig::Get().m_misc.m_bInfiniteAmmo
 		|| CheatConfig::Get().m_misc.m_bInstaKill
 		|| CheatConfig::Get().m_misc.m_bCarryMoreBags
+		|| CheatConfig::Get().m_misc.m_bCarryMoreBodies
 		|| CheatConfig::Get().m_misc.m_bNoCivPenalty
+		|| CheatConfig::Get().m_misc.m_bThirdPerson
 		|| Cheat::SpawnerTools::HasPendingWork()
 		|| Cheat::PresetTeleport::NeedsPlayerTick();
 	if(!bRunPlayerLogic){
@@ -393,11 +415,42 @@ ULocalPlayerGetViewPoint_t ULocalPlayerGetViewPoint_o = nullptr;
 void ULocalPlayerGetViewPoint_hk(SDK::ULocalPlayer* _this, SDK::FMinimalViewInfo* OutViewInfo)
 {
 	ULocalPlayerGetViewPoint_o(_this, OutViewInfo);
-	if(!Cheat::g_bIsInGame)
-		return;
 
+	const bool bThirdPerson = CheatConfig::Get().m_misc.m_bThirdPerson;
+	if(!Cheat::g_bIsInGame)
+	{
+		if (bThirdPerson)
+			Cheat::ThirdPerson::ApplyCamera(_this, OutViewInfo);
+		return;
+	}
+
+	const auto& aim = CheatConfig::Get().m_aimbot;
+	const bool bCanAim = aim.m_bEnabled
+		&& Cheat::g_stTargetInfo.has_value()
+		&& !(Cheat::g_bIsInStealth && aim.m_bDisableInStealth);
+
+	if (bCanAim && aim.m_eAimType == CheatConfig::Aimbot_t::EAimType::Snapping)
+	{
+		SDK::FRotator rotGoal = Cheat::g_stTargetInfo->m_rotAimRotation;
+		if (aim.m_iSmoothing > 0)
+		{
+			const float flAlpha = 1.f / (1.f + static_cast<float>(aim.m_iSmoothing) * 0.15f);
+			OutViewInfo->Rotation = (OutViewInfo->Rotation + ((rotGoal - OutViewInfo->Rotation).GetNormalized() * flAlpha)).GetNormalized();
+		}
+		else
+		{
+			OutViewInfo->Rotation = rotGoal;
+		}
+		if (bThirdPerson)
+			Cheat::ThirdPerson::ApplyCamera(_this, OutViewInfo);
+		return;
+	}
+
+	// Silent (default): keep real camera; bullets still aim via GetPlayerViewPoint fire path.
 	OutViewInfo->Location = g_vecOriginalLocation;
-	OutViewInfo->Rotation = g_rotOriginalRotation;	
+	OutViewInfo->Rotation = g_rotOriginalRotation;
+	if (bThirdPerson)
+		Cheat::ThirdPerson::ApplyCamera(_this, OutViewInfo);
 }
 
 using APlayerControllerGetPlayerViewPoint_t = void(*)(SDK::APlayerController*, SDK::FVector*, SDK::FRotator*);
@@ -466,16 +519,31 @@ void APlayerControllerGetPlayerViewPoint_hk(SDK::APlayerController* _this, SDK::
 
 		g_bAttemptedToShoot = false;
 	}
-	else if(pGoalRet1 != pReturnAddress && pGoalRet2 != pReturnAddress)
-		return;
+	else if (pGoalRet1 != pReturnAddress && pGoalRet2 != pReturnAddress)
+	{
+		// Fire-path gate for Silent only. Snapping aims on every view call.
+		if (CheatConfig::Get().m_aimbot.m_eAimType != CheatConfig::Aimbot_t::EAimType::Snapping)
+			return;
+	}
 	
-	if(!Cheat::g_stTargetInfo || !CheatConfig::Get().m_aimbot.m_bEnabled || (Cheat::g_bIsInStealth && CheatConfig::Get().m_aimbot.m_bDisableInStealth))
+	const auto& aimCfg = CheatConfig::Get().m_aimbot;
+	if(!Cheat::g_stTargetInfo || !aimCfg.m_bEnabled || (Cheat::g_bIsInStealth && aimCfg.m_bDisableInStealth))
 		return;
+
+	const bool bSnapping = aimCfg.m_eAimType == CheatConfig::Aimbot_t::EAimType::Snapping;
 
 	SDK::FRotator rotCurrent = *out_Rotation;
 	SDK::FRotator rotGoal = Cheat::g_stTargetInfo->m_rotAimRotation;
-	//*out_Rotation = (rotGoal - ((rotGoal - rotCurrent).GetNormalized() * 0.5f)).GetNormalized();
-	*out_Rotation = rotGoal;
+
+	if (bSnapping && aimCfg.m_iSmoothing > 0)
+	{
+		const float flAlpha = 1.f / (1.f + static_cast<float>(aimCfg.m_iSmoothing) * 0.15f);
+		*out_Rotation = (rotCurrent + ((rotGoal - rotCurrent).GetNormalized() * flAlpha)).GetNormalized();
+	}
+	else
+	{
+		*out_Rotation = rotGoal;
+	}
 	*out_Location = Cheat::g_stTargetInfo->m_vecAimPosition;
 }
 
@@ -508,6 +576,9 @@ void MainLoop()
 
 		SDK::UGameInstance* pGameInstance = pGWorld->OwningGameInstance;
 		if (!pGameInstance)
+			ContinueLoop
+
+		if (pGameInstance->LocalPlayers.Num() <= 0)
 			ContinueLoop
 
 		SDK::ULocalPlayer* pLocalPlayer = pGameInstance->LocalPlayers[0];

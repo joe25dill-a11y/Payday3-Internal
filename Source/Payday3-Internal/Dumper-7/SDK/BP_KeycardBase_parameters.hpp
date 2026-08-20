@@ -14,35 +14,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_KeycardBase.BP_KeycardBase_C.GetSensorComponent
-// 0x0008 (0x0008 - 0x0000)
-struct BP_KeycardBase_C_GetSensorComponent final
-{
-public:
-	class USBZSensorComponent*                    ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_KeycardBase_C_GetSensorComponent;
-
-// Function BP_KeycardBase.BP_KeycardBase_C.GetSensorOutlineComponent
-// 0x0008 (0x0008 - 0x0000)
-struct BP_KeycardBase_C_GetSensorOutlineComponent final
-{
-public:
-	class USBZOutlineComponent*                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_KeycardBase_C_GetSensorOutlineComponent;
-
-// Function BP_KeycardBase.BP_KeycardBase_C.BndEvt__Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature
-// 0x0018 (0x0018 - 0x0000)
-struct BP_KeycardBase_C_BndEvt__Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature final
-{
-public:
-	class USBZBaseInteractableComponent*          Interactable_0;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class USBZInteractorComponent*                Interactor;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bIsLocallyControlledInteractor;                    // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_BP_KeycardBase_C_BndEvt__Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature;
-
 // Function BP_KeycardBase.BP_KeycardBase_C.ExecuteUbergraph_BP_KeycardBase
 // 0x0020 (0x0020 - 0x0000)
 struct BP_KeycardBase_C_ExecuteUbergraph_BP_KeycardBase final
@@ -55,6 +26,35 @@ public:
 	bool                                          K2Node_ComponentBoundEvent_bIsLocallyControlledInteractor; // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_KeycardBase_C_ExecuteUbergraph_BP_KeycardBase;
+
+// Function BP_KeycardBase.BP_KeycardBase_C.BndEvt__Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature
+// 0x0018 (0x0018 - 0x0000)
+struct BP_KeycardBase_C_BndEvt__Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature final
+{
+public:
+	class USBZBaseInteractableComponent*          Interactable_0;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class USBZInteractorComponent*                Interactor;                                        // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsLocallyControlledInteractor;                    // 0x0010(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_KeycardBase_C_BndEvt__Interactable_K2Node_ComponentBoundEvent_0_SBZOnInteraction__DelegateSignature;
+
+// Function BP_KeycardBase.BP_KeycardBase_C.GetSensorOutlineComponent
+// 0x0008 (0x0008 - 0x0000)
+struct BP_KeycardBase_C_GetSensorOutlineComponent final
+{
+public:
+	class USBZOutlineComponent*                   ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_KeycardBase_C_GetSensorOutlineComponent;
+
+// Function BP_KeycardBase.BP_KeycardBase_C.GetSensorComponent
+// 0x0008 (0x0008 - 0x0000)
+struct BP_KeycardBase_C_GetSensorComponent final
+{
+public:
+	class USBZSensorComponent*                    ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_KeycardBase_C_GetSensorComponent;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END
