@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "Aimbot.hpp"
 #include "TargetingHelpers.hpp"
+#include "../Player/Player.hpp"
+#include "../../Hooks/Features/AimbotHooks.hpp"
 
 namespace
 {
@@ -41,9 +43,11 @@ void Aimbot::HandleMenu()
 
 		m_pTab1Left->AddElement(m_pAimbotEnabled.get());
 		m_pTab1Left->AddElement(m_pAimbotVisibleCheck.get());
+		m_pTab1Left->AddElement(m_pAimbotWallbang.get());
 		m_pTab1Left->AddElement(m_pAimbotFOVEnabled.get());
 
-		m_pTab1Right->AddElement(m_pAimbotHotkey.get()); // key defaults unbound, bind it via the UI
+		m_pTab1Right->AddElement(m_pAimbotHotkey.get());
+		m_pAimbotHotkey->SetMode(Hotkey::EHotkeyMode::AlwaysOn);
 		m_pTab1Right->AddElement(m_pAimbotType.get());
 		m_pTab1Right->AddElement(m_pAimbotTarget.get());
 		m_pAimbotTarget->AddOption("Head");
@@ -68,37 +72,54 @@ void Aimbot::HandleMenu()
 	});
 }
 
-void Aimbot::Render()
+void Aimbot::UpdateAim()
 {
-	if (m_pAimbotFOVEnabled->GetValue())
-	{
-		const ImU32 color = ImGui::ColorConvertFloat4ToU32(m_pAimbotFOVColor->GetValue());
-		const float maxScreenDistance = static_cast<float>(m_pFOV->GetValue());
-
-		ImDrawList* pDrawList = ImGui::GetBackgroundDrawList();
-		const ImVec2 center = ImGui::GetIO().DisplaySize * 0.5f;
-		pDrawList->AddCircle(center, maxScreenDistance, color, 100, 1.0f);
-	}
+	auto ClearOverride = [this]() {
+		ShouldOverrideView = false;
+	};
 
 	if (!m_pAimbotEnabled->GetValue())
+	{
+		ClearOverride();
 		return;
+	}
+
+	// Config load can wipe AlwaysOn — keep Silent usable without a bound key.
+	if (m_pAimbotHotkey->GetKey() == ImGuiKey_None)
+		m_pAimbotHotkey->SetMode(Hotkey::EHotkeyMode::AlwaysOn);
 
 	m_pAimbotHotkey->Update();
-	if (!m_pAimbotHotkey->GetValue())
+	const bool bHotkeyOk = m_pAimbotHotkey->GetValue()
+		|| (m_pAimbotHotkey->GetKey() == ImGuiKey_None);
+	if (!bHotkeyOk)
+	{
+		ClearOverride();
 		return;
+	}
 
 	SDK::UWorld* pWorld = SDK::UWorld::GetWorld();
 	if (!pWorld)
+	{
+		ClearOverride();
 		return;
+	}
 
 	SDK::APlayerController* pPlayerController = SDK::UGameplayStatics::GetPlayerController(pWorld, 0);
 	if (!pPlayerController || !pPlayerController->PlayerCameraManager)
+	{
+		ClearOverride();
 		return;
+	}
 
 	SDK::FVector vecCameraLocation = pPlayerController->PlayerCameraManager->GetCameraLocation();
 	SDK::FRotator rotCameraRotation = pPlayerController->PlayerCameraManager->GetCameraRotation();
 
-	const float maxScreenDistance = m_pAimbotFOVEnabled->GetValue() ? static_cast<float>(m_pFOV->GetValue()) : std::numeric_limits<float>::max();
+	const float maxScreenDistance = m_pAimbotFOVEnabled->GetValue()
+		? static_cast<float>(m_pFOV->GetValue())
+		: std::numeric_limits<float>::max();
+
+	const bool bWallbang = IsWallbangEnabled() || (pPlayer && pPlayer->IsWallbangEnabled());
+	const bool bVisibleCheck = m_pAimbotVisibleCheck->GetValue() && !bWallbang;
 
 	const wchar_t* targetPart =
 		m_pAimbotTarget->GetSelectedIndex() == 0 ? L"Head" :
@@ -109,9 +130,13 @@ void Aimbot::Render()
 		m_pAimbotTarget->GetSelectedIndex() == 5 ? L"LeftLeg" :
 		m_pAimbotTarget->GetSelectedIndex() == 6 ? L"RightLeg" : L"Head";
 
-	auto optTarget = TargetingHelpers::SelectBestTarget(pWorld, pPlayerController, true, false, maxScreenDistance, m_pAimbotVisibleCheck->GetValue(), targetPart);
+	auto optTarget = TargetingHelpers::SelectBestTarget(
+		pWorld, pPlayerController, true, false, maxScreenDistance, bVisibleCheck, targetPart);
 	if (!optTarget.has_value())
+	{
+		ClearOverride();
 		return;
+	}
 
 	const SDK::FRotator desiredRotation = SDK::UKismetMathLibrary::FindLookAtRotation(
 		vecCameraLocation,
@@ -124,20 +149,58 @@ void Aimbot::Render()
 	const float deltaYaw = NormalizeAngle(desiredRotation.Yaw - rotCameraRotation.Yaw) * alpha;
 	const float deltaPitch = NormalizeAngle(desiredRotation.Pitch - rotCameraRotation.Pitch) * alpha;
 
-	ShouldOverrideView = false;
-	if (CurrentAimbotType() == 0 && ImGui::IsMouseDown(ImGuiMouseButton_Left))
+	if (CurrentAimbotType() == 0)
 	{
 		ShouldOverrideView = true;
+		// pSilent: fire-path hook teleports hitscan origin to bone + aims at it.
 		OverrideLocation = optTarget->AimWorldLocation;
 		OverrideRotation = desiredRotation;
 	}
-	else if (CurrentAimbotType() == 1)
+	else
 	{
+		ShouldOverrideView = false;
 		pPlayerController->AddYawInput(deltaYaw);
 		pPlayerController->AddPitchInput(-deltaPitch);
 	}
 }
 
+void Aimbot::Render()
+{
+	if (m_pAimbotFOVEnabled->GetValue())
+	{
+		const ImU32 color = ImGui::ColorConvertFloat4ToU32(m_pAimbotFOVColor->GetValue());
+		const float maxScreenDistance = static_cast<float>(m_pFOV->GetValue());
+
+		ImDrawList* pDrawList = ImGui::GetBackgroundDrawList();
+		const ImVec2 center = ImGui::GetIO().DisplaySize * 0.5f;
+		pDrawList->AddCircle(center, maxScreenDistance, color, 100, 1.0f);
+	}
+
+	UpdateAim();
+
+	// pSilent status
+	if (m_pAimbotEnabled->GetValue() && CurrentAimbotType() == 0)
+	{
+		ImDrawList* pDrawList = ImGui::GetBackgroundDrawList();
+		char szBuf[128]{};
+		if (AimbotHooks::IsSilentReady())
+		{
+			std::snprintf(szBuf, sizeof(szBuf), "pSilent: READY (hits %llu)",
+				static_cast<unsigned long long>(AimbotHooks::GetOverrideHitCount()));
+			pDrawList->AddText(ImVec2(20.f, 40.f), IM_COL32(80, 255, 120, 220), szBuf);
+		}
+		else
+		{
+			std::snprintf(szBuf, sizeof(szBuf),
+				"pSilent: LEARNING — keep shooting (hits %llu). Camera may twitch until READY.",
+				static_cast<unsigned long long>(AimbotHooks::GetOverrideHitCount()));
+			pDrawList->AddText(ImVec2(20.f, 40.f), IM_COL32(255, 200, 80, 220), szBuf);
+		}
+	}
+}
+
 void Aimbot::Run()
 {
+	// Backup path if Present is late — keeps ShouldOverrideView fresh in-heist.
+	UpdateAim();
 }

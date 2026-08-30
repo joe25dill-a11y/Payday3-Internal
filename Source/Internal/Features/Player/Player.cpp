@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "Player.hpp"
+#include "../Aimbot/Aimbot.hpp"
 #include <vector>
 #include <algorithm>
 
@@ -68,6 +69,7 @@ void Player::HandleMenu()
 		m_pTab3Left->AddElement(m_pInfAmmo.get());
 		m_pTab3Left->AddElement(m_pNoRecoil.get());
 		m_pTab3Left->AddElement(m_pNoSpread.get());
+		m_pTab3Left->AddElement(m_pWallbang.get());
 		m_pTab3Left->AddElement(m_pFireRate.get());
 		m_pTab3Right->AddElement(m_pFireRateSlider.get());
 
@@ -287,7 +289,11 @@ bool BackupWeaponData()
 
 				.m_iProjectilesPerFiredRound = pWeaponData->FireData->ProjectilesPerFiredRound,
 				.m_flRoundsPerMinute = pWeaponData->FireData->RoundsPerMinute,
-				.m_eFireMode = pWeaponData->FireData->FireMode
+				.m_eFireMode = pWeaponData->FireData->FireMode,
+
+				.m_iMaximumPenetrationCount = pWeaponData->FireData->MaximumPenetrationCount,
+				.m_bCanHitEnvironmentAfterPenetration = pWeaponData->FireData->bCanHitEnvironmentAfterPenetration,
+				.m_bCanPenetrateBlocked = pWeaponData->FireData->bCanPenetrateBlocked
 			});
 		}
 	}
@@ -407,6 +413,43 @@ void Player::noSpread(bool bEnabled)
 				weaponData->SpreadData->FireSpreadIncrease = backup->m_flFireSpreadIncrease;
 			}
 		}
+	}
+}
+
+void Player::ApplyWallbangToFireData(SDK::USBZWeaponFireData* pFire, bool bEnabled, const WeaponDataBackupEntry_t* backup)
+{
+	if (!pFire)
+		return;
+
+	if (bEnabled)
+	{
+		// High but not UINT_MAX — max pen + many pellets can hitch hard.
+		pFire->MaximumPenetrationCount = 32;
+		pFire->bCanHitEnvironmentAfterPenetration = true;
+		pFire->bCanPenetrateBlocked = true;
+	}
+	else if (backup)
+	{
+		pFire->MaximumPenetrationCount = backup->m_iMaximumPenetrationCount;
+		pFire->bCanHitEnvironmentAfterPenetration = backup->m_bCanHitEnvironmentAfterPenetration;
+		pFire->bCanPenetrateBlocked = backup->m_bCanPenetrateBlocked;
+	}
+}
+
+void Player::wallbang(bool bEnabled)
+{
+	SDK::ASBZPlayerCharacter* localChar = GetLocalCharacter();
+	if (!localChar || !g_bDidBackupWeaponData)
+		return;
+
+	for (auto* weaponData : GetCurrentWeaponData(localChar))
+	{
+		if (!weaponData || !weaponData->FireData)
+			continue;
+
+		auto* backup = GetWeaponBackupData(weaponData);
+		ApplyWallbangToFireData(weaponData->FireData, bEnabled, backup);
+		ApplyWallbangToFireData(weaponData->OriginalFireData, bEnabled, backup);
 	}
 }
 
@@ -580,5 +623,6 @@ void Player::Run()
 
 	noRecoil(m_pNoRecoil->GetValue());
 	noSpread(m_pNoSpread->GetValue());
+	wallbang(m_pWallbang->GetValue() || (pAimbot && pAimbot->IsWallbangEnabled()));
 	fireRate(m_pFireRate->GetValue());
 }

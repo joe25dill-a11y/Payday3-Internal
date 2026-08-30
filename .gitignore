@@ -3,3 +3,5 @@ Build/
 .xmake
 .github/*
 !.github/workflows/
+build-*.txt
+build-out*.txt

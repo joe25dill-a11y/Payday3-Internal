@@ -35,6 +35,7 @@ private:
 
 	std::unique_ptr<Checkbox> m_pAimbotEnabled = std::make_unique<Checkbox>("AIMBOT_ENABLED", "AIMBOT_ENABLED"Hashed);
 	std::unique_ptr<Checkbox> m_pAimbotVisibleCheck = std::make_unique<Checkbox>("AIMBOT_VISIBLE_CHECK", "AIMBOT_VISIBLE_CHECK"Hashed);
+	std::unique_ptr<Checkbox> m_pAimbotWallbang = std::make_unique<Checkbox>("AIMBOT_WALLBANG", "AIMBOT_WALLBANG"Hashed);
 	std::unique_ptr<Checkbox> m_pAimbotFOVEnabled = std::make_unique<Checkbox>("AIMBOT_FOV_ENABLED", "AIMBOT_FOV_ENABLED"Hashed);
 	std::unique_ptr<Hotkey> m_pAimbotHotkey = std::make_unique<Hotkey>("AIMBOT_HOTKEY", "AIMBOT_HOTKEY"Hashed);
 	std::unique_ptr<Combo> m_pAimbotType = std::make_unique<Combo>("AIMBOT_TYPE", "AIMBOT_TYPE"Hashed, ElementBase::Style_t{ .iFlags = ImGuiComboFlags_WidthFitPreview });
@@ -47,9 +48,11 @@ public:
 	void HandleMenu() override;
 	void Render() override;
 	void Run() override;
+	void UpdateAim();
 	int CurrentAimbotType();
 	RadioButtonIcon* GetMenuButton() const { return m_pMenuButton.get(); }
 	std::string GetName() override { return "Aimbot"; };
+	bool IsWallbangEnabled() const { return m_pAimbotWallbang && m_pAimbotWallbang->GetValue(); }
 
 	bool ShouldOverrideView = false;
 	SDK::FVector OverrideLocation{};
